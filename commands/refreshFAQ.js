@@ -5,9 +5,10 @@ module.exports = {
   async execute(message) {
     const args = message.content.split(' ');
     const forumId = args[1];
+    const bumpThreads = args.includes('--bump'); // Optional flag to bump threads
 
     if (!forumId) {
-      return message.reply('Usage: `!refreshfaq <forum_channel_id>`\nThis will fetch actual message content from forum threads to update the knowledge base.');
+      return message.reply('Usage: `!refreshfaq <forum_channel_id> [--bump]`\nThis will fetch actual message content from forum threads to update the knowledge base.\nAdd --bump to also bump archived threads back to active.');
     }
 
     try {
@@ -19,11 +20,17 @@ module.exports = {
 
       await message.reply('🔄 Fetching forum content... This may take a moment.');
 
-      const threads = await forumChannel.threads.fetchActive();
+      // Fetch both active and archived threads
+      const [activeThreads, archivedThreads] = await Promise.all([
+        forumChannel.threads.fetchActive(),
+        forumChannel.threads.fetchArchived({ limit: 50 }) // Get up to 50 archived threads
+      ]);
+
+      const allThreads = new Map([...activeThreads.threads, ...archivedThreads.threads]);
       const jsonEntries = [];
       let processedCount = 0;
 
-      for (const [id, thread] of threads.threads) {
+      for (const [id, thread] of allThreads) {
         try {
           // Fetch messages from the thread to get actual content
           const messages = await thread.messages.fetch({ limit: 100 });
@@ -49,6 +56,16 @@ module.exports = {
           processedCount++;
           console.log(`Processed: ${thread.name} (${content.length} chars)`);
 
+          // Bump archived threads if requested
+          if (bumpThreads && thread.archived) {
+            try {
+              await thread.send('🔄 FAQ thread refreshed for knowledge base update');
+              console.log(`Bumped: ${thread.name}`);
+            } catch (bumpError) {
+              console.log(`Could not bump ${thread.name}: ${bumpError.message}`);
+            }
+          }
+
           // Small delay to avoid rate limiting
           await new Promise(resolve => setTimeout(resolve, 100));
 
@@ -73,7 +90,10 @@ module.exports = {
       const jsonPath = path.join(__dirname, '..', 'data', 'forum_faq.json');
       fs.writeFileSync(jsonPath, JSON.stringify(jsonEntries, null, 2));
       
-      await message.reply(`✅ **FAQ Knowledge Base Updated!**\n\n📊 **Stats:**\n• ${processedCount} threads processed\n• ${jsonEntries.length} total entries\n• Saved to: \`data/forum_faq.json\`\n\n🤖 The bot now has access to actual forum content for answering questions!`);
+      const archivedCount = Array.from(allThreads.values()).filter(t => t.archived).length;
+      const activeCount = Array.from(allThreads.values()).filter(t => !t.archived).length;
+      
+      await message.reply(`✅ **FAQ Knowledge Base Updated!**\n\n📊 **Stats:**\n• ${processedCount} threads processed\n• ${activeCount} active threads\n• ${archivedCount} archived threads\n• ${jsonEntries.length} total entries\n• Saved to: \`data/forum_faq.json\`\n\n🤖 The bot now has access to actual forum content for answering questions!`);
 
     } catch (err) {
       console.error('[ERROR] Refresh FAQ command failed:', err);
