@@ -1,0 +1,22 @@
+[
+  {
+    "id": "world_overview",
+    "title": "Adrullan World Overview",
+    "content": "Adrullan is a vast, mystical realm where ancient magic and technology intertwine. The world is divided into several distinct regions, each with its own unique culture, challenges, and opportunities. Players explore this world as adventurers seeking to uncover its secrets and shape its destiny.",
+    "category": "lore",
+    "tags": ["world", "setting", "overview", "lore"],
+    "source_url": "design_docs",
+    "last_updated": "2025-01-15",
+    "priority": "high"
+  },
+  {
+    "id": "factions_system",
+    "title": "Faction System",
+    "content": "Players can align with various factions throughout their journey. Each faction offers unique quests, rewards, and storylines. Faction reputation affects how NPCs interact with you and unlocks special content. You can change factions, but this resets your reputation with the previous faction.",
+    "category": "lore",
+    "tags": ["factions", "reputation", "story", "lore"],
+    "source_url": "design_docs",
+    "last_updated": "2025-01-15",
+    "priority": "high"
+  }
+]

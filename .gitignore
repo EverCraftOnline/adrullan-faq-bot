@@ -1,0 +1,43 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+
+# Env files
+.env
+.env.local
+.env.*.local
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# OS clutter
+.DS_Store
+Thumbs.db
+
+# Log files
+logs
+*.log
+*.log.*
+
+# PM2 logs
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Build cache
+dist/
+build/
+.cache/
+tmp/
+temp/
+
+# Optional: Output files from your bot
+vector_store/
+forum-index.txt
+*.db
+*.sqlite

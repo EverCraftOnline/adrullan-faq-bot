@@ -1,0 +1,22 @@
+[
+  {
+    "id": "getting_started",
+    "title": "Getting Started Guide",
+    "content": "Welcome to Adrullan! Start by creating your character and choosing your starting region. Complete the tutorial quests to learn basic mechanics. Join a guild early to meet other players and get help. Focus on exploring and trying different activities to find what you enjoy most. Don't worry about min-maxing initially - just have fun!",
+    "category": "guides",
+    "tags": ["beginner", "tutorial", "getting-started", "guide"],
+    "source_url": "design_docs",
+    "last_updated": "2025-01-15",
+    "priority": "high"
+  },
+  {
+    "id": "combat_guide",
+    "title": "Combat System Guide",
+    "content": "Combat in Adrullan is action-based and skill-focused. Learn to dodge, time your attacks, and chain abilities for maximum effect. Practice against training dummies before taking on real enemies. Different weapon types have different playstyles - experiment to find what suits you. Positioning and timing matter more than raw damage numbers.",
+    "category": "guides",
+    "tags": ["combat", "guide", "mechanics", "tutorial"],
+    "source_url": "design_docs",
+    "last_updated": "2025-01-15",
+    "priority": "high"
+  }
+]

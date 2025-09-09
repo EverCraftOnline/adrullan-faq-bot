@@ -1,0 +1,24 @@
+{
+  "name": "adrullan-faq-bot",
+  "version": "1.0.0",
+  "description": "Discord bot for Adrullan Online Adventures FAQ with AI-powered responses",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js",
+    "dev": "node bot.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.17.1",
+    "discord.js": "^14.14.1",
+    "dotenv": "^16.6.1"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "faq",
+    "ai",
+    "adrullan"
+  ],
+  "author": "",
+  "license": "MIT"
+}

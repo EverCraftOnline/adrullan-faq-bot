@@ -1,0 +1,36 @@
+# Ignore all dependencies
+node_modules/
+package-lock.json
+
+# Ignore output, cache, and build artifacts
+dist/
+build/
+.cache/
+temp/
+tmp/
+vector_store/
+*.db
+*.sqlite
+*.log
+*.lock
+
+# Ignore environment secrets
+.env
+.env.*
+.env.local
+
+# Ignore git-specific files
+.git/
+.gitignore
+
+# Ignore IDE settings
+.vscode/
+.idea/
+
+# Ignore Cursor itself
+.cursorignore
+
+# Ignore test dumps or CLI outputs
+*.txt
+*.out
+*.dump

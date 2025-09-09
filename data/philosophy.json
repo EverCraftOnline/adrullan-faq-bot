@@ -1,0 +1,22 @@
+[
+  {
+    "id": "design_philosophy",
+    "title": "Core Design Philosophy",
+    "content": "Adrullan is designed around player agency and meaningful choices. Every system is built to give players real impact on the world and their character's journey. We prioritize skill over gear, community over competition, and exploration over grinding. The game should feel like a living world that responds to player actions.",
+    "category": "philosophy",
+    "tags": ["design", "philosophy", "core", "principles"],
+    "source_url": "design_docs",
+    "last_updated": "2025-01-15",
+    "priority": "high"
+  },
+  {
+    "id": "monetization_approach",
+    "title": "Monetization Philosophy",
+    "content": "Adrullan uses a fair monetization model focused on cosmetics and convenience, never pay-to-win. All gameplay content is accessible to all players. Premium items are purely cosmetic or provide minor convenience benefits. We believe in earning respect through great gameplay, not through spending money.",
+    "category": "philosophy",
+    "tags": ["monetization", "fair", "cosmetics", "philosophy"],
+    "source_url": "design_docs",
+    "last_updated": "2025-01-15",
+    "priority": "high"
+  }
+]
