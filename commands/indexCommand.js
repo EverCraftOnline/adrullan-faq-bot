@@ -3,9 +3,10 @@ module.exports = {
     const args = message.content.split(' ');
     const forumId = args[1];
     const style = args[2] || 'discord'; // default style: discord internal links
+    const noArchive = args.includes('--noarchive'); // flag to exclude archived threads
 
     if (!forumId) {
-      return message.reply('Usage: `!index <forum_channel_id> [style]`\nStyles: discord, markdown, plain, numbered');
+      return message.reply('Usage: `!index <forum_channel_id> [style] [--noarchive]`\nStyles: discord, markdown, plain, numbered\nAdd --noarchive to exclude archived threads');
     }
 
     try {
@@ -15,29 +16,38 @@ module.exports = {
         return message.reply('That\'s not a valid forum channel.');
       }
 
-      const threads = await forumChannel.threads.fetchActive();
+      // Fetch both active and archived threads by default
+      const [activeThreads, archivedThreads] = await Promise.all([
+        forumChannel.threads.fetchActive(),
+        noArchive ? { threads: new Map() } : forumChannel.threads.fetchArchived({ limit: 100 })
+      ]);
 
+      const allThreads = new Map([...activeThreads.threads, ...archivedThreads.threads]);
       const entries = [];
       let count = 1;
 
-      for (const [id, thread] of threads.threads) {
+      for (const [id, thread] of allThreads) {
         const url = `https://discord.com/channels/${thread.guildId}/${thread.id}`;
         const name = thread.name;
+
+        // Add archive indicator
+        const archiveIndicator = thread.archived ? ' 💤' : '';
+        const displayName = name + archiveIndicator;
 
         let line;
         switch (style.toLowerCase()) {
           case 'markdown':
-            line = `- [${name}](${url})`;
+            line = `- [${displayName}](${url})`;
             break;
           case 'plain':
-            line = `${name} - ${url}`;
+            line = `${displayName} - ${url}`;
             break;
           case 'numbered':
-            line = `${count++}. [${name}](${url})`;
+            line = `${count++}. [${displayName}](${url})`;
             break;
           case 'discord':
           default:
-            line = `#${name}`; // Discord-native clickable forum title
+            line = `#${displayName}`; // Discord-native clickable forum title
             break;
         }
 
@@ -60,6 +70,15 @@ module.exports = {
 
       if (currentChunk.length > 0) {
         await message.channel.send(currentChunk);
+      }
+
+      // Add summary
+      const activeCount = Array.from(allThreads.values()).filter(t => !t.archived).length;
+      const archivedCount = Array.from(allThreads.values()).filter(t => t.archived).length;
+      const totalCount = allThreads.size;
+      
+      if (totalCount > 0) {
+        await message.channel.send(`📊 **Index Summary:** ${totalCount} total threads (${activeCount} active, ${archivedCount} archived 💤)`);
       }
 
     } catch (err) {
