@@ -1,10 +1,12 @@
 const rateLimiter = require('../lib/rateLimiter');
+const { PermissionsBitField } = require('discord.js');
 
 module.exports = {
   async execute(message) {
     // Check if user is admin (you can customize this)
-    const isAdmin = message.member?.permissions.has('ADMINISTRATOR') || 
-                   message.author.id === '146495555760160769';
+    const isAdmin = message.member?.permissions.has(PermissionsBitField.Flags.Administrator) || 
+                   message.author.id === '146495555760160769' ||
+                   message.member?.roles.cache.some(role => role.name === 'Designer');
     
     if (!isAdmin) {
       return message.reply('❌ This command is only available to administrators.');
