@@ -1,7 +1,7 @@
 {
   "name": "adrullan-faq-bot",
   "version": "1.0.0",
-  "description": "Discord bot for Adrullan Online Adventures FAQ with AI-powered responses",
+  "description": "Senan - Discord bot for Adrullan Online Adventures FAQ with AI-powered responses",
   "main": "bot.js",
   "scripts": {
     "start": "node bot.js",
