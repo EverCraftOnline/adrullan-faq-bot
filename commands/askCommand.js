@@ -62,6 +62,7 @@ module.exports = {
       // Debug logging
       console.log(`Question: "${question}"`);
       console.log(`Using --all flag: ${useAllContext}`);
+      console.log(`Context mode: ${anthropicClient.isContextPassing() ? 'Context Passing' : 'File Usage'}`);
       console.log(`Context length: ${context.length} characters`);
       console.log(`Estimated tokens: ${Math.ceil(context.length / 4)}`);
       console.log(`Documents included: ${context.split('---').length - 1}`);
