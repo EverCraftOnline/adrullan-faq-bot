@@ -1,20 +1,130 @@
 [
   {
-    "id": "design_philosophy",
-    "title": "Core Design Philosophy",
-    "content": "Adrullan is designed around player agency and meaningful choices. Every system is built to give players real impact on the world and their character's journey. We prioritize skill over gear, community over competition, and exploration over grinding. The game should feel like a living world that responds to player actions.",
+    "id": "game_introduction",
+    "title": "Adrullan Online Adventures - Introduction",
+    "content": "\"Adrullan Online Adventures\" aims to recreate the magic of classic MMORPGs, emphasizing a large, apathetic world, grounded storytelling, social engagement, strategic combat, and immersive exploration. Inspired by the charm of early MMO gameplay, our game aims to offer players an intimate experience that celebrates the roots of the genre while introducing modern refinements.",
     "category": "philosophy",
-    "tags": ["design", "philosophy", "core", "principles"],
+    "tags": ["introduction", "classic_mmo", "design_goals", "vision"],
     "source_url": "design_docs",
     "last_updated": "2025-01-15",
     "priority": "high"
   },
   {
-    "id": "monetization_approach",
-    "title": "Monetization Philosophy",
-    "content": "Adrullan uses a fair monetization model focused on cosmetics and convenience, never pay-to-win. All gameplay content is accessible to all players. Premium items are purely cosmetic or provide minor convenience benefits. We believe in earning respect through great gameplay, not through spending money.",
+    "id": "large_apathetic_world",
+    "title": "Large Apathetic World Design",
+    "content": "Indifferent Environment: The world is not centered around the player. There are no heroes; instead, stories are grounded and localized.\n\nNo Navigational Maps: Players will navigate using contextual cues within the world, promoting a sense of exploration and intimacy with the environment. Maps provided will be stylized, simplified, and not show players absolute location.\n\nDiversity of Races and Classes: Various races and classes begin in different cities, enriching the game's culture and embracing content diversity.\n\nLimited Travel: A sense of grandeur is maintained through restricted travel, unlocking additional transportation methods over time.",
     "category": "philosophy",
-    "tags": ["monetization", "fair", "cosmetics", "philosophy"],
+    "tags": ["world_design", "exploration", "navigation", "immersion"],
+    "source_url": "design_docs",
+    "last_updated": "2025-01-15",
+    "priority": "high"
+  },
+  {
+    "id": "hub_design",
+    "title": "The Hub Design of Adrullan",
+    "content": "Guided Progression: Guided paths provide basic skills and experiences, leading players towards Anatma's Point (working name) around level 15.\n\nSoft Hub and Spoke System: Anatma's Point (working name) serves as a central hub, orchestrating journeys across the world and promoting exploration.\n\nAlards Fork stands as a testament to the hub's design philosophy. It serves as both a stand-in and proof of concept, paving the way for future mechanics. Crucial systems, such as Caravans and significant social components of Antamas, are expected to be piloted here.",
+    "category": "philosophy",
+    "tags": ["hub_design", "progression", "anatmas_point", "alards_fork"],
+    "source_url": "design_docs",
+    "last_updated": "2025-01-15",
+    "priority": "high"
+  },
+  {
+    "id": "social_engagement",
+    "title": "Social Engagement Philosophy",
+    "content": "Grouping and Interaction:\n- Encouraging Collaboration: Grouping is encouraged from early stages, driving players to interact and form teams.\n- Social Friction: Deliberate design choices create or omit systems to stimulate social interactions, backed by systemic support for positive interactions.\n\nReputation Management:\n- Importance of Reputation: Players' reputations precede them, impacting their social standing within the community.\n\nDrawing inspiration from Bartle's Taxonomy, we recognize the diversity of player motivations, be it the thrill-seeking Explorer or the interaction-loving Socializer. Our world's vastness and inherent risks aren't merely for show; they are designed to evoke ambition, perseverance, and collective effort.",
+    "category": "philosophy",
+    "tags": ["social", "grouping", "reputation", "community", "bartle_taxonomy"],
+    "source_url": "design_docs",
+    "last_updated": "2025-01-15",
+    "priority": "high"
+  },
+  {
+    "id": "combat_gameplay",
+    "title": "Combat and Gameplay Philosophy",
+    "content": "Strategic Combat:\n- One-Handed Gameplay: Designed for strategic thinking and work-from-home style gameplay, with optional focus-intensive content.\n- Collection, Skills, and Abilities: Expansion of mechanics through collectibles, unique class abilities, and an emphasis on skills.\n\nCrafting and End Game:\n- Crafting Importance: Crafting plays a vital role, with end-game targets often involving guild cooperation.\n- Mystical World: The game world feels mystical, hiding details and requiring players to engage in detailed exploration.",
+    "category": "philosophy",
+    "tags": ["combat", "strategic", "crafting", "endgame", "mystical"],
+    "source_url": "design_docs",
+    "last_updated": "2025-01-15",
+    "priority": "high"
+  },
+  {
+    "id": "narrow_content_bandwidth",
+    "title": "Narrow Content Bandwidth Philosophy",
+    "content": "The concept of \"Narrow Content Bandwidth\" revolves around providing players with a grounded and incremental experience. It focuses on starting with simple, realistic content and gradually building up to more complex and fantastical elements.\n\nGrounded Beginnings:\n- Simplicity of Tasks: Initially, players engage in relatable and straightforward tasks like killing rats in the field, crafting basic items, or running errands for NPCs.\n- Limited Abilities: Players begin with basic abilities and skills, slowly gaining access to more advanced options as they progress.\n\nRoom for Growth:\n- Scale of Challenges: As players progress, challenges and adventures escalate in complexity and grandeur.\n- Mechanical Evolution: Game mechanics such as movement speed, teleports, and potion crafting evolve over time.\n\nThis approach ensures that even simple actions feel significant and that each new stage of the game brings fresh challenges and rewards.",
+    "category": "philosophy",
+    "tags": ["progression", "grounded", "incremental", "content_bandwidth"],
+    "source_url": "design_docs",
+    "last_updated": "2025-01-15",
+    "priority": "high"
+  },
+  {
+    "id": "unique_selling_points",
+    "title": "Unique Selling Points (USPs)",
+    "content": "Adrullan Online Adventures distinguishes itself in the crowded MMORPG market by embracing a deliberate retro-inspired design philosophy, but with a modern twist. Unlike other Retro styled MMOs, we focus on providing enhanced Quality of Life (QoL), a robust crafting system with extensive world exploration and non-combat options, and passive gameplay as a viable choice.\n\nKey Differentiators:\n- Large Apathetic World: The vast and indifferent world creates a sense of grandeur and mystique\n- Social Engagement: We actively drive players to interact and collaborate\n- Restrictive Travel and Exploration: Navigational cues are contextually woven into the world\n- Strategic and Slow-paced Gameplay: Combat requires thoughtful planning\n- Crafting and Collective Action: Crafting is central to the game\n- Preservation of Mystery: The absence of modern navigational directed maps fosters wonder",
+    "category": "philosophy",
+    "tags": ["usps", "differentiation", "retro_modern", "unique_features"],
+    "source_url": "design_docs",
+    "last_updated": "2025-01-15",
+    "priority": "high"
+  },
+  {
+    "id": "balancing_act",
+    "title": "Balancing Act: Nostalgia vs. Modernity",
+    "content": "It's a tightrope walk for us. On one hand, we are committed to preserving the slow, strategic, and social elements that made classic MMOs stand out. On the other, we're acutely aware of the pitfalls and deterrents of older mechanics that could turn away contemporary players.\n\nThe challenge is to refine the rugged aspects, ensuring accessibility without compromising our game's distinct identity. We approach our design by boiling down what we loved, and what is missing, from these modern games. Then we take all our best design knowledge and best practices for modern audiences and recreate the systems through that lens.\n\nOur charming and vibrant accessible art style, combined with a cutting-edge voxel world, allows for rapid content creation and a fresh, engaging player experience.",
+    "category": "philosophy",
+    "tags": ["balance", "nostalgia", "modernity", "accessibility", "refinement"],
+    "source_url": "design_docs",
+    "last_updated": "2025-01-15",
+    "priority": "high"
+  },
+  {
+    "id": "development_phases",
+    "title": "Development Phases and History",
+    "content": "Initial Development (2016): H1ddentree starts with a server emphasizing a detailed style using a Node.js server-client in Unity. The project leans heavily on the asset store and incorporates light maps.\n\nVoxel Transition (End of 2020): A shift to voxel-based design speeds up content development. This also opens doors to use existing voxel tools, including leveraging Minecraft.\n\nCollaboration with Kronnect (2021): Building upon Kronnect's Voxel Play, notable progress includes a video demo featuring Leont gates and a special 2021 celebration event.\n\nExpansion and Collaboration (Early 2021): Upon viewing Kronnect's video highlight and H1ddentree's job posting, EnigmaFactory joins 4/1. By April 15th, talent like Modest and Skeeter join the team.\n\nThe Real World (2022): We retired the Island and were developing on the real world map. Divided into 3 regions so we can tackle one at a time.\n\nCompleting the Third (2025): As we draw to a close on 2025, the team, now larger and more experienced than ever, closes in on completing the first third of the world.",
+    "category": "philosophy",
+    "tags": ["development", "history", "phases", "timeline", "team_growth"],
+    "source_url": "design_docs",
+    "last_updated": "2025-01-15",
+    "priority": "high"
+  },
+  {
+    "id": "current_team",
+    "title": "Current Development Team",
+    "content": "Current Team:\n- Hiddentree - Founder, Owner, Server, Everything\n- EnigmaFactory (Kyle) - Design (especially World), Content, Client, Marketing\n- Skeeter - Design (especially Class), Content, Voxel Mappings\n- Stolisitc - Server, Client Systems, Art\n- Modestlaw - Art Lead (Mostly Retired)\n- Titanas (Mike) - World Painter (Mostly Retired)\n- Drexen - Balance\n- Donfrow - Content\n- Landon - Content / Icons / Webtools\n- Abisobwa - Web Tools\n- Rhino - Props / Character Art / World Textures / Creatures\n- Bognar - Server / Performance Genius\n- Riggles - Props / Character Art / World Textures\n- Sassage (Kyle) - Web API / Reporting / Server Config\n- Pire - World Textures / Creatures\n- Brool - Content\n- Raena - Props / Texture Art\n- Normal Neighbor - Sprites / Textures / Props\n- Qlawen - Content\n- Krongus - High Level Lore",
+    "category": "philosophy",
+    "tags": ["team", "developers", "roles", "contributors"],
+    "source_url": "design_docs",
+    "last_updated": "2025-01-15",
+    "priority": "high"
+  },
+  {
+    "id": "game_milestones",
+    "title": "Game Development Milestones",
+    "content": "Handover Holm: The starting island that served as a 'vertical slice'. Featured towns like Leont, Greenwood Cover, and notable locations such as Hillshade Hollow.\n\nEngine and Version Transitions: Major changes included updating the voxel engine, transitioning from Unity 2019 to 2021, and shifting from SRP to URP.\n\nGameplay and Features: Several successful test runs and gameplay enhancements like UI updates, first and third-person perspectives, skill sets, and expanding content like ogres.\n\nCurrent Focus: While the grand vision is to construct the world of Adrullan, immediate focus lies in developing its eastern region, limited by the Yanus Spine. With the eastern region serving as a compact representation of Adrullan, the goal is to test systems, gather feedback, and seek essential funding for future expansions.",
+    "category": "philosophy",
+    "tags": ["milestones", "development", "features", "focus", "funding"],
+    "source_url": "design_docs",
+    "last_updated": "2025-01-15",
+    "priority": "high"
+  },
+  {
+    "id": "modern_trends_evolution",
+    "title": "Modern Trends and the MMO Evolution",
+    "content": "The landscape shifted dramatically with the emergence of mass-market games like World of Warcraft. These titles, while popular, often simplified the rich complexities that defined the golden age of MMORPGs. Such streamlining brought in a vast audience but, in the process, diluted the very essence that made these games distinctive.\n\nWe aim to recapture that vintage charm – strategic, social-centric gameplay set in sprawling, indifferent worlds – that offers a counterpoint to today's instant-gratification gaming zeitgeist. By intertwining old-school charm with modern innovations, we hope to ignite the magic of classic MMORPGs, offering both veterans and newcomers an unforgettable journey.",
+    "category": "philosophy",
+    "tags": ["evolution", "wow", "streamlining", "vintage_charm", "modern_innovation"],
+    "source_url": "design_docs",
+    "last_updated": "2025-01-15",
+    "priority": "high"
+  },
+  {
+    "id": "conclusion_vision",
+    "title": "Conclusion and Future Vision",
+    "content": "\"Adrullan Online Adventures\" seeks to offer a renewed MMORPG experience that blends old-school charm with modern sensibilities. Through strategic gameplay, an expansive world, social interaction, and mystical exploration, the game aims to become a beloved addition to the genre, honoring its roots while paving its own path.\n\nOur vision for Adrullan Online Adventures is clear – to craft a game that feels deeply rooted in the past, yet speaks to the sensibilities of the present. We're committed to avoiding the pitfalls that have led other games to become generic clones, while making concerted efforts to introduce new players to the rich tradition of strategic, social-focused MMORPGs like those of old.",
+    "category": "philosophy",
+    "tags": ["conclusion", "vision", "future", "goals", "legacy"],
     "source_url": "design_docs",
     "last_updated": "2025-01-15",
     "priority": "high"
