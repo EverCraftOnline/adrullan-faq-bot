@@ -1,8 +1,19 @@
 const fs = require('fs');
 const path = require('path');
+const anthropicClient = require('../lib/anthropicClient');
+const { PermissionsBitField } = require('discord.js');
 
 module.exports = {
   async execute(message) {
+    // Check if user is admin (you can customize this)
+    const isAdmin = message.member?.permissions.has(PermissionsBitField.Flags.Administrator) || 
+                   message.author.id === '146495555760160769' ||
+                   message.member?.roles.cache.some(role => role.name === 'Designer');
+    
+    if (!isAdmin) {
+      return message.reply('❌ This command is only available to administrators.');
+    }
+
     const args = message.content.split(' ');
     const forumId = args[1];
     const bumpThreads = args.includes('--bump'); // Optional flag to bump threads
@@ -93,7 +104,30 @@ module.exports = {
       const archivedCount = Array.from(allThreads.values()).filter(t => t.archived).length;
       const activeCount = Array.from(allThreads.values()).filter(t => !t.archived).length;
       
-      await message.reply(`✅ **FAQ Knowledge Base Updated!**\n\n📊 **Stats:**\n• ${processedCount} threads processed\n• ${activeCount} active threads\n• ${archivedCount} archived threads\n• ${jsonEntries.length} total entries\n• Saved to: \`data/forum_faq.json\`\n\n🤖 The bot now has access to actual forum content for answering questions!`);
+      // Upload to Anthropic workspace
+      await message.reply('📤 Uploading updated FAQ to Anthropic workspace...');
+      
+      try {
+        const uploadResults = await anthropicClient.uploadAllDataFiles();
+        const successCount = uploadResults.filter(r => r.success).length;
+        const totalFiles = uploadResults.length;
+        
+        let uploadStatus = `✅ **FAQ Knowledge Base Updated & Uploaded!**\n\n📊 **Local Stats:**\n• ${processedCount} threads processed\n• ${activeCount} active threads\n• ${archivedCount} archived threads\n• ${jsonEntries.length} total entries\n• Saved to: \`data/forum_faq.json\`\n\n📤 **Anthropic Upload:**\n• ${successCount}/${totalFiles} files uploaded successfully`;
+        
+        if (successCount < totalFiles) {
+          uploadStatus += '\n\n❌ **Upload Issues:**';
+          uploadResults.filter(r => !r.success).forEach(result => {
+            uploadStatus += `\n• ${result.file}: ${result.error}`;
+          });
+        }
+        
+        uploadStatus += '\n\n🤖 The bot now has access to actual forum content for answering questions!';
+        
+        await message.reply(uploadStatus);
+      } catch (uploadError) {
+        console.error('Upload to Anthropic failed:', uploadError);
+        await message.reply(`✅ **FAQ Knowledge Base Updated Locally!**\n\n📊 **Stats:**\n• ${processedCount} threads processed\n• ${activeCount} active threads\n• ${archivedCount} archived threads\n• ${jsonEntries.length} total entries\n• Saved to: \`data/forum_faq.json\`\n\n❌ **Anthropic Upload Failed:** ${uploadError.message}\n\n🤖 The bot has local access to forum content, but upload to Anthropic failed.`);
+      }
 
     } catch (err) {
       console.error('[ERROR] Refresh FAQ command failed:', err);
