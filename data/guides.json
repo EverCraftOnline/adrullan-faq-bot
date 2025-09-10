@@ -1,22 +1,112 @@
 [
   {
-    "id": "getting_started",
-    "title": "Getting Started Guide",
-    "content": "Welcome to Adrullan! Start by creating your character and choosing your starting region. Complete the tutorial quests to learn basic mechanics. Join a guild early to meet other players and get help. Focus on exploring and trying different activities to find what you enjoy most. Don't worry about min-maxing initially - just have fun!",
-    "category": "guides",
-    "tags": ["beginner", "tutorial", "getting-started", "guide"],
-    "source_url": "design_docs",
+    "id": "alpha_status",
+    "title": "Alpha Testing Status",
+    "content": "**Current Alpha Status:** Closed Server - Friends and Family only (invite only)\n\n**About Alpha Testing:** Adrullan Online Adventures (AOA) is currently in alpha testing phases. The game is in very early development with core system rewrites and many features still being implemented. Alpha tests are limited in scope and content - only a small fraction of classes and races are available, and there are intentional barriers and level caps that won't exist in the final release.\n\n**Testing Phases:** We run periodic Open Alpha tests on the Tibolt Server. These are announced in advance and allow community members to participate in testing server stability and new features. Check our Discord for announcements about upcoming test periods.\n\n**Important Note:** This is NOT a marketing presentation. You will find unfinished, unadapted, and intentionally truncated content. The intent is to analyze server and client stability with recent features and enhancements.",
+    "category": "alpha",
+    "tags": ["alpha", "testing", "status", "server", "access"],
+    "source_url": "alpha_announcements",
+    "last_updated": "2025-01-15",
+    "priority": "critical"
+  },
+  {
+    "id": "alpha_registration",
+    "title": "Alpha Registration & Download",
+    "content": "**Account Registration:** All account registration, verification, and client download is managed via the dashboard at https://account.adrullan.online/register\n\n**Registration Process:**\n- Upon registration, you'll receive an email to the provided address\n- Check Junk/Spam folders if you don't see the email\n- For password recovery: https://account.adrullan.online/forgot\n- Login with your credentials in the Dashboard\n\n**Client Download:**\n- Download the Alpha Installer from the Dashboard\n- Alternative download link: https://account.adrullan.online/patcher\n\n**System Requirements:**\n- Windows (primary support)\n- Linux users have reported success (see community guides)\n- Decent rig with modern graphics card recommended\n- Game is in early development with optimization pending",
+    "category": "alpha",
+    "tags": ["registration", "download", "account", "client", "alpha"],
+    "source_url": "alpha_announcements",
     "last_updated": "2025-01-15",
     "priority": "high"
   },
   {
-    "id": "combat_guide",
-    "title": "Combat System Guide",
-    "content": "Combat in Adrullan is action-based and skill-focused. Learn to dodge, time your attacks, and chain abilities for maximum effect. Practice against training dummies before taking on real enemies. Different weapon types have different playstyles - experiment to find what suits you. Positioning and timing matter more than raw damage numbers.",
-    "category": "guides",
-    "tags": ["combat", "guide", "mechanics", "tutorial"],
-    "source_url": "design_docs",
+    "id": "alpha_character_creation",
+    "title": "Character Creation & First Steps",
+    "content": "**Character Creation:**\n- Only a small fraction of Classes and Races are available during alpha\n- Classes are in varying states of development\n- Check Discord Getting Started channel for latest available classes\n- Classes and Races are subject to ongoing changes\n\n**First Steps in Game:**\n- Welcome window appears when you enter - type /info to reopen if closed\n- Open settings menu with 'F8' or gear icon on menubar\n- First tab: Interface and preferences, including key bindings\n- Second tab: Video settings (adjust UiScale, enable VSync Every V Blank)\n- Third tab: Audio settings for mixer volumes and optional music\n\n**Starting Equipment:**\n- Every new character starts with a simple weapon and summons from Class leader\n- Right-click the 'Starters Note' in inventory to read it\n- Note contains hints on finding your Class leader",
+    "category": "alpha",
+    "tags": ["character", "creation", "classes", "races", "tutorial"],
+    "source_url": "alpha_announcements",
     "last_updated": "2025-01-15",
     "priority": "high"
+  },
+  {
+    "id": "alpha_basic_controls",
+    "title": "Basic Controls & Interface",
+    "content": "**Essential Controls:**\n- 'I' - Open Inventory\n- 'C' - Character window (equipment, stats, experience)\n- 'B' - Spell Book\n- 'J' - Journal (recall NPC conversations)\n- 'H' - Hail NPCs (or right-click)\n- 'U' - Understand target (get info about targeted NPC/corpse)\n- '`' (tilde) - Toggle Auto Attack\n- Alt+Enter - Toggle fullscreen/window mode\n- 'F8' - Options menu\n\n**Interface Elements:**\n- Action bar at bottom for spells, abilities, and items\n- Target window shows NPC level, faction, and threat level\n- Health (red), Mana (blue), and Stamina (yellow) bars\n- Spell bar for memorized spells\n- Inventory with drag-and-drop functionality\n\n**Target Window Information:**\n- Green gem: Trivial fight\n- Blue gem: Mild resistance\n- White gem: Challenging (easier with group)\n- Yellow gem: Very challenging (best groups only)\n- Red gem: Survival nearly impossible",
+    "category": "alpha",
+    "tags": ["controls", "interface", "keybinds", "targeting", "ui"],
+    "source_url": "alpha_announcements",
+    "last_updated": "2025-01-15",
+    "priority": "high"
+  },
+  {
+    "id": "alpha_class_leader_quest",
+    "title": "Finding Your Class Leader",
+    "content": "**Locating Your Class Leader:**\n- Read your Starters Note for hints on finding your Class leader\n- Explore and talk to NPCs to get directions\n- Ask other players for help\n- Class leaders are marked with 'Trainer' tag on their nameplate\n\n**Class Leader Interaction:**\n- Right-click the Class Leader to initiate trade\n- Give them your Starters Note to receive welcome items\n- They provide starting equipment and supplies\n- Purchase abilities and skills from trainers\n- Melee classes find most abilities through trainers\n- Casters should pick up Meditate from class leader at level 2\n\n**Starting Items:**\n- Starter bag with torch and bandages\n- Basic weapon and equipment\n- Spell scrolls (for casters)\n- Class-specific starting gear",
+    "category": "alpha",
+    "tags": ["class-leader", "trainer", "quest", "starting-items", "tutorial"],
+    "source_url": "alpha_announcements",
+    "last_updated": "2025-01-15",
+    "priority": "high"
+  },
+  {
+    "id": "alpha_spells_abilities",
+    "title": "Spells, Abilities & Skills",
+    "content": "**Spell System:**\n- Open Spell Book with 'B' key\n- Click spell scroll in inventory and drop on 'Scribe Spell Here' area\n- Click spell icon and place on spell bar to memorize\n- Drag spells from spell bar to action bar for hotkeys\n\n**Abilities & Skills:**\n- Purchase from Class Leaders and other trainers\n- Right-click trainers to see their offerings\n- Long left-click icons to hotkey to action bar\n- Melee classes get most abilities from trainers\n- Casters learn spells through scrolls and trainers\n\n**Hotkey System:**\n- Spells, abilities, and items can be hotkeyed to action bar\n- Long left-click any icon to assign hotkey\n- Drag from spell bar to action bar\n- Remap controls in Options menu (F8)",
+    "category": "alpha",
+    "tags": ["spells", "abilities", "skills", "hotkeys", "magic"],
+    "source_url": "alpha_announcements",
+    "last_updated": "2025-01-15",
+    "priority": "high"
+  },
+  {
+    "id": "alpha_combat_system",
+    "title": "Combat & Combat Mechanics",
+    "content": "**Combat Basics:**\n- Target NPCs and turn on Auto Attack with '`' (tilde)\n- Use spells from spell bar or action bar\n- Use abilities and items from hotkeys\n- Manage Health (red), Mana (blue), and Stamina (yellow) bars\n\n**Threat Assessment:**\n- Target window shows NPC level and threat level\n- Green: Trivial fight\n- Blue: Mild resistance\n- White: Challenging (easier with group)\n- Yellow: Very challenging (best groups only)\n- Red: Survival nearly impossible\n\n**Faction System:**\n- NPC faction listed below portrait in target window\n- 'Hate' or 'aggressive' NPCs attack on sight\n- Target gem flashes when targeting aggressive NPCs\n- Use 'U' key to get detailed target information\n\n**Combat Tips:**\n- Seek even fights when starting out\n- Run to guards if health gets low\n- Properly manage resources (health, mana, stamina)\n- Seek items, abilities, or allies for resource recovery",
+    "category": "alpha",
+    "tags": ["combat", "fighting", "threat", "faction", "mechanics"],
+    "source_url": "alpha_announcements",
+    "last_updated": "2025-01-15",
+    "priority": "high"
+  },
+  {
+    "id": "alpha_looting_trading",
+    "title": "Looting, Trading & Economy",
+    "content": "**Looting System:**\n- Right-click corpse to loot\n- Right-click or manually move items from corpse to inventory\n- Long right-click items in inventory to inspect\n- Click 'Link' button in inspect window to share in chat\n\n**Trading & Merchants:**\n- Sell loot to merchants regularly\n- Consider buying a backpack early for longer adventures\n- Trade with other players\n- Use /shout for regional communication\n- Use /global for global communication\n\n**Item Management:**\n- Loot everything you can when starting out\n- Sell rewards to merchants often\n- Backpack allows longer ventures and more profit\n- Inspect items to see their properties\n- Share interesting finds with other players",
+    "category": "alpha",
+    "tags": ["looting", "trading", "merchants", "economy", "items"],
+    "source_url": "alpha_announcements",
+    "last_updated": "2025-01-15",
+    "priority": "medium"
+  },
+  {
+    "id": "alpha_social_features",
+    "title": "Social Features & Communication",
+    "content": "**Party System:**\n- Target player and click Invite icon on target window\n- Find Invite in Skills under General\n- Cooperative play is encouraged\n- Grouping makes challenging content easier\n\n**Communication:**\n- /shout - Regional communication\n- /global - Global communication\n- Discord support channel for help\n- NPCs respond in chat window\n- Click hyperlinked terms to progress dialogue\n\n**Death & Recovery:**\n- Respawn at bind point when you die\n- Seek out your corpse to recover items\n- Type /corpse for corpse location info\n- Items lost if corpse not recovered within 24 hours\n- Use Corpse Summoner in town for lost items\n- Grouping makes corpse recovery easier",
+    "category": "alpha",
+    "tags": ["social", "party", "communication", "death", "recovery"],
+    "source_url": "alpha_announcements",
+    "last_updated": "2025-01-15",
+    "priority": "medium"
+  },
+  {
+    "id": "alpha_performance_settings",
+    "title": "Performance & Technical Settings",
+    "content": "**Performance Optimization:**\n- Game is in early development with optimization pending\n- Decent rig with modern graphics card required\n- Adjust settings in Options menu (F8)\n- Weather can be very heavy on hardware\n- Corpses are also performance-intensive\n\n**Video Settings:**\n- Adjust UiScale based on screen resolution\n- Enable VSync Every V Blank (strongly recommended)\n- Weather Quality settings in Video tab\n- Corpse visibility settings in Video tab\n- Fullscreen toggle with Alt+Enter\n\n**Audio Settings:**\n- Configure audio balance in F8 menu\n- Adjust mixer volumes for different audio types\n- Toggle optional battle and merchant music\n- Enjoy the amazing sounds by Tony Manfredonia\n\n**Platform Support:**\n- Windows (primary support)\n- Linux users have reported success\n- Community guide available from @GreatToCreate",
+    "category": "alpha",
+    "tags": ["performance", "settings", "optimization", "video", "audio"],
+    "source_url": "alpha_announcements",
+    "last_updated": "2025-01-15",
+    "priority": "medium"
+  },
+  {
+    "id": "alpha_streaming_policy",
+    "title": "Streaming & Content Creation Policy",
+    "content": "**Streaming Guidelines:**\n- You are free to stream and capture the game\n- Make it clear this is early alpha systems test\n- Does not resemble the complete product\n- Not a marketing presentation\n\n**Content Creation:**\n- Welcome to invite friends or inform communities\n- Caution against increasing exposure during alpha\n- Save energy for future outreach campaigns\n- Twitch game tag: Adrullan Online Adventures\n- Follow us on Twitch: https://www.twitch.tv/directory/game/Adrullan%20Online%20Adventures\n\n**Rules & Enforcement:**\n- Follow stringent rules in Rules channel\n- We reserve rights to suspend players/services\n- Suspension can occur for any reason\n- Especially for breaking game rules\n\n**Future Plans:**\n- We will call for support and outreach in the future\n- This alpha helps collect data for the experience we want to show off\n- Save your energy for future marketing efforts",
+    "category": "alpha",
+    "tags": ["streaming", "content", "policy", "twitch", "rules"],
+    "source_url": "alpha_announcements",
+    "last_updated": "2025-01-15",
+    "priority": "low"
   }
 ]
