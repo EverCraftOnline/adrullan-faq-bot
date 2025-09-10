@@ -6,6 +6,7 @@ const askAllCommand = require('./commands/askAllCommand');
 const refreshFAQ = require('./commands/refreshFAQ');
 const quizCommand = require('./commands/quizCommand');
 const statsCommand = require('./commands/statsCommand');
+const uploadDataCommand = require('./commands/uploadDataCommand');
 
 const client = new Client({
   intents: [
@@ -18,7 +19,7 @@ const client = new Client({
 
 client.once('ready', () => {
   console.log(`Logged in as ${client.user.tag}`);
-  console.log('Bot is ready! Commands: !index, !ask, !askall, !refreshfaq, !quiz, !stats');
+  console.log('Bot is ready! Commands: !index, !ask, !askall, !refreshfaq, !quiz, !stats, !uploaddata');
 });
 
 // Handle connection errors
@@ -66,6 +67,11 @@ client.on('messageCreate', async (message) => {
   // Handle !stats command (usage statistics - admin only)
   if (message.content.startsWith('!stats')) {
     await statsCommand.execute(message);
+  }
+  
+  // Handle !uploaddata command (data upload and toggle management)
+  if (message.content.startsWith('!uploaddata')) {
+    await uploadDataCommand.execute(message);
   }
 });
 
