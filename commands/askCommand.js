@@ -1,18 +1,46 @@
 const anthropicClient = require('../lib/anthropicClient');
 const knowledgeLoader = require('../lib/knowledgeLoader');
+const rateLimiter = require('../lib/rateLimiter');
 const fs = require('fs');
 const path = require('path');
 
 module.exports = {
   buildComprehensiveContext,
   async execute(message) {
-    const question = message.content.replace('!ask', '').trim();
+    const fullContent = message.content.replace('!ask', '').trim();
     
-    if (!question) {
-      return message.reply('Usage: `!ask <your question>`\nExample: `!ask What is the death penalty system?`');
+    if (!fullContent) {
+      return message.reply('Usage: `!ask <your question>`\nExample: `!ask What is the death penalty system?`\n\n**Flags:**\n`--all` or `--full` - Use all available context (no token limits)');
     }
 
+    // Parse flags and question
+    const parts = fullContent.split(' ');
+    const flags = parts.filter(part => part.startsWith('--'));
+    const question = parts.filter(part => !part.startsWith('--')).join(' ');
+    
+    const useAllContext = flags.includes('--all') || flags.includes('--full');
+
     try {
+      // Determine question complexity for rate limiting
+      const query = question.toLowerCase();
+      const isStoryQuery = ['story', 'lore', 'narrative', 'plot', 'background', 'history', 'world', 'setting', 'conflict', 'gods', 'champions', 'aspects'].some(keyword => query.includes(keyword));
+      const isGameplayQuery = ['gameplay', 'mechanics', 'combat', 'crafting', 'classes', 'races', 'how to', 'how do', 'what happens', 'die', 'death', 'penalty', 'level', 'xp', 'experience', 'bind', 'respawn', 'corpse', 'gear', 'equipment', 'inventory', 'skills', 'abilities', 'spells', 'magic', 'weapons', 'armor', 'items', 'loot', 'drops', 'rewards', 'quests', 'missions', 'dungeons', 'raids', 'pvp', 'pve', 'guild', 'group', 'party', 'trade', 'economy', 'gold', 'money', 'cost', 'price', 'buy', 'sell', 'shop', 'vendor', 'npc', 'mob', 'monster', 'boss', 'enemy', 'friendly', 'neutral', 'hostile', 'faction', 'reputation', 'honor', 'karma', 'alignment', 'good', 'evil', 'neutral', 'lawful', 'chaotic', 'lawful good', 'lawful evil', 'chaotic good', 'chaotic evil', 'true neutral', 'lawful neutral', 'chaotic neutral', 'neutral good', 'neutral evil'].some(keyword => query.includes(keyword));
+      const isPhilosophyQuery = ['design', 'philosophy', 'vision', 'approach', 'why', 'purpose'].some(keyword => query.includes(keyword));
+      
+      // Simple queries are short OR basic gameplay questions (not complex story/philosophy)
+      // Much more lenient - most questions under 100 chars are simple
+      const isSimpleQuery = (query.length < 100) || 
+                           (isGameplayQuery && !isStoryQuery && !isPhilosophyQuery);
+      
+      // Use appropriate command type for rate limiting
+      const commandType = isSimpleQuery ? 'ask_simple' : 'ask';
+      
+      // Check rate limits
+      const rateLimitCheck = rateLimiter.canMakeRequest(message.author.id, commandType);
+      if (!rateLimitCheck.allowed) {
+        return message.reply(`⏰ **Rate Limited:** ${rateLimitCheck.message}`);
+      }
+
       // Show typing indicator
       await message.channel.sendTyping();
 
@@ -24,7 +52,8 @@ module.exports = {
       }
 
       // Build comprehensive context based on question type
-      const context = buildComprehensiveContext(question, knowledgeBase);
+      const maxTokens = useAllContext ? 50000 : 20000; // Increased default limit for better answers
+      const context = buildComprehensiveContext(question, knowledgeBase, maxTokens);
       
       if (context.length === 0) {
         return message.reply('I don\'t have information about that topic in my current knowledge base. Try asking about game mechanics, lore, or community topics.');
@@ -32,6 +61,7 @@ module.exports = {
 
       // Debug logging
       console.log(`Question: "${question}"`);
+      console.log(`Using --all flag: ${useAllContext}`);
       console.log(`Context length: ${context.length} characters`);
       console.log(`Estimated tokens: ${Math.ceil(context.length / 4)}`);
       console.log(`Documents included: ${context.split('---').length - 1}`);
@@ -84,50 +114,94 @@ RESPONSE FORMAT:
   }
 };
 
-function buildComprehensiveContext(question, knowledgeBase) {
+function buildComprehensiveContext(question, knowledgeBase, maxTokens = 12000) {
   const query = question.toLowerCase();
   
-  // Determine question type and build appropriate context
-  const isStoryQuery = ['story', 'lore', 'narrative', 'plot', 'background', 'history', 'world', 'setting', 'conflict', 'gods', 'champions', 'aspects'].some(keyword => query.includes(keyword));
-  const isGameplayQuery = ['gameplay', 'mechanics', 'combat', 'crafting', 'classes', 'races', 'how to', 'how do'].some(keyword => query.includes(keyword));
-  const isPhilosophyQuery = ['design', 'philosophy', 'vision', 'approach', 'why', 'purpose'].some(keyword => query.includes(keyword));
+  // Check if we want ALL context (--all flag)
+  const useAllContext = maxTokens > 20000; // If token limit is very high, use all docs
   
   let selectedDocs = [];
   
-  if (isStoryQuery) {
-    // For story queries, prioritize lore content but include some philosophy for context
-    selectedDocs = [
-      ...knowledgeBase.filter(doc => doc.category === 'lore'),
-      ...knowledgeBase.filter(doc => doc.category === 'philosophy' && doc.id.includes('introduction'))
-    ];
-  } else if (isGameplayQuery) {
-    // For gameplay queries, include guides, FAQ, and relevant philosophy
-    selectedDocs = [
-      ...knowledgeBase.filter(doc => doc.category === 'faq' || doc.category === 'alpha'),
-      ...knowledgeBase.filter(doc => doc.category === 'guides'),
-      ...knowledgeBase.filter(doc => doc.category === 'philosophy' && (doc.id.includes('combat') || doc.id.includes('gameplay')))
-    ];
-  } else if (isPhilosophyQuery) {
-    // For philosophy queries, focus on philosophy content
-    selectedDocs = knowledgeBase.filter(doc => doc.category === 'philosophy');
+  if (useAllContext) {
+    // Use ALL documents when --all flag is used
+    selectedDocs = knowledgeBase;
   } else {
-    // For general queries, use a balanced approach
-    selectedDocs = [
-      ...knowledgeBase.filter(doc => doc.priority === 'high'),
-      ...knowledgeBase.filter(doc => doc.category === 'faq').slice(0, 10) // Top 10 FAQ entries
-    ];
+    // Determine question type and build appropriate context
+    const isStoryQuery = ['story', 'lore', 'narrative', 'plot', 'background', 'history', 'world', 'setting', 'conflict', 'gods', 'champions', 'aspects'].some(keyword => query.includes(keyword));
+    const isGameplayQuery = ['gameplay', 'mechanics', 'combat', 'crafting', 'classes', 'races', 'how to', 'how do', 'die', 'death', 'penalty', 'level', 'xp', 'experience', 'bind', 'respawn', 'corpse', 'gear', 'equipment', 'inventory', 'skills', 'abilities', 'spells', 'magic', 'weapons', 'armor', 'items', 'loot', 'drops', 'rewards', 'quests', 'missions', 'dungeons', 'raids', 'pvp', 'pve', 'guild', 'group', 'party', 'trade', 'economy', 'gold', 'money', 'cost', 'price', 'buy', 'sell', 'shop', 'vendor', 'npc', 'mob', 'monster', 'boss', 'enemy', 'friendly', 'neutral', 'hostile', 'faction', 'reputation', 'honor', 'karma', 'alignment', 'good', 'evil', 'neutral', 'lawful', 'chaotic', 'lawful good', 'lawful evil', 'chaotic good', 'chaotic evil', 'true neutral', 'lawful neutral', 'chaotic neutral', 'neutral good', 'neutral evil'].some(keyword => query.includes(keyword));
+    const isPhilosophyQuery = ['design', 'philosophy', 'vision', 'approach', 'why', 'purpose', 'team', 'developers', 'who is', 'who are', 'staff', 'people', 'working on', 'made by', 'created by'].some(keyword => query.includes(keyword));
+    const isSimpleQuery = query.length < 20 && !isStoryQuery && !isGameplayQuery && !isPhilosophyQuery;
+    
+    if (isStoryQuery) {
+      // For story queries, prioritize lore content but include philosophy for context
+      selectedDocs = [
+        ...knowledgeBase.filter(doc => doc.category === 'lore'),
+        ...knowledgeBase.filter(doc => doc.category === 'philosophy'),
+        ...knowledgeBase.filter(doc => doc.category === 'faq').slice(0, 5) // Some FAQ for context
+      ];
+    } else if (isGameplayQuery) {
+      // For gameplay queries, include guides, FAQ, philosophy, and lore
+      selectedDocs = [
+        ...knowledgeBase.filter(doc => doc.category === 'faq' || doc.category === 'alpha'),
+        ...knowledgeBase.filter(doc => doc.category === 'guides'),
+        ...knowledgeBase.filter(doc => doc.category === 'philosophy'),
+        ...knowledgeBase.filter(doc => doc.category === 'lore').slice(0, 10) // Some lore for context
+      ];
+    } else if (isPhilosophyQuery) {
+      // For philosophy queries, focus on philosophy but include lore and FAQ
+      selectedDocs = [
+        ...knowledgeBase.filter(doc => doc.category === 'philosophy'),
+        ...knowledgeBase.filter(doc => doc.category === 'lore').slice(0, 5),
+        ...knowledgeBase.filter(doc => doc.category === 'faq').slice(0, 5)
+      ];
+    } else if (isSimpleQuery) {
+      // For simple queries, still include philosophy and lore for better answers
+      selectedDocs = [
+        ...knowledgeBase.filter(doc => doc.priority === 'high'),
+        ...knowledgeBase.filter(doc => doc.category === 'faq').slice(0, 10),
+        ...knowledgeBase.filter(doc => doc.category === 'philosophy').slice(0, 5),
+        ...knowledgeBase.filter(doc => doc.category === 'lore').slice(0, 5)
+      ];
+    } else {
+      // For general queries, use a balanced approach
+      selectedDocs = [
+        ...knowledgeBase.filter(doc => doc.category === 'faq').slice(0, 20),
+        ...knowledgeBase.filter(doc => doc.category === 'philosophy').slice(0, 10),
+        ...knowledgeBase.filter(doc => doc.category === 'lore').slice(0, 8),
+        ...knowledgeBase.filter(doc => doc.category === 'guides').slice(0, 5)
+      ];
+    }
   }
   
-  // Remove duplicates and limit to reasonable size (still well under token limit)
+  // Remove duplicates and sort by priority
   const uniqueDocs = selectedDocs.filter((doc, index, self) => 
     index === self.findIndex(d => d.id === doc.id)
-  ).slice(0, 20); // Increased from 5 to 20 for better context
+  );
   
-  // Build context with better formatting
-  return uniqueDocs.map(doc => {
-    const source = doc.source_url ? `[${doc.title}](${doc.source_url})` : doc.title;
-    return `[${doc.id}] ${doc.title}\n${doc.content}\nSource: ${source}`;
-  }).join('\n\n---\n\n');
+  // Smart context trimming based on token limit
+  let context = '';
+  let currentTokens = 0;
+  const maxChars = maxTokens * 4; // Rough estimate: 4 chars per token
+  
+  for (const doc of uniqueDocs) {
+    const docContent = `[${doc.id}] ${doc.title}\n${doc.content}\nSource: ${doc.source_url ? `[${doc.title}](${doc.source_url})` : doc.title}`;
+    const docTokens = docContent.length / 4;
+    
+    if (currentTokens + docTokens > maxTokens) {
+      // If adding this doc would exceed limit, try to add a truncated version
+      const remainingTokens = maxTokens - currentTokens;
+      if (remainingTokens > 100) { // Only add if we have meaningful space left
+        const truncatedContent = docContent.substring(0, remainingTokens * 4 - 50) + '...';
+        context += (context ? '\n\n---\n\n' : '') + truncatedContent;
+      }
+      break;
+    }
+    
+    context += (context ? '\n\n---\n\n' : '') + docContent;
+    currentTokens += docTokens;
+  }
+  
+  return context;
 }
 
 function findRelevantDocs(question, knowledgeBase, limit) {
