@@ -4,7 +4,7 @@ module.exports = {
   async execute(message) {
     // Check if user is admin (you can customize this)
     const isAdmin = message.member?.permissions.has('ADMINISTRATOR') || 
-                   message.author.id === 'enigmafactory'; // Replace with your actual Discord ID (numeric)
+                   message.author.id === '146495555760160769';
     
     if (!isAdmin) {
       return message.reply('❌ This command is only available to administrators.');
