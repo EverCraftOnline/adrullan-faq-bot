@@ -52,6 +52,46 @@
             grid-column: 1 / -1;
         }
 
+        .files-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .file-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s ease;
+        }
+
+        .file-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .file-name {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .file-details {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .file-size {
+            color: #667eea;
+            font-weight: 500;
+        }
+
+        .file-date {
+            color: #999;
+        }
+
         .card {
             background: white;
             border-radius: 15px;
@@ -490,7 +530,7 @@
                 </div>
             </div>
 
-            <!-- Active Profile Card -->
+            <!-- Active Profile & Cost Metrics Row -->
             <div class="card">
                 <h3>👤 Active Profile</h3>
                 <div class="metric">
@@ -504,6 +544,45 @@
                 <div class="metric">
                     <span class="metric-label">Uploaded Files</span>
                     <span class="metric-value" id="uploadedFiles">Loading...</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>💰 Cost Metrics <small style="color: #ff9800; font-size: 0.7em;">(ESTIMATES)</small></h3>
+                <div style="background: #fff3cd; padding: 8px; border-radius: 5px; margin-bottom: 15px; font-size: 0.8rem; color: #856404;">
+                    ⚠️ These are estimates based on token usage. Check your <a href="https://console.anthropic.com/" target="_blank" style="color: #856404;">Anthropic dashboard</a> for actual billing.
+                </div>
+                <div class="metric">
+                    <span class="metric-label">Total Cost (Est.)</span>
+                    <span class="metric-value" id="totalCost">Loading...</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">Today's Cost (Est.)</span>
+                    <span class="metric-value" id="todayCost">Loading...</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">Total Tokens</span>
+                    <span class="metric-value" id="totalTokens">Loading...</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">API Requests</span>
+                    <span class="metric-value" id="apiRequests">Loading...</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">Avg Cost/Request</span>
+                    <span class="metric-value" id="avgCostPerRequest">Loading...</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">Est. Monthly</span>
+                    <span class="metric-value" id="estimatedMonthly">Loading...</span>
+                </div>
+            </div>
+
+            <!-- Uploaded Files Card -->
+            <div class="card dashboard-full-width">
+                <h3>📁 Uploaded Files</h3>
+                <div class="files-grid" id="filesGrid">
+                    Loading...
                 </div>
             </div>
 
@@ -667,6 +746,7 @@
             <button class="btn btn-danger" onclick="viewErrorLogs()">🚨 Error Logs</button>
             <a href="/health" class="btn btn-primary" target="_blank">🏥 Health API</a>
             <a href="/metrics" class="btn btn-primary" target="_blank">📊 Metrics API</a>
+            <a href="/costs" class="btn btn-primary" target="_blank">💰 Costs API</a>
         </div>
 
         <div class="last-updated" id="lastUpdated">
@@ -690,13 +770,14 @@
             
             try {
                 // Fetch all data in parallel
-                const [status, metrics, botStatus, profiles, files, logs] = await Promise.all([
+                const [status, metrics, botStatus, profiles, files, logs, costs] = await Promise.all([
                     fetch('/status').then(r => r.json()),
                     fetch('/metrics').then(r => r.json()),
                     fetch('/bot/status').then(r => r.json()),
                     fetch('/bot/profiles').then(r => r.json()),
                     fetch('/bot/files').then(r => r.json()),
-                    fetch('/bot/logs').then(r => r.json())
+                    fetch('/bot/logs').then(r => r.json()),
+                    fetch('/costs').then(r => r.json())
                 ]);
 
                 updateHealthStatus(status);
@@ -705,6 +786,7 @@
                 updateProfiles(profiles);
                 updateFiles(files);
                 updateLogs(logs);
+                updateCostMetrics(costs);
                 
                 document.getElementById('lastUpdated').textContent = 
                     `Last updated: ${new Date().toLocaleTimeString()}`;
@@ -958,8 +1040,39 @@
             }
         }
 
+        function updateCostMetrics(costs) {
+            document.getElementById('totalCost').textContent = `$${costs.total.cost.toFixed(4)}`;
+            document.getElementById('todayCost').textContent = `$${costs.daily.today.cost.toFixed(4)}`;
+            document.getElementById('totalTokens').textContent = costs.total.tokens.toLocaleString();
+            document.getElementById('apiRequests').textContent = costs.total.requests.toLocaleString();
+            document.getElementById('avgCostPerRequest').textContent = `$${costs.average.costPerRequest.toFixed(4)}`;
+            document.getElementById('estimatedMonthly').textContent = `$${costs.estimated.monthlyCost.toFixed(2)}`;
+        }
+
         function updateFiles(files) {
-            // This is handled in updateBotStatus
+            const filesGrid = document.getElementById('filesGrid');
+            
+            if (files && files.files && files.files.length > 0) {
+                filesGrid.innerHTML = files.files.map(file => {
+                    const size = Math.round(file.size / 1024); // Convert to KB
+                    const created = new Date(file.created).toLocaleDateString();
+                    
+                    return `
+                        <div class="file-item">
+                            <div class="file-name">${file.filename}</div>
+                            <div class="file-details">
+                                <div class="file-size">${size}KB</div>
+                                <div class="file-date">Uploaded: ${created}</div>
+                                <div style="margin-top: 5px; font-size: 0.8rem; color: #999;">
+                                    ID: ${file.id}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            } else {
+                filesGrid.innerHTML = '<div style="text-align: center; color: #666; font-style: italic;">No files uploaded to Anthropic workspace</div>';
+            }
         }
 
         function updateLogs(logs) {

@@ -115,8 +115,7 @@ module.exports = {
         if (successCount < totalFiles) {
           statusMessage += '\n❌ **Failed Uploads:**\n';
           uploadResults.filter(r => !r.success).forEach(result => {
-            const textFileName = result.file.replace('.json', '.txt');
-            statusMessage += `• ${textFileName}: ${result.error}\n`;
+            statusMessage += `• ${result.file}: ${result.error}\n`;
           });
         }
         
