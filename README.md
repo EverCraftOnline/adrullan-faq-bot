@@ -17,7 +17,8 @@ adrullan-faq-bot/
 │   ├── askAllCommand.js      # Full context responder (!askall)
 │   ├── quizCommand.js        # Interactive quiz system (!quiz)
 │   ├── statsCommand.js       # Usage statistics (!stats)
-│   └── refreshFAQ.js         # FAQ data generation (!refreshfaq)
+│   ├── refreshFAQ.js         # FAQ data generation (!refreshfaq)
+│   └── uploadDataCommand.js  # Data upload & toggle management (!uploaddata)
 │
 ├── data/                     # Knowledge base
 │   ├── forum_faq.json        # Scraped FAQ threads (33 entries)
@@ -381,9 +382,21 @@ module.exports = {
 - `!quiz` - Start an interactive quiz from the knowledge base
 - `!stats` - View usage statistics and costs (admin only)
 - `!index <channel_id>` - Generate clickable FAQ index from forum
-- `!refreshfaq` - Regenerate FAQ data from Discord channels
+- `!refreshfaq <channel_id>` - Regenerate FAQ data from Discord channels and upload to Anthropic
+- `!uploaddata upload` - Upload all data files to Anthropic workspace
+- `!uploaddata toggle on/off` - Toggle between context passing and file usage modes
+- `!uploaddata status` - Show current mode and uploaded files
+- `!uploaddata clear` - Clear uploaded files cache
+
 
 ## Key Features
+
+### Anthropic File Upload System
+- **Dual Mode Operation**: Toggle between context passing and file usage modes
+- **Automatic Uploads**: `!refreshfaq` now uploads files to Anthropic workspace after local save
+- **File Management**: Upload all data files with `!uploaddata upload`
+- **Cost Optimization**: File usage mode provides better quality answers without token limits
+- **Console Feedback**: Comprehensive logging for all upload operations
 
 ### Smart Context Filtering
 - **Question Type Detection**: Automatically detects story, gameplay, philosophy, or general queries

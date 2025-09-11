@@ -2,6 +2,7 @@
 const anthropicClient = require('../lib/anthropicClient');
 const knowledgeLoader = require('../lib/knowledgeLoader');
 const rateLimiter = require('../lib/rateLimiter');
+const profileManager = require('../lib/profileManager');
 const fs = require('fs');
 const path = require('path');
 
@@ -30,6 +31,9 @@ module.exports = {
         return message.reply('❌ No knowledge base found. Please add some data files to the `data/` folder first.');
       }
 
+      // Get active profile settings
+      const activeProfile = profileManager.getActiveProfile();
+      
       // Use ALL context (no filtering)
       const context = buildAllContext(knowledgeBase);
       
@@ -40,33 +44,14 @@ module.exports = {
       // Debug logging
       console.log(`Question: "${question}"`);
       console.log(`Using --all flag: true`);
+      console.log(`Active profile: ${activeProfile.name} (${profileManager.activeProfile})`);
       console.log(`Context mode: ${anthropicClient.isContextPassing() ? 'Context Passing' : 'File Usage'}`);
       console.log(`Context length: ${context.length} characters`);
       console.log(`Estimated tokens: ${Math.ceil(context.length / 4)}`);
       console.log(`Documents included: ${context.split('---').length - 1}`);
 
-      // Load system prompt
-      const systemPromptPath = path.join(__dirname, '..', 'prompts', 'systemPrompt.txt');
-      let systemPrompt = `You are a helpful FAQ assistant for Adrullan Online Adventures. You have access to comprehensive knowledge about the game including lore, philosophy, gameplay mechanics, and community information.
-
-STRICT RULES:
-1. Only use information from the provided knowledge base context
-2. If information isn't available, say "I don't have official information about that in our current knowledge base"
-3. Always cite sources using clickable URLs when available - format as [Source: Title](URL)
-4. Stay focused on Adrullan - don't answer off-topic questions
-5. Be helpful and comprehensive but concise (under 800 words)
-6. Never speculate or add unofficial information
-7. Synthesize information across multiple sources when relevant
-
-RESPONSE FORMAT:
-- Direct answer to the question, drawing from all relevant sources
-- Cite your sources using clickable links when available
-- If helpful, suggest where to ask follow-up questions (#general-discussion, #dev-updates)
-- For story/lore questions, provide rich context about the world and narrative`;
-      
-      if (fs.existsSync(systemPromptPath)) {
-        systemPrompt = fs.readFileSync(systemPromptPath, 'utf8');
-      }
+      // Use system prompt from active profile
+      const systemPrompt = activeProfile.systemPrompt;
 
       // Call Anthropic API
       const response = await anthropicClient.ask(systemPrompt, context, question);
