@@ -31,6 +31,5 @@ vector_store/
 .cursorignore
 
 # Ignore test dumps or CLI outputs
-*.txt
 *.out
 *.dump

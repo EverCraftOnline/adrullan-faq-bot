@@ -1,0 +1,1407 @@
+
+
+Ogre - Osgul - Frostfall
+A Design Guide
+Summary
+Race - Ogre
+City - Osgul
+Area - Frostfall
+Introduction
+Culture
+Leadership
+Outcastsm
+The Frostborn
+Fishing
+Misc
+Language
+Speech/Conversation
+Naming Conventions
+Dictionary
+Name Generation
+Ogre Counting
+City of Osgul
+Layout
+Ivory & Elixir
+Hammer & Bone
+Guilds
+The Split Skull Brigade - Warriors [Red]
+Warrior Starting Questline Overview
+The Frost Fright Knights [Blue]
+Frostfright Knight's Code of Honor
+Frostfright Knight's Training
+Glacier Gazers [Green]
+Starting Questline Overview
+Keepers of the Tide [Purple (Brookberry)]
+Brookberry Gurshak Mead Brewing
+Da Gurshak Brewin'
+Contemporary Conflicts
+Gnolls
+Da True Tale of Hillshade Hollow
+Halflings
+The Brookberry Battles / Gurshak War
+Halfling Camp Ideas (The Brookberry Battles)
+Halfling NPC Ideas (Brookberry Battles)
+Low-Level Halfling Encounters (Levels 2-3)
+Mid-Level Halfling Encounters (Levels 5-7)
+High-Level Halfling Encounters (Levels 10+)
+Race Relations
+Humans
+Halflings
+Herb Stonefoot
+Faction Early Exits
+Uneasy (4250 - 4750)
+Suspicious (3750 - 4250)
+Example WIP High Faction Potentials (Likely more Bespoke per NPC in these higher cases)
+Cuisine
+Butchering and Meat Prep
+Ugtar the Kalu’Tag Cleaver (Butchering Champion)
+Torgruk and the Skinweaver (Skinning Legend / Blade)
+Skinweaver (Item)
+Historical Events
+The Felling of the Elf Prince’s Hall
+Brainstorm Dump
+Surrounding Geography
+Frostfall Foothills
+The Northernmost Reach
+NPCs
+Notable Locations within the Dungeon
+The Silent Shelf
+Silent Shelf - Place for Think and Smash
+Iceheart Wastes
+Additional Ideas
+Celtrious Reach
+Frostcrag
+Frostfall Glacierlands
+Da Tale of Da Frostborn
+Additional Ideas
+Kalu’Tag Uplands
+Ijur’rag
+Local Minerals/Ores
+Glaciumite (Krystogar)
+Cryostelium (Sjelstal)
+Local Fauna
+Gokra
+Fish
+Local Flora
+Flowering Plants
+Nightlily
+Frostflower
+Bloodthorn Shrub / Ogre’s Blush
+Brookberries (Gurshak)
+Hearty Chard
+Ice Cradle Carnation
+Frost Fern
+Winter's Lace
+Mushrooms
+Snowy Glib
+Frosty Webcap
+Polar Puffball
+Icecap Morel
+Glacial Gills
+Other Flora
+Frostvine
+Snowbloom Grass
+Icebark Sap
+Quest Summaries
+Ik`kigak - The Misborn Ogre
+The Crypt of Tokor - Desecrated Remains
+Summary
+Race - Ogre
+Vibe: Big brutes, After simple pleasures of life (bashing, hot springs), caveman-like, contemplative
+Appearance: Among the tallest. Scary, goofy faces, Top-heavy, muscular.
+Culture: Beat Downs (Sanctioned Brawls) are what gains an ogre respect. Reject civility. Embrace Smash.
+Naming: Marth, Norg, Okrog - simple, no surname, Inuit inspired 
+Classes: Warrior, Shadowknight, Shaman, Monk
+Domains: Industry, Insects, Rot, Justice, Dark, Hate, War, Death, Fire, Earth, Nature, Seasons, Air, Water, Moon
+General Difficulty: Medium, Shadowknight Hard
+City - Osgul
+Vibe: Snow mountain with hot springs, bones, hides, and blood
+Appearance: Primitive dwellings in and around caves of a snowy mountain, bones of Frost Giants buried underneath, part of the city, even carved to be part of it.
+History: Ancient forgotten battle on a hill, Ice god crushes failed bio war machines “ice giants” with rocks, forming mountain. Bones still there. Warring Ogre clans come together, drive out Gnolls and High Elves.
+Leader: Chieftain Uktuk, High Elder Yarok
+Factions: Several Ogre Clans, guilds have several clans.
+Rivals: Halflings (constant war), One halfling hero is respected and welcomed.
+Conflicts: Lightfoot Gnolls harassing Ogres, Ancestor spirits haunting creatures, Ogre Outcasts.
+Area - Frostfall
+Vibe: Always frozen wasteland, lots of mountains, creatures just trying to survive the harsh environment.
+Mobs: Mammoth, Gnoll, Penguin, Walrus, Gokra (Snow Yeti/Saquatch)
+Dungeons: Hillshade Hollow
+Introduction
+The Ogres of Adrullan hold an imposing keep in frozen lands of the far Northeast, as formidable and imposing as the race itself! Ogres believe, perhaps even accurately, that they are first sentient beings of Adrullan, despite the objections of the Dwarves.
+
+On the frigid plains of Northeast Adrullan, the Ogres hold an imposing fastness known as Osgul. Formidable and imposing as the Ogres themselves, Osgul has stood as refuge and a proving ground for the Tribes of the Frostfall Foothills. Challengers from the Glacier Gazers, all the way to The Split Skull Brigade, step up to test their mettle in the Beat Down Pit. As primitive as Osgul may appear from the outside, there is much wisdom (and treasure) to be found within; if you can stomach the cold!
+
+
+Key Facts
+City: Osgul
+Location: Frostfall Foothills, Eastern Region
+Available Classes: Warrior, Shadowknight, Shaman, Monk
+Aspects: Industry, Insects, Rot, Justice, Dark, Hate, War, Death, Fire, Earth, Nature, Seasons, Air, Water, Moon
+
+Culture
+The prime driver of ogre culture is beatings and smashing. Ogres frown upon other ogres that use more common speech patterns or attempt to become more educated or act similar to other races. If an ogre adapts a grammatically correct style of conversation they are looked down upon by other ogres, though this is not considered enough of an insult to outcast an ogre from the city. Smashing (fighting) is what gains an ogre respect.
+
+Ogre names are simple. Generally last names are not used. Ogres go by a single name, such as Marth, Norg, Okrog, etc.
+Leadership
+Ogres are broken into clans. A clan is generally in charge until the leader of that clan becomes too old/weak to successfully smash. When this happens a new clan is chosen to lead through ritualistic beatings to prove they are worthy to lead the next generation.
+
+The previous weakened Chieftain becomes the High Elder which only ranks beneath the new Chieftain. The High Elder retains a large influence over the current power structure until the High Elder passes, despite their clan not technically being in charge. The High Elder remains greatly respected until their death, and to a certain extent is still revered even after. As time passes they are often only remembered for their previous time as Chieftain rather than High Elder. 
+
+Upon the demise of a Chieftain, the traditional resting arrangements are overseen by their descendants. Various methods are employed: some chiefs are interred in elaborate tombs, others are returned to nature, while some are preserved indefinitely within massive ice cubes.
+
+For those laid to rest in tombs, the responsibility of upkeep falls upon their progeny. However, as time passes and the influence of the clan diminishes, these tombs often succumb to decay and neglect. An exception to this trend is found in the tomb of Chieftain Tokor, renowned for his profound influence on Ogre culture from the battle of Hillshade Hollow. In this case, all tribes and factions of Osgul take it upon themselves to ensure the maintenance of the tomb.
+
+Many tasks with Osgul leadership require a player to have proven their worth to the citizens of Osgul (faction: Tribe of Osgul (60)”. The current High Elder is High Elder Nar`gol of Clan Nar`gol.
+
+
+Outcasts
+Ogres who refuse to follow traditions, ignore decrees by the Chieftain/High Elder, and generally are offensive to ogre culture are outcast from Osgul. These ogres stem from all classes (monks, shadow knights, shamans, warriors). An example of offensive conduct would be throwing dirt or snow into the face of a fellow ogre during a ritualistic beating. This is seen as “punching below the belt” type of behavior and is not honorable.
+
+Although not all outcasts are hostile to Osgul and its citizens, many feel anger for their banishment and are violent to those who remain in good standing with Osgul or are not of the ogre race.
+
+Ogres start Low Suspicious faction with Outcasts (~4000) [Kyle made this up, Donfrow to Confirm - could have class differences too if we want]
+Donfrow - Thinking maybe low threatening / kos? Couple simple quests or objectives get you to non-kos?
+
+The Frostborn
+The Frostborn is a faction of Ogres who left Osgul many generations ago to establish a village in the Frostfall Glacier Lands. It is now threatened by Coalition Activity in the area. All Ogres start mid Uneasy (4500) to Frostborn. All other Races are KoS.
+
+See Frostfall Glacier Lands
+Fishing
+Like all races, fishing is a way for ogres to get food and goods that can be sold. Although all ogres can use a fishing pole the true ogre way of fishing is to plunge their bodies into the icy waters and catch the fish with their hands. This practice stems from an ogre legend.
+
+The legend is that during the early days of the founding of Osgul there was a great famine. A legendary ogre monk, Gaktin Tivruk, used a great smash <Monk Ability TBD> which stunned thousands of fish to the surface. Hungry ogres jumped into the frigid waters, gathering thousands of the stunned fish and placing them in their empty food baskets. Their food baskets now full, the ogres rejoiced and filled their belly’s in a great feast. Their hunger now satiated and thousands of fish to nourish them for years to come, the great famine came to an end.
+
+QUEST NOTE: Intention is for a zone near the water to be defined where when a monk ability is used 2-4 lvl 1 fish with little to no loot will have a chance to spawn. Possibly have a rare fish that spawn for an ogre monk quest specifically.
+
+Misc
+Ogres like their Gurshak that is made by the Keepers of the Tide, but there is a special brew that the merchant Aumaga adds. This is hated by most but loved by Au`gak, leader of the Frostfright Knights. This brew is the standard Gurshak but further strengthened by frost spiderling venom for an extra kick. Dubbed Savage Gurshak for its terrible taste and bite.
+Language
+Speech/Conversation
+Ogres are not a “dumb” race but many view them as simple or dimwitted due to their speech patterns. Ogres do not use pronouns such as he/she, you, me, I, etc. They refer to themselves in the 3rd person and others by name. Sentences are more basic in structure, omitting words. “Why waste time say lot word when few word do trick” type of speech. Plurals are often said in singular fashion.
+
+Example if Ogrok the ogre would like 5 gnoll scalps:
+
+“I want you to collect five gnoll scalps from the gnolls that plague the Frostfall Foothills. When you have gathered the scalps, return them to me.” 
+
+would be said as
+
+“Gnoll pup plague Frostfall Foothills. Ogrok want <player> smash vermin. Collect five gnoll scalp. Return to Ogrok.”
+
+Here are a few tips for creating words in an Inuit-inspired language for the Ogres of Osgul:
+
+Emphasize guttural sounds: Inuit languages are known for their use of guttural sounds, such as "ng" and "k." Try to incorporate these sounds into words for the Ogres to give them a distinct vocal quality.
+Use short, simple syllables: Inuit languages are often characterized by short, simple syllables, rather than long, complex words. Try to stick to this pattern when creating words for the Ogres to keep their language accessible and easy to understand.
+Incorporate Inuit words and sounds: Look for Inuit words or sounds that have meanings relevant to the Ogres and their culture, and incorporate these into your language for the Ogres. This can help to create a sense of authenticity and cultural heritage for the Ogres.
+
+Naming Conventions
+Inuit Dictionary for Inspiration: https://library.alaska.gov/hist/hist_docs/docs/anlm/200078.pdf
+
+Themes: Ice, War, Blood, Tribe
+Inuit Phonetics Anglicized
+Warriors: smashers
+Fighting: smashing
+
+Words are mashed, such as Brookberries being Gurshak:
+Gur: (Gurak) River
+Shak: (Shukta) Fruit / Berry
+
+Dictionary
+
+Gurak: River
+Shukta: Fruit
+Takuk: Battles
+Throgar: War
+Auk: Blood
+Ulkra: Gore
+Nuna: Tribe
+Kragun: Tribe (Third Party)
+Nunaq: Shelter of a Tribe
+Siglu: Home / Shelter
+Apun: Snow
+Vasku: Ice
+Nakul: Frost
+Qanik: Snowflake
+Apusiq: Storm
+Vassiq: Blizzard
+Pukul: Fight
+Griptak: Hand to Hand Combat
+Grug: Tusk
+Nanuk: Beast
+Ruska: Monster
+Mak: Terror
+Angun: Hunter
+Tivik: Mountain
+Gokra: Yeti
+Nattiq: Seal
+Magun: Strength / Power (a salute)
+Tusa: Listen / Heed (command for attention)
+Erneq: New / Unfamiliar
+Ungava: Unexplored / Mystery
+Anana: Mother
+Ataata: Father
+Kor: World / Adrullan
+
+Name Generation
+Based on the sound system of the Iñupiat Eskimo language. Use an optional apostrophe ( ‘ ) in between each element. Not all elements need to be used. Middle can be used more than once.
+
+Prefixes:
+A, Ak, Am, An, Au, Ig, Ik, Ika, Il, Ka, Kav, Ma, Mi, Na, Pi, Sa, Sai, Si, Ta, Ti, Tin, Tug, Uk, Un, Up
+
+Middle:
+Ak, Ayu, Chi, Chia, Gak, Gi, Gir, Git, Gru, Guan, Guu, I, Ik, Ki, Kua, La, Laa, Lla, Lu, Luk, Ma, Naa, Nia, Pak, Pik, Ra, Rus, Sak, Sik, Su, Suu, Tan, Tak, Tau, Va, Vat, Vas, Ya, Yu
+
+Suffixes:
+Ak, Chat, Chuk, Gak, Gun, Ik, Ka, Kat, Ku, Kun, Kut, Lin, Lu, Lua, Maga, Mi, Muk, Nik, Piak, Piat, Ruk, Sak, Si, Suk, Suun, Tuk, Un, Vik, Yaak, Yun
+
+Simple python program for name generation (200 names):
+import random
+
+
+prefixes = "A, Ak, Am, An, Au, Ig, Ik, Ika, Il, Ka, Kav, Ma, Mi, Na, Pi, Sa, Sai, Si, Ta, Ti, Tin, Tug, Uk, Un, Up"
+prefixes = prefixes.split(", ")
+middle_parts = "Ak, Ayu, Chi, Chia, Gak, Gi, Gir, Git, Gru, Guan, Guu, I, Ik, Ki, Kua, La, Laa, Lla, Lu, Luk, Ma, Naa, Nia, Pak, Pik, Ra, Rus, Sak, Sik, Su, Suu, Tan, Tak, Tau, Va, Vat, Vas, Ya, Yu"
+middle_parts = middle_parts.lower().split(", ")
+suffixes = "Ak, Chat, Chuk, Gak, Gun, Ik, Ka, Kat, Ku, Kun, Kut, Lin, Lu, Lua, Maga, Mi, Muk, Nik, Piak, Piat, Ruk, Sak, Si, Suk, Suun, Tuk, Un, Vik, Yaak, Yun"
+suffixes = suffixes.lower().split(", ")
+
+
+def generate_name():
+    middlepart = 0
+    name = random.choice(prefixes) # Prefix always added
+    if random.random() > 0.90: # 10% chance of apostrophe after first element
+        name += "'"
+    if random.random() > 0.60: # 40% chance to middle part
+        name += random.choice(middle_parts)
+        middlepart = 1
+    if middlepart == 1 and random.random() > 0.90: # 10% chance of apostrophe after second element
+        name += "'"
+    name += random.choice(suffixes) # Suffix always added
+    return name
+
+
+names = [generate_name() for _ in range(200)]
+names.sort()
+sorted_names = ", ".join(names)
+print(sorted_names)
+
+
+
+A'tanmaga, Achat, Achat, Achichuk, Achuk, Ak'ruk, Akgak, Akik, Akikkun, Aknik, Akun, Akvaun, Akvik, Akvik, Akyakun, Alaasak, Alin, Amaga, Amaik, Amchat, Amgakik, Amgirpiat, Amik, Amkua'lin, Amkun, Ammaga, Amnik, Amun, An'un, Angun, Anka, Ansuka, Anyakun, Anyun, Au'gak, Auguannik, Aukut, Aulu, Aumaga, Aurayun, Aurustuk, Autansi, Ayaak, Ig'chat, Igchiayaak, Igkut, Iglayaak, Iglumaga, Igmaga, Igniakut, Igsi, Igva'maga, Ik'kigak, Ik'tauyaak, Ikachuk, Ikaika, Ikakun, Ikamaga, Ikamaga, Ikamuk, Ikavaschuk, Ikchat, Ikchuk, Ikchuk, Ikka, Ikllapiak, Ikpiat, Ikyugun, Ilak, Ilkun, Illu, Iltan'tuk, Ka'lukkut, Kagak, Kaik, Kallanik, Kami, Kasuk, Kav'kisak, Kavchuk, Kavgrukun, Kavgun, Kavkut, Kavraak, Kavsi, Kavsi, Kavsuuik, Ma'sak, Magitmi, Maiik, Malin, Mamaga, Mapikku, Matuk, Migrumi, Miguutuk, Misi, Misuk, Misuk, Na'suk, Naayugun, Nagigun, Nagun, Naik, Nalin, Nalin, Nalu, Namaga, Natankat, Nayaak, Pi'chat, Pichiakun, Piguuyaak, Pikun, Pinaaun, Pivik, Saichia'yaak, Saiichuk, Saikkut, Saikun, Sailukmuk, Sainaa'kun, Saipaklin, Saisak'ka, Saka, Salu, Salukik, Sanik, Saruk, Sasik'kut, Satuk, Si'ayuchuk, Sikat, Sikut, Silaami, Silu, Simaga, Sitanvik, Sivaslu, Taak, Tachat, Tachiayun, Tagak, Talin, Taniakun, Tanik, Tasulua, Tasuun, Tasuun, Ti'vatku, Tichiayaak, Tichuk, Tikat, Timi, Tin'yaak, Tinchilua, Tingak, Tinki'piat, Tinku, Tinlin, Tinlin, Tinraka, Tinruk, Tinsuuyun, Tipakun, Tipiat, Tipikchuk, Tiyaak, Tug'guantuk, Tugchat, Tugik, Tugka, Tugllamaga, Tugmi, Tugnik, Tugra'yaak, Tugtuk, Ukaklua, Ukchuk, Uklin, Uklua, Uktauku, Uktuk, Ukun, Un'piat, Unchat, Unka, Unkat, Unkuami, Unlu, Unsikun, Up'ayuyun, Up'vasruk, Upgrulin, Upka, Upkun, Uplaagak, Upmaga, Upmatuk, Upmi
+
+Ogre Counting
+Here's a counting sequence from one to one hundred in the ogre language:
+
+Rak
+Shak
+Thrak
+Throk
+Gor
+Ull
+Mog
+Gro
+Nak
+Osgul
+Rakul
+Shakul
+Thrakul
+Throkul
+Gorul
+Ullul
+Mogul
+Groul
+Nakul
+Osgulul
+Rakshak
+Shakshak
+Thrakshak
+Throkshak
+Gorshak
+Ullshak
+Mogshak
+Groshak
+Nakshak
+Osgulshak
+Rakthrak
+Shakthrak
+Thrakthrak
+Throkthrak
+Gorthrak
+Ullthrak
+Mogthrak
+Grothrak
+Nakthrak
+Osgulthrak
+Rakthrok
+Shakthrok
+Thrakthrok
+Throkthrok
+Gorthrok
+Ullthrok
+Mogthrok
+Grothrok
+Nakthrok
+Osgulthrok
+Rakkor
+Shakkor
+Thrakkor
+Throkkor
+Gorkor
+Ullkor
+Mogkor
+Grokor
+Nakkor
+Osgulkor
+Rakosgul
+Shakosgul
+Thrakosgul
+Throkosgul
+Gorosgul
+Ullosgul
+Mogosgul
+Groosgul
+Nakosgul
+Osgulosgul
+Rakulosgul
+Shakulosgul
+Thrakulosgul
+Throkulosgul
+Gorulosgul
+Ullulosgul
+Mogulosgul
+Groulosgul
+Nakulosgul
+Osgululgul
+Rakshakulgul
+Shakshakulgul
+Thrakshakulgul
+Throkshakulgul
+Gorshakulgul
+Ullshakulgul
+Mogshakulgul
+Groshakulgul
+Nakshakulgul
+Osgulshakulgul
+Rakthrakulgul
+Shakthrakulgul
+Thrakthrakulgul
+Throkthrakulgul
+Gorthrakulgul
+Ullthrakulgul
+Mogthrakulgul
+Grothrakulgul
+Nakthrakulgul
+Osgulthrakulgul
+
+City of Osgul
+
+
+Layout
+The city of Osgul is split into two major zones. Upon approach, one will be welcomed by a surprisingly open design concept. This may seem conspicuous defenses until you lay your eyes upon the Beat Down Pit and realize that no porticulius could do a finer job. Surrounding the pit, one will find a selection of shops, a bar, and an inn. However, it can be easy to miss some of the sights when you catch a glimpse of the massive mammoth tusk skull that embroiders the bounds of the Osgul Innards. Within, one can find the various guilds and protected factions of Osgul. The truly adventurous (and properly permitted) may take in a breathtaking view of Icesurge.
+
+Ogre’s have a written language of simple marked up runes, however for their signage, tend to prefer practical signs. That is, one which symbology invokes its name. For example, the Inn features a large mammoth skull and barrels for Ivory and Elixir.
+
+Ivory & Elixir
+
+"Ivory & Elixir" is a monumental pub and a commanding presence in Osgul, a grand sight greeting anyone entering the city. Built out of massive blocks of stone, the establishment stands four stories tall, though it seems even higher already set a full story above the pit. As you enter Osgul, the pub catches your eye immediately, its imposing height all the more accentuated by the city's layout.
+
+The entrance to the pub is up a flight of stairs on your left as you pass the city's main gate, leading you to the bustling first level. This is where you'd find the heart and soul of "Ivory & Elixir" - the pub itself. Here, a jovial Ogre named Norg holds court behind the counter, serving general provisions and sharing tales of furs from various beasts. The scent of hearty food and the murmur of convivial conversations fill the air, creating a sense of homely comfort despite the intimidating surroundings.
+
+One level up is a more private space, dedicated to hushed gatherings and confidential meetings. Its location offers an unrivaled view of Osgul, transforming the room into a sort of viewing deck for those privileged enough to access it. This level also holds the reason behind half of the pub's name, the massive Mammoth Skull, "Ivory", is affixed to the exterior of the building, serving as an imposing decoration.
+
+A path and set of stairs lead directly from the next level to the primary guild hall and brewery. This is the domain of the Keepers of the Tide, the diligent monks responsible for brewing the famed Gurshak Mead. Their quarters are a hive of activity, filled with barrels of aging brews, supplies for the monks, and a uniquely pleasant aroma of fermentation in process, and supply the locale with the second part of its name.
+
+At the very top, under the open sky, is where you will find Aumaga and Bonesplitter Skarn. This rooftop is a thriving butchery, brimming with cuts of fresh meat, bones of various shapes and sizes, and the unmistakable, robust smell of the butcher's craft. Aumaga, the quartermaster, oversees the operations, dealing with issues ranging from vermin infestations to securing ingredients for the Savage Gurshak Mead. On the other side, Skarn, the city's butchery trainer, offers his expertise to anyone willing to learn the art of butchery.
+
+"Ivory & Elixir" is indeed a remarkable place that encapsulates the Ogre essence - it is grand, busy, and full of life. It's a hub of activity, where the city's culinary practices, brewing skills, and even some of its politics, converge to create a unique, Ogre-ish experience.
+Hammer & Bone
+Nestled to your immediate left upon entering the town of Osgul, you will find the industrious Ogres craftspeople at Hammer & Bone. The blacksmith shop is a rugged structure of sturdy stone, featuring an imposing open-air forge that dominates the scene. Run by the diligent ogre blacksmith, Smith Glokurk, and his apprentice Torig, the forge remains aglow day and night, sending hypnotic waves of light and shadow over the shop's interior and surrounding streets.
+
+At Hammer & Bone, players can watch the art of smithing in motion or commission weaponry and armor. They might also interact with the blacksmiths, who may offer tasks or have knowledge of local rumors.
+
+Just adjacent to the blacksmith's forge, Leatherbinder Grukna, works with finesse over a bench strewn with hides of various stages of transformation. This is the place for those seeking expertly crafted leather goods, repair services, or even exotic leathers, if they have the right coin.
+
+Despite the distinct divide between the blacksmith and leatherworker areas, the shop operates as one unit. The space is a labyrinth of tools, materials, and finished goods that create an intriguing blend of sights, sounds, and smells.
+
+Hammer & Bone is not just a store but a crucial piece of the local ecosystem. It's a testament to the town's hardworking spirit, a hub of commerce and information, and a potential springboard for many adventures.
+
+The Money Pit
+
+
+Guilds
+The Split Skull Brigade - Warriors [Red]
+Warriors
+Leader: Grand Smasher Dor`zug
+
+The Split Skull Brigade is the backbone of the Ogre society, embodying both its martial prowess and steadfast commitment to their community. As the city guard and non-magic warrior guild, the Brigade ensures the safety of Osgul and its inhabitants.
+
+Averaging taller and broader than most of their kin, members of the Brigade are an intimidating sight. They are renowned for their unparalleled strength, endurance, and sheer determination. Their scarlet insignia, a stylized skull split down the middle, symbolizes the strength and resilience of their people and their readiness to protect at any cost.
+
+Devoted to Vexx the Flood, Celtrious the Tide, and Mortas the Decomposed of the Water Domain, the Split Skull Brigade integrates the teachings of these deities into their way of life, embodying the fluidity, adaptability, and relentlessness of water. Many among the Brigade also worship Zegrath the Barbarian, the Dark Aspect's deity of War, whose doctrine complements their martial spirit.
+
+Beneath the Beat Down Pit at the center of town lies the expansive barracks where members of the Brigade live and train. The cavernous, well-lit space is lined with bunks and communal living areas. Here, warriors rest, share tales of their exploits, and prepare for their guard duties or the next friendly clash in the Pit.
+
+Training in the Split Skull Brigade is an intense affair, focusing on building physical strength, learning weapon skills, and mastering combat techniques. Mentored by experienced warriors, new recruits are constantly drilled, shaped, and tested until they become adept fighters, able to uphold the security of Osgul and protect their fellow Ogres from any threats.
+
+Warrior Starting Questline Overview
+Quest 1: A Display of Mites
+Smash young gnoll pups and bring Dorzug one gnoll mites to prove the player's worthiness. Upon completion, the player must go fetch a Halfling ear.
+
+Afterwards, the player learns of the Tomb of Tokor and the gnolls setting up shop. The player must enter the tomb and destroy some of the gnoll supply crates before returning to Dor`zug.
+
+Upon returning, the player must venture to the Gokra caves to slay Frostspine, a slay the Gokra and return it for the reward.
+
+OLD ITEMS TO BE MOVED TO ANOTHER NPC AS A GENERIC WARRIOR GUILD QUEST ANY CAN DO:
+Quest 2: A Scheme Disrupted
+Deal with the halfling menace by bringing Dorzug proof of their plans (Crumpled Attack Plans). Completing this part rewards the player with experience and additional faction points with the Split Skull Brigade and Osgul citizens.
+
+Quest 3: Clipping Clovis
+Defeat the halfling commander called Clovis and bring his head to Dorzug. Upon completion, the player is considered an initiate smasher and receives a Halfling Skull Helm, experience, faction points with the Split Skull Brigade and Osgul citizens, and if the player is level 8 or higher, the skill to dual wield weapons.
+
+Relics of the Past (Optional Quest)
+In a separate, optional quest, Dorzug requests warriors to bring him a Large Rusty Sword, a relic of past battles. For non-warrior players, he will reward them with a Dented Training Shield, a symbol of enduring strength, along with experience, and faction points with the Split Skull Brigade and Osgul citizens.
+
+As you traverse this path of battles and diplomacy, always remember the spirits watching over you, guiding you towards your destiny. With every task, you draw closer to the heart of Osgul, embodying its essence and becoming a true warrior.
+
+The Frostfright Knights [Blue]
+Shadowknights
+Starting Questline Overview
+After learning basic skills Au`guk wants the player to get some bone fragments to prove basic combat. After this, he wants a Halfling foot.
+
+After proving your ability in combat, he wants you to go to Tomb of Tokor and slay a gnoll defiler which has been a gnoll who has been defiling the tomb in the worst way. Upon slaying it, the player must take the head and place it on a pike outside the Tomb to ward off gnolls.
+
+After this, the player must go to the Ogre outcasts and recover the Heart of Gro`mak, a stone used in a young Frostfright Knight test, that was stolen by one of the outcasts, Tin`nuk. After recovering the heart, the player must provide the heart to Upkin in the guild who will summon the Echo of Gor`mak as the final test to the player.
+
+Leader: Au'gak 
+
+As one of the oldest races on Adrullan, and one not particularly good at keeping written records, it can be challenging to interpret the Ogre’s historical relationship to magic. Their Shamans and healers most certainly participated in the ancient crafts, but seemed undaunted when the god’s turned their back. They continued their rituals and “spells” regardless of the efficacy. With the return of the divine aspects, their rituals are no longer impotent. This fact did not go unnoticed by the Split Skull Brigade who have begun to train an elite force of intention magic-wielding soldiers known as The Frostfright Knights. Augmenting their brute strength with occult magics, these Knights are a true force inspiring fear of any would-be enemy. There are those in Adrullan however that question this contemporary interest in intention magics suggesting it may be of foreign influence. That is to say, there are some that believe the Dark Pact has been supplying Osgul with these ancient studies. The Ogres, for their part, think little of it past an augmentation of their natural abilities.
+
+It is said that Gor`mak was the first Frostfright Knight to use magic. Initiates into the Frostfright Order must use the stone “Heart of Gor`mark” as a test to prove their ability to Au`gak.
+
+Frostfright Knight's Code of Honor
+
+Be loyal to Split Skull Brigade.
+Respect Mortas and Zegrath, they give us power.
+Protect Ogre family and old ways.
+No give up when things hard.
+Get better, body, mind, and spirit.
+Trust Shaman teachers and Water power.
+Show no mercy to ones who want hurt our people and life.
+
+Frostfright Knight's Training
+
+Frostfright Knights learn hard, use magic and Ogre strength together. Train body and learn spells, knights mix strong fightin' with gods' power. Learn Rot and War, call on ruin and fight to make enemies fall.
+
+With help from Split Skull Brigade and learnin' from Shaman teachers, Frostfright Knights use Mortas and Zegrath power, make enemies scared and weak. Some say Dark Pact help Frostfright Knights come back, but Ogres no listen, focus on new power and protectin' Ogre family.
+
+Fear
+Glacier Gazers [Green]
+Shamans
+Glacier Gazers, as most Shamans, revere several aspects with most focused in Fire, Earth, Air, and Insects. They believe they can draw power with spirits through communicating with the ancient ice laid about their frozen realm. You can often find them performing rituals and speaking in low hums around large pillars of ice that make up some of the walls of Osgul. 
+
+Starting Questline Overview
+Quest 1: Frozen Origins Heating Up
+Grozar wishes you to practice the Words he has given you to defeat monsters (level 1) in the Frostfall Foothills. He wants you to bring him one Bone Fragments (71) to prove you have done so.
+
+Quest 2: Small Tokens, Big Meanings
+Grozar mentions his fascination with the Halflings, specifically their wooden totems carved by the Whittlers. He explains that he believes these totems might have a role in helping the Brookberry Druids and Windcallers channel spirit magic. He sends you to collect one from a Halfling camp in the Foothills.
+
+Quest 3: Reflecting on Origins
+Grozar urges you to reflect on the importance of understanding and respecting one's roots. He tells you to seek out the Ancestor in Tomb of Tokor and to give an offering to see if the young shaman is ready for pilgrimage.
+
+Quest 4: A Quiet Pilgrimage
+Grozar now feels you are ready for the pilgrimage. He sends you to sit at a specific spot to offer a charm at a shring in the Silent Shelf to reflect on your journey so far and to experience the convergence of the moon's water and the earth's stone, represented by the silent sea crashing against the stone cliff. He advises you to look towards Icesurge Harbor as you meditate, connecting with your beginnings.
+
+Quest 6: The Road Ahead
+After your pilgrimage, Grozar starts preparing you for your biggest challenge yet - a fight with a Gokra. He explains that this trial represents the final step in your initiation as an Ogre Shaman. It also is a way to honor Vexx the Flood's power as the god of the Waters.
+
+Upon completion, Grozar informs you he has fashioned a bracer for you made of the bone fragments, a Wooden Charm of a Halfling, the quiet strength of Vexx, and the fur of the legendary Gokra Tidemaw  bringing all the quests into the item..
+
+At some point in these quests, Grozar will mention the Tomb of Tokor questline, suggesting you seek out Lorekeeper Krozrok for more information. He also talks about Rokgut at the fishing alcove outside Osgul, suggesting that learning to fish may be a way to help maintain your connection with Vexx the Flood and the element of Water.
+
+By the end of this questline, players should be around level 8, setting them up for the next set of challenges and adventures such as Hillshade Hollow or the Northernmost Reach.
+
+
+Keepers of the Tide [Purple (Brookberry)]
+Monk
+It is said that as the kiln that forged Adrullan cooled, Celtrious, the moon, was violently born into the cosmos from the frigid and barren lands the Ogres hold. The trauma created aftershocks that defined the tides for generations to come. However, when the gods abdicated, the tides too did shift and quelled. Now, they stir once more and the order of Keepers will once again practice the art of their ancestors.
+
+Knights of the Tide have a proclivity towards Celtrious the Tide of the Moon Domain, Water Aspect. 
+
+Brookberry Gurshak Mead Brewing
+The Keepers of the Tide have a unique and time-honored tradition of brewing a mead using the hardy Brookberries, known to them as Gurshak; from the literal "Gur" (river or stream) and "Shak" (fruit or berry). The brewing process is an essential part of their culture, and it involves several steps:
+
+Harvesting: The Keepers of the Tide collect Brookberries when they are ripe, either from the wild or by competing with the Halflings for their share. These berries are primarily found along the border of The Ardent Vale and Frostfall Foothills.
+
+Crushing: The Ogres then crush the Gurshak to release their juice, often by stomping on them with their massive feet in large wooden troughs. This step is crucial in extracting the flavors and sugars needed for fermentation.
+
+Straining: After crushing, the Ogres strain the juice using simple woven baskets or large pieces of cloth to separate the solids from the liquid. The result is a smooth, colorful juice that serves as the base for their mead.
+
+Fermentation: The juice, or must, is fermented in large wooden casks or barrels. The Ogres might add wild yeast or other natural fermentation agents to aid the process, but often the natural yeast present on the Gurshak is enough to start fermentation.
+
+Aging: Once the mead has fermented to the desired level, it is aged to develop and enhance its flavors. The Ogres store the mead in the same casks or barrels used for fermentation, transferring it to smaller vessels only when needed for distribution or consumption.
+
+
+Da Gurshak Brewin'
+
+Keepers of Tide make special drink from Gurshak. Berries found near Vale and Hills. Halfling fight for them, but Ogre always get share.
+
+Keeper stomp on Gurshak with big feet, crush them good in big wooden troughs. Then strain juice, make it smooth and pretty color.
+
+Keeper put juice in big barrels for make mead. Juice change, become strong drink, make Ogre happy. Leave in barrels long time, let flavor grow and become better.
+
+Gurshak Mead special to Ogre. Share with friends, celebrate good times. Taste like home, like strength of Tide.
+
+
+
+Contemporary Conflicts
+Gnolls
+As with all races East of Yanus’ Spine, Ogres contend with threats from the Gnolls of Hillshade Hollow. Ironically enough, it was the Ogres of antiquity, led by the chieftain of Clan Tokor, that chased the Elf, Human, and conscripted Dwaves from the halls the Gnolls now occupy. Across the Frostfall Foothills gnolls of all clans can be found, however the Lightfoot presence seems to be most dominant. Some who believe the Gnolls to be  strategic enough, suggest that Snarltooths are sent to attack Humans with force and likewise send Lightfoots to sabotage and attack Ogres from behind their lines.
+
+
+Da True Tale of Hillshade Hollow
+
+In time when ogres still young and fierce, in heart of Frostbreak Ridge, strong ogres of Clan Tokor and Clan Iceheart live as one. Big, mighty ogre, great Tokor, lead them all.
+
+Tokor hear whispers of rich lands, full of elves, humans, and half-elves hiding in fortress called Hillshade Hollow. Tokor want this place for ogres. Speak of treasures, lands, and glory.
+
+Ogres march to Hillshade Hollow, meet soft ones in battle. Fight be long, fight be hard, but ogres strong, ogres fierce. Ogres win, chase soft ones from fortress. Hillshade Hollow now belong to ogres.
+
+Ogres in Hillshade Hollow rejoice, then leave. Leave fortress, return to Osgul. Treasures and lands theirs, glory won.
+
+But fortress not stay empty. Many moons pass, gnolls, pushed by humans and coalition, creep into Frostbreak Ridge. Find fortress, make it own. Worship Fenla, Wild God of Nature, happy to claim shrine.
+
+Now gnolls infest fortress, ogres not fully push them out. Hillshade Hollow lost to gnolls.
+
+Meanwhile, wise elder Gromnir of Clan Iceheart, brother of Tokor, want different life. Leave Hillshade Hollow, lead followers through cold Frostfall Foothills, to Frostfall Glacierlands.
+
+Land of ice and snow, harsh for ogres, but Gromnir wise. Teach ogres to live in cold, build homes from ice, hunt rare beasts. These ogres grow, become Frostborn. Make Frostfall Village, live own way.
+
+Ogres in Osgul watch Frostborn, see them grow strong in cold. Not understand why live in cold, but respect.
+
+That be true tale of Hillshade Hollow, Frostfall Glacierlands, and split of ogre clans. Ogres, always proud, always strong.
+
+Halflings
+The ongoing conflicts between Ogre and the Halflings have created partisan command posts and camps on both sides of the frost line. Be weary as across the Frostfall Footlands camps of Halfling specialists observe and plot against Osgul. Young Ogres can find many opportunities of employ if willing to sabotage the Halfling efforts.
+
+See also: Race Relations -  Halflings
+
+The Brookberry Battles / Gurshak War
+A never-ending game of tug-of-war spans the vast expanse of the Frostfall Foothills and the Ardent Vale, as the pint-sized Halflings pit their cunning against the formidable strength of the Ogres in a relentless struggle for the prized Brookberries.
+
+As the frigid winds of Frostfall sway over the snow-draped lands, a tenuous line is drawn between the warring factions. Nestled in the frost-kissed valleys and hidden beneath the verdant canopy of the Ardent Vale, Halfling camps, the lifeblood of their operations, spring up like mushrooms after a spring rain. From the unassuming Hidden Hollow, the bustling Frostfall Warren, the lofty Watchful Willow, the impregnable Bramblefort, to the jovial Merry Meadhall, the Halfling spirit of resilience and ingenuity prevails.
+
+
+
+Yet, matching their tenacity, the Ogres hold their ground in an equally impressive manner. Gritting their tusks against the biting cold, they scour the foothills in search of the elusive Halfling camps, ever ready to wrest control of the Brookberries from their diminutive adversaries. Ogres, brandishing titles like Meatcleaver or Beastbreaker, are a common sight in these battlegrounds, their sheer size and strength a constant reminder of the formidable foe the Halflings face.
+
+The constant skirmishes and raids echo across the foothills and the vale, the sweet scent of Brookberries forever entwined with the iron tang of spilled blood. This cycle of stealth, subterfuge, and sudden bouts of violence forms the backbone of the Brookberry Wars, an inescapable reality for every Halfling and Ogre who call these lands their home.
+
+
+At night, when the moon bathes the landscape in its cold, silver glow, one could almost forget the wars waged in daylight. Yet, every rustling leaf and snapping twig is a reminder of the ongoing conflict, the need for vigilance etched deeply in the hearts of every combatant.
+
+As the Brookberry Wars rage on, the line between friend and foe blurs, transforming the once serene Frostfall Foothills and Ardent Vale into a chessboard where Halflings and Ogres dance their deadly waltz, vying for supremacy, one Brookberry at a time.
+
+
+
+Purple dots represent approximate Halfling Camps and Red represent approximate Ogre Camps across Frostfall Foothills and The Ardent Vale. These provide low level Humanoid camps to Halflings and Ogres alike.
+Halfling Camp Ideas (The Brookberry Battles)
+
+The Hidden Hollow: An unassuming cave entrance in the mountainside reveals a complex network of tunnels and chambers. This encampment is primarily used as a staging ground for surprise attacks on the Ogres. The Halflings have cleverly camouflaged the entrance with foliage and rocks, making it nearly invisible unless one knows exactly where to look.
+
+Frostfall Warren: Named after the surrounding foothills, this camp is a honeycomb of burrows dug into a large snow-covered hill. It serves as a sort of "field hospital" for injured Halflings, thanks to the natural insulation provided by the snow and earth.
+
+The Watchful Willow: This camp is nestled high in the boughs of a massive willow tree, safely out of reach from Ogres. Equipped with long-range weapons, the Halflings here act as the eyes and ears of their people, alerting others to the approach of any Ogres.
+
+Bramblefort: A bristling thicket of thorny bushes and brambles conceals this encampment. The Halflings have cleverly woven the natural vegetation into a labyrinthine fortress that confuses and repels would-be attackers.
+
+Merry Meadhall: A camp dedicated to morale and camaraderie, this is where Halflings gather to feast and make merry, bolstering their spirits for the battles to come. The camp features a large underground hall where they store their food, drink, and instruments for their lively celebrations.
+
+Each camp could also feature unique challenges and quests for the player, such as helping the Halflings fortify their defenses, participating in their celebrations, or aiding in strategic attacks against the Ogres.
+
+Since Halflings are known for their guerilla tactics, these camps should reflect their cunning and resourcefulness. They could incorporate decoy camps to misdirect Ogres, or hidden escape tunnels for a quick retreat. The Halflings' love for masks could also be utilized in their war strategy, such as using masked decoys to confuse their enemies or even scare them away.
+
+The camps should also reflect the Halflings' cheerful and convivial nature, with small details like colorful banners, impromptu stages for bards, and communal dining areas. Despite the ongoing war, the Halflings' indomitable spirit and love for life should shine through.
+
+
+Halfling NPC Ideas (Brookberry Battles)
+
+Low-Level Halfling Encounters (Levels 2-3)
+
+
+
+Halfling Foragers: These Halflings gather food and resources for their camps. They might drop Cloth Scraps, Forager's Tools, Brookberries, and the occasional piece of Woolen Workaday Armor.
+
+Brookberry Defenders: These low-ranking Halfling soldiers defend the precious Brookberry groves. They could drop Small Shields, Defenders' Short Swords, Brookberries, and pieces of Woolen Workaday Armor.
+
+Halfling Scouts: These quick and sneaky Halflings spy on the Ogres and report back to their camps. They might drop Scout's Slingshots, Maps of the Foothills, and pieces of Woolen Workaday Armor.
+
+Halfling Trappers: These Halflings are responsible for trapping small game in the foothills. They might drop Trapper's Nets, Small Game Pelts, and the occasional piece of Woolen Workaday Armor.
+
+Halfling Whittlers: These crafty Halflings make simple tools and weapons. They could drop Whittler's Knives, Carved Wooden Trinkets, and pieces of Woolen Workaday Armor.
+
+Halfling Runners: These Halflings serve as messengers between camps. They might drop Runner's Boots, Sealed Messages, and pieces of Woolen Workaday Armor.
+
+Halfling Cooks: These Halflings prepare meals for the camps. They could drop Cook's Ladles, Halfling Rations, and pieces of Woolen Workaday Armor.
+
+Halfling Tenders: These Halflings take care of the pack animals. They might drop Tenders' Whips, Beast Feed, and pieces of Woolen Workaday Armor.
+
+Mid-Level Halfling Encounters (Levels 5-7)
+
+Halfling Raiders: These Halflings are trained to launch quick, brutal attacks on the Ogres. They could drop Raider's Hatchets, Halfling Rations, and pieces of Sturdy Leather Armor.
+
+Brookberry Berserkers: These Halflings have gone a bit mad from eating too many Brookberries. They might drop Berserker's Clubs, Pouches of Fermented Brookberries, and pieces of Sturdy Leather Armor.
+
+Halfling Beastmasters: These Halflings have trained the local wildlife to fight on their side. They could drop Beastmaster's Whistles, Tamed Animal Companions, and pieces of Sturdy Leather Armor.
+
+Halfling Pathfinders: These Halflings are excellent trackers and navigators. They could drop Pathfinder's Bows, Compasses, and pieces of Sturdy Leather Armor.
+
+Halfling Firestarters: These Halflings are experts at setting fires for both warmth and destruction. They might drop Firestarter's Torches, Flint & Steel, and pieces of Sturdy Leather Armor.
+
+Halfling Tinkerers: These crafty Halflings are skilled at making simple machines and traps. They could drop Tinkerer's Tools, Cog & Gear Sets, and pieces of Sturdy Leather Armor.
+
+Halfling Brewers: These Halflings make potent brews from Brookberries. They might drop Brewer's Barrels, Bottles of Brookberry Brew, and pieces of Sturdy Leather Armor.
+
+Halfling Skirmishers: These Halfling soldiers are trained to skirmish with the Ogres. They could drop Skirmisher's Spears, Halfling Rations, and pieces of Sturdy Leather Armor.
+
+
+High-Level Halfling Encounters (Levels 10+)
+
+Halfling Commandos: These elite Halfling soldiers are experts in guerrilla warfare. They might drop Commando's Daggers, Detailed Battle Plans, and pieces of Commando's Chainmail Armor.
+
+Brookberry Druid: These Halflings use the power of the Brookberries to cast powerful spells. They could drop Druid’s Staves, Potions of Brookberry Power, and pieces of Druid’s Mystic Wear
+
+Halfling Chieftains: These are the leaders of the Halfling camps. They might drop Chieftain's Warhammers, Chieftain's Crests (a rare crafting material), and pieces of Chieftain's Plate Armor.
+
+Halfling Wardens: These elite Halflings are entrusted with the safety of their communities. They might drop Warden's Longswords, Warden's Shields, and pieces of Warden's Plate Armor.
+
+Halfling Windcallers: These Halflings have learned to harness the power of the wind. They could drop Windcaller's Staves, Scrolls of Wind Magic, and pieces of Windcaller's Mystic Robes.
+
+Halfling Battle Chefs: These Halflings are as deadly with a knife as they are with a frying pan. They might drop Battle Chef's Cleavers, Bottles of Spicy Battle Brew, and pieces of Battle Chef's Chainmail Armor.
+
+Halfling Master Trappers: These Halflings are the best at capturing and taming wild beasts. They could drop Master Trapper's Nets, Tamed Beast Companions, and pieces of Master Trapper's Leather Armor.
+
+Halfling Elder Sages: These wise Halflings guide their people with wisdom and powerful magic. They might drop Elder Sage's Staves, Ancient Halfling Tomes, and pieces of Elder Sage's Mystic Robes.
+
+
+
+Race Relations
+Humans
+The Frostfall Foothills give way to the Pineyearn Ridge in the south, and not far from there, the human occupied fastness of Leont. Ogres engage in diplomatic relations with the humans from time to time, but tend to avoid them. Ogres find humans puny and unworthy of their time. Their apathy towards them is driven by utter disregard.
+
+Core City Factions of Leont regard Ogre factions Uneasily (4500) by default
+
+Halflings
+Follow the path West of Osgul into the Frostfall Foothills, towards the Halfling territories and you will undoubtedly encounter one of their reconnaissance camps. Hostilities on both sides are inflamed as rediscovered magics increase the ferocity of conflict. Light, mobile sabotage groups are now capable of untold damage to the enemy. Young Ogres of all Classes find it an honor to participate in disrupting the enemies activities. Despite the recent revelations however, this has historically been one cold war and not just because of the tundra. For some reason, neither side has managed to land a decisive blow, nor fully recall why the feud began in the first place. Regardless, Ogres respect Halflings as fierce warriors and many young Ogres find themselves making close companions with adventuring Halflings as they take on the Gnolls of Hillshade Hollow and help save the puny humans.
+
+Herb Stonefoot
+Little is known of Herb’s previous life amongst the Halflings; and he’s content to keep it that way. All that is known is the tales of a stocky Halfling that bested a battalion of Split Skulls in unarmed combat. Once Herb was finally subdued, the commander stepped before him. Herb knew he was licked. “You. You are no Half-Man. You are Ogre” More at home with the Ogres then his own kind anyways, he’s accepted this fate. If he’s not defending his title in the Beatdown Pit, you’ll find Herb guzzling his winnings in the Pub.
+
+
+
+
+
+
+Faction Early Exits
+Uneasy (4250 - 4750)
+
+"Moon watch all. Hide nothing from Osgul."
+"Trust like fresh snow, easy to spoil."
+"Rot stink strong. Need prove pure."
+"Tide can change. Show worth to Osgul."
+"Mortas watch, no fool Osgul."
+"Trust not given like free water. Earn it."
+"Moon not fully shine on <Player>. Trust thin."
+"In eyes, see the Flood. Trust not ready."
+"Vexx's eyes on <Player>. Trust not given."
+"Like shaky ice. Could break."
+"Water can be deep. Be careful where step."
+"Need more prove. Osgul watch."
+"Trust not come easy. Show worth."
+"Moonlight not yet clear. Trust hard."
+"Flood of deceit strong. Trust thin."
+"Trust like fresh snow, can melt fast."
+"Like slippery ice. Trust not firm."
+"Eyes of Moon upon <Player>. Trust not given."
+
+Suspicious (3750 - 4250)
+
+"Patience thin like ice in sun. Beware."
+"Not welcome here. Osgul not forget."
+"See through lies. No fool us."
+"On edge of trust. Next step might fall."
+"Not stupid. Need show respect."
+"Not trusty. Eyes watch. Ears listen."
+"Actions speak louder than words. Osgul remember."
+"Ice thin underfoot. Trust not strong."
+"Moon not fully shine on <Player>. Trust thin."
+"Flood not clear. Trust murky."
+"Water run deep. Trust not deep."
+"Rot stench strong. Trust not there."
+"Like thin ice. Might break any moment."
+"Not forget. On dangerous ground."
+"Not friend. Not yet, maybe never."
+"<Player> not trusty. Eyes watch. Ears listen."
+"Osgul remember. <Player> actions speak louder than words."
+
+
+Example WIP High Faction Potentials (Likely more Bespoke per NPC in these higher cases)
+
+Neutral (4750 - 5251)
+
+"<Player>, like pebble in stream. Not causing ripples."
+"Moon half-lit on <Player>. Not full light."
+"Standing on thin ice, needs more frost."
+"In the middle of the river, not on the shore."
+"Like calm sea, no big waves yet."
+"<Player>, like quiet wind. Not storm, not breeze."
+"Like first snowfall, not enough to cover ground."
+"Osgul see <Player>. Not foe, not kin."
+"Feeling towards <Player> like a new path, not yet walked."
+"Celtrious' gaze not fully on <Player>. Not yet."
+Friendly (5251 - 6001)
+
+"Walking in fresh snow, but not a blizzard yet."
+"River flows stronger with <Player>, but not yet a flood."
+"Moon shines brighter on <Player>, but not full glow."
+"Frost forming, but winter not here yet."
+"Like a calm sea before a tide, needs more waves."
+"Stronger wind, but not a gale yet."
+"More than pebble, but not boulder. Not yet."
+"Like a growing sprout, but not a tree."
+"Vexx smiles, but not full laughter."
+"Snow covers ground, but not a whiteout. Not yet."
+Trusted (6001 - 7001)
+
+"<Player>, like strong current in river. But not a flood."
+"Walking in deep snow, but not snowed in."
+"Moon shines on <Player>. But not full moon."
+"Ice thick, but lake not frozen over."
+"Gusts are stronger, but storm still far."
+"More than a sprout, but not a forest."
+"Strong waves, but tide not at peak."
+"Like a growing flame, not yet a bonfire."
+"Celtrious watches <Player>, but not full attention."
+"Like a forming cloud, but not a storm."
+Honored (7001 - 8501)
+
+"Like a roaring river, but not a waterfall."
+"Moon almost full on <Player>, but not quite."
+"Like a snowstorm, but not a blizzard."
+"Strong gale, but not hurricane."
+"Ice almost frozen over, but lake not solid."
+"Tide high, but not at its peak."
+"Like a large tree, but not a forest."
+"Boulder in stream, but not a mountain."
+"Flame burns bright, but not a bonfire."
+"Vexx laughs, but not full belly laughter."
+
+Cuisine
+Butchering and Meat Prep
+
+Ogres of Osgul, nestled in the heart of the Frostfall Foothills, are seasoned masters of butchering. Their techniques, handed down through generations, are more than just the art of meat preparation - they're a lifeline in the freezing wilderness.
+
+Ogres primarily target massive Mammoths, using their Stout Butchering Knives with practiced efficiency. The rich, fatty mammoth meat is perfect for slow roasting over an open fire, seasoned with crushed Brookberry and hearty chard. While Ogres scoff at the chard for its poor taste, they've found that the moose and rabbits they hunt can't resist it.
+
+The Beguins and bears are reserved for special occasions, their tougher meat requiring more skill and time to cook. A special Gilded Butchering Knife is used in these instances, signifying the importance of the occasion.
+
+Post-butchering, the prized Gurshak berries are harvested, each one carefully squashed underfoot by the Keepers of Tide. The juice, a vibrant, pulpy mixture, is then strained and set aside in large wooden barrels. This process starts the fermentation of the coveted Gurshak Mead, a strong, intoxicating beverage that fuels many a boisterous Ogre celebration.
+
+The Ogre's Blush, extracted from the Bloodthorn shrub, has a place of honor in Ogre tradition. Its crimson dye paints their bodies and homes, symbolizing their strength and resilience in the face of Frostfall's harsh conditions.
+
+Nightlilies and a plethora of wild mushrooms grow abundantly in the area, both being utilized in a variety of ways. The luminescent Nightlilies attract and mesmerize various nocturnal creatures, providing the Ogres with a delightful hunting spectacle. Meanwhile, the fungi of Frostfall are versatile ingredients, lending their unique flavors to the Ogres' rich stews and broths.
+
+In summary, butchering in Osgul is a rich and intricate affair. Rooted in tradition, it remains an essential part of Ogre culture, ensuring their survival and prosperity amidst the unforgiving wilderness of Frostfall Foothills.
+
+Ugtar the Kalu’Tag Cleaver (Butchering Champion)
+
+This tale,  it go way back. It about old Ogre, Ugtar, him big like mountain, heart strong like boulder.
+
+One day, Ugtar say, "Me need feel icy wind, taste frosty air. Me go Kalu'Tag Uplands." Him leave Osgul, go far up north. Them call it 'land of eternal winter,' but for Ugtar, it just another home.
+
+Long he travel, up hills of ice, through snow forests, across frozen rivers. No beast too big, no cold too bitter for Ugtar. Him carry big cleaver, shiny, sharp, like star in night sky. It name, 'Beast's Bane.'
+
+Finally, Ugtar reach top of Kalu'Tag. There him see mammoth, big as fortress, fur like endless snow. It alone, old like Ugtar, strong like Ugtar.
+
+Ugtar look mammoth in eye. It no fear him. Ugtar no fear it. It pure, this moment. It right. Ugtar raise Beast's Bane high, let out bellow loud like thunder. Mammoth lower head, ready.
+
+Then Ugtar strike, one, two, three. Each hit like drum, like heartbeat of world. Mammoth fall, quiet, peaceful. Ugtar bend down, make cut with Beast's Bane. One cut, clean, through fur, flesh, bone. He lift up biggest, finest mammoth loin Osgul ever see. It gleam in cold sun, red like fire.
+
+Ugtar take it back to Osgul. Him show everyone. Ogres cheer, raise cups high. That night, they feast. They eat finest mammoth loin, taste like victory, taste like strength, taste like home. They remember Ugtar, remember mammoth, remember Kalu'Tag Uplands.
+
+This tale, it be told again, again. It reminder. No matter how hard life be, no matter how big beast be, Ogre always stand tall, always fight. That spirit of Ugtar. That spirit of Ogre.
+
+
+
+Torgruk and the Skinweaver (Skinning Legend / Blade)
+
+Torgruk, him not biggest Ogre, not strongest Ogre, but him sharp, like edge of ice. Him have hands soft as snow, eyes keen as eagle. Him have knife, thin, flexible, sharp as winter wind. Him call it, 'Skinweaver.'
+
+Torgruk, him love Frostfall Foothills. Love chill in bones, crunch of snow underfoot, silent dance of snowflakes. Him say, "Here, beasts pure. Here, skins finest."
+
+One day, Torgruk spot Beguin, grand beast of Frostfall. Fur thick like blizzard, white like moonlight on snow. It alone, fierce, wild. Torgruk look in eye. It see him, but not fear. It respect him. Torgruk respect it.
+
+Torgruk raise Skinweaver. Silent like falling snow, him make approach. Him whisper, "Skinweaver, do dance. Take what we need, leave rest." Then him move, swift, precise, like wind on mountain top.
+
+Beguin feel no pain, no fear. It watch Torgruk, eyes wide, understand. Then it fall, gentle as snowflake. Torgruk stand tall, him eyes glow with respect. Then him begin, begin dance of skinning.
+
+Him hand move fast, fast, like wind over icy lake. Each stroke of Skinweaver perfect, like brush on canvas. Him work until dawn, until skin of Beguin free, whole, flawless. It gleam in soft light, pure, untouched. It finest skin Frostfall ever see.
+
+Torgruk bring it to Osgul. Ogres look, touch, whisper. They no believe. It too perfect. But they feel, they know. It work of Torgruk, work of Skinweaver.
+
+That night, Ogres sing song of Torgruk, of Beguin, of Frostfall Foothills. They remember. They honor. This tale, it be told again, again. It be reminder of respect, of skill, of harmony with Frostfall.
+
+This be tale of Torgruk. This be tale of Frostfall Foothills. This be tale of Ogres. You remember, young'uns. You remember well.
+
+Skinweaver (Item)
+
+Skinweaver is a legendary tool and weapon. Its name bears the essence of its purpose. This knife is thin and flexible yet incredibly sharp, able to slice through the toughest of skins with an uncanny ease. Its handle is carved from bone, etched with ancient symbols that evoke the spirit of Frostfall Foothills. The blade itself is forged from a rare metal alloy, honed to an edge sharp enough to split a hair, and imbued with a silvery sheen that glows like the moonlit snow. It is said to dance in the hands of its wielder, separating the skin from the beast with respect and precision.
+
+
+
+
+Historical Events
+The Felling of the Elf Prince’s Hall
+Some Ogre found the hall being built in the mountain by Dwarves. The Ogres raided, flushing the contracted Dwarves and the Half-Elven kin from the halls. Half-Elves never fully fit in ever since with either race, Dwarves maintain a healthy distance from Ogres when possible, and the halls have fallen into the hands of the Gnolls who continue to praise Fenla from its dilapidated shrines.
+
+Brainstorm Dump
+Icebreaker Bastion, Bone Coast, Frostbone Cliffs, Frostfall Foothills, Bone Breaker Bay, Frostfear, Headhaul, Headwall, Gugblort, Snorglecrush, Rompesnort
+
+Skullsplitter Faction
+- Oldest alliance of ogres, first ones there, camped in Osgul
+- Main friendly outpost towards the player
+
+
+
+
+
+- 2 extra factions diverged after the Frost Lake Incident
+
+Frost Lake Incident
+- 2 brothers were going on an expedition with more ogres
+- They found a mystical lake with everything frozen around but the water
+- The water looked magical and had weird frozen alive species swimming in it
+- An ogre fell down into the lake
+- He came out changed, glowing eyes and veins, hyper aggression
+- Every second he became more deformed, more ice-like, until he was unrecognizable
+- He was insanely strong and suddenly possessed arcane frost magic.
+- After a long fight, they managed to defeat him.
+
+- While one brother was frightened, the other saw the potential on being able to tame such power.
+- They diverged in their paths and beliefs after discussing the event with the elders, who made forbidden any further contact with the lake, thus creatings two factions:
+
+Frostfright Knights
+- Created by the more fearless brother.
+- Focused on taming the frost lake powers
+- Gathered other outcasts who followed his beliefs.
+- Many ogres succumbed into the lake in search of power, they are now roaming ice elementals.
+- Ritual was made to create frostfright ogres, enhanced strength and features, complete control over frost, very bad temper and aggression, decay overtime if not controlled
+- Maintenance required so they don't succumb to the powers and turn into an ice elemental.
+
+
+- They own mines around the area and enslaved other races to work for them, with this they were able to build a stone fortress over time.
+- Plate gear made by an icy mineral, stronger versions are infused with primordial frost magic from the lake.
+
+- The respect towards the elders keeps them from attacking Osgul, but they don't hesitate in stealing from other ogres outside of it.
+
+Glacier Gazers
+- Created by the frightened brother
+- Focused on understanding the waters and finding a cure for their curse
+- Desperate to save his brother and the ogres that followed him
+- Was able to cure one frostfright ogre that came to him seeking help, this ogre can describe what it feels like.
+
+
+The player can become a frostfright knight by doing favours for the respective faction.
+Glacial Gazers are the only way to get a cure in case the player tries to become a frostfright knight. 
+Frostfright buff has the same rules for the player, over time, if the player does not return every once in a while to redo the ritual, he will also succumb to the powers (this could be dying, turning into a frost beast with no control for X time, getting a massive debuff...etc)
+
+
+
+Eki Uzo
+Kuyo Ueme
+Fran Baresh
+Juv Gal
+
+Tung Asugit (welcome)
+Naa-nook the Bear
+Naa-tick the Seal
+
+Mama Qtuq (delicious)
+
+Ilaali
+Ehlahlee you are welcome
+
+Thank you	Nakurmiik	Na-koor-meek
+
+qanuk: ‘snowflake’
+kaneq:  ‘frost’
+kanevvluk: ‘fine snow’
+qanikcaq: ‘snow on ground’
+muruaneq: ‘soft deep snow’
+nutaryuk: ‘fresh snow’
+pirta: ‘blizzard’
+qengaruk: ‘snow bank’
+
+Snowberry (Qimminikberry) - This plant produces edible fruit that is said to taste like snow.
+
+Frostweed (Sikuaq) - This plant is a type of weed that thrives in the cold, snowy environment of the Frostfall Foothills.
+
+Icecreeper (Aputik) - This plant has long, creeping vines that are said to be as cold as ice.
+
+Snowcap mushroom (Sikuakpik) - This mushroom is found growing on the ground covered with snow.
+
+Winterbark (Kangiqtuqpik) - This tree has a bark that is said to be as hard as the frozen ground of the Frostfall Foothills.
+Surrounding Geography
+Across the icy expanse, remnants of age-old structures dot the landscape. The origin of these ruins has faded into the annals of time, yet ogre legends speak of a time when the lands were not yet covered in ice and snow. It is said these long since abandoned structures were shrines to the Aspect of Fire, specifically Rajdo. Ogre legend tells that Rajdo became displeased with the ancestors who built these shrines and abandoned the area, ushering in the current biome of ice and snow. As told by Storyweaver Nagigun:
+“In the ancient days, when the land basked in warmth and Rajdo's mighty presence was still revered, our great ancestors raised shrines in homage to the formidable Aspect. Yet, Rajdo found efforts insufficient and grew displeased, choosing to abandon the region.
+When Rajdo departed intense cold enveloped once-temperate and fertile lands, transforming great lands into a frozen expanse of snow and ice. Faced with drastic change, the ancestors, once reliant on the gentleness of their climate, were forced to weather numerous great tries, resilience tested by harsh trials of time.
+
+Through adversity, ancestors stood unwavering, compelled to adapt and became hardier than ever before. Resilience of ancestors still courses within every ogre. Legacy of enduring strength runs deep. Great challenges of ancestors have only fortified ogres, and now ogres stand resolute against adversity
+
+All that remains of era long past are scattered ruins strewn across the land, any treasures long since pillaged by lesser races. Do not fret for greatest treasure from ancestors can never be stolen. Ogre blood strong, veins flowing with great strength of ancestors. Ogre smash!”
+
+
+
+
+Frostfall Foothills
+
+Nestled in the heart of Adrullan's frozen north, the Frostfall Foothills serve as the rugged homeland to the powerful Ogres of Osgul. Stretching from the eastern coast, where frigid sea waves crash upon the icy shores, to the western edge where the snowy landscape gives way to the Ardent Vale, the homeland of the Halflings, the Frostfall Foothills stand as a testament to the Ogres' strength and resilience.
+
+Osgul, the formidable Ogre city, is constructed within a mountain rich in hot springs, ice blocks, and stone, providing a natural fortress to protect the Ogres from their enemies. To the south, the imposing Frostbreak Ridge casts a shadow over Hillshade Hollow, a treacherous cavern system inhabited by the cunning Gnolls of the Lightfoot and Snarltooth clans, who frequently raid the Ogres' territory.
+
+The northern expanse of the Frostfall Foothills is marked by a winding path that cuts through the snow-covered hills and dense, frost-laden forests. Young Ogres hone their skills and prove their might by hunting the various creatures that inhabit these lands, such as the seals and walruses that dwell near the eastern coast, the wolves that roam the hills, and the snow rabbits and rats that dart through the snowy underbrush. Deeper within the woods, moose stand defiantly, challenging any Ogre who dares to pursue them.
+
+The ongoing conflict between the Ogres and the Halflings has led to the establishment of forward and reconnaissance camps in each other's territories, creating contested hunting grounds where each side can display their strength, cunning, and power.
+
+The Frostfall Foothills, a land of snow, ice, and valor, provide the perfect environment for young Ogres to grow strong, wise, and ready to face the challenges of Adrullan. It is here that the Ogres build their legacy, become heroes, and defend their cherished homeland.
+
+Ogre Description:
+
+Frostfall Foothills, land of strength, home to Ogres of Osgul. This land stretch from east coast, where icy sea waves crash, to west where soft snow meet Ardent Vale, home of tiny Halfling enemies.
+
+Osgul, great Ogre city, sit on east coast, built in mountain of hot springs, iceblocks, and stone. Mighty fortress stand guard, protect Ogre lands from enemies. Just south of Osgul, Frostbreak Ridge tower above, home to Hillshade Hollow, where pesky Gnolls of Lightfoot and Snarltooth clans sneak and raid Ogre lands.
+
+To north of Osgul, main path wind through snowy hills, icy forests, full of creatures for young Ogres to hunt, learn, become strong. Seals and walrus play in icy waters, wolves roam hills, snow rabbits and rats scurry through snow. Deep in woods, moose stand tall, challenge Ogres who dare to hunt them.
+
+Ogres and Halflings, always fight, always test each other. Forward and reconnaissance camps sit in enemy lands, hunting grounds for both sides to prove strength, cunning, and power.
+
+Frostfall Foothills, land of snow, ice, and mighty Ogres. This place, where young Ogres grow strong, wise, ready to face world of Adrullan. Here, Ogres build legend, become heroes, and protect their home.
+
+The Northernmost Reach
+In the days of yore, when Harbourview stood tall and proud, the rise of Leont but a whisper in the wind, the sons and daughters of mankind reveled in their prowess and might. From the heart of their kingdom, they spread their dominion, conquering the realms far and wide, embracing their destiny.
+
+In the midst of this age of conquest, King Handover, the ruler of Harbourview, sought to extend his realm even further. He set his sights on the North, a mysterious and uncharted land of ice and snow said to be filled with untold treasures. To achieve this, King Handover summoned his most skilled and loyal captain, Eamon Galehart, a man renowned for his expertise in navigating treacherous terrain and leading his troops through the toughest of battles.
+
+The king entrusted Captain Galehart with the task of establishing a fortified outpost as far north as they could go, a beacon of civilization amidst the unforgiving wilderness. With unwavering resolve, Captain Galehart set out on his journey with a company of Harbourview's finest soldiers and builders.
+
+Their expedition led them around Frostbreak Ridge, through the lush Ardent Vale, and across the dense forests of the Frostfall Foothills. Each step of the journey presented its own challenges, from frostbitten landscapes to prowling beasts that lurked in the shadows. Yet, Captain Galehart's determination and strategic prowess saw them through each obstacle.
+
+Eventually, they came upon a grand morainic divide overlooking The Deep Kettle of the Iceheart Wastes. It was a place of raw beauty and desolation, a testament to the power of nature. Captain Galehart knew that this was the perfect location for the fortress that would become the northernmost outpost of mankind.
+
+The construction of the fort began, and over time it grew into a powerful and imposing edifice. The outpost boasted formidable walls and towers, a symbol of Harbourview's might and ambition. For several decades, this fort stood strong, defying the harsh conditions and protecting the interests of the kingdom.
+
+However, fate had other plans. A fearsome storm descended from the Kalu'Tag Uplands, bringing with it a relentless barrage of snow and ice. The tempest raged for days on end, with the outpost's inhabitants fighting valiantly to keep the fort from succumbing to the storm's wrath.
+
+Despite their best efforts, the outpost was eventually lost beneath a blanket of ice and snow. Captain Galehart and his loyal company perished alongside their creation, their once-mighty fortress buried and forgotten.
+
+Now, it is said that only the phantasmic spirits of Captain Galehart and his crew remain, haunting the grounds where their dreams of conquest once stood. Their presence serves as a chilling reminder of the merciless nature of the world and the fleeting nature of human ambition.
+
+Their tale stands as a testament to the indomitable spirit of the humans of Harbourview and the price they paid in pursuit of their dreams. It is a story that will be remembered and retold, a haunting echo of the past, as the legend of the Northernmost Reach lives on.
+
+NPCs
+Ghost of Captain Galehart (Level 8) - The apparition of the once formidable leader of the expedition. His spirit roams the ruins of the outpost, forever bound to his failed mission.
+Drop: Galehart's Frozen Saber, Galehart's Ghostly Chainmail
+
+Lieutenant Coldvein's Specter (Level 8) - Galehart's second-in-command, his wraithlike figure is a chilling sight in the snow-blanketed ruins.
+Drop: Coldvein's Spectral Shield, Coldvein's Frostbound Ring
+
+Frostfall Ghosts (Level 5) - The spectral remnants of the fort's inhabitants, forever trapped in the outpost they once called home.
+Drop: Ghostly Cloth Scraps, Spectral Amulet Fragments
+
+Frostfall Skeletons (Level 6) - The reanimated bones of the soldiers and builders who perished n the fort, driven by a timeless anger.
+Drop: Frostbitten Bone Shards, Skeleton Soldier Helm
+
+Spectral Engineer Thordric (Level 8) - The chief builder of the fort, his ghost lingers on, eternally striving to repair the fort that never was.
+Drop: Thordric's Ghostly Hammer, Thordric's Blueprint Fragments
+
+Nethermancer Ethelred (Level 8) - A member of the expedition's support staff, Ethelred was a practitioner of forbidden magics that were said to control the weather. Some say it was his failed spells that led to the fort's demise.
+
+Drop: Ethelred's Nether Tome, Ethelred's Cursed Staff
+
+Notable Locations within the Dungeon
+The Lost Barracks - Where the soldiers used to rest and train, now filled with undead.
+
+The Haunted Quarters - Where the spirits of the builders and other non-combatants can be found.
+
+The Spectral Command - The central command post, where the Ghost of Captain Galehart can be found.
+
+The Nethermancer's Study - A hidden corner of the fort where Ethelred practiced his dark arts.
+
+The Silent Shelf
+
+
+To the northeast of the Frostfall Foothills lies a strikingly serene expanse known as The Silent Shelf. This vast ice sheet forms a peninsula that stretches along the cove, providing an almost otherworldly landscape of barren, reflective ice. The southern part of the Silent Shelf is predominantly flat, while the northern region is characterized by its hilly terrain.
+
+The Silent Shelf is considered a sacred place by the Ogres, particularly the Glacier Gazers and the Keepers of the Tide, who travel here to meditate, reflect, and worship Celtrious the Tide, the god of the Moon in the Domain of Water. The tranquil setting allows these spiritual Ogres to connect with their deity and draw upon the mystical energies that flow through the ice and sea.
+
+An ancient temple, now inhabited by Ogre Outcasts, stands solemnly just north of the southern shore. This forsaken sanctuary serves as a reminder of the Ogres' past and a refuge for those who have been cast out from their society.
+
+The eastern coast of the Silent Shelf, which extends the furthest south, is home to a lively colony of penguins and walruses. These creatures thrive in the icy environment, blissfully unaware of the battles that rage nearby.
+
+On the northern side of the peninsula, a massive cave structure carved into the shape of a clam houses fearsome Yetis, known as Gokra by the Ogres. These formidable beasts roam the hilly terrain, hunting penguins, walruses, and even Ogre Outcasts for sustenance. The Yetis' presence serves as a challenge for Ogres from Osgul, who venture to The Silent Shelf to test their mettle against these monstrous creatures and prove their worth to their kin. The cave is referred to as Korgash-Gokra by the Ogres, derived from Korgash (Kor: earth/world; Gash: cave) and in honor of the Gokra who inhabit it.
+
+The Silent Shelf is a place of contrasts, where tranquility and danger exist side by side, and Ogres must learn to balance their spiritual pursuits with their inherent need for battle and strength. It is here that Ogres find themselves, confront their fears, and emerge stronger, wiser, and more in tune with the world around them.
+
+Silent Shelf - Place for Think and Smash
+
+Northeast of Frostfall Foothills, Ogre find place called Silent Shelf. Big ice land, flat and shiny in south part. North part have hills. Ogre like place much. Good for think and smash.
+
+Silent Shelf special to Ogres. Glacier Gazers and Keepers of Tide go there for think about Tide and talk to Celtrious, god of Moon in Water world. Silent Shelf good for feel power from ice and sea.
+
+Old temple stand in south part, near shore. Now home for Ogre Outcasts, them who leave Ogre family. Sad place, but also place for hiding and new start.
+
+East coast of Silent Shelf go far south, have many penguin and walrus. Them live happy on ice, not know about smash and fight near them.
+
+North part have big cave look like clam, called Korgash-Gokra. Scary Gokra, like Gokra Scavenger and Gokra Brute, live there, them hunt penguin, walrus, and sometimes Ogre Outcasts. Ogres from Osgul come to Silent Shelf for fight Gokra, show them strong.
+
+Silent Shelf place of quiet and danger. Ogres learn balance think and smash, grow strong and wise. In Silent Shelf, Ogre find self, face fear, and come back better Ogre.
+
+
+Iceheart Wastes
+
+ Iceheart Wastes - The Frozen Heart of the North
+
+Iceheart Wastes, a vast expanse of snow and ice, lies at the heart of the entire frozen region. To the east, it shares a border with the Silent Shelf, while the Frostfall Foothills stretch across its southern face. Traveling from the Silent Shelf to The Ardent Vale in the west, one encounters the increasingly steep Morainic Divide. The Deep Kettle, located at the center of Iceheart Wastes, is the lowest elevation point, nestled against the Morainic Divide.
+
+The Kalu'Tag Uplands mark the western boundary of the Iceheart Wastes. Rivers flow down from the Uplands and merge into a colossal frozen lake, which occupies a significant portion of the Wastes' western side. To the north, the shoreline meets the ocean, except for a solitary land bridge that extends towards the peninsula head of Celtirous Reach.
+
+The Iceheart Wastes is an unforgiving land of permafrost, inhabited by resilient creatures that have adapted to the harsh environment. Hardy mammoths and packs of fierce dire wolves roam the frozen landscape, braving the extreme conditions.
+
+Additional Ideas
+
+In the center of the frozen lake, there could be an ancient, icebound structure, rumored to hold powerful artifacts or secrets. The site attracts adventurers and treasure hunters, but the journey across the treacherous ice is filled with peril.
+
+A reclusive tribe of Frost Giants might dwell in the remote corners of Iceheart Wastes.
+
+The land bridge leading to Celtirous Reach might hold significance for the local inhabitants or creatures. It could serve as a pilgrimage site or a battleground for territorial disputes between the different species. Frostborn vs Frost Giants?
+
+In the Deep Kettle, geothermal activity might create hot springs or other thermal features, providing a surprising oasis of warmth in the otherwise frigid landscape. These hotspots could host unique flora and fauna, as well as provide a valuable resource for those brave enough to venture into the Wastes.
+
+Celtrious Reach
+
+
+
+Frostcrag
+
+The Northeast peninsula known as Celtrious Reach is a snowy and mountainous region. These snow covered mountains contain twisting tunnels carved out by slow flowing water over the ages, known as Frostcrag. As the water wore away the rock, an ore known as Glaciumite/Cryostelium was revealed. At first Glaciumite/Cryostelium was only used as shiny baubles and other trinkets, soon it became apparent there was more to Glaciumite/Cryostelium than first thought. Soon shamans and others that practice the mystical arts realized that the elemental possessed a unique attunement to magical forces.
+
+Recognizing the advantages of Glaciumite/Cryostelium, the ogres of Osgul enlisted a labor force of Gnolls, taken by force from Hillshade Hollow, to engage in the hazardous and demanding task of extracting the ore. Yet, extended exposure to the unrefined mineral produced unforeseen effects on the physiology of the gnolls. Eventually, they revolted and successfully ousted their ogre overseers, forcing the ogres to procure the less pure ore from the outskirts of the cavern.
+
+
+Having hollowed out significant portions of their former tunnels, the ice gnolls now inhabit the mountains, carving shrines and other bizarre monstrosities with minds twisted by exposure to the ore. Transformed into fanatical brutes, the gnolls fiercely attack anyone who invades their new home, defending it with unwavering devotion to their distorted gods.
+Layout Info:
+The tunnels of Frostcrag are now home to a variety of creatures but most notable are the semi-intelligent but mentally twisted gnolls. The gnolls have carved out a home in the deep twisting tunnels of Frostcrag. These creatures follow a warped aspect of Water in the domain of Water (ie, ice) so there will be various rooms/areas setup as altars or similar areas of reverence along side other points of interest.
+Not all of these tunnels are not inhabited by the gnolls.. Many other creatures of ice inhabit some of the other tunnels that sprawl through this labyrinth such as ice/frost wolves/spider/elementals depending on which part of the dungeon is used. The naturally carved areas will be more filled with the standard unintelligent creatures.
+
+BELOW MAY BE REMOVED/REWORKED?
+—
+At the north side of the mountain peak there is a large open cavern that is frozen/snow covered that connects into the northern water. Here an old ship rests trapped in the ice after an exhibition learned of a back entrance to the caverns and tried to sail in as an easy way to extract riches from the tunnels. Unfortunately, the ship became trapped in the ice along with its crew. Succumbing to the cold this ship is now inhabited by cursed sailors, becoming so when its captain invoked magic relating to the Aspect of Darkness (Death) in an effort to save themselves. Instead, all that remains of the ship and its crew is a frozen ship filled with those trapped in a cursed state as frozen undead sailors.
+Note: This could either be used as a high level raid or simply another part of the dungeon.
+—
+Entrances:
+This will have 3 entrances/ways to enter and will vary by level. The purpose of this is to allow groups to get replacements and enter in different ways without having groups break up, but also make sense based on the layout of the dungeon.
+1 - The main entrance that is part of the mountain. This is less "tunnel-like" and more carved out from the gnolls/goblins, but still maintains a natural opening.
+CONCEPT:
+
+2 - Small tunnel entrance to the south where the peninsula connects.
+CONCEPT:
+
+
+3 - Back entrance to the frozen ship. Accessible by a long run over the water or over/around mountain. Mountain to be updated to not allow direct scaling to access this entrance.
+Concept:
+
+
+
+General Room Concepts:
+ m
+
+Level Range
+15+ for that slowly ramps up as it goes deeper, but given the remote location I think it may be better served as a 20+ dungeon. Overall the idea is this has a level range of 20 levels for various parts of the dungeon, with the goal being 2-3 areas for each range, such as 15-20, 20-25,  25-30. with a mix of levels as areas transition to different level ranges.
+Itemization
+Due to the remoteness of this dungeons a decent but fair amount of loot for all classes/races, possible Aspect of Water deity specific loot (goblins/gnolls), Aspect of Death specific loot (sailors), quest items will be needed in here to make it a place to go for all player classes/races for at least 1 quest that is worth doing. I would like to avoid a "Permafrost" EQ experience where it's a decent dungeon but unused due to poor loot and remoteness.
+
+Frostfall Glacierlands
+
+The Frostfall Glacierlands, nestled on the western edge of Osgul's influence, is a breathtaking landscape of ice and snow. Home to the Frostfall Glacier, an awe-inspiring ice wall that stretches high into the sky, this region has been a subject of fascination and wonder for generations. The pristine white glacier, glittering with icy crystals, faces the vast ocean to the west, giving the impression of an eternal guardian protecting the continent from the unknown depths.
+
+In recent years, the Frostfall Glacierlands caught the attention of The Coalition, an influential and powerful faction in Adrullan. Recognizing the potential of the colossal glacier, they set up a massive vertical ice quarry along the west face of the glacier. Intricate scaffolding and a network of pulleys, ropes, and ladders scale the icy wall, allowing workers to access the higher levels.
+
+The Coalition has built a small port nearby, with icebreaker ships navigating the treacherous waters to transport the harvested ice to distant lands. The demand for this pristine ice has grown, with wealthy patrons using it for lavish feasts and alchemists seeking its unique properties for potent elixirs. As a result, the Frostfall Glacierlands has a history of drawing ambitious adventurers from all corners of Adrullan. Much to the chagrin of the natives.
+
+Amidst the ice and snow of the Frostfall Glacierlands lies Frostfall Village, home to the Frostborn – a resilient and hardy race of Ogres who have adapted to the harsh environment. The Frostborn are descendants of Gromnir Iceheart, the elder brother of the legendary ogre Tokor, and his followers who left Osgul after Gromnir was deemed too weak to lead the assault on the High Elf Prince's estate. The Frostborn are proud of their way of life and hold a deep reverence for the ancient glacier they call home. However, their peaceful existence has been disrupted by The Coalition's greed, as they cut into the sacred ice and ship it off to faraway lands. This encroachment on their territory has ignited a conflict between the Frostborn and The Coalition, with players given the choice to join either side in the struggle for control over the Frostfall Glacierlands.
+
+Note from Rhino: Frostborn Shamans go to the Ice Lake in Ice Heart to monoliths.
+
+Da Tale of Da Frostborn
+
+Once in long time ago, in heart of Osgul, small group of Ogres want life different from other ogres. Wise elder Gromnir of Clan Iceheart, brother of the great Tokor, lead dem, leave Osgul for find new home, make own destiny.
+
+Gromnir and ogres go through Frostfall Foothills, face cold wind, big snowstorm. Reach edge of Frostfall Glacierlands, see big ice land, make ogres feel at home.
+
+Gromnir lead ogres into Frostfall Glacierlands. In beginning, hard for ogres to live in cold land, but Gromnir smart, teach ogres how make home from ice, how hunt rare creatures for food and warmth.
+
+Years pass, small ogre group grow, become Frostborn. Make Frostfall Village, in heart of glacier, build strong community, respect icy home.
+
+Ogres in Osgul watch Frostborn from far, not understand why live in cold, but respect. Two groups leave each other alone, live own way.
+
+Frostborn face more challenges, new threats, but spirit of ogres strong, always protect them. Frostborn ogres remember journey to Frostfall Glacierlands, always proud, always strong.
+
+
+
+Kalu’Tag Uplands
+Todo
+Ijur’rag
+Todo
+
+Local Minerals/Ores
+Glaciumite (Krystogar)
+Glaciumite, known to the Ogres of Osgul as Krystogar, is an ore as rare as it is potent. Found only in the treacherous, icy crags of Frostcrag to the north of Celtrious Reach, this ore intertwines with the very essence of frost and magic. Handling it is not without its perils, but the rewards are immense. The Frostfright Knights, in particular, covet Krystogar for their armor, which is said to amplify the wearer's innate abilities while offering unmatched protection from both blade and spell.
+
+The Ogre’s know this ore as Krystogar. Kryst meaning ice or frost and gar meaning stone or rock.
+
+Collequally around Adrullan, you may hear the resulting processed materials as  Frosthewn Steel.
+
+Cryostelium (Sjelstal)
+Cryostelium, a mineral akin to Glaciumite, has been employed for trinkets and baubles for generations. In its untouched state, Cryostelium holds no practical value and serves merely as a mineral with a modestly appealing appearance. Howeverw, with the resurgence of magic, it has been discovered to readily absorb and retain magical imbuements, making it an ideal material for enchanted artifacts. The shamans of Osgul, known as the Glacial Gazers, are particularly eager to obtain Cryostelium. They highly prize this mineral for its exceptional ease in absorbing magical enhancements, utilizing it in their intricate magical rituals and crafting ornate jewelry that plays a significant role in their ceremonial practices.
+
+The Ogre’s know the mineral as Sjelstal. Sjel for Spirit, and Stal for Crystal.
+
+The Glacier Gazers incorporate the material into Sjelstal Relics or Witchcrystal Talismans.
+
+Local Fauna
+Gokra
+Towering, fearsome creatures native to the Silent Shelf, the Gokra are pale blue-skinned beasts with white fur that blends seamlessly into the icy environment. These imposing creatures stand even taller than Ogres, with their impressive manes adding to their formidable appearance. Their fearsome underbite showcases an array of sharp teeth, hinting at their predatory nature. The Gokra are respected and feared by the Ogres, who view them as both a challenge and a test of strength.
+
+
+Title: The Bluebeast of Silent Shelf
+
+Ogre knows Gokra, beasts of icy Silent Shelf. But one Gokra not like others. One Gokra big, powerful, wise. One Gokra called Bluebeast.
+
+Bluebeast not just beast, Bluebeast symbol. Symbol of Silent Shelf, of ice and sea. Symbol of strength and wisdom, symbol of Tide and moon. Bluebeast live deep in Maw of the Beast, part of Korgash-Gokra, waiting, watching.
+
+Bluebeast see many moons, see Tide come and go. Bluebeast see penguin and walrus live, die, born again. Bluebeast see same in Ogres. Ogre born, grow, smash, think, die... and Bluebeast still watch.
+
+Shaman see Bluebeast in dreams, in Tide whispers, in moon glow. Shaman hear call of Bluebeast, feel pull of Maw of the Beast. Bluebeast not call all Shamans, only those ready for truth. Truth of ice, truth of Tide, truth of self.
+
+Shaman go to Maw, face Bluebeast. Not just fight. Fight easy. Fight just muscle and rage. Face Bluebeast more. Need think, need listen, need understand. Need see self in Bluebeast, see Bluebeast in self. Need see how all things tide, all things moon, all things one.
+
+When Shaman face Bluebeast, Shaman face self. Shaman face fear, weakness, doubt. Shaman face strength, wisdom, spirit. When Shaman see all this in self, see all this in Bluebeast, then Shaman ready. Ready for true power of Shaman, power of understanding, power of oneness.
+
+Bluebeast not just challenge. Bluebeast journey, understanding, truth. Bluebeast always here, always watch, always wait. Bluebeast not end, Bluebeast beginning. Beginning of true Shaman path, path of understanding, path of oneness. 
+
+Bluebeast, Silent Shelf, Ogres... all part of same tide, same moon, same truth. Shaman keep this truth, remember, understand, honor. Shaman and Bluebeast, all one. All tide, all moon. All Silent Shelf.
+
+Mammoth
+A mammoth calf (16-18)
+
+Skinning
+Damaged Mammoth Hide (C: Common, A: Common)
+Fine Mammoth Hide (C: Ultra Rare, A: Rare)
+Pristine Mammoth Hide (A:Ultra Rare)
+
+Butchering
+Mammoth Meat (C: Common, A: Common)
+Mammoth Rib Strip (C: Rare, A: Common)
+Mammoth Flank (A: Rare)
+Mammoth Steak (A: Ultra Rare)
+
+Loot
+Ivory - A hard, white material from tusks, prized for carving and ornamentation.
+Mammoth Tusk - A massive and curved tusk, symbolizing strength and resilience.
+Mammoth Meat - A hearty chunk of meat, providing sustenance and basic nourishment.
+Mammoth Heart
+
+
+Fish
+
+
+Glacial Grouper - This sizeable, hardy fish has a bluish-white body that camouflages it within the icy waters of Frostfall Foothills. Its meat is surprisingly warm when cooked.
+
+Frost Fin Tuna - These fish have beautiful shimmering fins that resemble icicles. They migrate in large schools around Icesurge Harbor.
+
+Icebelly Salmon - Renowned for their silver scales and frost-blue belly, these fish thrive in the chilly waters of Silent Shelf. Their oily meat is a delicacy among the Ogres.
+
+Snowflake Eel - This slender creature is known for its delicate, snowflake-like patterns on its skin. It's a rare sight, even in the cold depths of Frostfall waters.
+
+Blizzard Bass - The Blizzard Bass has adapted to thrive in the extreme cold of Frostfall Foothills. Its thick, white scales reflect the icy environment it calls home.
+
+Shiver Shad - Small yet hardy, Shiver Shads have a gleaming silver-blue hue. They're a popular catch among the Ogres due to their versatility in cooking.
+
+Ice Surge Snapper - Known for their snapping jaws and icy-blue scales, these fish are a challenging but rewarding catch for any Ogre fisherman.
+
+Frostfall Flounder - With their flat bodies and frosty coloration, Frostfall Flounders are experts at hiding within the icy seabed of Icesurge Harbor.
+
+Chillclaw Crab - Not a fish, but these frost-resistant crustaceans are a common sight around Silent Shelf. Their claws are surprisingly sweet and meaty.
+
+Winter Walrus Whiskerfish - This bizarre-looking fish sports lengthy barbels that resemble walrus whiskers. Its meat is rich and often used in Ogre stews.
+
+
+Local Flora
+Flowering Plants
+Nightlily
+The Nightlily blooms and illuminates the night. Its beautiful glow attracts many nocturnal creatures of the common and unknown. Their gentle pulsating light show is said to reflect their environment. 
+Voxel Rules: Grows in 5m Clusters of 1-4, Open Terrain, Grass and Snow
+Frostflower
+The Frostflower is a rare and magical plant that can be found in the coldest regions of the Adrullan, where the ground is in permafrost. Despite the harsh conditions, the Frostflower thrives, its petals unfurling from the icy ground like radiant beams of light.
+
+The Frostflower has silver-blue petals that shimmer in the moonlight, and its stem and leaves are a deep, rich purple. The plant gives off a faint, sweet aroma that is said to have healing properties, and its nectar is said to be a potent elixir that can restore vitality and energy to those who drink it.
+
+Ogre and Barbarian legend alike has it that the Frostflower only blooms once a year, during the longest night of the year, and that it is a sign of good luck and prosperity for those who are lucky enough to witness its beauty. Some of the more romantic persuasions even believe that the Frostflower has the power to grant wishes to those who tend to it with care and love.
+Voxel Rules: Permafrost
+
+
+Bloodthorn Shrub / Ogre’s Blush
+
+The Bloodthorn Shrub is a hardy plant that thrives in the harsh conditions of the Frostfall Foothills. Its branches are spindly and sparse, yet each one is laden with clusters of tiny, vivid red berries. The contrast between the barrenness of the shrub and the profusion of its berries is a sight to behold in the midst of the icy, white landscape.
+
+Despite their appealing look, Bloodberries, known as Ogre’s Blush by the citizens of Osgul, are not used for culinary purposes as their taste is extremely bitter. However, they are highly prized by the Glacier Gazers, the Shamans of Osgul. The Shamans believe that the berries contain powerful energy and use them in their potions and rituals. It is said that consuming a potion made from Bloodberries can grant one a heightened sense of vitality and even a brief glimpse into the spirit realm.
+
+The potent red dye extracted from Bloodberries is used extensively throughout Osgul. From painting their icy abodes to marking their bodies, the Ogres utilize the dye to express their identity and their reverence for the harsh environment they call home.
+
+Voxel Rules: Grows Solitary or in Small Clusters, Open Terrain, Snow
+
+Brookberries (Gurshak)
+
+
+The Brookberry, or "Gurshak" as referred to by the Ogres, is a hardy, vibrant fruit that grows along the border of The Ardent Vale and Frostfall Foothills. This unique flora thrives in these transitional landscapes, proving as adaptive as the people that prize them.
+
+Brookberries bear a striking, vibrant blue hue, a burst of color against the often stark landscapes where they flourish. These berries grow in dense clusters on sturdy, low-hanging shrubs adapted to the harshest of climates. Their leaves are broad and waxy, designed to withstand the cold, dry conditions of Frostfall Foothills and the humid microclimate of The Ardent Vale.
+
+Each berry is a small, glossy orb roughly the size of a large marble, with a thick, resilient outer skin protecting the sweet, juicy flesh inside. Brookberries are filled with a clear, sweet-tasting juice that contrasts with the slightly tart and bitter skin. This balance of flavors is what gives the Gurshak Mead its distinct taste profile.
+
+The natural yeast present on the Brookberry's skin is a key component in the fermentation process of Gurshak Mead, making these berries not just a fruit, but an integral part of the brewing tradition among the Keepers of the Tide.
+
+As a testament to their hardiness, Brookberries remain ripe and good for harvest over an extended period, allowing for the Ogres and Halflings to collect them over time. Despite the competition for these cherished fruits, there always seems to be enough Brookberries to go around, symbolizing the abundance and generosity of the land they inhabit.
+
+
+Hearty Chard
+Shallow, sprawling roots slurp the runoff of the Frostfall melt forming a hearty flowering leaf. Nutrient rich and delicious. It’s disgusting. The food of their food, the Ogres would say.
+
+Voxel Rules:  Near Steeps, Near Snow / Grass boundaries
+
+ Ice Cradle Carnation
+
+The Ice Cradle Carnation is a delicate plant that thrives in the icy crevices of Frostfall Foothills. Its petals are a vibrant blue, encased in a thin layer of frost. At night, these petals emit a soft, bioluminescent glow. This plant is treasured for its frost-resistant properties and its unique beauty.
+Voxel Rules: Mountainous Terrain, Permafrost
+
+Frost Fern
+
+The Frost Fern is a unique, snow-white fern that grows in abundance in the shadowed valleys of Frostfall Foothills. Its leaves, while appearing delicate and fragile, are extremely hardy and resistant to the cold. The leaf patterns are complex and beautiful, often used as decorations and motifs by local inhabitants.
+Voxel Rules: Shady Areas, Snow
+
+Winter's Lace
+
+Winter's Lace is an ethereal flowering vine that drapes itself over rocks and cliffs in the Frostfall Foothills. It blooms with clusters of frost-white flowers that resemble intricate lacework. The plant is believed to possess restorative properties and is often used in medicinal concoctions.
+Voxel Rules: Cliffs and Rock Surfaces, Permafrost
+
+
+Mushrooms
+Snowy Glib
+Chewy and pungent, this steepled mushroom resembles a little mountain having a brown cap with a white splashed summit.
+Voxel Rules: Requires 1 1-Up Block Adjacent
+
+
+Frosty Webcap
+
+Hearty cortinarius with a blueish/purple webcap texturing found in damp frosty locations. 
+
+The Frosty Webcap mushroom has a tough, woody stem and a wide, flat cap that is covered in a thick layer of frost. Its flesh is white and firm, with a delicate, earthy flavor that is said to be both nourishing and energizing.
+
+The Frosty Webcap is highly prized by foragers and chefs alike for its unique flavor and versatility in the kitchen. It can be used in a wide range of dishes, from soups and stews to sautés and sauces, and is said to have medicinal properties that can boost the immune system and promote overall health.
+
+For most of the Northern Races of Adrullan, the Frosty Webcap is a symbol of endurance and resilience, able to withstand the harsh conditions of the frosty region and thrive in spite of them.
+
+References: https://www.jungledragon.com/specie/22566/frosty_webcap.html
+Voxel Rules: Grass Near Snow
+
+
+
+Polar Puffball
+
+The Polar Puffball is a round, white mushroom that is capable of growing in the harshest cold. It gets its name from the burst of spores it releases when mature. These spores have a stunning blue glow, adding a magical allure to the Frostfall Foothills.
+Voxel Rules: Snow, Flat Terrain
+
+Icecap Morel
+
+The Icecap Morel is a prized mushroom known for its distinctive, honeycombed surface and its icy blue color. It has a rich, earthy flavor and is used by the locals in a variety of dishes. Due to its rarity and taste, it is highly sought after.
+Voxel Rules: Near Trees, Snow
+
+ Glacial Gills
+
+Glacial Gills is a large, hardy mushroom that thrives in the coldest regions of Frostfall Foothills. It is characterized by its icy blue cap and prominent white gills. The mushroom is known to possess potent medicinal properties.
+Voxel Rules: Near Bodies of Water, Permafrost
+
+Other Flora
+ Frostvine
+
+The Frostvine is a hardy vine plant that grows from stones in the Silent Shelf.
+Voxel Rules: Stone Surfaces, Korgash-Gokra
+Snowbloom Grass
+
+The Snowbloom Grass is a species of tall grass that thrives in the snowy landscapes of the Frostfall Glacierlands. Its stems culminate in a puff of white seeds that resemble snowflakes. This grass is used by the Frostborn Tribe for weaving and as a fodder for livestock.
+Voxel Rules: Open Terrain, Snow
+Icebark Sap
+
+The Icebark Tree is a large, evergreen tree found in the Frostfall Foothills. Its thick, ice-encrusted bark and snow-white leaves make it a remarkable sight. The tree produces a sap that is used in various culinary and medicinal applications.
+Voxel Rules: Snow, Forests
+
+(Sap Nodes is Model)
+
+Quest Summaries
+Ik`kigak - The MisbourneOgre
+TYPE: In Depth - Lvl 1-20+
+
+Ik`kigak the ogre boasts that he comes from good blood, an older ogre chieftain known as Kag`aktin but no ogre believes him and considers him weak and pathetic, lucky to even be allowed in Osgul due to descending from a bloodline of outcasts.
+
+Several generations ago when the chieftain was in charge he had an affair with an ogre, but that ogre showed poor honor (TBD what) and was outcast from Osgul. Unknown to Kag`aktin or any other ogre, the ogre was pregnant with Kag`aktin’s child. This ogreling was born and named Kigak. The baby was smuggled into Osgul under the guise of being a survivor of a Halfling raid so that it could be raised by the clan instead of the outcasts, but rumors always swirled that he was the spawn of an outcast ogre.
+
+As Kigak aged, the ogre that was entrusted to care for the child learned of the true lineage. Knowing that it would bring shame to the Chieftain this was kept secret, only divulging this information to Kigak on the caretaker’s deathbed.
+
+Although Kigak was always somewhat shunned by the ogres due to the rumours of outcast heritage, he was able to grow and thrive and produced offspring. As with the caretaker, when Kigak was on his deathbed he spoke of the true heritage to his own offspring. This continued down the family line for generations, where their true bloodline was revealed only when an ogre was passing on.
+
+The latest descendent, Ik`kigak, has spoken of such things but other ogres think it is careless boasts, an attempt to make his bloodline “clean” and overshadow the outcast rumours. Ik`kigak tires of constant mocking and occasionally goes to the Beat Down Pit and always loses. But perhaps this blood rag can prove his true lineage…
+
+However, all is not well within the lineage of Kag`aktin. Rumors swirl that generations ago the only grandchild of the Kag`aktin bloodline perished in infancy. Such an event would be perceived as a weakness for ogres, especially within such a prestigious bloodline. Some ogres speculate that the infant was swapped with an unremarkable ogre baby left orphaned following gnoll attacks in order to cover up such shame. 
+
+Now, the accepted successor to the blood of Kag`aktin is the ogre known as Taak`aktin, although whispers among the ogres suggest that Taak`aktin lacks the illustrious bloodline in his veins. Such insinuations are an insult to Taak`aktin, who clings to his heritage with unwarranted pride, often engaging in confrontations with those he perceives as disrespecting the aktin name.
+
+Perhaps an adventurous ogre could uncover the truth… is Ik`kigak an heir to the aktin bloodline? Is Taak`akin nothing but a commoner?
+
+DETAILS:
+NPC 823 will go to Beat Down Pit and lose, dropping a bloody rag (item 1160) on the way back.
+Give rag (1160) to NPC 823 to learn that the Shadowknights can divine the bloodline. Go to the Shadowknight guild leader (NPC 816) and give item 1160.
+Will only do this for a Savage Gurshak mead drink, which takes the player to NPC 845 to clean out the pests, at which point player gets item 1191.
+Giving item 1191 and 1160 to NPC 816 will offer more insight into the blood line
+TBD WHAT HAPPENS FROM HERE (Kalangak ogre name somehow involved)
+Maybe have this diverge here with you can use the proof with outcasts in some way to sully the former chieftain
+The Tomb of Tokor - Desecrated Remains
+The Tomb of Tokor - Desecrated Remains quest exists in each factions guild. Each is the same reward for the remains with a change in faction based on which guild you are on, but the player can complete the quest in any guild. Based on the class, there is an additional “find an extra item” quest for a class specific item:
+
+Warrior:
+
+Warrior is given by an NPC named Ikchat, located in Osgul warrior guild. Ikchat asks the player to help honor the great Clan Tokor by recovering the desecrated remains of the clan members from the tomb that has fallen into disrepair and has been plundered by gnolls.
+
+If a player is a warrior, Ikchat mentions a prized sword used by Tokor, which has also been stolen by the gnolls. Ikchat asks the player to return the sword to the Broken Skull Brigade as it is a great dishonor for the gnolls to possess such a hallowed weapon. Other classes CAN turn in the sword for the same reward as a warrior, but it is not explicitly mentioned.
+
+Shadowknight:
+
+Shadowknight is given by an NPC named Akvik, located in Osgul Shadowknight guild. Akvik asks the player to help honor the great Clan Tokor by recovering the desecrated remains of the clan members from the tomb that has fallen into disrepair and has been plundered by gnolls.
+
+If a player is a Shadowknight, Akvik mentions a fallen Frostfright Knight and wants the skull returned. Other classes CAN turn in the skull for the same reward as a SK, but it is not explicitly mentioned.
+
+Shaman:
+
+Shamanis given by an NPC named Keik, located in Osgul Shaman guild. Keikasks the player to help honor the great Clan Tokor by recovering the desecrated remains of the clan members from the tomb that has fallen into disrepair and has been plundered by gnolls.
+
+If a player is a shaman, Keik mentions a fallenan impersa they put to try to protect it that is damaged and needs to be returned.. Other classes CAN turn in the impersa for the same reward as a Shaman, but it is not explicitly mentioned.
+
+For all desecrated remains, rewards the player with experience, faction reputation, and a chance at a waxed thread armor piece.

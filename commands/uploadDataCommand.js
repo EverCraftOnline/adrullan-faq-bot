@@ -1,4 +1,5 @@
 const anthropicClient = require('../lib/anthropicClient');
+const monitor = require('../lib/monitor');
 const fs = require('fs');
 const path = require('path');
 const { PermissionsBitField } = require('discord.js');
@@ -20,7 +21,7 @@ module.exports = {
     try {
       switch (subCommand) {
         case 'upload':
-          await this.handleUpload(message);
+          await this.handleUpload(message, args[2]);
           break;
         case 'toggle':
           await this.handleToggle(message, args[2]);
@@ -43,13 +44,17 @@ module.exports = {
         default:
           await message.reply(`**Data Upload Commands:**
 
-\`!uploaddata upload\` - Upload all data files to Anthropic workspace
+\`!uploaddata upload [filename]\` - Upload all data files or specific file to Anthropic workspace
 \`!uploaddata toggle on/off\` - Toggle between context passing and file usage
 \`!uploaddata status\` - Show current mode and uploaded files
 \`!uploaddata list\` - List all files in Anthropic workspace
 \`!uploaddata delete <file_id>\` - Delete a specific file from workspace
 \`!uploaddata deleteall\` - Delete ALL files from workspace
 \`!uploaddata clear\` - Clear uploaded files cache
+
+**Examples:**
+\`!uploaddata upload\` - Upload all files
+\`!uploaddata upload aoa-halfling-willowbrook.txt\` - Upload specific file
 
 **Current Mode:** ${anthropicClient.isContextPassing() ? 'Context Passing' : 'File Usage'} (with ${anthropicClient.isContextPassing() ? 'File Usage' : 'Context Passing'} fallback)`);
       }
@@ -59,38 +64,70 @@ module.exports = {
     }
   },
 
-  async handleUpload(message) {
-    await message.reply('🚀 Starting upload of all data files to Anthropic workspace...');
-    
-    try {
-      const uploadResults = await anthropicClient.uploadAllDataFiles();
-      const successCount = uploadResults.filter(r => r.success).length;
-      const totalFiles = uploadResults.length;
+  async handleUpload(message, filename) {
+    if (filename) {
+      // Upload specific file
+      await message.reply(`🚀 Starting upload of specific file: ${filename}...`);
       
-      let statusMessage = `📤 **Upload Complete!**\n\n✅ **Successfully uploaded:** ${successCount}/${totalFiles} files\n\n`;
-      
-      if (successCount > 0) {
-        statusMessage += '**Uploaded Files:**\n';
-        uploadResults.filter(r => r.success).forEach(result => {
-          statusMessage += `• ${result.file} (ID: ${result.fileId})\n`;
-        });
+      try {
+        const uploadResult = await anthropicClient.uploadSpecificFile(filename);
+        
+        if (uploadResult.success) {
+          monitor.trackUpload(filename, true, uploadResult.fileId);
+          let statusMessage = `📤 **File Upload Complete!**\n\n✅ **Successfully uploaded:** ${filename}\n`;
+          statusMessage += `• File ID: ${uploadResult.fileId}\n`;
+          statusMessage += `• Size: ${uploadResult.size} characters\n\n`;
+          statusMessage += `**Current Mode:** ${anthropicClient.isContextPassing() ? 'Context Passing' : 'File Usage'} (with ${anthropicClient.isContextPassing() ? 'File Usage' : 'Context Passing'} fallback)`;
+          statusMessage += '\n\n💡 Use `!uploaddata toggle on/off` to switch modes';
+          
+          await message.reply(statusMessage);
+        } else {
+          monitor.trackUpload(filename, false);
+          await message.reply(`❌ Upload failed: ${uploadResult.error}`);
+        }
+      } catch (error) {
+        console.error('Upload failed:', error);
+        await message.reply(`❌ Upload failed: ${error.message}`);
       }
+    } else {
+      // Upload all files (existing behavior)
+      await message.reply('🚀 Starting upload of all data files to Anthropic workspace...');
       
-      if (successCount < totalFiles) {
-        statusMessage += '\n❌ **Failed Uploads:**\n';
-        uploadResults.filter(r => !r.success).forEach(result => {
-          const textFileName = result.file.replace('.json', '.txt');
-          statusMessage += `• ${textFileName}: ${result.error}\n`;
+      try {
+        const uploadResults = await anthropicClient.uploadAllDataFiles();
+        const successCount = uploadResults.filter(r => r.success).length;
+        const totalFiles = uploadResults.length;
+        
+        // Track upload results
+        uploadResults.forEach(result => {
+          monitor.trackUpload(result.file, result.success, result.fileId);
         });
+        
+        let statusMessage = `📤 **Upload Complete!**\n\n✅ **Successfully uploaded:** ${successCount}/${totalFiles} files\n\n`;
+        
+        if (successCount > 0) {
+          statusMessage += '**Uploaded Files:**\n';
+          uploadResults.filter(r => r.success).forEach(result => {
+            statusMessage += `• ${result.file} (ID: ${result.fileId})\n`;
+          });
+        }
+        
+        if (successCount < totalFiles) {
+          statusMessage += '\n❌ **Failed Uploads:**\n';
+          uploadResults.filter(r => !r.success).forEach(result => {
+            const textFileName = result.file.replace('.json', '.txt');
+            statusMessage += `• ${textFileName}: ${result.error}\n`;
+          });
+        }
+        
+        statusMessage += `\n**Current Mode:** ${anthropicClient.isContextPassing() ? 'Context Passing' : 'File Usage'} (with ${anthropicClient.isContextPassing() ? 'File Usage' : 'Context Passing'} fallback)`;
+        statusMessage += '\n\n💡 Use `!uploaddata toggle on/off` to switch modes';
+        
+        await message.reply(statusMessage);
+      } catch (error) {
+        console.error('Upload failed:', error);
+        await message.reply(`❌ Upload failed: ${error.message}`);
       }
-      
-      statusMessage += `\n**Current Mode:** ${anthropicClient.isContextPassing() ? 'Context Passing' : 'File Usage'} (with ${anthropicClient.isContextPassing() ? 'File Usage' : 'Context Passing'} fallback)`;
-      statusMessage += '\n\n💡 Use `!uploaddata toggle on/off` to switch modes';
-      
-      await message.reply(statusMessage);
-    } catch (error) {
-      console.error('Upload failed:', error);
-      await message.reply(`❌ Upload failed: ${error.message}`);
     }
   },
 

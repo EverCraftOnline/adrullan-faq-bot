@@ -1,0 +1,1594 @@
+
+Halfling - Willowbrook - The Ardent Vale
+A Design Guide
+Contributors: Landon Rivers
+Summary
+Race - Halflings
+City - Willowbrook
+Area - The Ardent Vale
+Halflings
+Joyful Beings
+Burrowers
+Herders
+Masks
+The Concord Veils
+Warm Diplomacy
+Baker’s Hours
+Snackrifice
+The Eight Meals
+War Tactics
+Naming
+Complete Name Examples:
+List of Names to Use
+Male Halfling Names (Clan Name / Trade)
+Male Halfling Names (Feat of Accomplishment)
+Female Halfling Names (Clan Name / Trade)
+Female Halfling Names (Feat of Accomplishment)
+Willowbrook
+Layers of the City
+Symbol of Willowbrook (The Maorglyph)
+The Founding of Willowbrook
+The Tragedy of Bottombrook
+The Reverdure Speech
+Present / Post Reverdure Willowbrook
+Contraband Sulfur
+Sunflecked Shards
+Willowbrook Points of Interest
+Mayor’s House / Main Bottombrook Entry
+The Mayor of Willowbrook
+Bakery (Willowbrook) / Brewery (Underbrook)
+Beer Store (Willowbrook)
+General Goods (Willowbrook)
+Mushroom Pen (Willowbrook)
+Tailor (Willowbrook)
+Bank (Willowbrook)
+Sheep Pens & Dairy (Willowbrook)
+Duck Pond (Willowbrook)
+Whittler Museum (Willowbrook)
+Fish & Ferry (Willowbrook)
+Bard Guild / Open Pavilion (Willowbrook)
+Underbrook Points of Interest
+Warrior Guild / Prison (Underbrook)
+Underdock (Underbrook)
+Class Duties
+Factions of Willowbrook
+Warriors of Willowbrook (Tunnel Runners)
+Yosef Mekfarrow
+Rogues of Willowbrook (Willowbrook Union of Archaeology)
+Rogue Guild Features
+Whittlers of Willowbrook (The Whittlers)
+Druids of Willowbrook (The Root Readers)
+Bards of Willowbrook
+Bottombrook (starter dungeon)
+Bottombrook Points of Interest
+Music
+Landon’s Airplane Sketches (OLD)
+Direct Conflicts (OLD)
+Ogres of Osgul
+The Ardent Vale
+Mob Guide
+Full Ardent Vale
+Ardent Vale West
+Ardent Vale East
+Bottombrook (to scale)
+The Brookberry Battles / Gurshak War
+Points of Interest
+Picnic Area / Race Track (Newbie yard)
+Creatures
+Bunnies
+Ants
+Moving North
+Wolves
+Wolf Den
+Snakes / Sea serpents
+Satyrs
+Visual Guide and Reference
+Satyr Names
+Satyr Models
+Possible Character Animation Rig
+Satyr Buildings
+Fireflies
+Moles
+Animation Rig
+Rats
+Halfling Bandits
+Padric Crow
+Lost Ogres
+Vale Sheep (Clovik)
+Sheep Model Reference
+Sheep Animation Rig Reference
+Sheepdogs (Clovikhound)
+Sheepdog Model Reference.
+Sheepdog Animation Rigs
+Imps
+Sulfurmancy
+Imp Model References
+Imp Animation Rigs:
+Golem
+Golem Animation Rigs
+Halfling Ghosts
+Ardent Vale Reference Images
+Ehrensdale
+History & Ties to the Streamfoot Tribe
+Points of Interest
+1. Streamfoot Winery
+2. Merrybloom Florist & Apiary
+3. The Watchtower
+4. The Foothill Cork Tavern
+5. The Brookberry Fields
+Additional Quest Hooks
+Ant Labyrinth
+Mistledew Island
+The First Mask from Mistledew
+Mistledew Island Operations
+Reference Maps
+The Maor
+Maor Possible Rigs
+Mistledew Island Points of Interest
+Loading Bay
+Ranger’s Hut
+Wood Processing Hut
+Renegade Union
+Maor Mushrooms
+Maor House
+Ogre Camp
+Library Books
+Founding of Willowbrook I - about the three original tribes BurrowHart, Meadowkin, Streamfoot, tensions and war, satyr creation by Thornwise
+Founding of Willowbrook II - integration and union after the war
+Fighting Things Bigger than You - principles of the halfling ‘art of war’ usually against Ogres.
+Tricks & Traps I: The Effect - A military guide of practical tactics and traps, the first volume focusing on traps and placement
+Tricks & Traps II: Hill Warfare - A military guide of practical tactics and traps, the second volume focusing on Hill Warfare
+Tricks & Traps III: The Cause - A military guide of practical tactics and traps, the third volume focusing on tricks, illusions, deception, and masks
+The Eight Meals and Vale Etiquette - A listing of all the Eight Meals and a bit on halfling culture
+Maorglyph, Maorstone, and Maor - Root Readers account of everything Maor related, seeing it as a font of mana, and the Maor as its protector.
+Bottombrook Abridged - Gelen OvShale's personal account of Bottombrook, told on his 90th birthday to the Whittlers
+Tragedy of Bottombrook I - "Willowbrook has fallen." Retreat to the BurrowHart Redoubt, fighting back ogres, setting up camps and base, Root Readers sensing where to dig, forming of the clans.
+Tragedy of Bottombrook II - Celebrants bringing back the Dwarf brothers, discovery of sulfur, sulfur trade,
+Tragedy of Bottombrook III - Reverdure speech, declaration of reverdure, sulfur contraband, blame thrown around
+The Reverdure I - Declaration of Sulfur Contraband, Fighting back Ogres, rebuilding broken buildings, Underbrook
+The Reverdure Speech - book that is simply the Reverdure speech, and a little about Sersha MecLoom
+The Concord Veils - about the masks from the tribal wars that were fueled by magic of Thornwise
+Beware The Lies of Crow - a pamphlet put out by the mayor about Padric Crow's bandits and their campaign to take over Willowbrook, along with people who suffered because of it.
+We Shall Be More - Propaganda piece by Padric Crow to recruit people, talking about expanding the bounds and trade of Willowbrook, saying the mayor is holding everyone back.
+Service and Resource Ledger - (Bottombrook) Un-scorched and in surprisingly good condition. If only it were a fantastic tale and not a boring government document!
+Brainstorming / Comments / Ideas
+
+Summary
+Race - Halflings
+Vibe: Wholesome, Happy. Party like hobbits, Fight like Ewoks. Love to dig tunnels and holes.
+Appearance: Short humans, pudgy faces, hairy feet.
+Culture: Expression and emotions are important. Masks a big motif, not just for arts and celebration, but also combat. Tunnels join us and protect us. Big families, watch your flock. Learn what makes the other [races] happy (spy), integrate it, do it better. Easy diplo.
+Naming: Gaelic influence with English phonetics: Brine MekHerder, Konor OvFargus, Sersha Manybiers.
+Classes: Bard, Druid, Rogue, Warrior
+Domains: Earth, Nature, Seasons, Insects, Peace, Moon, Love, Hope, Knowledge, Deceit
+General Difficulty: Easy to Medium
+City - Willowbrook
+Vibe: Hobbit holes, but connected through tunnels. Sleepy town on the surface, Party city underneath. Business comes second to dessert.
+Appearance: Two parts, Calm exterior with buildings for husbandry, fishing, and trading, Exciting colorfully lighted interior tunnel system for artisans, and of course, parties.
+History: There were three warring nomadic halfling tribes. One day they all used masks in their fights (a trick by god of deceit, Thornwise), Couldn’t tell each other apart. Instead of killing each other, they unexpectedly made friends. Made peace under a willow tree along a river. Made lots of holes, tunnels, and babies together. God of deceit pissed plan backfired, but also impressed. Thornwise taught them how to make traps against Ogres. This story goes deeper in the Tragedy of Bottombrook
+Leader: Mayor Derrick OvMiller
+Factions: Willowbrook Union of Archaeology (Rogue), Bottombrook Protection Initiative (War + Rog + NPC), Root Readers (Dru), The Whittlers (NPC), The Celebrants (Brd)
+Rivals (not enemies): Dwarves - “breaking rocks all day is harsh to nature, dirt is easier to work with”. Bad history hundred of years ago from Bottombrook incident. Satyrs (start ‘suspicious’) - created by Thornwise as the ‘anti-halfling’ long before tribal wars, always trying to trick halflings. Their revelry and mischief goes against halfling’s good nature. Also, “their beer and songs suck!”
+Conflicts: The Brookberry Battles vs. Ogres - constant raids eating halflings for snacks; Sulfur Imps in Bottombrook; Satyrs - infiltrating the halfling brewery; 
+Distant but relevant conflicts: Gnolls from Hillshade Hollow found a way into the tunnels leading to Bottombrook, though on the other side of imps; Ants from Dun Antnach, though they bother the Satyrs more since they’re closer.
+Area - The Ardent Vale
+Vibe: Dale with rivers, sparse willow trees, Mountains in the background. Think Scottish Highlands. Also can think of the Everquest Classic box art. Not the best farmland.
+Mobs: Bunnies, Ants, Wolves, Snakes / Sea serpents, Satyrs, Fireflies, Moles, Rats, Halfling Bandits, Lost Ogres, Sheep, Sheepdogs, Imps, Ghosts
+Dungeons: Bottombrook (Ghosts / Imps); Mistledew Island (Forest Animals, Bandits, Cryptid); Hillshade Hollow (Gnolls); Reveler’s Notch (Satyrs)
+
+Halflings
+Joyful Beings
+Halflings wear their emotions on their sleeves proudly. Their creator allowed them to express themselves so deeply, why waste this gift? Halflings love arts, stories, music and anything involving a party.
+Burrowers
+In a hole in the ground there lived a Halfling. Halflings know the outside world can be dangerous, and they don’t want anyone or anything to hear their partying, so they figured why not dig towards their neighbors’ house instead of going outside? As digging is a national pastime of Halflings, soon a network of tunnels develops.
+Herders
+Herders not only tend to sheep (cloviks) and goats, but also act as the scouts around the dale. Fierce and loyal sheepdogs (clovikhounds) protect the herd from wolves.
+Masks
+Wooden masks are important to Halfling culture. Halflings are extremely expressive in their language and discourse, and masks allow them to act beyond what their pudgy faces allow them to show. These masks are not always for camouflage, instead they are usually very vibrant and meant to be seen. Mask makers carve masks from trees of Mistledew Island and are held to a high regard in Halfling society. Mask makers are tasked with perfectly capturing an emotion or a creature’s likeness in all of their creations. In some cases, a poorly crafted mask unable to fool a dumb ogre could spell danger for a halfling.
+
+
+The Concord Veils
+When Willowbrook was founded, the members of three tribes, the BurrowHart, the Meadowkin, and the Streamfoot, all were given wooden masks created by Thornwise the Deceitful, promising it would grant them great strength in a battle about to ensue. The masks all looked the same though. In the heat of battle, the halflings, now unsure if they were fighting friend or foe, all in their individual wisdom laid down their arms and instead sought unity with the other veiled individuals around them. This helped make masks into a symbol of unity and taught the halflings to never forget the individual behind the mask.
+
+The masks of the soldiers have gone missing or were destroyed, but the masks of the chieftains were called The Concord Veils, and they were originally buried beneath the Great Willow tree. The Concord Veils were unearthed unexpectedly when the ogres destroyed First Willowbrook. Only one Concord Veil was recovered by a rogue, Kelly Ankler, after she stole it from a green dragon undetected. The other two Concord Veils are still at large. Some say they were coveted by other deities and their agents.
+
+Meta: I was thinking these three leader masks could be part of an epic quest, very high level. Raid drop maybe for halflings.
+Warm Diplomacy
+Halflings are curious about the other races and creatures around the world. You may find some sneaking around taking a peek at venues of entertainment, or watching citizens play games of chance. They figure, this makes them happy, and we could be happy from this too. Halflings are constantly taking ideas back home and localizing them with a Halfling flavor. In some cases, the Halflings become better at the activity than many of the races they took it from. When working with the other races, it’s easy for Halflings to warm up the relations and negotiations through activities, games, and food (if ingredients are local enough) that the race is already familiar with.
+Baker’s Hours
+They say that the loudest and most disruptive voice heard in business negotiations is a growling stomach, and a deal certainly cannot be reached until this voice is silenced! To make sure all parties are of sound mind and the most content a halfling can possibly hope to make them, business takes a back seat to any and all meals and snacks spread throughout the day. Even when brokering an important deal abroad, foreign parties can expect to be offered cakes and tea even mid-sentence if one of the 8 sacred meal or snack times comes to pass! Dubbed ‘Baker’s Hours’, many businesses are temporarily closed during snack times so the halfling retailers and patrons alike can both savor the moment and have one less thing to worry about.
+Snackrifice
+One of the saddest occurrences is seeing your brother, coworkers, patrons, and sometimes even your in-laws, unable to partake in a meal. It’s seen as one of the highest honors to offer your meal (or, let’s be honest, just a few pieces) to this unfortunate soul. Such a kind act is known as a snackrifice, and many know to repay the deed in full and beyond.
+The Eight Meals
+First Bite (6:00 AM – 7:00 AM) – A small nibble upon waking, typically bread, fruit, or a light pastry.
+Breakfast (8:00 AM – 9:00 AM) – The proper morning meal, hearty and filling, featuring duck eggs, meats, porridge, and bread.
+Tunnelers (11:00 AM – 12:00 PM) – A mid-morning snack of nuts, cheese, dried fruit, or a warm hand pie along with tea. Something light but sustaining. Originally coined by the Tunnel Runners who got hungry on patrol, and it turned into an excuse to join them.
+Lunch (1:00 PM – 2:00 PM) – The midday meal, ranging from simple soups and sandwiches to full feasts, depending on the day’s work.
+Easies (2:30 PM - 3:00 PM) – Typically some leftovers from Lunch and a cup of tea, meant to help unwind, and many times precede an afternoon nap. 
+Brewbreak (5:00 PM – 6:00 PM) – A light meal with either tea or a beer
+Dinner (7:00 PM – 8:00 PM) – The largest and most social meal of the day, featuring stews, roasts, fresh bread, and plenty of conversation.
+Afterbites (9:30 PM – 10:30 PM) – A post-dinner snack for those still peckish, usually roasted nuts, cheese, or a small pastry, often enjoyed by the fireside.
+
+War Tactics
+Halfling Tactics, specifically against Ogres, developed as the Brookberry Battles evolved.
+
+First Brookberry Battles 
+(15 - 35) - Halflings don't know any better, use a direct approach with pitchforks, slings, simple ambushes, and build outposts. They're not the most effective and ogres make off with brookberries often, though Willowbrook is not threatened.
+
+Second Brookberry Battles
+(100 - 268) - After demon influence dies down and Ogres are no longer distracted, they turn their attention to the brookberries again and the pesky halflings protecting them. Halflings develop deadly traps, and sharpened shovels turn into a weapon of choice against ogres for their utility. Tactics are much more effective, but make ogres angrier, eventually leading to the destruction of Willowbrook.
+
+Bottombrook 
+(268 - 271) - Sharpened shovels allow for easily made arrow slits and to turn a hill into a defensible bunker. Thus introduces "Hill Warfare". Hill Warfare doesn't push ogres back though. A mysterious peddler Jentercorn comes and introduces the idea of masks being used, looking to the original tribal war as inspiration. Many believe Jentercorn is Thornwise (Magic comes back into the world around year 300, some argue this is a gentle introduction back). This psychological warfare combined with the other Halfling ruses drives Ogres back. "How to fight things bigger than you" is written (their ‘Art of War’), with Halflings feeling like they have the most effective arsenal.
+
+Reverdure
+(272-273) - No new tactics introduced, allies in this war (Men, Wildemen, Elves) see what halflings are capable of on their own, improving diplomacy.
+
+Third Brookberry Battles
+(295 - Present) - With Willowbrook and Underbrook well established, Outposts are re-built alongside hill bunkers from multiple fronts of the Ardent Vale. Every tactic from the past fuels the halflings' ability to hold off the Ogres on their own.
+
+Forbidden Tactics
+Some devious halflings look to Sulfur as a potential weapon, though Sulfur was labeled contraband after the Tragedy of Bottombrook. Sulfur would essentially create bombs and gas, which would be effective, but would destroy nature around it, including the Brookberry Bushes.
+
+Naming
+Given names have an Irish or Scottish Gaelic influence with English phonetics. Male names tend to end with hard consonant sounds (“ar” “en” “es”). Female names tend to end with soft vowel sounds (“ah” “ee” “ay”).
+
+Male: Ande, Brine, Konor, Kinan, Sheen, Sevan, Tay; 
+Female: Fia, Wiva, Niv, Aifa, Sersha, Eimee; 
+
+Surnames are based on the names of Old Tribe, the Trade of the family, or even a feat accomplished by a historic relative (a halfling who tamed a wolf could have their surname ‘Wolfwhisper’)
+ 
+Much like in Irish surnames prefixed with “Mc / Mac” or “O”, Halflings use a slight variation.
+“Mec” - Commonly paired with trades, with ‘Mec’ in Halfling meaning ‘Make’ or “Do.”
+“Ov” - Simply meaning “Of”, usually tied with a formal Tribe name. In both cases, they don’t capitalize the second part of the surname.
+
+Examples: Mecherder, Ovfargus.
+
+Complete Name Examples:
+Shan MekMasker
+Roree Ovallister
+Donakay Embers
+Cale Mectracker
+
+Warrior
+Rogue
+Druid
+Bard
+Ranger - ?
+Shaman - ??
+Beastlord - ??
+
+List of Names to Use
+This is based on the naming convention above. Mark these off as you use them, either crossing them out, or putting an X next to the name.
+Male Halfling Names (Clan Name / Trade)
+Ande Mecsmith
+Brine Bracken
+Konor Mechunter
+Kinan Ovthorne
+Sheen Mecweaver
+Sevan Ovbrook
+Tay Mecbrewer
+Lorne Mecmasker
+Eran Ovgregor x
+Finnes Ovstone
+Darin Mecfletcher
+Bardon Ovgreen x
+Joren Mectiller x
+Fergus Mecburrow
+Roan Patterson
+Keelan Ovharbor
+Traven Mechearth
+Willem Mecriver
+Graden Ovross
+Lorcan Mecthatcher
+Niall Ovhearth x
+Orrin Mecbaker
+Torin Ovridge x
+Ailin Mectailor
+Eamon Ovfraser - x
+Bren Mecgarden
+Faolan Overfield
+Kieran Mecmiller
+Nevan Cameron
+Liam Mecforger
+Male Halfling Names (Feat of Accomplishment)
+Finlo Wolfwhisper
+Garret Stone
+Taran Bridger
+Padric Cliffs
+Eoghan Crow x
+Cian Riddles
+Daire Mendall
+Lorcan Goldpockets
+Nolan Shadeweaver
+Rian Telltale
+Female Halfling Names (Clan Name / Trade)
+Fia Mecspinner
+Wiva Ovstream
+Niv Mecpotter
+Aifa Ovold
+Sersha Mecloom x
+Eimee OvMeadows x
+Ailey Mecstitch
+Ciera Ovmoonx
+Neala Mecbloom
+Delia Ovred
+Eithne Mecwisp
+Maire Ovcrawford
+Sorcha Mecweave
+Fiana Ovlogan
+Lorna Mecsong
+Aine Ovforbe
+Brigid Mecshaper x
+Ciara Ovshine
+Dervla Mecblend
+Enya Ovgrain x
+Fiadh Meccharm
+Grainne Ovstar
+Iona Mecdance
+Keira Ovgomery
+Morna Mecchisel
+Nessa Ovgrove
+Orla Mecplume
+Roisin Ovkerr
+Una MecLanister
+Yseult Ovbruce
+Female Halfling Names (Feat of Accomplishment)
+Sersha Manybiers
+Elva Moonguide
+Siobhan Gale
+Ailis Catcher x
+Nuala Dreamer
+Iseult Windwhistle
+Deirdre Frostberry
+Oonagh Keeper
+Maeve Pester
+Saoirse Ales
+Bronagh Bakeheart
+
+Willowbrook
+Layers of the City
+Willowbrook - Top layer, pleasant, very Hobbiton like
+Underbook - The network connecting all of the hobbit holes, also a cave-ish area with buildings of its own
+Level further below, halflings dare not dig further - "Bottombrook"
+Bottombrook is a small dungeon with the end having a link to old halfling warriors and lore of the city. Big part of the city quest.
+
+Symbol of Willowbrook (The Maorglyph)
+
+Meta knowledge: Meant to be like a Fleur-de-lis of the Halflings. The symbol is derived from a combination of the shape of the slide which takes you into Underbrook, and the Chinese character for ‘small’ 小.representing the halflings.
+
+Found on shields and banners throughout the city, and even the ancient tablet upon the highest hill of Mistledew island. Were it ever to come up in conversation, most halflings would know it as ‘The Maorglyph’ and know that it represents the unity of the people. The exact meaning is unknown, because it was first found on the tablet on Mistledew Island. As all Halflings make a journey to the island eventually to obtain the wood for their own mask, they’ve all seen it and faced the danger of the island, and thus eventually adopted it as a common sight for all Halflings. The Whittlers would believe the symbol is a representation of the fated three historic areas of Willowbrook bound together. The Druids would believe it’s a pictograph of the willow tree. The other factions wouldn’t care as much about the deep meaning.]
+The Founding of Willowbrook
+In the rolling hills of the Ardent Vale, where the rivers meandered like silver threads through the lush landscape, there once roamed three halfling tribes: the BurrowHart, the Meadowkin, and the Streamfoot. These tribes, each unique in their customs and aspirations, were locked in a perpetual struggle over the fertile land and resources of the Vale. The BurrowHart were master diggers, known for their intricate underground homes; the Meadowkin were skilled farmers and herders, blessed with a deep connection to the earth; and the Streamfoot were adept fishers and silver tongued traders.
+
+The strife among the tribes reached its zenith under the mischievous influence of Thornwise, the god of deceit. Seeking to exacerbate their conflicts, before a battle was to commence between the three tribes, Thornwise gifted each tribe masks which he promised would make the members powerful. He deviously imbued each mask with the power to disguise their wearers' identities. In the ensuing clash, the lines between friend and foe blurred. But in this chaos, an unexpected change of events occurred. Unable to distinguish their kin from their enemies, the tribes realized they weren’t all too different. Laughter and shared stores replaced the clashing of swords. When the battle concluded and everyone removed their masks, it was then under a grand willow tree by the river, a neutral ground, where the leaders of the tribes – Fergus BurrowHart, Aelwen Meadowkin, and Bran Streamfoot – declared a truce, realizing that their similarities far outweighed their differences.
+
+The founding of Willowbrook was a testament to this newfound harmony. Each of the tribes had their own historic lands which they now considered one in the same, uniting it under the name “Willowbrook”, as the center of the three lands had a willow tree upon a brook.. The BurrowHart land lay north of Mekally River, The Meadowkin lands were in the middle, and the Streamfoots were towards the south. 
+
+
+
+At the heart of this collaboration was the first Mayor of Willowbrook, Eamon OvWillow, a charismatic and wise figure from the Meadowkin, who was chosen for his ability to understand and integrate the diverse perspectives of all three tribes. However, these lands would soon fall to a new foe, and the halflings would find themselves desperate for a new home.
+The Tragedy of Bottombrook
+“Bottombrook... it was a time when we weren’t ourselves. Our homes lay in ruin, smashed by hulking ogres, and we found ourselves huddled in a dug-out hill too small for the beasts to enter. We tried to make the best of it. Finding solace in our safety, we dug, and we dug, until we couldn’t dug no more, hitting rock-bottom beneath the Mekally River. Things only got worse when we uncovered the rich clusters of sulfur. To this day, we still point fingers over whose idea it was to dig it up. But we were all to blame for succumbing to the temptations of profit. The Celebrants snuck out and spread word of the sulfur far and wide. Demand from the other races soared. We thought if we can ship it out, make some money, and clear the stink from our cave, well, that’s a win-win, isn’t it? Anything to rebuild our homes. But the sulfur’s promise of riches turned on us like a monster. The greed consumed us, and before we knew it, we woke a real monster. Our digging shook a nest of imps with a hunger for sulfur. They swarmed us, clawing and biting like demons. They blocked our exits, driving us back against a tall dirt wall. Panic gripped us. The guards formed a line to hold them off, while the rest of us clawed at the dirt wall, digging upward. Imps broke through the line, struck down my brother, and claimed many others as we carved out our staircase of desperation. We climbed higher until the imps suddenly lost interest in us. It turned out they were only after the sulfur itself. We dug out a ledge and collapsed there, looking over the chaos below. Everything was destroyed. Our homes, our hopes. All seemed lost. Then Sersha Mecloom, a simple seamstress, stood up and said what none of us had the courage to say. Greener pastures still lay ahead, and it was time to take back what was ours. ‘For so we rose today, shall we rise tomorrow,’ she said, promising our reverdure of Willowbrook. We dubbed her mayor right then and there. Taking back Willowbrook was easier than we thought. We knew how to fight the ogres now, and once we recovered the riches we’d stashed away in Bottombrook’s bank, we turned into the thriving civilization you see before you. Enough of the storytelling though, where’s my cake?” - Gelen Ovshale on his 90th birthday, recounting the tragedy to the Whittler historians.
+
+Before Willowbrook was founded, the BurrowHarts had already led a project to dig a defensive redoubt under Mekally River which flows out of Lake Titan.
+The three tribes came together, but soon found themselves against a new foe
+Conflict arose in the northern Ardent fields of Brookberries. No one knows for certain who made the first blow, but it spiraled out of control, and the halflings were overrun by Ogres.
+Former lands of the three tribes were destroyed by Ogres.
+The halflings decided to retreat to the BurrowHart redoubt under Mekally River. They held off the Ogres from invading because the entrance to the settlement was too small for Ogres to fit through. Halfings dug embrasures and arrow slits out from the hill entrance, thrusting spears through them and keeping Ogres at bay, until they were finally able to push back.
+
+After the initial battle with the ogres, Thornwise was intrigued by the ingenuity of the halflings, and bestowed the knowledge of trapmaking and other cunning tactics to further help keep ogres at bay
+The BurrowHart redoubt soon turned into a new home for all of the halflings, who lived in makeshift tents within the redoubt, also steadily building more battlements north of the Ardent vale to keep Ogres of Osgul at bay.
+The halflings all worked together to dig out the rest of the ground beneath the Mekally River until they hit a bed of stone and could dig no further. It was on this bed that they constructed their homes and businesses. The redoubt turned into a town which they called Bottombrook, given its position built on the rock bed beneath the river.
+
+The Meadowkin, though used to working in the open air, found solace in the rich dirt of Bottombrook, and found themselves growing a variety of mushrooms.
+The clans mixed out of necessity, and the BurrowHart, Meadowkin, and Streamfoot names were phased out for new families, though many still remember their clan roots.
+Descendants of the clans formed into guilds.
+Many BurrowHart became the Tunnel Runners, the warriors who protect the very lands and tunnels they dug which saved their people
+Many Meadowkin became the Root Readers, druids and herders with an affinity for the land and its creatures.
+Many Streamfoots became the Celebrants and the Whittlers, traders and craftsmen of not just goods, but also knowledge from around the world.
+One celebrant returned from a trip to the dwarven city of Moraguld with a couple of dwarven craftsmen (Gebrik and Fergun Stoneshine) who were impressed by the exploits of the halflings against the ogres, but also in digging out Bottombrook.
+The dwarves were dumbfounded that the halflings dug no further than the dirt, and offered to break new ground in Bottombrook.
+Around where the dwarves started mining, the druids of the Root Readers sensed a new element that they hadn’t felt before, sulfur. Interested, they had the dwarves mine out the first cluster of sulfur.
+The sulfur was first used in some alchemy experiments, and was also sought after by dyers, tanners, and farmers. The dwarves also had used sulfur in primitive explosives to help their mining. The halflings saw wealth and advancement in Bottombrook from selling the sulfur. They were fine with it being sold and taken away, because the smell sometimes turned a bit overwhelming.
+One fateful day, the dwarves demonstrated how sulfur could be used in blast mining. The explosion, though small, blew open a hole into a hollow cavern and awoke a new foe: The Sulfur Imps.
+From the hole poured out hundreds of sulfur imps who became ravenous for the sulfur clusters mined, attacking all halflings in their way. The swarm of them blocked the exit to Bottombrook.
+The imps cornered the halflings against the dirt wall of Bottombrook, causing panic. All of the halflings desperately turned around and started digging upward into the dirt walls to escape the imps.
+Everyone clawing at dirt created a steep stairway up from their doomed city. Some had to climb over the corpses of their fallen brethren who were killed by pursuant imps.
+The halflings dug high enough that it lost the attention of the sulfur imps, as the influence of the sulfur faded the further up the halflings traveled.
+The tragic and bloody climb which formed the steps now leading down to Bottombrook is called “The Redflight” (both the event and the stairs are called this.) The stairs aren’t red with blood anymore, but the name has stuck.
+Bottombrook was lost, many were slain, including the Mayor Kedrick Jovius (city quest item on a high level imp).
+Many would say “we were not ourselves when we lived in Bottombrook.” In that new home setting, they ended up being a little more explorative and experimental than a halfling should be.
+The shock of fending off the monstrous ogres and retreating underground was new to the halflings who until then tended to live above ground.
+To this day, the different guilds and historic clans blame each other for the reason this tragedy befell them.
+The Tunnel Runners are at fault for digging so deep, and for helping the dwarves dig out the sulfur
+The Root Readers are at fault for sensing the sulfur and directing everyone to pursue it
+The Celebrants (and by extension the Union) are at fault for bringing the dwarves over, as well as facilitating trade.
+As the halflings looked below at their lost city from the cliff of despair they created, they knew they could only rebuild. After a rousing speech from the seamstress Sersha Mecloom, likening this tragedy to the opportunity of regrowth, Sersha Mecloom became the new mayor following in the footsteps of Kedrick Jovius.
+Sersha and others dubbed this period of reconstruction “The Reverdure” from her speech.
+The lands of the Meadowkin clan above ground south of the Mekally River were reclaimed. The halflings rebuilt Meadowkin homes among the ruins where Ogres attacked.
+The allies made through sulfur trade sent contingents of troops to help drive out Ogres. Among them were Men of Leont, Wildemen, and Elves of Solendris (Loyalists to Prince Lyrion of Hillshade) 
+Everyone appreciated the protection they had underground from the concept of Bottombrook, so the Tunnel Runners dug out a network of tunnels connecting the different hills above ground together. This led to the formation of modern day Underbrook.
+The battlements against the ogres were maintained to prevent another takeover from the north, though their attention seemed to be more on the Brookberries.
+A common house belonging to the Meadowkin was repurposed into the mayor’s house, though Sersha lets any of her fellow halflings in.
+A graveyard was built on the cliff overlooking Bottombrook.
+Meanwhile, the satyrs migrated partially from their home of Revelers Notch into the lands of the Streamfoots, causing tension.
+The halflings wanted to make a push back into Bottombrook at least for one important resource, all of the gold in their bank.
+This led to the creation of the Willowbrook Union of Archaeology, who were charged with recovering artifacts from Bottombrook
+The Bottombrook Defense Initiative (BDI) was formed with the Tunnel Runners, The Willowbrook Union of Archaeology, and The Whittlers working together to fight back the imps that massacred their people.
+When the mission to retrieve all of the gold was completed, the Union turned to the venture of acquiring other artifacts around Bottombrook and the world outside, even though some of those artifacts might have already been found and already belong to someone else.
+Eventually magic came back into the world, conjuring the lost yet jovial spirits of the halflings back to Bottombrook. Many of these ghosts drove out the imps plaguing their old town.
+Out of respect for the dead, the BDI built a gated entrance to the old city. The Whittlers hold the key to the gate.
+The magic that came back into the world enchanted the masks that the Whittlers carved, some of the masks made in honor of the fallen.
+The Reverdure Speech
+This speech was given by Sersha Mecloom, elected Mayor of the Vale Folk following the tragedy of Bottombrook. Spoken from atop the cliff overlooking Bottombrook, shortly following the climb up the Redflight. (Note: the speech and the song lyrics are NOT AI, by the way.)
+
+“I stand with you. The same dirt and the same blood beneath my nails. I stand with you, looking off the cliff we carve, driven from our depths to heights of despair. See well the poisoned soils we refuse to wither in. Listen well to the song of our lost ones, whose silent tune we must hold. Though we were forsaken, a sapling whose pot was shattered, I stand with you, now ready to root in the vast gardens of our forefathers. Our tears water the earth we claw, but so we rose today, shall we rise tomorrow, and after our grand reverdure, I will plant a flower in these ruins.”
+
+Bards have created a song from this speech
+
+Our Reverdure
+Composed by: Keven Mecluther
+
+I stand with you.
+With dirt beneath my nails.
+I stand with you.
+As we claw these bloody trails.
+
+For we refuse to wither,
+and We refuse to die.
+Damn the sulfur monster,
+For besting you and I.
+
+Upon this cliff we carved,
+Our tears forever sting,
+I sing the silent tune that my brothers cannot sing.
+
+But so we rose today,
+Shall we rise tomorrow,
+Our spirits will ensure,
+Our grandest reverdure.
+
+Link to MP3 (this was made with AI - UDIO, after 2 hours of editing)  - https://drive.google.com/file/d/1I3xVwL7Zk4pn8bPLUvPpyic69WQfW-3h/view?usp=drive_link 
+
+The lyric about ‘the sulfur monster’ refers to not just the imps and their beasts, but also how the pursuit for sulfur was a metaphorical monster that led to the tragedy of Bottombrook. “So we rose today, shall we rise tomorrow” is a popular saying among the halflings, jokingly sometimes by bakers in a different sense. Some halflings raise their glasses on the line “Our spirits will ensure”
+Present / Post Reverdure Willowbrook
+This refers to the time after the reconstruction and resettling of the overworld after the ogres originally destroyed all of the lands of the tribes. Willowbrook is thriving again with visitors near and far coming for halfling baked goods, and Underbrook has completely connected all of the Willowbrook structures into a protective network. Bottombrook remains infested with sulfur imps, though the Bottombrook Defense Initiative holds them from potentially reaching the surface. Mistledew Island.
+
+Contraband Sulfur
+“You know when they knocked open the wall to the first Sulfur chamber in Bottombrook? Take a moment to consider the feelings of our ancestors. Imagine a grand door opening, and pouring out at an immense pressure was one of the strongest, largest farts ever heard and sniffed in all the Ardent Vale. Second only, of course, to me cousin Ransel after Tunnelers Brunch. Wives pointed fingers at husbands, Uncles had children pulling all their fingers, disaster had just begun. Do you understand why we couldn’t wait to sell it off?” - Werner MekCliff, Retired Historian and Full-time bar crawler.
+
+After the Bottombrook period of Willowbrook’s history, the sulfur which the halflings spent years of their lives selling and growing rich from turned into a soured memory. Sulfur has been deemed contraband in Willowbrook, and the mining of it in Bottombrook is strictly prohibited. Simply enough, sulfur attracts the imps that destroyed the halfling’s homes and massacred their people. This said, there still are lucrative opportunities that call for their trade, and Bottombrook is still rich with this resource. Some roguish-types have taken to smuggling sulfur alongside unsavory characters to help fill their own coffers. Sulfur of course also carries a pungent odor though, so smugglers of this material are easily caught.
+Sunflecked Shards
+The satyrs of the Ardent Vale are known to sometimes trade and sell things they foraged to halflings. Back before magic returned to Adrullan hundreds of years ago, among the satyr’s wares were some captivating dark purple shards which they dug up around Cape Corvus. At the time, these shards were inert, and many halflings bought them for use in jewelry and heirlooms. Nobody knew that these held a great power. Magic returned to the world, and suddenly there were halflings whose necklaces and rings were glowing from these sunflecked shards. While this was first seen as a curiosity, it wasn’t until some halflings in possession of the shards started seeing hallucinations and slipping into aggression that they knew the shards were a problem. The shards also attracted some non-native creatures such as gnolls with the aura they pulsed. The mayor at this time and the people of Willowbrook agreed that these shards were cursed, and there was a coordinated effort to have them removed from Willowbrook and the Vale entirely. This was a task carried out by the Union of Archaeology, who were seen as natural treasure hunters already. All of the known shards were found based on sales logs found, and word of mouth. The shards were disposed of (usually destroyed, but potentially sold on a black market), and the knowledge of these shards faded into obscurity. Some of these shards may still be hidden though, emanating an energy which attracts unwanted attention to Willowbrook. 
+
+Willowbrook Points of Interest
+
+Mayor’s House / Main Bottombrook Entry
+On one of the highest hills of central Willowbrook on the Northwest Side sits a substantial cottage entwined with a majestic Willowtree. This building houses the governing (so much as Halflings are “governed”) family and is also the portal to the main entry shaft of Underbrook. This helps ensure identification and processing of anyone entering Underbrook without their own private residence with entry.
+
+The Mayor of Willowbrook
+Mayor Derrick OvMiller has presided for the past five years, overseeing the direction of Willowbrook and charged with keeping its people gleeful. Known for his knack for peaceful diplomacy, he often resolves conflicts with a warm smile and a clever word. He's a former excavator who found his calling in leadership after successfully mediating a dispute between rival digging crews. (TODO: Expand or change this backstory)
+
+During his inauguration and every inauguration of a new mayor, the village schedules this ceremony after Baker’s Hours (as is with all ceremonies) and they make sure the new mayor is fed plenty of brookberry pie to prepare them for their new role. The mayor is then immediately seated for a painting of their portrait before they can clean up, depicting their messy face and all, thus capturing each mayor at their most content state of mind.
+
+(Note - Riggles hates this image)
+
+Every mayor is passed down the chains of office depicting the maorglyph in the center medal, and circular metal plates along the lace to represent every absolutely extraordinary and successful annual summer party thrown.
+Bakery (Willowbrook) / Brewery (Underbrook)
+“Bread Above & Beer Below”
+
+Innkeeper - Mrs. Eimee OvMeadows : renowned for her infectious laugh and stories of her youthful adventures outside the Vale. She turned to innkeeping after a life of travel, seeking to create a haven of comfort and joy in her hometown.
+
+Waitress - Ms. Ailis Catcher : quick-witted and observant, gathers stories from patrons and hopes to be a bard some day, singing tales of all the people she met.
+
+Master Baker - Mr. Joren MecTiller : a perfectionist in his craft, known for his early morning serenades to his bread as it bakes. He's a former farmer who discovered his passion for baking.
+
+Baker - Ms. Enya OvGrain : an innovative and creative baker, always experimenting with new recipes. She was inspired to take up baking by her grandmother's legendary pies and has been known to incorporate unusual ingredients from the Vale and Mistledew Island.
+
+Master Distiller - Mr. Eran OvGregor : On a personal quest to perfect a brew that captures the essence of Willowbrook
+
+Brewer’s Assistant - Mr. Torin OvRidge : His passion for brewing started young, stemming from a fascination with the alchemy of turning simple ingredients into exquisite drinks.
+
+In the center of the Willowbrook, at the bend in the river, sits a dominant two story structure that serves as the Inn for travelers as well as the main bakery for Willowbrook. In Underbrook, the underside water wheel drives the brewery operations. Lake Barley hewn from the fields outside are brought in from the waterfall entrance and unloaded at the Underdock for a short trip to the brewery to begin the distilling process as soon as possible, with the surplus barley being delivered upstairs to the bakery.
+
+Foreigners, who are typically unaware of the existence of Underbrook, mistakenly believe the name “Bread Above & Beer Below” comes from how the first floor of the Inn features a bar, and the upstairs has tables for a quick snack or meal. The halflings never rearranged the furniture in the inn after they learned of this convenient misconception which helps retain their secrecy.
+
+
+
+Beer Store (Willowbrook)
+“The Barrel’s Rest”
+
+Manager - Mr. Fintan OvFerris : A fixture for the community with a talent not just for brewing, but also writing his fictional novel. His best brainstorming sessions for writing come when sampling his brews alongside patrons.
+
+Where the finest ales bottled from the brewery hidden beneath the inn find their way to the surface. Functioning also as a mini bar, a large, intricately carved wooden counter stands close to the entrance, behind which the shopkeeper expertly advises customers on their selections. A small seating area with cushioned benches provides a space for patrons to sample brews and exchange stories.
+General Goods (Willowbrook)
+“Maela’s Bounty”
+
+Manager - Mrs. Maela OvTheed : known for her incredible memory, recalling every item in her shop’s history and origin. She is unknowingly in league with the Union of Archaeology and discovers some of her goods were illegitimately procured. She needs to return the illegitimate, and tasks players with finding legitimate and interesting items she could sell.
+Mushroom Pen (Willowbrook)
+Caretaker - Mr. Bardon OvGreen : youthful and enthusiastic, always looking to expand this collection to the largest collection of mushrooms in Adrullan. You turn in mushrooms to him much like the hemp, and cotton in Leont. Gives high-level quest asking you to find mushrooms across Northern Adrullan (Halfling, Human, Ogre, Gnoll areas)
+
+Seated next to the river and one of the first structures seen by newcomers to Willowbrook, this lush, damp enclosure is surrounded by a low stone wall and is a haven for various exotic mushrooms thriving in the rich, moist soil. Wooden walkways meander through the pen, allowing visitors to observe the mushrooms' growth without disturbing them.
+Tailor (Willowbrook)
+Manager - Mrs. Lirra Seamquick : Snippy personality, proud of her work and you should be too, or else you’ll get a mouthful. Sends players on quests to obtain rare materials, such as silk from spiders in Mistledew Island
+
+Assistant - Ms. Finley OvReid : bright, ambitious apprentice, brimming with innovative design ideas. Inspired by the nature around Willowbrook which sometimes can be found in cloth designs throughout the town.
+
+"The ancient technique of dyeing textiles to make our tapestries and heirloom clothing has been passed down for generations. It's quite an intricate process; observe!"
+
+Lirra Seamquick reaches into a barrel of brookberries and smears them all over some cloth on a loom
+
+"...You know, sometimes brookberry heirloom clothes are made by mistake when we're having dessert!"
+
+Inside, bolts of fabric in a rainbow of colors line the walls, and mannequins display the latest fashions in halfling attire. The air hums with the sound of sewing machines. Assistants are seen dyeing cloth with brookberries to be the iconic blue color found throughout Willowbrook.
+
+Donfrow addition 10/4/24 - A small sideroom or counter will be used for a Halfling laundry/cleaning, to be used for various errand-running Halfling newbie quests
+Bank (Willowbrook)
+
+Banker - Bramble MecLedger : A former mathematician. Nice enough guy, but easily taken advantage of. Weird guy at parties. Ironically in debt to the rogues. Has you quest to find a bill of sale in Old Willowbrook (Bottombrook) proving that the rogue guild leader actually owes him more, thus canceling out the debt.
+
+Though the Mayor himself swears by it, the bank just so happens to be placed above the Rogues guild in Underbrook. This has called into question the legitimacy of some of the bank’s operations, and brings a little more clarity to why you might find savings stuffed underneath halfling beds.
+Sheep Pens & Dairy (Willowbrook)
+A clovikhound overlooks a flock of cloviks. There’s a farmer and his wife. They sell dairy goods.
+Duck Pond (Willowbrook)
+A medium size pond near the druid guild. You can purchase a bag of bread crumbs from Eran Floodbar, then using the glyph throwing mechanic, you can throw bread crumbs into the pond which the ducks go after. When a duck eats 5 breadcrumbs they despawn and respawn as ‘a happy duck’. You can kill ‘a happy duck’ for ‘happy duck meat’ which is only used in ogre or troll  heritage recipes, and halflings refuse to buy happy duck meat because you are a bad person.
+
+Whittler Museum (Willowbrook)
+Ouu
+
+Fish & Ferry (Willowbrook)
+Splash
+Bard Guild / Open Pavilion (Willowbrook)
+In the previous fight against the Demons of Adrullan long ago, there was a Halfling Bard hero known as “Liri the Songblade”. May be useful to showcase this somewhere in the bard guild (maybe statue on the open pavilion?) but not required. There will be reference to this NPC elsewhere in the world but it would make sense that the Halfling bards would have some sort of acknowledgement of this NPC given the history. See The Demons of Adrullan document for more information.
+
+However, OUTSIDE of the city a small area that ogres can access for a more interactive/quest based story with the statue is desired. So while I think it makes sense to have a status at the bard guild, the main focus with a statue would be somewhere outside of the city proper for ogre access purposes.
+Underbrook Points of Interest
+
+
+Warrior Guild / Prison (Underbrook)
+Shawshank escape for other races. Ogre prisoner.
+
+Underdock (Underbrook)
+Managed in part by the rogue guild and the mayor. Halflings who travel through the waterfall dock their boats and unload their goods.
+Class Duties
+Bards - Collect knowledge from the world, obvious party planners
+Druids - Shape the earth, terraform, ritualists
+War - Protect, lead warbands, help with digging where need be.
+Rogues - Treasure Hunters, make and disarm traps
+Factions of Willowbrook
+NOTE - This needs to be condensed. 
+
+Fish and Brewers Collective (NPC)
+Willowbrook Union of Archaeology (Rogue)
+Bottombrook Protection Initiative (War + Rog + Shm)
+Tunnel Runners (War),
+Vale Herders (Bst, Rng / NPC), 
+Root Readers (Dru), 
+The Whittlers (NPC - Shm)
+The Celebrants (Brd)
+Warriors of Willowbrook (Tunnel Runners)
+Lead by Sevan OvBrook. The Tunnel Runners not only carve out the tunnels, but are fiercely protective of their work, and gain a deep knowledge of the nooks and crannies they’ve dug out. This gives them a whole different kind of home court advantage in war, since they dug out their home. The Warriors and the Druids work hand in hand, though some are at odds. The warriors lay the foundation and dig out the rough areas, while the druids maintain them and make use of them (growing mushrooms and other fauna). Druids sometimes see the warriors as a bit brutish, as much as you can be for a halfling. 
+Apprentices dig their own "First Tunnel" as an initiation rite.
+(Quest - have a large clump of dirt as a blocker to a cave in, takes you to a hidden area where the warrior discovers the fate of another)
+Special wooden shields that double as emergency tunnel supports
+Tunnel Runners intentionally dig "weak points" for Rogues to trap
+Wear special hats that mesh nicely with their masks
+hats that are like mining hats, might have a little light on them
+Use a glowing stone taken from the grotto
+hats that look a little like a cooking pot, there is padding between the pot and their head, so they can take the padding out and use their helmet as a pot.
+Each tunnel patrol carries rations that are far too tasty to be rations, and end up turning into a meal, so they always need an extra set of emergency rations.
+Lots of pockets in their armor
+
+Ranks in the Tunnel Runners
+Recruit
+Warrior Route
+Watchman
+Sentry
+Bunker Guard
+Captain
+Hill Commander
+Engineer Route
+Tunneler
+Earthwright
+Bunkerwright
+Chief Engineer 
+Guild Master
+Yosef Mekfarrow
+A retired Tunnel Runner now working at the docks outside of Willowbrook. He still holds a surprising amount of influence over the Tunnel Runners, though he may just be a guardian in the background. In the Halfling Warrior’s initiate quest, Yosef is the one to save the player after his hovel was destroyed by roving ogres. As it turns out, the ogres were tracking and chasing a gnoll (a creature not found in the vale, and which they thought was some kind of strange wolf). The gnoll was after a radiant shard found in the player’s house (there is no reason as to why the radiant shard is there, that’s up to the player to think). The gnoll went from house to house in this search, and behind him were the swinging clubs of ogres that destroyed hovel after hovel. After finally finding it, they chased him off and he dropped the shard, picked up by Yosef, who was coming home late from work on the docks. Yosef then pulled the played from their destroyed hovel. The player gets in touch with this character partway through the warrior guild initiate quest, as Yosef had been working in the background to track down this gnoll who still hunts for the shard.
+Rogues of Willowbrook (Willowbrook Union of Archaeology)
+Halfling Rogues are not the typical rogue breed, they are devious, but in a sort of Happy Mafia way. The rogues operate out of a guild called the “Willowbrook Union of Archaeology” (hereafter called ‘The Union’), lead by Foreman Galiger. The truth is, union members go treasure hunting and dungeon diving. They have a close relationship with the Whittlers to understand lore behind what they hunt. They truly do benefit Willowbrook with their discoveries which they might pawn off, or integrate into their society. The catch is, their  “Artifact Recovery Teams” (A.R.T., members called Artists) are not always doing the most honest work, sometimes straight up robbing someone’s house (though their halfling hearts would find a way to justify it).
+
+The Union’s main area of legitimate operations recently has been in Bottombrook where the Halflings once roamed. There are still pieces of their past which the rogues try to recover. It’s a joint effort with the Warriors and Whittlers in order to do any digging and identifying of any relics. Many Rogue quests in Bottombrook will centralize around digging for artifacts, and eventually diving into the Imp side of Bottombrook, trying to see what relics the Imps themselves may hold.
+
+Outside of the city, the Union aids the warriors in their campaigns laying traps and collecting intel on the enemy. Their work in dangerous dungeons and ruins has more than prepared them for direct conflict with big brute Ogres. One of the rogue’s favorite traps against the Ogres is leading them to narrow areas with holes only a halfling could escape from (dug holes or not), then picking them off from behind one by one. No construction needed, just dumb wit on the Ogre’s end.
+
+Mentioned near the end of the Tragedy of Bottombrook, the Union was founded alongside the Bottombrook Defense Initiative in order to recover the profits of the halflings made from the sulfur trade. Some devious halflings in the union may try to revive the practice of sulfur trade, as it is still lucrative when working with the right people, but it’s easy enough to sniff out a rat since the sulfur stinks so bad.
+
+A branch of the Rogue guild is in charge of banking for the town of Willowbrook, since many of the rogues found themselves out of jobs after the gold recovery operation was complete, and they didn’t necessarily want to turn to a life of active cr.. archaeological digging.
+
+You’ll find that about half the people of Willowbrook find the Union as necessary, with reasoning ranging from “they’re helping recover our history” and “they’ve dedicated themselves to protecting our riches” to “well, their traps keep the moles out” and “well some of those people had it coming.” The other half see them as the rogues that they are, saying “they’re crooks and thieves, simple as that!”, “they have an evil god blessing their deeds and encouraging their crookedness”, “I think the mayor is a crook enough. I’m sure those rogues are the reason he won the last election”, and of course, “my silverware and platters are heirlooms, but certainly not artifacts! You really think they’re preserving history?”
+Rogue Guild Features
+Purple motifs
+Shipping area that continues from the underground dock, stacked crates.
+Guarded Bank is accessible from Willowbrook at the top. The bank is closed off so that the entrance down to the guild is essentially a one way.
+Small vault at the top.
+3 fake paintings, each with their own maze. Right one is correct, “Follow the Stepping Stones”
+Trapworks area, building traps, testing traps on maybe some mouse or mole that walks by every so often. Big ogre sandbag dummies caught in some traps (can re-use the ogre sandbags in the warrior area too?)
+Put in a “scareogre” or two in the corner, as a nod to the scareogres in Frostfall
+Tents here and there. The ceiling is not so low, so the tents do not hit the ceiling. This is where rogues sleep.
+Some rogue sleeping areas might have a few personal goods. One quest has you stumble upon some smuggled sulfur one rogue has.
+A firepit in the center, its smoke goes up through a chimney which one would think is the chimney for the bank, but it’s really just the exhaust.
+A bigger vault in the underground area with two guards and a clovikhound next to the riches.bard
+A small shrine to Thornwise with his portrait in a wood carving. If there absolutely must be something with a fox head… then fine whatever. The guildmaster is here.
+Thornwise blessed the rogues, not the other halflings, promising them a future and purpose after seeing their potential from the gold recovery operation, so he taught them about traps and the art of thievery and deception. Don’t want it to turn into a “Dark Brotherhood I hear my duty from the gods” kind of deal though. That’s not very halfling-like.
+
+
+Whittlers of Willowbrook (The Whittlers)
+"With the power of our ancestors, we can overcome any obstacle!"
+They are the strange ones at parties, though the others know they mean well. Found in the corners of the underground and with their own methods to enter and exit Underbrook. Bards brought over the knowledge from other lands and some halflings were intrigued. The first bit of knowledge came from the prospect of Alchemy. "That's how it always starts. Some young'n thinks they'll brew the strongest ale". Then the idea of communing directly with spirits elevated to the next level. Final level, where it gets weird, is the rituals to utilize the strength of the spirits. Sometimes it requires sacrifice.
+	1. Alchemy - Potion making to assist with war, on the bright side used them to help with brewing for parties
+	2. Spirits vs Nature - Internal rivalry between Druids and Shaman. Shaman are more spirit based, and they argue that the spirit of the halfling is stronger than any force of nature. Commune with the dead asking for aid is better than manipulating nature.
+		a. Druids "there is no Willowbrook without nature", Whittlers "there is no Willowbrook without Halflings"
+	3. Still Halfling at Heart, just a bit more death obsessed.
+	4. Lorekeepers and historians. Pray to the halflings of old
+	5. Mask makers - channel spiritual enhancements into masks, after all, emotion is controlled by spirit
+
+Druids of Willowbrook (The Root Readers)
+Leader: Brigid Mecshaper
+“The Tunnel Runners dig the earth, but we are the ones who learn and grow from its secrets”
+In charge of Tunnel Maintenance, guiding the growth of roots and life below.
+Tend to the growth of mushrooms of all kinds, above and below ground.
+Because of their connection to the earth, they can sense tremors and “read the roots” of the trees to predict any impending danger or natural disaster.
+Earth builders, molding the shape of the walls of Underbrook and Bottombrook. Sometimes they have made sculptures from the earth, or carved tapestries on the dirt walls with their magic.
+Underground mushroom gardens tended jointly by Druids and common folk.
+Bards of Willowbrook
+The Celebrants
+Leader: Egan Crow (brother of Padric Crow, the bandit chief)
+
+Bottombrook (starter dungeon)
+
+
+Bottombrook is dark, and full of natural stone. This is where Halflings used to dwell hundreds of  years ago after their lands were destroyed by Ogres. The Warriors planned for an expanded living space beneath the river flowing out of Lake Titan.  dug as deep as they could go, until they hit a bed of stone.  hit a vein of sulfur(?) and caught the attention of Sulfur Imps(?) who quickly attacked to defend their sustenance. Halflings were caught off guard and the population of underbrook was nearly wiped out as a retaliatory attack. Whittlers use this as their argument against Druids and a big point that fuels their rivalry. Now in the area are restless undead, and sulfur imps. Old halfling dwellings are still there and hold secrets to the past. While Willowbrook could definitely reclaim Bottombrook, they are not so interested because with the discovery of Sulfur, it simply stinks too much there to have a good party. Still, the area is tended by a small branch of warriors and Whittlers. Some mine for stone, some try to keep back any would-be attackers, some try to sneak out some sulfur.
+ 
+Bottombrook has 2 bosses, Halfling Commander Spirit, and Sulfur Golem (guy made of sulfur), who doesn’t necessarily lead the imps, but was constructed by them, and it took many halfling lives.
+ 
+-------------
+ 
+Sulfur Imps
+They're little guys. They lay eggs in sulfur. Halflings call them 'Rotten Eggs', rightfully so.
+What do they look like: smaller than halflings? Pointy ears, big mouths and sharp teeth, red eyes. Black skin, and always covered in a bit of sulfur.
+What do they eat: uhh sulfur
+What do they live in: Hollowed out Stalagmites
+What do they want: more sulfur
+Classes: warrior, magician, shaman
+ 
+One quest, you can coax out sulfur imps using Shaman alchemy to create an imitation block of sulfur, and lead the imps into a trap.
+ 
+The sulfur imps, when they were disturbed by the Druids of Willowbrook, launched an offensive against the halflings, channeling their dark energies to conjure elementals and golems made of sulfur. They aren't necessarily wanting to attack the halflings, because they don't have any sulfur up there.
+ 
+--------------
+ 
+Halfling Spirits
+Appearance: Halfling models, but transparent with blue tint
+Classes: Warrior, Bard, Rogue, Druid
+Dead spirits which Shaman try to put to rest, but they are stubborn and like to keep partying. Most of them don't realize they're dead. Players are KOS to most of them, when spirits attack, they might make comments about how they think you are sulfur imps, or that you are killing the vibe and interrupting the party.
+ 
+"Leading" the spirits is a halfling commander spirit who lead a contingent of soldiers in defense against the imps and golems, but fell. He would be involved in a city quest in uncovering lore about the city. He would drop a token on death which one of the city Whittlers would recognize and present to the mayor. He's found in a barracks guarded by halfling warrior spirits
+ 
+-----------------
+ 
+Undead
+They're just mindless skeletons. Found in the same area as the spirits. Little bit of a mix.
+Classes: Warrior
+
+Bottombrook Points of Interest
+OLD DRAWING. OUTDATED.
+
+
+
+Music
+Music has 3 themes that play at the same time for the player. When they are overland, then it's the calmer song. When they're underground it’s the exciting song. When they're in the dungeon, it's the spooky song. Technically they are all playing at the same time and crossfade based on where the player is.
+
+"the hills of willowbrook have a song to sing"
+Landon’s Airplane Sketches (OLD)
+
+3D cross section of willowbrook showing rivers above and rivers below
+
+Showing that there might be some rivers above that just disappear into Underbrook, and there are cave mouths leading outside. That white box thing is supposed to be like a fishing shop
+
+This shows how a river in Willowbrook merges with a river in underbrook to create a secret passage in. Outside of river exit is a scout of x race, simple dialogue, possible infiltration into the underground city.
+Ogre NPC, when non kos, talks about disappearing boats. Hard to get him non KOS.
+
+There are guards on the other side of the waterfall entrance
+
+
+Guards on either side of a bridge in a river entrance for Underbrook
+
+
+2 levels, Willowbrook and Underbook. Misc whatever layout.
+
+This was supposed to be Bottombrook. I think that was a staircase leading down? That stuff in the lower left is sulfur.
+Direct Conflicts (OLD)
+Ogres of Osgul
+Constant war with the Ogres. Halflings use their guerilla tactics to gain the upper hand and outsmart the Ogres who are bigger and stronger. 
+The Ardent Vale
+Mob Guide
+The following is a guide to mobs which will be in what areas, and what level range to expect them to be. The landscape presented is subject to change to help match these mob areas. The Ardent Vale is lush not only with greenery but a range of mobs to keep young halflings busy. Use this to help create quests and plan for any named mobs and where to place them appropriately. The layout is subject to change, but it takes so dang long to plan, we’re probably going to stick to this for the most part.
+Full Ardent Vale
+
+Ardent Vale West
+
+Ardent Vale East
+
+Bottombrook (to scale)
+
+
+Dunnock Hills (Ehrensdale East)
+
+The Brookberry Battles / Gurshak War
+"How did the Brookberry Battles start? Ah who knows. Probably like any other war. Maybe they were jealous of our good looks and didn't like us picking from a brookberry bush they had their eyes on. One thing leads to another, an ogre eats a cousin, families vow revenge, then an ogre gets killed, their families vow revenge, and you basically have a wedding between the OvMachers and the MecMilers, 'cept with a whole lot of berries in between which we both want! They make their strong alcohols, and we make the tastiest pies which bring in folk like you from all around Adrullan. And iffn' you don't want your slice, then hand it over!" - Eamon OvFraser, retired Herder
+
+
+
+(Link to Osgul writings about the battle) A never-ending game of tug-of-war spans the vast expanse of the Frostfall Foothills and the Ardent Vale, as the pint-sized Halflings pit their cunning against the formidable strength of the Ogres in a relentless struggle for the prized Brookberries.
+
+The indigo-colored berries are found mainly on the northern hills of the Ardent vale and have attracted the attention of Ogre raiders from the east. These raiders seek to steal these berries for the meads they can produce which carry cultural importance to their monks, and a high alcohol content for the rest.
+
+The importance of berries to the Halflings come not from the alcohol (it’s difficult for halfling feet to stomp out the juice as ogres do), but more from the taste. Brookberries are commonly used in pies, jams, and baked goods which alone have piqued the interest of outsiders enough to stop by for a visit at the bakery. Goods made from these rare berries are worth the trouble, fetching in not only hungry stomachs and great stories swapped over dessert, but also heavy pockets. Clothes and textiles dyed with brookberries are treasured as family heirlooms and are a common color motif found in places of importance in Willowbrook. Traders from afar might bear some brookberry blue clothing among their wares at a high price.
+
+Due to minor variations in flavor and tannin by area, some families and factions of halflings fiercely protect and some even go as far to obscure and defend their harvesting locations.
+
+
+
+
+
+Brookberries (Link to Osgul writings) bear a striking, vibrant blue hue, a burst of color against the often stark landscapes where they flourish. These berries grow in dense clusters on sturdy, low-hanging shrubs adapted to the harshest of climates. Their leaves are broad and waxy, designed to withstand the cold, dry conditions of Frostfall Foothills and the humid microclimate of The Ardent Vale. Each berry is a small, glossy orb roughly the size of a large marble, with a thick, resilient outer skin protecting the sweet, juicy flesh inside. Brookberries are filled with a clear, sweet-tasting juice that contrasts with the slightly tart and bitter skin. Brookberries remain ripe and good for harvest over an extended period, allowing for the Ogres and Halflings to collect them over time.
+
+Points of Interest
+Picnic Area / Race Track (Newbie yard)
+Once a lovely picnicing spot, but it was overrun by vermin. Then the vermin of course brought in wolves. Now, long after our picnic has been ruined, giant ants have skittered in. Ah, I remember when you were a child you and your friends would race around that track.
+
+Creatures
+The Ardent Vale is home to many mundane and mystical creatures
+Bunnies
+Typically found grazing the clover fields of Willowbrook. Their fur can fetch a higher price than you’d think, as a halfling might be able to make a pair of halfling mittens from one bunny, unlike humans who have larger hands.
+(models and animations already exist, we can use what we have).
+Ants
+Scouts from the Dun Antnach cleft can be found searching for riches to supply their colony. Being the size of a halfling, they pose a great threat to any halfling which may wander outside of the confines of Willowbrook. Many times, the halflings prefer to hide instead of killing an ant, because they fear taking one down will attract the support of many more to retrieve their comrade’s corpse.
+Moving North
+Sweetness can kill. Ehrensburg had perfected the taste of wine recently with the inclusion of honey in the brookberry wine recipe. The honey is produced right across from the winery, making it an easy pairing. The Dun Antnach scouts had a taste, and couldn’t get enough though. Now Ehrensburg is threatened by the colony, and are steadily moving north towards Willowbrook. There is more foul play involved than one would think though. In a covert operation to undermine Willowbrook’s defenses, a fringe group of gnolls from Hillshade Hollow have taken to stealing from Ehrensburg’s honey caravans, and using it as lures for the ants. By steadily sneaking closer to the city under the guise of night and planting honey closer and closer, they hope for the ants to one day overrun Willowbrook. There is one thing the gnolls did not account for though - ants hate sulfur.
+Wolves
+May resort to hunting bunnies due to the difficulty the Herders and their Sheepdogs pose whenever their sheep are threatened. There may be a den of these creatures where they horde their trophies, including the spare sheep or two they managed to snag. (Easy quest idea - missing sheep, find the remains of a sheep, because hell no are we doing an escort quest)
+(models and animations already exist, we can use what we have).
+Wolf Den
+Found in the Western mountains, a large cave hosts a growing family of wolves. The alpha wolf leads the pack. Many clovik corpses can be found within, along with the treasure of some unfortunate halflings and other travelers.
+
+
+Snakes / Sea serpents
+Found near the rocks around the ardent vale are garter snakes (which are unfortunately inedible) for the halflings, and act as a deterrent for the mice which try to make their way towards the smells of baked goods. Ardent Lake is also not without its dangers. The fish population booms, meaning the predators must be active to cull their numbers. Sea serpents can be found around the lake, and in some spots might pose a hindrance to those who seek to enter Underbrook from an alternate entrance.
+
+Snake Pit
+Found on the ruins of a building from First Willowbrook, snakes have gathered
+
+Satyrs
+Said to be creations of the god Thornwise, and thought to be created specifically to cause havoc towards the Halflings… though this is a story you would only hear from a Halfling. Satyrs are Half-human, half-goat, and wield an innate magical power and connection to nature which they sometimes abuse in the name of pranks and revelry. Standing at nearly the same height as halflings, if not a little taller, the satyrs have turned into a natural rival of the halflings since they feel much at home in the Ardent Vale. With their crafty skills and magical illusions, there have been occasions where they have infiltrated the halflings and stolen their brews, or launched a few fireworks inside the command post in Underbrook for a spot of fun. Either way, the halflings have a long standing feud with satyrs, in some cases turning violent.
+
+These intelligent beings have evolved their own tribal culture centered around revelry, much akin to the halflings, though the Halflings would find the satyrs a bit noisier and hedonistic than them, making satyrs a true threat to the peace and quiet of the Vale. One downfall of the Satyrs is they never learned how to read, and have no written language. All tribal knowledge is passed down orally, many times through song and dance. Satyrs tend to be nomadic and roam around the wooded areas of Adrullan, but will always circle their camps back to the Ardent Vale out of a sense of belonging around other small beings. The Satyr’s most recent camp has been set up at the center of the Whistling Glade, where they have resided for the past few years.
+
+The average player starts out at least at “suspicious” level to the satyrs. Players with classes generally against chaos or nature (Paladins, Clerics, Necromancers, Shadowknights) will have an even lower faction with Satyrs. Nature oriented classes (Druid, Beastlord, Ranger) will have a slight bonus towards Satyrs. The fun-loving Bard will have a greater increase towards their innate faction with Satyrs, and Satyrs may be able to teach them how to play the pan flute some day.
+
+There are opportunities to gain better faction with the satyrs, though many halfling tasks might end up lowering satyr faction. Satyrs, being able to speak, will have their own set of quests which players with enough faction can partake in. Satyrs love a good drink, so you might gain some friends through enjoying a good bottle of halfling Brookberry wine with them. It might be a common sight though, that players turn the satyr village into a hunting ground, intent on finding their rumored magical artifacts.
+
+
+(The Whistling Glade as is 2024 05 26)
+Visual Guide and Reference
+Satyr Names
+Harkening to the Greek legends that produced them, Satyrs all have names with a heavy Greek influence, but with slight alterations. For instance, most Greek male names end with “os” “is” “es”, the Satyr names drop these, thus ending with harsher consonant endings for males. Female names end with “ah”, “ai” or “ei”, sounds associated with breathing out.
+
+Male names:
+Mendrak
+Braskur
+Drykur
+Ythgar
+Othrek
+Deiagar
+Thrigok
+Kibrakar
+Vrakor
+Chastur
+
+Female names:
+Zorynah
+Melgrah
+Zilvarah
+Morvei
+Khaldrai
+Jandrei
+Rhaskah
+Sarai
+Satyr Models
+Satyrs are the same height as Halflings, if not a little taller. They have the bottom half of a goat on its hind legs, with a small tail behind. Their top half is that of a human (or halfling?) though their ears are goat-like, and they have horns that curl from the side of their head. The hair of the satyr grows the same as a human, and most times covers up the root of the horns.
+
+These magical creatures are intelligent and can speak, reason, revel, deceive, and learn like a man. They cover themselves with light cloth to keep them limber. Males may wear just a vest, and females might wear a short tunic. Many can be found with magical instruments (stereotypically a pan flute), or a drinking horn (as satyrs love to drink).
+
+Female Satyr - wears a tunic
+
+(Landon’s old D&D character he drew. Sarai the Drunken Monk Satyr)
+
+Male satyr - May wear a simple vest, or a tunic. many times might have a beard or a goatee.
+
+Possible Character Animation Rig 
+(JUST ANIMATION, NOT ART): 
+https://assetstore.unity.com/packages/3d/characters/humanoids/fantasy/funny-satyr-211698
+(death animation is a little strange, but it has what we need otherwise)
+
+https://assetstore.unity.com/packages/3d/characters/humanoids/fantasy/elder-satyr-275239
+(not sure it has attacks / dying animations)
+
+https://assetstore.unity.com/packages/3d/characters/fawn-3d-199077 
+(the animations in the video look a little stiff, but this fits the character design closely. I like the death animation.)
+
+https://assetstore.unity.com/packages/3d/characters/creatures/poly-hp-goatman-177613
+(might work out, but animations might be tied to the arms and head being huge)
+
+https://assetstore.unity.com/packages/3d/characters/humanoids/fantasy/minotaur-barbarian-222570
+(It doesn’t look like the head plays a huge role in the animations. Everything is there though; we could use for an actual minotaur character as well)
+
+There are unfortunately no animations I can find where the satyrs are dancing or playing an instrument.
+
+Satyr Buildings
+Their buildings are not as intricate as the halflings, as many times the Satyrs would much rather party than work on construction. The nicer buildings they manage to accomplish are far and few, and are little more than a log hut. Most of the time, being partially nomadic, Satyrs reside in tents (a shoddy yurt at most), or many times sleep outside.
+
+
+(images generated with AI)
+
+Fireflies
+Not necessarily a creature, more an enhancement to the night scene. Player sees occasional clusters of blinking yellow/orangish lights which illuminate the clover fields.
+
+Moles
+The halflings are not the only ones digging tunnels in the vale. Moles are a vermin which can sometimes cause issues for the denizens, not just in the farms, but also in their underground city of Underbrook. The inconvenient threat these creatures cause with their natural tendencies can be the source of some early quests, such as damaged crops (Moles don’t eat crops, but their tunneling can affect crop growth). Moles are always after tasty insects, but they may run into some trouble with the enlarged ants of Dun Antnach creeping into the Vale. However, a bigger ant may have brought evolution to a bigger mole..The moles in ECO take the appearance of the European Mole and can possibly be inserted as a variation for the rat.
+
+Animation Rig
+If the rat will not work (As moles are pretty close to the ground) this rig should work.
+https://assetstore.unity.com/packages/3d/characters/animals/mammals/mole-226198 
+Though there is no dedicated attack animation, the standing up animation from the YouTube video might be repurposable as an attack. 
+Rats
+Another vermin found in the Vale, this one which may very well be after the crops of the halflings, is the common rat or mouse. As the halflings and satyrs are big partiers and eaters,  the rats can’t make up their mind of where to go to dinner some nights. The rogues of Willowbrook are already in charge of creating traps and ruses for the hulking Ogres, so they might train a young Rogue to assemble a trap to catch some of the pests.
+(Models and animations already exist, use what we have).
+Halfling Bandits
+Sometimes the allure of gold can outweigh the allure of pie, though as these tricksters rationalize, more gold equals more pie, so this renegade lifestyle trumps that of the traditional halfling. Bandits clad in armors from leather to chain make their bases in abandoned halfling hovels. As halflings are not always the most bloodthirsty by nature, many times these hovels were simply foreclosures, or some long standing dispute on inheritance got out of hand. Either way, a halfling knows a bandit hovel by the makeshift fortifications, unorganized boxes of stolen goods, and how the silverware was never put away right.
+
+Bandit halflings are aggressive to everyone, though they start “suspicious” to Halfling Rogues. There may be the possibility for increases to faction, but there might only be one quest given by Padric if you ever become non aggressive.
+
+Padric Crow and his crew of renegades are the more recent troublemakers popping out of sequestered hovels throughout the Vale. Watch your step on the roads, or you may find a small knife threatening you for your money, or your life, or your pie.
+Padric Crow
+The leader of Crow’s Bandits and brother to Egan Crow, guildmaster of the Celebrants. Egan would say Padric was too ambitious for a halfling, so much that it became dangerous. To Padric, the gold locked away in Underbrook’s vault was a symbol of wasted potential. Why hoard wealth while the city stagnates? He argued with Willowbrook’s leadership one too many times, and those arguments turned heated. “We’re just sitting on our wealth!”
+
+Now an outlaw, Padric frames himself as a savior to the downtrodden, rallying those who feel abandoned by Willowbrook’s rulers. He promises his followers a share of the gold, which he claims he would use to expand and strengthen the city. Over the past year, he has built his gang by recruiting ex-militia who never got their fair due, as well as mercenaries and opportunists chasing gold.
+
+When a band of roving ogres destroyed the western block of hovels, Padric saw his opportunity. While the town reeled from the attack, his gang moved in, ransacking the abandoned homes and turning them into their base. With Willowbrook’s guards stretched thin defending against ogres, imps, and threats from the south, there simply aren’t enough forces to push Padric out.
+
+Lost Ogres
+Down the river from the Ardent Lake leading to the sea, heading north into Tibolt’s Bounty, you may find some Ogres who have either abandoned their ranks in the Ogre army, or simply lost their way when looking for berries. These Ogres may also be in league with the thugs found in the outskirts of Osgul. In any case, everyone including Ogres would be considered a threat by these loners. They may have some treasure they are trying to hide from their kin.
+
+Vale Sheep (Clovik)
+Grazing around the clover fields are the domesticated vale sheep, known colloquially as Cloviks (combination of Clover, Ovis, and Yak). They grow to the waist of a halfling, but they trust their owners enough to never cause trouble. These sheep are the lifeline of many halfling products, including not only their clothing, but dairy goods as well (and eventually make a nice shepherd’s pie). Brookberry Wine needs to be paired with a good cheese from the Vale after all, and these sheep are just the source. They say the unique flavors produced by the vale sheep are thanks to the clover weeds they graze upon (and which sometimes gets caught in their wool). As the breed is considered miniature, they either find their strength in numbers or protection from a loyal sheepdog, because the prowling wolves would consider these critters as bite-sized snacks.
+
+Sheep Model Reference
+For the Vale Sheep, we could model them after the Valais Blacknose sheep, which are a swiss breed https://en.wikipedia.org/wiki/Valais_Blacknose 
+As adults they grow to be up to 2.5 feet tall, putting them roughly at the chest of the halflings, though we can adjust them to be slightly smaller. Both male and female have little horns. It’s hard to make out where their eyes are on their near pitch black faces.
+
+The Valais Blacknose can thrive in both a field and a mountainous region, meaning these could be repurposed in the northern region around the area where Tibolt’s Bounty turns into a mountainous area.
+
+The color of their wool might best be represented as an off-white at least, but not a straight white. Some little clovers might get caught near the bottom of their wool, giving a cute green accent to their palette.
+Sheep Animation Rig Reference
+While there is the Protofactor rig, the neck on it might be too long
+https://assetstore.unity.com/packages/3d/characters/animals/mammals/sheep-5012 
+
+This low poly rig seems to have a shorter neck which would work, and has all of the animations we would need, including walking, grazing, getting hit, attacking, dying, sitting (a cute one).
+https://assetstore.unity.com/packages/3d/characters/animals/mammals/lowpoly-sheeps-pack-183107 
+Sheepdogs (Clovikhound)
+The gentle Cloviks would stand no chance against the hulking wolves that roam the area, but fortunately, they are protected by the faithful Clovikhounds, also known as sheepdogs or simply dogs. These loyal companions grow to be almost as tall as a halfling, but their bond with the Cloviks is formed when they are still puppies, smaller than the halflings themselves.
+
+The halflings of the Ardent Vale are immensely grateful for the Clovikhounds' service and feed them as well as they feed themselves. This generous treatment further incentivizes the dogs to excel in their duties. Interestingly, the Clovikhounds are not native to the Vale. They were originally a gift from the Barbarians, who taught the halflings how to breed and train them several decades ago when the growing number of wolves began to threaten the Cloviks.
+The Barbarians use these dogs in war, which initially made the halflings hesitant to accept them. However, the arrangement ended up being successful. The adopted dogs immediately felt less stressed in the calmer environment of the Vale, yet they still retained their killer instinct when a threat was near. Over time, the halflings have grown very fond of these companions. Due mainly to their size, the halflings are strict about the number of Clovikhounds they breed, ensuring there is enough food to go around for all.
+
+Much like Fippy rushing to the gates of Qeynos and being slain by guards, Players might see a wolf dart towards the Clovik pens and be slain by dogs on duty.
+Sheepdog Model Reference.
+A sheep herding dog in the real world capable of killing a wolf would be the Turkish Shepherd Dog, Aksaray Malaklisi. They are big dogs in real life, standing nearly 3 feet tall, but we can adjust their size to whatever suits the halflings.
+https://en.wikipedia.org/wiki/Aksaray_Malaklisi 
+
+
+
+Sheepdog Animation Rigs
+We might be able to get away with the wolf animations, but that might cause conflict seeing the wolf death on a dog, among other things.
+This one should work and has all the animations we need. The tail on this one droops down a little, but the Aksaray Malaklisi tail droops as well when at rest.
+https://assetstore.unity.com/packages/3d/characters/animals/mammals/dog-tatra-sheepdog-18016 
+What might also work is this rig for a Shiba Inu https://assetstore.unity.com/packages/3d/characters/animals/dog-shiba-inu-185346 which has its tail curling up, and they have a similar structure, however their ears point up. 
+
+Imps
+When the halflings lived in Bottombrook, the druids dug too deep and hit a pocket of sulfur, immediately covering the area with a pungent smell. They unknowingly disturbed a hive of Sulfur Imps in the process who were immediately aggressive against the halflings. Seeing the cavernous area, the Imps swarmed out and settled where they could, turning the halfling lands into a hatchery. They didn’t expand much further out, since the Halflings had no sulfur themselves, but the halflings don’t want to let them grow too numerous and seep into Underbrook. The halflings call the imp eggs ‘Rotten Eggs’, and rightfully so.
+
+Sulfurmancy
+After the Halflings fled Bottombrook and the Imps were once again left alone to their sulfur, the magic in the world returned. With it, Ludos was released, now with control over a 7th aspect of magic, Chaos. Ludos sought to empower the demons of Adrullan who had no control over any kind of magic, forsaken by the gods. Ludos visited the imps in his travels, and bestowed them chaos magic which they could use to control the very thing they covet: Sulfur. It is through this new study of transmutation that the Imps had a grand awakening, expanding their minds and motives well beyond what was natural. The sulfur imps could now use sulfur as a conduit for feats of divination, evocation, conjuration, and in some cases, necromancy.
+Imp Model References
+Physically, the imps are slightly smaller than the halflings. 
+⚠ We are currently polling to see what people like in the appearance of an imp, which would alter the course for the rigs we use. We might use elements of top choices together in the final design
+
+OLD References
+
+
+
+Imp Animation Rigs:
+
+A few variations for a smaller version with a big head, which we might be leaning towards.
+https://assetstore.unity.com/packages/3d/characters/creatures/cartoon-characters-imp-warriors-240983
+
+Nice hunched over pose, as well as casting animations, but generally for an imp with a smaller head
+https://assetstore.unity.com/packages/3d/characters/creatures/low-poly-character-demons-fantasy-rpg-183691
+
+Nice variant if we have more of a rat like guy
+https://assetstore.unity.com/packages/3d/characters/creatures/ratkin-rogue-88599 
+Golem
+The Sulfur Imps bear a powerful magic which in times of need they use to conjure a golem made of sulfur as a champion. Golems are automatons created from elements of the land, much like the common pet of a magician, and this one is not much different, though it is created with the combined efforts of several imps at once. It has a limited sense of loyalty because it doesn’t have one true master, meaning there are times this kind of golem can turn chaotic and violent at everything around it.
+
+Golem Animation Rigs
+The protofactor rig for Golem fits almost perfectly with what I had in mind. https://assetstore.unity.com/packages/3d/characters/humanoids/fantasy/golem-3620 
+
+Alternatively, we could go the route of having free floating rocks through this model
+https://assetstore.unity.com/packages/3d/characters/creatures/enemy-golem-211406 
+
+Halfling Ghosts
+In Bottombrook when the Sulfur Imps swarmed and attacked Old Willowbrook, it happened so fast that some Halflings didn’t know they even died. Some of them continue to party and live out their lives, and if you try to disturb that, then that’s on you. The Whittlers of Underbrook are trying to cleanse Old Willowbrook and deliver the spirits of the fallen halflings, but these spirits can be so stubborn sometimes. Still, these creatures are part of the key to discovering Willowbrook’s past.
+
+Players are KOS to all Halfling Ghosts, except for select quest ghosts, which may be neutral or suspicious.
+
+
+Ghost Model: Use a transparent texture, colored mainly light blue, potentially a special shader  to give a wispy aura about the ghosts. We should be able to get away with the halfling models we have now, and use some npc onesheets as a basis for this texture.
+Ardent Vale Reference Images
+
+
+(Fewer houses, those would be buildings for trade, crafting, husbandry, and fishing).
+
+Ehrensdale
+Travelers passing through the Moorlands to Willowbrook typically come by way of Ehrensdale. 
+
+To rewrite below – lots of AI crap which came from initial ideas.
+
+Ehrensdale is a small but vibrant outpost nestled in the rolling terrain of the Ardent Vale, on the winding road to Willowbrook. Though it’s only a short journey away from its larger sister settlement, Ehrensdale stands out for its wine production—specifically, the famous Brookberry vintage refined here at Streamfoot Winery. Additionally, the settlement’s watchtower keeps a wary eye on the roads east, where ogres are known to skulk in search of more Brookberries for their powerful brews. After the Reverdure (the grand halfling resurgence following the tragedy in Bottombrook), a handful of dedicated families rebuilt Ehrensdale on ancestral land once belonging to the Streamfoot tribe. Their winemaking tradition lives on, enriched by a dash of rare honey harvested near the lakeshore.
+History & Ties to the Streamfoot Tribe
+Centuries ago, the Streamfoot tribe thrived in this region, fishing the local streams and concocting fruit-based libations. When the halflings unified under the Willowbrook banner, most Streamfoots relocated closer to the main city, but a stubborn branch of descendants kept a foothold in the old homeland. After the destruction wrought by ogres, the place was abandoned—until the Reverdure sparked a revival effort. Halfling survivors, many bearing Streamfoot lineage, returned to Ehrensdale to restore it to its former glory as a proud but peaceful waypoint for travelers (and a beacon for wine-lovers everywhere).
+Points of Interest
+1. Streamfoot Winery
+The beating heart of Ehrensdale is this cozy collection of timbered buildings with large, sloping roofs designed to keep stored casks cool and dry. A carved wooden sign out front bears the old Streamfoot crest (a pair of wavy lines under a stylized footprint), honoring the tribe that once controlled these lands.
+Winemaking Process:
+Brookberries arrive from the halfling pickers across the Vale. The berries are pressed, fermented, and then aged in oak barrels. A small portion of unique honey is added during fermentation, giving Ehrensdale wine an unmistakably sweet floral hint.
+Operations & Staff:
+Wiva OvStream (Winery Matriarch): Direct descendant of the original Streamfoot tribe. Warm and talkative, always has a sample tasting on hand for curious visitors. She prides herself on upholding her tribe’s legacy of hospitality.
+Darin Mecfletcher (Cooper & Barrel-Maker): Meticulous about his craft. Prefers to work in relative quiet so he can listen for the hollow ring of properly cured wood. Lately, however, he’s been dealing with a minor termite problem. They don't seem to spread too far, though, and Darin has noted, "Something is keeping them at bay. Either way, they're a nuisance."
+A Hidden Secret – Chastur the Satyr:
+Deep in the winery’s back storeroom, accessible only by a small locked side door, lurks a surprising figure: Chastur, a satyr who has bargained his way into part-time “employment.” Officially, he helps shift barrels and occasionally offers “taste tests” in exchange for a share of the brew. Unofficially, he’s been smuggling contraband sulfur. The pungent sulfur odor is largely masked by the fermenting wine, so it’s the perfect front. Only a few (very trusted) winery staff have any inkling that something about that rear storeroom is off.
+2. Merrybloom Florist & Apiary
+Located a short distance from the winery, Merrybloom serves as Ehrensdale’s primary source of flowers, honey, and natural remedies. The establishment is surrounded by carefully maintained flower beds and a series of sturdy wooden beehives, producing the Dawnwhisper Honey that enhances Brookberry Wine.
+Unique Honey & Flowers:
+The bees of Merrybloom forage on Dawnwhisper Blooms, silvery-petaled flowers that thrive in the misty lakeshore environment. Their nectar infuses the honey with a subtle tang and faint lavender hue, making it a rare and valuable commodity.
+Operations & Staff:
+Bronagh OvMellow (Owner & Florist): A meticulous halfling with a keen sense for floral arrangements and apiary maintenance. She supplies both Ehrensdale and Willowbrook with honey, candles, and herbal remedies.
+A Growing Problem – Ant Infestation: Bronagh has recently discovered ants burrowing into her basement, possibly drawn north from Dun Antnach by the sweet nectar and honey storage. She is seeking help before it escalates into a major problem.
+Quest Hook: Bronagh hesitantly admits to adventurers: “Um… I do have a bit of a problem.” If players investigate, they will uncover the first hints of a greater ant migration toward Willowbrook, potentially leading them toward larger-scale infestations.
+3. The Watchtower
+A modest stone tower stands east of the settlement, keeping watch over the roads leading toward ogre territory. Typically, one to two halfling guards patrol outside, with another stationed inside.
+Guard Dialogue: “I’d rather deal with ogres than these cursed ants. Least ogres don’t sneak up on ya in the dark.”
+4. The Foothill Cork Tavern
+A snug and inviting tavern sits near the winery, boasting a simple but hearty menu and, of course, a constant flow of Brookberry Wine. With only two rooms for rent, travelers need luck or a good story to claim a spot for the night.
+Specialties:
+Brookberry-Honey Mulled Wine
+Streamfoot Stew (made with leftover grape mash and root vegetables)
+Aged Willowbrook Cheese Platter
+5. The Brookberry Fields
+Surrounded by a stone fence are 
+
+Additional Quest Hooks
+Sulfur and its Unintended Protection: The sulfur hidden in Chastur’s storeroom is unknowingly repelling the ants from the winery and much of Ehrensdale. If it were removed, the infestation would likely explode. Players investigating the ants may stumble upon this truth, creating a moral dilemma—keep the sulfur to hold back the ants (while engaging in illegal smuggling) or find an alternative way to protect Ehrensdale?
+
+Ant Labyrinth
+Ants from Dun Antnach have unexpectedly set up a complex system of tunnels and chambers to fuel their operation of plundering Ehrensdale slowly but surely from underneath. They’ve infested the basements of two stores, but stay away from the Winery for some reason (the sulfur deposit of Castur the satyr, as it turns out). Some halflings aware of the labyrinth may jokingly comment “they’re copying Underbrook, connecting our houses underneath! Stealing our honey, and now our ideas!”
+
+From Dun Antnach in the south, there are cadres of five delivery ants (spawned by script) which march towards the storage area of the labyrinth (they are on a one-way path taking them from a spot near dun antnach to a spot in the storage room, and then they run back to the dun ant nach spawn point, disappearing afterward.
+
+There’s a couple of ant chambers for brooding and holding onto honey (where honey is moved to storage in bits for the delivery ants.)
+
+In the royal chambers leading the operation is not a queen, but a royal of Dun Antnach, Prince Krikak. Halfling Rangers doing their capstone initiate quest are tasked with killing Prince Krikak to save Ehrensdale, or at least, buy it some time to recover.
+
+
+Mistledew Island
+When you first come to Willowbrook, ascend the stairs, and cross the bridge over the river flowing through, to your left you would see the joy and bustling life of Willowbrook proper. However to your right you will see a more mysterious site which could even bring a frown to the jolliest of halflings. Directly off the beaches of Willowbrook, in the middle of Lake Titan
+ is the foggy island of Mistledew. In the center of the island, towering over the tallest trees stands the Maorstone atop an ominous residence bearing the famous maorglyph. Every halfling must visit the island at least once in their life as a rite of passage, for it is on Mistledew Island where lumber is hewn not only for their structures and crafts, but the sacred masks held dear in Halfling culture. The island additionally is home to many delicious fruits and mushrooms, as well as delicious game found in the heartiest of meat pies. Unfortunately Mistledew also plays host to some unfortunate dangers. Most notably, at night, the tall and ferocious mythical being known as the Maor will roam the island and hunt any intruders, including halflings. Some halfling outlaws, ogre raiders, and dangerous predators make their home on the island, keeping all visiting halflings on their fuzzy toes.
+The First Mask from Mistledew
+When a halfling has their coming of age ritual, It feels a little against halfling nature to choose wood from the scary island across the lake rather than the woods up the hill from Willowbrook. It’s said the first halfling to make the trek across the lake and carve the first mask made from Mistledew wood most likely lost a bet. The kooks among the Whittlers like to say the Maorglyph called to him… but nah, he most likely lost a bet. Either way, Taygen OvHaggie, later dubbed Taygen Maskmeker, showed true courage that day, and impressed his friends not only by bringing back a block of wood, but also with a basket of new mushrooms he discovered. A grand story and now food certainly made this man a legend. As this was all for his coming-of-age ritual, Taygen whittled away at the wood to fashion a mask representing an owl face. He challenged his friends to wear the mask and bring back their own piece of wood.
+
+(the first mask carved from Mistledew lumber)
+
+One by one, his friends swam across with the mask, bringing back their own block, and a few new snacks. The moon eventually rose in the sky, and Taygen’s last friend Orrimun made his way across, brimming with confidence seeing the success of his other friends. As it was night time, this was the first friend to come face to face with the Maor. Dropping the hewn block of wood and the owl mask, but not dropping a bushel of apples, Orrimun fled the island, barely escaping the Maor. It was from that day on, in jest, all halflings would call any friend who befell a spot of misfortune as “Lucky Orrimun,” who though he failed, at least was able to save his life and a snack. They never did get that mask back, but soon this daring feat turned into a tradition, shaping some of the most important aspects of Willowbrook culture: courage, spirit, and a bit of fun.
+Mistledew Island Operations
+As the tradition continued for young halflings to chop Mistledew wood for their own mask, the process became more streamlined. Eventually some halflings opened full operations on the island to harvest Mistledew’s resources. There came to be huts dedicated to processing lumber, game, and all gathered goods. The main rule these halflings must follow though is moderation in harvest. There may be several months where the huts are vacated and no halflings would travel to Mistledew in order to allow the island to regrow. To make sure this is upheld, the bravest ranger from the Hillwatchers is designated as the island’s warden. Any halfling who gets too greedy or visits when unauthorized is punished and potentially imprisoned after the ferry ride back to Willowbrook.
+Creeping Curiosities
+Mistledew Island is the only place in the Ardent Vale which has spiders on it, and the spiders are quite aggressive, meaning that silk goods are rare to come by in Willowbrook. However of the spiders on Mistledew Island, they’ve evolved to produce a silk that is quite thick and slick compared to other spiders. This particular strain of silk is used in cultural crafting for the Halflings, specifically in handkerchiefs and napkins, because with the slick silk, the crumbs can roll off and they are quite easy to clean.
+
+Recently there are a number of termites that have built their home on Mistledew Island as well, as they’ve gained a taste for the island’s rich lumber. It’s unknown where they came from, but most would blame the Ogres of Osgul. With the loading bay quite close by, it was easy for the termites to find their way into Underbrook and become an invasive pest that has been chewing through the beams, supports, tables, and more of Underbrook.
+
+Reference Maps
+
+
+The Maor
+Meta: Pronounced “Moo-r”, Gaelic for ‘Warden’. This is a cryptid, around level 35. Tall boogeyman that roams the path at night, stays in the center at day. KOS to players. All Halfling NPCs go inside their huts at night to simulate them hiding. In reality, the cryptid isn’t KOS to them. Worth finding a way to make sure players inside huts aren’t KOS either. Could still KOS the outlaws and raiders on the islands. He makes sounds like a silt strider from morrowind, heard from afar to let players know he is close. High level quests might dare halflings to go inside his house at night when he is on patrol.
+
+An ancient being that roams Mistledew island, protecting it from any who seek to disrupt the natural order of the island. It stands over 10 feet tall and bears a resemblance to the nature surrounding it, with long wooden-like limbs covered in hanging moss. Its face is shrouded and emotionless, but its glowing blue eyes shine through, piercing the souls of those brave enough to stand in its way.
+
+(AI Generated, current working concepts)
+
+The halfling laborers who have taken residence on the island know that staying out after dark on Mistledew spells certain doom, as this is when the Maor emerges from his house and patrols the path encircling the island, attacking all outsiders in his way. This has turned the Maor into a boogeyman figure of halfling culture, mainly to scare misbehaving small children, though everyone knows the Maor would never leave Mistledew.
+
+Maor Possible Rigs
+https://assetstore.unity.com/packages/3d/characters/creatures/sci-fi-rapax-216873
+(Just don’t care about the mouth pieces, and this could work)
+
+https://assetstore.unity.com/packages/3d/animations/animset-creature-202644
+(Not reverse jointed legs, but has the stance and feeling otherwise)
+
+https://assetstore.unity.com/packages/3d/characters/creatures/monster-gorosaurus-53236 
+(the legs are a little stubby though)
+
+Mistledew Island Points of Interest
+Loading Bay
+As one of the main operations of Mistledew island is to provide lumber, fungi, and silk for Willowbrook, it’s only natural an external warehouse takes form close to the dock which players offboard. Not only this, but the warehouse is well protected, especially at night, by the Maor who doesn’t want anyone near anything on the island. Not only this but the loading bay acts as an intermediary between the docks at the end of the mekally river, and underbrook. This helps maintain the secret of Underbrook itself, and ensures no boats of improper clearance possibly enter through the waterfall.
+Ranger’s Hut
+Mistledew Island is under the keen watch of the Hillwatchers of Dunnock Hills, and one elite Ranger in particular ensures the operations of the island are running smoothly with no disturbances to the inherent ecosystem of the island with its wildlife, no matter how dangerous it might be. Ranger Kelver keeps several curiosities that he’s foraged himself or brought over from Willowbrook to help keep his abode all the more cozy.
+Shroom Shelter
+Foraging mushrooms is another important activity and export from the island. The Master Forager may seek help from the player in foraging some common goods from Mistledew. The Shelter is not just to keep the mushrooms from spoiling though, it acts as a shelter at night from the Maor prowling. All Willowbrook citizens will make their way into the Shroom Shelter, where there are bunks, bedding, benches, and of course, meals and games to play while the night passes and the island guardian makes its rounds.
+Wood Processing
+Mistledew Island acts as a main source of lumber for Willowbrook, as its trees grow quickly and are rotated through like a proper tree nursery. The other important source of lumber for Willowbrook comes through trade with the Wildemen of the West. At the Wood processing outlet, players are able to train their carpentry skills as they observe halflings hard at work hewing through dozens of felled trees from the island.
+Renegade Union
+Breakaway group from the Union, led by Sean Riddles (a target for a bounty hunter quest). Little did they realize their hideaway would not be so cozy at night. Players will find caches of weapons in these renegade huts, and maybe a firework or two.
+
+Maor Mushrooms
+Per a library book ‘Maorglyph, Maorstone and Maor’, there was a man who stumbled upon a patch of fog eater fungus growing in the center of the island. Rather than charge at the man, he claims the Maor leaped towards the fungus and ripped it apart, giving him time to escape. Fog eater fungus has a natural ability to absorb condensation, leading some Root Readers to theorize the Maor was wanting to protect the fog that forever enshrouds the island. However such a phenomenon has not since been observed, leaving this entity firmly rooted in the realm of speculation and tradition.
+Maor Cave
+During the day, the Maor prowls inside its cave, in which it keeps some curiosities it has found around the island. The Maor’s house gives a look at the apparent intelligence of the creature which nobody seems to be able to decipher.
+Ogre Camp
+Raiders from the Brookberry Battles have established a front on Mistledew Island in the North East. from here the Raiders plan to make an amphibious assault on Willowbrook, though their plans are often foiled by the Maor, and how Underbrook has such tiny entrances.
+
+Library Books
+
+Founding of Willowbrook I - about the three original tribes BurrowHart, Meadowkin, Streamfoot, tensions and war, satyr creation by Thornwise
+
+<b><i>Founding of Willowbrook, Volume I</i></b>
+By Bramble Timby, Senior Historian of the Whittlers
+
+Long before Willowbrook’s founding, before tales of ogres and wild things, before the eight meals were decided, our folk all lived scattered throughout Adrullan, in places hot and cold. If you ask any elder in Willowbrook how the halflings came to be, he’d say we were all wandering about, bumped into other folk around our height, and naturally decided lunch was in order. Thus formed the first halfling tribes, who some of them wandered into the Ardent Vale. Mind you the Vale was a bit shaggier back then as we’ve discovered. Many more trees and brush kept us out of sight of predators without us even realizing.
+
+To address a point early, our druids, the Root Readers, will say with absolute seriousness that we settled in the Ardent Vale specifically because our ancestors stumbled upon that great lump of rock called the Maorstone out on Mistledew Island. They swear blind it had some magical sway over us, shaping our culture and manner. This topic though is highly debated, as many vale folk agree they’d rather not heed to lessons of industrialization and table manners from the whispers of very large rocks.
+
+What we do know for certain is among the many tribes in Adrullan, three of the more civilized tribes claimed the Vale. The <b>BurrowHarts</b> were the industrious ones, digging into the northern hills and mountains of modern day Tibolt’s Bounty for its rich ores. The <b>Meadowkin</b> settled the fertile central fields, herding cloviks and tending crops and  gardens. To the south, you’d find the <b>Streamfoots</b> paddling about rivers, fishing, and trading their wares far and wide.
+
+Sharing the Vale with the halflings were a handful of vermin (that come up to about our knees), the adorable and equally feisty cloviks, bountiful fish, and the ever unpopular Satyrs. It is said, rather <i>yours truly says</i>, the Satyrs were created as the antithesis of halflings by  Thornwise the Deceiver himself. He made them all with the sole purpose of revelling haphazardly, lazing about, and general carrying-on. The opinions expressed by this author are probably what we’re all thinking.
+
+Anywho, the vale tribes and the satyrs at first coexisted through keeping distance to their business. But years of harsh winters and thinning resources strained their ties. Disputes over land, water, and pride turned into thefts, scuffles, and even a poisoned feast or two. The satyrs, of course drawn to discord, stirred the pot with rumors and pranks guised as tribe against tribe. Eventually things reached their worst when Meadowkin and Streamfoot blood was spilled along the brook. Each tribe, though never having fought in their lives, now prepared for war, reckoning it was the only way out.
+
+On the eve of the battle, it is said Thornwise, our favorite god of mischief, deception, and creating the bloody satyrs, appeared before each tribe’s chieftain disguised as one of our own. Thornwise offered enchanted masks to one tribe’s soldiers, promising it would bring them great power. Then he went to the next tribe and the next tribe, offering masks to their soldiers, promising them it would bring them great power. Of course, the masks all looked the same! I’m sure the bastard sat upon a hill nearby with his satyrs next to him giggling over all the halfings about to crush each other, friend and foe alike.
+
+And so the battle began. The three tribes charged forward, pitchforks, pots, and pans wavin', shouting something they reckoned sounded fierce. Then they suddenly stopped. None could recognize ally or enemy. Nobody knew how to engage, hesitation spread, and the battlefield fell to silence. Then, someone let out a chuckle, for they all of them knew each other a fool. All the same fools with the same blood and bedside manners.
+
+At that moment, the tribes chose peace. Weapons dropped, hands were shook, and recipes swapped. The chieftains, Fergus BurrowHart, Aelwen Meadowkin, and Bran Streamfoot, sat themselves under a grand willow by a babbling brook and shared a pint, deciding to join as one folk. They called their shared home ‘Willowbrook’, which seemed appropriate at the time, and probably all they’d bothered to come up with. Then, symbolically, the chieftains buried their battle masks beneath the Great Willow Tree, and began planning the next steps to their bright future.
+Founding of Willowbrook II - integration and union after the war
+
+<b><i>Founding of Willowbrook, Volume II</i></b>
+By Bramble Timby, Senior Historian of the Whittlers
+
+I suppose you wouldn’t have thought that seven hundred years ago the Vale Folk hadn't so much as the notion to burrow homes into hillsides. The BurrowHart tribe dug into the earth all right, but only for storing tatties and turnips, mind you. They wouldn't dream of making living quarters and trying to keep the wife happy in a place inherently full of dirt. Or so they say. I suppose you also wouldn’t have thought that the Ardent Vale was an unkempt jungle when the three vale tribes united, and the vale was not the tidy fields and gardens as we know it now. There was plenty of timber about to build homes the proper way, thank the stars. It also meant there wasn't one blessed reason for any soul to be wandering off to Mistledew Island, which is where we get our timber these days.
+
+As the building of this new city situated next to a willow tree and a brook, masterfully named ‘Willowbrook’, began, the first building planned was the Mayor’s house. Yes, the tribes had their chieftains, but the citizens wanted a Mayor, and a Mayor was yet to be elected. I suppose like any halfling, they’d want to see how good the house turned out first before they decided to run for Mayor. And build it they did with study BurrowHart tools, fine Meadowkin planning, and the Streamfoots providing the wine (a side note, the Streamfoot winery was built 350 years before Willowbrook, and sated the thirst of our ancestors with the same recipe used today!)
+
+Well now the house was built, but then there was the decorating that needed to be decided upon. So naturally it wasn’t until a good ten years later that a Meadowkin lad with the patience of a saint named Eamon OvWillow, was chosen as the first Mayor. Of course the curtains and crockery were still being decided upon, but Eamon had dreams of industry and growth. Under his eye, the forests were chopped and the lawns were cut. By the time it was done, they'd forested just about all the forest there was to forest. In return though, they built farms and fisheries, pantries, planteries, bakeries and bridges, dairies and docks, and every manner of thing a halfling heart could crave.
+
+But when the final nail was hammered in the final cupboard of the final dwelling of Willowbrook, a large bang from the south was heard, and a great magic of the world seemed to slip away. Unlike most Root Reader propaganda on magic, this period is well known and recorded, referred by some as The Absence. This is when they say the gods left the world and nobody rightly knows why. Root Readers would say Fenla, Goddess of unkempt nature, didn’t take kindly to our chopping and kemping of nature, so she packed her bags and that’s why the Vale never grew back to the jungle it was.
+
+What we do know, the large bang as we learned was from Elves in Solendris wiggling their fingers too quickly and summoning a calamity to threaten all of Adrullan. Oh but they did say they were sorry and trying to help us inferior beings, so maybe take it easy on the poor sods! Little did the Vale Folk know, the effects of this dark age would spell out a dark fate. Ogres, Battles over Brookberries, Wolves, and of course, more bloody Satyrs.
+
+Great change was indeed waiting beyond the borders, but the vale folk would always band together through the thick, the thin, and the crumbly bits. And so ends my account of the Founding of First Willowbrook.
+
+Fighting Things Bigger than You - principles of the halfling ‘art of war’ usually against Ogres.
+
+<b><i>Fighting Things Bigger than You</i></b>
+<i>Third Edition. Tunnel Runner Codex. Circulated Year 276</i>
+<i>With contributions from Pira BurrowHart, Odis BurrowHart, Mr. Jentercorn, and many other fine folk.</i>
+
+If you’re reading this, you’re likely in danger of being crushed, have just narrowly avoided being crushed, or are currently in the process of being crushed. Well, our ancestors were crushed plenty so that you might have the good fortune of reading this fine manuscript. Here are five principles hard-earned, practical, reliable and proven through experience and survival.
+
+<b>1. Focus Forward, Focus Far</b>
+
+When Vale folk first encountered Ogres in the Northern Brookberry fields, the first thing they saw right at eye level was not their ugly mugs, but the wide space between their legs. And it took a mere one hundred years after to realize that this space was a path we could safely weave around. Unlikely paths can save your life, but you’ll never see them focusing only on what’s in front of you.
+
+Don’t merely watch your immediate next step. Instead, identify the next two or three moves ahead. Without even moving your head, keep your eyes scanning forward. See that rock you might leap to, the log you could duck under, or that hidden tunnel entrance. Perhaps there’s even an ogre's leg positioned right where your rope can tangle it. Move deliberately from one point to the next, adjusting as you go but always thinking several steps ahead. Focus forward, focus far.
+
+<b>2. Mind Their Head</b>
+
+Anything larger than you must first search for you, whether by looking down or bending low. Their head can only roam where their body is able. Move to where their heads cannot easily follow. However, hiding is not enough.
+
+Understand how they search. Anticipate the paths they'll expect you to take. Choose positions that require too much effort for them to find you. Create patterns deliberately, let them believe they've understood you, then shift those patterns. Misdirection consistently beats brute strength.
+
+<b>3. Every Step Should Be a Question</b>
+
+Make your enemy uncertain. Every hill might be hollow and full of folk, every wall might hide a secret. Uncertainty sows hesitation, frustration, and fear. Use your environment to create doubt. Something that might crack beneath your foot will surely shatter beneath theirs.
+
+Masks are tools of deception, not just disguise. Become something your enemies chase, fear, or falsely trust. Capitalize on their confusion. Strike when they're uncertain, distracted, or simply looking away. If they never saw you coming, your strike counts twice.
+
+<b>4. Don’t Stop Boulders Rolling Off Cliffs</b>
+
+Sometimes, the wisest move is to do nothing at all. If an ogre is already heading toward trouble (a trap or a pit), let them continue. If they're retreating from the Vale, kindly guide them to the door subtly but don’t obstruct them.
+
+Use misdirection to control outcomes. A retreating ogre isn't just running away; they're isolating themselves. Alone, they're vulnerable. Allow gravity and their own mistakes to do your work for you. Be patient, observant, and ready to act when the moment comes.
+
+<b>5. You Never Fight Alone</b>
+
+Even when physically alone, you're never without allies. The land itself is on your side. The tunnel you dug yesterday, the hidden entrance under the moss, the familiar shape of the hill you've walked countless times, all these are allies. Branches become tools, puddles become reflections, shadows become signals.
+
+Vale folk don’t win by force; they win by understanding their surroundings and relying on preparation. This is our land, we know our land, and our land knows us. We protect what we know, and what we know protects us.
+
+Tricks & Traps I: The Effect - A military guide of practical tactics and traps, the first volume focusing on traps and placement
+
+<b>Tricks & Traps I: The Effect</b>
+By Viora Shane, Chief Engineer, The Tunnel Runners
+
+Through our many campaigns and wars against Ogres and things a bit larger than us, we’ve developed several tactics and traps to help ensure victory in overwhelming odds. With help from several veteran Tunnel Runners, and A.R.T.ists of the Willowbrook Union of Archaeology, the following tricks and traps in this manual are verified and approved for modern field application.
+
+In every encounter, we play a game of cause and effect. The Tricks are the cause, and the Traps are the effects. It is crucially important we understand the effect we desire to bring, because this sets us up for our next cause and effect. “Focus forward, focus far.” For this, we always train operatives by first teaching them how to make traps.
+
+<b>Traps</b>
+
+For all basic traps, it is recommended you bring your combat shovel (for easy chopping, digging, and shaping), plenty of rope, burlap, and a companion (for lookout, scouting materials, and meal conversation).
+
+<i>Site Selection</i>
+Of course the main roads, bottlenecks, chokepoints, and blind corners would be too obvious. Fortunately for us, ogres fall for the obvious more than they’d ever admit. Unfortunately for us, the ogres unguided will charge in a line on the main road, triggering traps until we’d run out, but still there’d be more in their line following. As you’ll learn with trickery, separating a target from their group and guiding them into intermediate areas (a valley between two hills) opens up a whole new range of trap opportunities.
+
+<i>Pitfall</i>
+One of the first traps developed by our ancestors, though at the time their deepest traps only came up to the knees of the ogres. The modern pitfall shall be dug three halflings tall, and can sometimes take a day to complete. Haul dirt up to your companion with your burlap, and in turn  have your companion fashion and toss down sharpened sticks which you drive into the pit floor. Coat the tips with serpent venom for extra spice.
+
+When your companion pulls you out with a rope, prepare the covering. The modern pitfall should come at no danger to your fellow vale folk. One of the greatest features of halfling pitfalls is that what cracks under our feet as we walk will surely crumble when an ogre walks over it. Cover the hole with branches, sticks, and foliage just enough that you can comfortably walk across the pitfall with minor crackling heard. With the leftover dirt from digging, use a third for the trap covering, a third for covering your own tracks, and a third for the nearest patch of flowers.
+
+<i>Pitfall Variants</i>
+From the Pitfall, other quicker variants have emerged. Digging a simple trench, or series of trenches, and covering them, could cause some in a line of ogres to trip or twist their leg in a chase, splitting their numbers. Bait is often used to change a pitfall into a trick and a trap, such as placing food, weaponry, or even a live Clovik. These Pitfalls can easily capture a wolf or entice a snake, and thus provide easy alternatives to sharpened sticks.
+
+<i>Slipstack</i>
+A simple trap designed for ridgelines or sloped paths. Veterans use these traps not just to injure but to break formation. Use your shovel to wedge out a shallow shelf in the slope, just wide enough to nest four to five large stones or a tightly stacked rubble cluster. Leave a lip at the base to hold your support. Your companion will help you roll or carry rocks into position.
+
+Place bundles of sticks under the frontmost stones as the support. Tie your rope to the support and anchor it across the path below as a tripline, roughly at ogre knee height. Ogre knee height is highly visible to vale folk, making this trap once again safe for our kin.  When triggered, the support dislodges, and gravity does the rest. The stones crash down just as the ogre passes underneath. If you’ve done it right, the first ogre in line won’t make it out of the pile. The rest tend to hesitate, giving you the next moment to strike.
+
+Tricks & Traps II: Hill Warfare - A military guide of practical tactics and traps, the second volume focusing on Hill Warfare
+<b>Tricks & Traps II: Hill Warfare</b>
+By Viora Shane, Chief Engineer, The Tunnel Runners, with contributions from Pira BurrowHart
+
+In this volume of Tricks & Traps, we focus on the concept of Hill Warfare, which developed since the days of Bottombrook. Hill Warfare ties together elements of stealth and misdirection, making every mound in our vale a source of fear for enemies. Pira BurrowHart was the first to realize that a hollowed out hill provides a natural armor which no Ogre can chase, yet still we can fight and drive enemies away from it. It was also from Hill Warfare that Vale Folk found solace living in these battle-forged hills, and quite preferred it as a living quarter after the Reverdure battles.
+
+The great thing about hills is they can always be dug out further in case you ever want to expand. There are the <i>Four Intentions</i>, or Grades, which apply to hills: <b>Hides, Passes, Shelters, or Keeps.</b>
+
+<b>Hill Hides</b>
+Take the least effort to dig, and can be finished in under an hour by a single vale folk. A Hill Hide is a small hollowed-out pocket, just large enough for one halfling to crouch inside, shielded from view and protected from above. The front is camouflaged with a layer of branches, burlap, or scrub netting. Hill Hides serve best for scouting, ambush setups, and breaks. It is from this many tunnel runners, when given the chance, prefer not to camp in tents by fires, but huddled in their Hill Hides for the night. If discovered, a Hill Hide cannot be defended. That’s not its purpose. If they find you, you’re either out too long or not hidden well enough. Try again.
+
+<b>Hill Passes</b>
+A Hill Hide can become a Hill Pass simply by continuing to dig straight through the rest of the hill. This allows vale folk to move from one side of the battlefield to the other without ever being seen. The entrances are kept low and camouflaged, though often marked by a specific knot of roots, or a smudge of ash to signal fellow vale folk. To avoid collapse in a Hill Pass, keep the ceiling rounded and tamp the soil well. If the ground is loose, line the sides with burlap or thin boards scavenged from fences. Now and then, an ogre might be fool enough to crawl in after you. Should the pass be kept together by boards, simply collapse the roof behind you. That’s why the shovel stays with you at all times.
+
+<b>Hill Shelters</b>
+A Hill Hide dug deeper, or a Hill Pass widened at midpoint, often becomes a Hill Shelter. These hollowed-out spaces are large enough to rest and store gear. They are built near the outer edge of a hill, allowing for the carving of <b>Hill Slits</b> at shoulder height. From here, a single vale folk has a firing point to hold off multiple enemies, or they may observe the field in near total safety. Brush can be hung inside to obscure the slit when not in use. To prevent Hill Shelter collapse, avoid digging too wide without reinforcement. Use spare boards, packed barrels, or stone ribs to support larger chambers. If the hill dirt is loose, sandy, or prone to shedding, it's best abandoned. 
+
+To note: After the Reverdure, Hill Shelters became the model for halfling homes and shops alike. The narrow slits once used in defense were widened until they became what we now call windows.
+
+<b>Hill Keeps</b>
+The rarest and most labor-intensive intention, acting as a fortified command and control center. A Keep is built from the center outward, with multiple chambers branching off and acting as turrets on the hillsides. This battlefield anchor is capable of housing over a dozen defenders, and requires just as many to construct it. With time, the walls are stone-lined where possible, the roof thick-packed with gravel and timber. Many are rigged with kill-tunnels, flanking slits, and secondary exits that drop into passes below.
+
+The BurrowHart Redoubt, later renamed Bottombrook, is the first and best-known Hill Keep constructed. Though ultimately overrun, it held longer than any open-field defense ever did, and its lessons shaped the future of Vale strategy. Some argue Underbrook itself is a Hill Keep expanded to absurd scale.
+
+Tricks & Traps III: The Cause - A military guide of practical tactics and traps, the third volume focusing on tricks, illusions, deception, and masks
+
+<b>Tricks & Traps III: The Cause</b>
+By Viora Shane, Chief Engineer, The Tunnel Runners, with contributions from Mr. Jentercorn.
+
+Where the first volume taught the trap as an effect, and the second volume expanded on reinforced areas to compliment effects, this volume focuses on cause. There must be a force to  drive our enemies to move, to choose wrongly, or to fear shadows that were never there. Jentercorn, the veiled strategist of the Bottombrook years, famously wrote: "Ogres don't think, they react. If you give them something to chase, make sure it was your idea where they end up." From this, many modern deception tactics bear his mark.
+
+The following will guide any operative through basic thought and tactics to create a cause and lead to a devastating or enrichening effect.
+
+<b>The Chase</b>
+At its base before any ambush or ruse, you must get the enemy’s attention, but not all of it. Never let them focus on a single halfling for long. The key is to use your companions to bait and split. A single runner could show themselves briefly and bolt, then disappear behind a rock. Sound plays an important game as well, from whistles, clangs, and shouts. Pair this all with your companions shifting in and out of Tunnel Passes and Hides, and you are guaranteed to frustrate an ogre. Frustrated ogres act out of emotion to get what they want. At this point, it’s very easy to gain their focus on you and away from the environment, leading them right into a deadly trap.
+
+<b>The Broken Retreat</b>
+Attitude plays a role in the deception just as well. This chase involves leaving a trail of discarded packs, bloody cloth, and scattered gear leading into a choke point. Ogres, emboldened by the sight of retreat, give chase, breaking formation to find themselves right in an ambush. Best used with slipstack traps to cut off stragglers.
+
+<b>Countless Footfalls</b>
+For an advanced illusion used at night, some Vale Folk have developed ways to create sounds and sights of more halflings existing than in actuality. A device is made with several pairs of boots tied to sticks. A single vale folk can then create the sound of many footsteps. Echoed against a narrow lane, the effect exaggerates. In addition, place torches and burn small campfires spaced irregularly in the distance. Ogres report hearing full companies that never existed.
+
+<b>Masks</b>
+Since the founding of First Willowbrook, Masks have been used in war. In the battle of the tribes, we were bestowed masks that made us appear the same, which then we refused to fight each other. Now with that same idea we use it, and a mask’s many shapes to conquer through an unlikely power.
+
+<b>Mask of Fatigue</b>
+An ogre may be chasing a vale folk wearing a bright, memorable mask for a good while. Now that halfling ducks behind cover and passes the mask to their companion who continues the chase, giving the first a chance to rest. Eventually the ogre tires and opens themselves up to easy attacks.
+
+<b>Mask of the Ogre</b>
+One vale folk can hop on another’s shoulders, don a cloak and wear a mask resembling an ogre. Though it might look crude at a distance, it’s convincing in chaos. This has been used to infiltrate enemy camps, disrupt formation signaling, or lure their ogre friends into pits or open fire.
+
+<b>Mask of the Wolf</b>
+Ogres ignore local predators, especially wolves, which they see as beneath concern. By donning wolfskins and walking on all fours, halflings have crossed ogre-patrolled trails unseen. The scent is more important than the look though. Many burn herbs and meat fat into the pelt beforehand. Also, never approach a real wolf while wearing its cousin.
+
+
+The Eight Meals and Vale Etiquette - A listing of all the Eight Meals and a bit on halfling culture
+
+The Eight Meals and Vale Etiquette:
+A guide for our young, our friends from afar, and our noisy neighbors who have forgotten their manners.
+
+We of the Vale wish to impart the wisdom of our beloved customs to the curious, the repentant ill-mannered, and the ever-hungry. While these lessons may come naturally to those who dwell in the Vale long enough, let this be a guide wherever you are to navigate our business and traditions with ease.
+
+<b>The Eight Meals</b>
+First Bite (6:00 AM – 7:00 AM) – A small nibble upon waking, typically bread, fruit, or a light pastry.
+
+Breakfast (8:00 AM – 9:00 AM) – The proper morning meal, hearty and filling, featuring duck eggs, meats, porridge, and bread.
+
+Tunnelers (11:00 AM – 12:00 PM) – A mid-morning snack of nuts, cheese, dried fruit, or a warm hand pie along with tea. Something light but sustaining. Originally coined by the Tunnel Runners who got hungry on patrol, and it turned into an excuse to join them.
+
+Lunch (1:00 PM – 2:00 PM) – The midday meal, ranging from simple soups and sandwiches to full feasts, depending on the day’s work.
+
+Easies (2:30 PM - 3:00 PM) – Typically some leftovers from Lunch and a cup of tea, meant to help unwind, and many times precede an afternoon nap. 
+
+Brewbreak (5:00 PM – 6:00 PM) – A light meal with either tea or a beer
+
+Dinner (7:00 PM – 8:00 PM) – The largest and most social meal of the day, featuring stews, roasts, fresh bread, and plenty of conversation.
+
+Afterbites (9:30 PM – 10:30 PM) – A post-dinner snack for those still peckish, usually roasted nuts, cheese, or a small pastry, often enjoyed by the fireside.
+
+<b>Our Warm Diplomacy</b>
+We Vale Folk are curious about the other races and creatures around the world. You may find us sneaking around taking a peek at venues of entertainment, or watching citizens play games of chance. It makes us happy, and we could be happy from this too. Our Celebrants are constantly taking ideas back home and localizing them with a Vale flavor. When working with the other races, it’s easy for us to warm up the relations and negotiations through activities, games, and food (if ingredients are local enough) that our friends from afar are already familiar with.
+
+<b>On Baker’s Hours</b>
+They say that the loudest and most disruptive voice heard in business negotiations is a growling stomach, and a deal certainly cannot be reached until this voice is silenced! To make sure all parties are of sound mind and the most content a vale folk can possibly hope to make them, business takes a back seat to any and all meals and snacks spread throughout the day. Even when brokering an important deal abroad, foreign parties can expect to be offered cakes and tea even mid-sentence if one of the Eight Sacred Meal or snack times comes to pass! Dubbed ‘Baker’s Hours’, many businesses are temporarily closed during snack times so the halfling retailers and patrons alike can both savor the moment and have one less thing to worry about.
+
+<b>Snackrifice</b>
+There's little sadder than seeing kin or neighbors miss a meal. To offer your portion (or perhaps just a small bite) to this unfortunate soul is among the highest honors, a deed we fondly call a "snackrifice." Many remember and repay such kindness, generously returning the favor when it’s least expected.
+
+
+Maorglyph, Maorstone, and Maor - Root Readers account of everything Maor related, seeing it as a font of mana, and the Maor as its protector.
+
+<b>Maorstone, Maorglyph, and Maor</b>
+By Tibbick Longthatch, Associate Researcher, Whittlers Guild
+
+The Maorstone, Maorglyph, and Maor constitute three interconnected mysteries located on Mistledew Island in the Ardent Vale. Despite ongoing studies and numerous theories, their true origins and meanings remain unconfirmed. But what is known, they have all played significant roles in the shaping of Vale history.
+
+The Maorstone is a large, weathered monolith located centrally on Mistledew Island in the middle of Lake Titan. It is considered a place of significant spiritual importance. Through recent customs, halflings eventually journey to Mistledew Island to collect wood for carving their ceremonial masks, and thus encounter the Maorstone at some point in their lives.
+
+While all recognize its presence, interpretations of its significance vary considerably among guilds. According to tradition, the Maorstone predates civilization. Root Readers regard the stone as not only the mystical object which called the tribes to settle the Ardent Vale, but also as a conduit of natural magical energy. They believe the Maorstone enhances or even awakens the connection of vale folk to the earth. Many argue it is for this reason the Root Readers are isolationists, fearing their gifts and value would diminish were they to leave the vale.
+
+Upon the Maorstone carved into its western face, is a symbol referred to as the Maorglyph. Characterized by its circular top, three marks, and central column, the Maorglyph has been adopted by Willowbrook as an emblem of unity. It is commonly displayed on shields, banners, and other communal markers. Wide-spread adoption of this symbol occurred after The Reverdure during the reconstruction of Willowbrook. This devotion dates earlier though, as instances of recreations or sketches of the Maorglyph have been found on ancient documents, and even in some caves.
+
+As the Root Readers of Willowbrook covet the symbol closest, many tend to side with their interpretations of the Maorglyph. They all believe the Maorglyph is a tree. Some Root Readers think the three marks represent rain and water going into its roots, others think it represents creatures or forms of life, others think it represents the three tribes. Some even dare to believe the Maorglyph shares some secret about the Maor itself. Despite these interpretations, no definitive meaning has been established, other than the fact that all halflings will see it once in their life. It may bring enlightenment and joy to some, though for others, a sense of dread for what lurks around the island at night.
+
+The Maor is an ancient guardian creature dwelling exclusively on Mistledew Island. Standing over ten feet tall, it possesses a body resembling living wood and moss, with distinctive glowing blue eyes. The Maor is known for its aggressive protection of the island, emerging nightly to patrol and attack intruders who remain after sunset.
+
+Common halfling folklore utilizes the Maor as a cautionary figure to discourage lingering on Mistledew after dark, or to frighten misbehaving children. Its motivations are unclear, and no known attempts to communicate with it have succeeded. Some Root Readers privately claim brief, non-hostile encounters in which the Maor appears curious or passive rather than aggressive, though these accounts remain anecdotal and unverified.
+
+One rare instance involves a man who stumbled upon a patch of fog eater fungus growing in the center of the island. Rather than charge at the man, he claims the Maor leaped towards the fungus and ripped it apart, giving him time to escape. Fog eater fungus has a natural ability to absorb condensation, leading some Root Readers to theorize the Maor was wanting to protect the fog that forever enshrouds the island. However such a phenomenon has not since been observed, leaving this entity firmly rooted in the realm of speculation and tradition.
+
+Mistledew Chronicles I - old account surveying the land, seeing the Maorglyph, and the Maor 
+
+<b>Mistledew Chronicles I</b>
+By Deidre OvSentus, Master Researcher, Whittlers Guild
+
+Since a millenia ago, we’ve looked out upon Lake Titan to an island shrouded in wood and fog. It is a seat of danger, but also of promise. Peeking from between the branches of the mighty ash is the ever glowing symbol upon a stone resting in the center of the island. It is the Maorglyph, and it is what the Root Readers claim drew us to the Ardent Vale since the beginning.
+
+The first account of our kin traveling to the island came during the time of the three tribes. The Meadowkin were particularly drawn to it and worshipped it from afar. So it is written that thirty Meadowkin swam to shore, braved the forests, and touched the Maorstone, but only three returned. They spoke then of towering, growling, creepy and crawling monsters. It was then decided for many centuries that Mistledew Island was simply more trouble than is worth for the common vale folk.
+
+Perhaps it is the draw of the Maorglyph that there are so many predators upon Mistledew Island. Swarms of bugs naturally are drawn to its glow at night, which explains the prevalent arachnid population on the island. It’s simply too easy for them to grab a snack. In fact, in our time here it would seem spiders on the mainland have all but died out and the remainder have flocked to Mistledew Island as a terminal refuge.
+
+The other predator found prevalent is the black furred, extremely intelligent Mistledew Wolf. They’ve evolved to not work as a pack, but rather work in pairs. Our Rangers have observed the Mistledew Wolves find a mate extremely early in life and grow up alongside them. For this it feels like the wolf pairs act with the same mind, and make them all the more dangerous. Their main source of food has dwindled. The now-extinct Mistledew Rabbit, with horns upon its head and featured in popular mask designs, was no longer able to reproduce in centuries of late after we valefolk set up operations on the island, much to the dismay of the Hillwatchers.
+
+The mistledew wolves still dare not gain an appetite for spiders due to their potent venom. Thus in some cases they resort to cannibalism, as some accounts see them feast upon another slaughtered pair in the early morning. Otherwise, the wolves are observed to lie in wait, ever patient for the vermin to repopulate before making their strike. They farm for their slaughter, much how we rotate our hewing on the island. Should the wolves find their way to the mainland through our ferries, we can’t judge if they would be a force unleashed, or a still-patient hunter.
+
+The final predator is the apex, the Maor. A hulking being with eyes of blue and giant claws. We cannot discern if it is beast or automaton. We have only ever witnessed it killing, but never consuming. Its routine has not changed since our arriving in the vale. The Maor leaves its cave and patrols the island when the moon rises, and retreats back when the sun arises. In its patrol, it cares for no living thing upon its island, even some breeds of fungi, it will hunt down anything in its path, which supports the accounts of wolves feasting on their own in the morning.
+
+It was not until after the Reverdure, nearly one thousand and a quarter years since the first excursion to the island, that our kin had a second thought to travel to the island. Taygen OvHaggie, of course a legacy Meadowkin, on his coming-of-age rite to hew a tree for whittling his own mask, decided to travel to a new source of wood that had been calling to us for so long. All of this as a dare from his friends. Not only did he return a unique log of ash timber, but a bundle of new and flavorful  mushrooms. This sparked our curiosities, and made us hungry for more. Taygen was then surnamed Maskmeker, and his adult life centered on establishing an operation for a vale folk foothold on Mistledew Island.
+
+Mistledew Chronicles II - Creating the ferry and building safely only during day, tunnel runner escorts
+
+<b>Mistledew Chronicles II</b>
+By Deidre OvSentus, Master Researcher, Whittlers Guild
+
+It had been two-hundred seventy-seven years since the start of the Dark Age, when magic and the aspects left Adrullan. Our home had been built, destroyed, and rebuilt again. Our kin had adapted to fighting ogres thrice our size. We had retaken the vale for ourselves with the help of newfound allies which previously we’d never dare to travel out to. The makeup of our race and culture shifted dramatically in the course of these two-hundred and seventy-seven years. We are more curious and adventurous than ever, but still we’d only venture so far to still try and make it back home in time for a hearty dinner. So, in the wake of this change, when we see our own brave and return unscathed from an island which haunted our minds terribly, it only made sense we try to learn and expand further into this forbidden part of our vale.
+
+Taygen Maskmeker was dared by his friends to hew the timber of Mistledew Island for his coming-of-age rite of making his own mask. His account of the island did not match the tales of old, in fact it felt the island had turned more vulnerable since the Dark Age. He spotted several predators, but they all seemed to keep their distance and regard him with curiosity. The Maor still patrolled the island, ever an enigma with its motivations. The ash trees on the island grew twice as tall and twice as quick as any of the ash on our mainland. Our druids attribute this to the power of the Maorstone, though at this time the glow upon the stone had diminished, its shape only remembered by the many tapestries of the Root Readers.
+
+With the recovered gold from Bottombrook, the mayor and all of the guilds began their efforts to establish a channel between our new Willowbrook and the island. The Union and the Celebrants were excited at prospects of trade and a new source of timber. The Whittlers and Root Readers were curious to uncover more information about the island’s history. The Tunnel Runners and Hillwatchers though just wanted to make sure nobody was hurt in the process.
+
+It all started with the expansion of the fishery (now owned by the OvFisk family) to become a shipyard, where the construction of Streamfoot canoes was moved, and the building of the first Mistledew Ferry began. The docks and ships were constructed with timber bought and supplied from the Wildemen of the West, as was most timber that Willowbrook was rebuilt with. Not even a month later would the docks be complete, and the ferry shortly after. Then the real fun began with the docks on the island needing construction.
+
+The ferry brought over three bunches of halflings every morning as the sun rose. First the guards, then the scouts, then the builders. Work would proceed, and we went largely uninterrupted, aside from the Maor at night. Then as the moon rose the ferry brought back three bunches of halflings. First the builders, then the scouts, then the guards. Not even a month later would the docks of Mistledew Island be complete, and the channel connecting our islands would finally be established.
+
+The docks begat the dock yard, which begat the lumber yard, which begat the foraging yard, which begat the Ranger’s house, which begat the Shelter. So it was, at two-hundred eighty-two years since the start of the Dark Age, that we started our modern operations on Mistledew Island.
+
+Mistledew Chronicles III - Written by Mistledew Island’s Ranger, About Current operations, Unwelcome guests, Ogres and Renegade Union setting up camp.
+
+<b>Mistledew Chronicles III</b>
+By Fergen OvFisk, Ranger Captain and Mistledew Warden, Hillwatcher’s Guild
+
+It is the year 350. I am the 13th Warden to overlook the operations of Mistledew Island, yet only the first to seek publication of our organization. With many thanks to Gernest MekMellen of the Whittler’s Guild may our realities reach the eyes and ears of our kin.
+
+Wardens of Mistledew serve for five years before retirement, with their fifth year spent training a prospect Warden. So it began with Thane, then Eoric, Konnel, Faskin, Loenrick, Velm, Maern, Tebbin, Droven, Werrit, Sulan, and finally my mentor Padan Fessil. As I approach my fifth year, the Hillwatchers numbers have dwindled, and I fear not finding a prospect, which has fueled the need of this publication. Know that the pension matches the duty, and all Wardens live happily and comfortably in a warm home of the Western Block provided after their service.
+
+Fifty years have passed since the Aspects returned and the Maorglyph shone its green hues once more. A magic has re-surged in the island. The trees grow faster. The creatures multiply faster, and as such, they hunger twice as often. The operation we began sixty-eight years ago has doubled in its yield, but also its risks and dangers. There are three main operations on Mistledew Island, with our staging yard, lumber processing and foraging of mushrooms and silk. In all of them, protecting our kin and adhering to policy is more important than ever.
+
+The operations of production, that is lumber and foraging, only happen twice a year at the start of the Spring and Autumn seasons. One quarter of the island is hewed of lumber and foraged for two months, and then is resoiled and reseeded for one month. The next three months are dedicated to rest and regrowth, after which the next quarter of the island is acted on. This pattern of Harvest Moderation has been perfected over the past few decades after careful observation. Before the Maorstone activated again, we could only sustainably harvest one quarter once a year, but now the trees grow twice, or thrice as fast.
+
+Foraging operations are overseen by the Forage Master, who stores silks and mushrooms in the Shelter on the south-side of the island. Foragers are typically members of the Hillwatchers or Tunnel Runners and are outfitted with weaponry specifically for dealing with spiders and wolves, that is, our combat shovels or spears. Spiders are best dispatched by piercing the head, as hitting their abdomen may damage silk glands. Should a pair of wolves be slain, their corpses are to be set off the main road, with nothing harvested. As the Mistedew wolves eat their own, this practice is best for sustainability.
+
+Mistledew Island acts as a proxy warehouse to Underbrook and the docks at the end of the Mekally river, flowing into the northern ocean. Production and maintenance of jetties between these three points continues at the Fish & Ferry, operated by my cousin’s family. The unloading and loading of crates happens year-round, with consistent dock labor needed at the island.
+
+With this, the Ranger Warden’s duty is three-fold: First, ensure Harvest Moderation is followed and only the designated quarter is cleared. Second, Scout the island daily for transgressions, logging and reporting them to the proper authorities (to be delivered by the day crew). Finally, Protect all Vale Folk and eliminate any threats to the ecosystem of the Island.
+
+Previous transgressions on the island have involved smuggling and banditry operations happening opposite our operations. With the everlasting Brookberry Battles against the Ogres of Osgul, we have also faced some raiders occasionally making camp on the island. In some situations, a dispatch of Tunnel Runners and Hillwatchers have been called upon to cull the activity, but efficient Wardens have imparted a new technique harkening to the war manuals of our people.
+
+The Maor of Mistledew Island is its fiercest defender, stronger and more dedicated than any Warden. In many cases, the Warden has set traps or breadcrumbs for the Maor to follow at night, leading it directly to the transgressors on the island. The island is protected and cleared of anything improper, and our operations continue unhindered. Thus, the Warden forms this mutual symbiotic relationship with the Maor.
+
+In my final year as Ranger which I hope to share with a prospective Warden, I must impart a recent project which we hope to complete, but has ever-been delayed. We’ve always envisioned long-term residence on the island not needing to return to the mainland every evening. The Shroom Shelter is planned to be further excavated to make for a living area and a shelter for not only the mushrooms, but the workers. The challenge we face is knowing at which depth the Maor no longer carries an interest along its route, and to do this requires a vale folk to stay in the hill we dig overnight. We can only dig so deep before hitting lake water, so the effort has been handled carefully.
+
+And so are the operations and duties of all on Mistledew Island, as compiled and summarized from the many passed-down accounts of Wardens past. With our techniques, maintaining the island is lower risk than many perceive. Should this position interest you as an existing Hillwatcher or Mistledew Forager, please inform the acting Ranger Captain of Dunnock Hills. May this publication assist my following brothers and sisters in their duty to master the warding of  Mistledew Island.
+
+The Brookberry Wars - An account of an ongoing senseless struggle fueled by past murders which led to the fall of Willowbrook.
+
+<b>The Brookberry Wars</b>
+By Quintus Olen, Field Researcher, Leont Academy, In collaboration with the Whittler’s Guild
+
+It was shortly after the founding of Willowbrook, near the very time when the Aspects and all of the magic of Adrullan left the world, when the trees and brush of the Ardent Vale were hewed and scythed for resource, that these very same trees and brush of the Ardent Vale never seemed to grow back to the sizes they were. This then made two things much more visible: the brookberry plants, and the Vale Folk themselves. Like it or not, the world suddenly had their eyes on a city named Willowbrook, and lumbering brutes called Ogres came down from their frozen mountains hungry for a snack.
+
+Halflings were not the only ones to adapt brookberries to their cultural cooking and crafts, the Ogres are also known to take brookberries from their frozen north (though much more scarce), and heavily ferment them into a potent drink they call ‘Gurshak’. Gurshak is consumed almost religiously by Ogres as a prelude to any battles, or in celebration of winning a battle, or for any other excuse related to smashing things while under its frenzying effects. In short, Osgul was pleasantly surprised to find such masses of brookberries before them.
+
+In the northern plains of the Ardent Vale where the brookberries grow, there once sat the milling hamlet of Pellswin. It was the landlord and his lady that first made contact with the Osgul Ogres, at which point the history on which side committed the first social faux paus can differ from accounts. One popular telling from halflings notes how one of the ogres, frustrated that the halflings refused to hand over all their berries, struck the mill, at which point the mill wheel dislodged and squished the ogre, causing the other ogres to rampage. The same story from Ogre narratives tell of halflings using giant wheels to attack their kin, and that their actions were in self defense. In either case of this first encounter, Pellswin was destroyed and turned into the ancient battlefield still fought over today.
+
+<b>First Brookberry Battles (15 - 35)</b>
+The first Brookberry War took place during the 15th year into the Dark Age, with battles spanning across fifteen years. This was a time when Vale Folk didn’t live in hills, and were not accustomed to fighting. Before they had swords and spears they had pitchforks and kitchen wares. Halflings established outposts with their remaining lumber and shot at Ogres with slings, as bows were not introduced to Halflings. The only advantage they had over the ogres were their numbers, and sometimes performed simple ambushes to overwhelm, but not once did they think of hiding or using their size to their advantage. As a result, it was a consistent decisive loss for the halflings and their brookberry bushes. The ogres established total control over the northern plains, until the demon outbreak shortly after in Frostfall and Tibolt’s Bounty, forcing the ogres and halflings alike to retreat and defend their lands.
+
+<b>Second Brookberry Battles (100 - 268)</b>
+One hundred years past the Dark Age, after the demon influence died down and the Ogres were no longer distracted, they turned their attention to the brookberries again and the halflings protecting them. These battles lasted much longer as halflings now developed and adopted deadly traps, including pitfalls, boulder traps, and poisoned spikes. They were all of them complimented by the halfling’s new weapon of choice, the combat shovel. By sharpening the sides of a spade, now halflings had a way to set traps and slice at the ankles of the invading brutes. Eventually, Ogre numbers swelled as attention from Osgul’s other campaigns focused mainly on the Ardent Vale. Ogres trampled through halfling lines, and overtook Willowbrook, smashing and razing all they could find, including the Great Willow which they severed. This pushed the halflings into Bottombrook, but once again, the Pellswin Plains fell into Ogre control.
+
+<b>Third Brookberry Battles (295 - Present)</b>
+Following the Reverdure campaign which pushed Ogres out of the Ardent Vale with the help of allies from other nations, Halflings had emerged from Bottombrook with angrily written and established advanced tactics to truly put them on even footing with Ogres. Using their popularized “Hill Warfare” architecture and deceptive masks mentioned in their new military guide “How To Fight Things Bigger Than You”, and the three volumes of “Tricks & Traps”, halflings finally found themselves in a position to consistently push Ogres back, preventing their numbers from surging. With this the halflings were able to establish a massive Hill Keep in the Pellswin Plains from which a dedicated commander could watch for attacks, as well as lead brookberry foraging efforts. Meanwhile the Ogres were forced to adapt, and they established a fort of their own, with siege equipment that they still launch against the bunkers of their tiny opponents to this day.
+
+The Brookberry Battles stand as a testament to unlikely victors with brains versus brawn. As a side effect of this ongoing war, brookberries are among the most coveted fruits in the Ardent Vale and even Adrullan, with wines, jams, pies, and more costing several platinum pieces. 
+Bottombrook Abridged - Gelen OvShale's personal account of Bottombrook, told on his 90th birthday to the Whittlers
+
+“Bottombrook... it was a time when we weren’t ourselves. Our homes lay in ruin, smashed by hulking ogres, and we found ourselves huddled in a dug-out hill too small for the fiends to enter. We tried to make the best of it. Finding solace in our safety, we dug, and we dug, until we couldn’t dug no more, hitting rock-bottom beneath the Mekally River. Things only got worse when we uncovered the sulfur. Rich clusters of them even. To this day, we still point fingers over whose idea it was to dig it up. But we were all to blame for succumbing to the temptation of profit. The Celebrants snuck out and spread word of the sulfur far and wide. Demand from the other races soared. We thought if we can ship it out, make some money, and clear the stink from our cave, well, that’s a win-win, isn’t it? Anything to rebuild our homes. But the sulfur’s promise of riches turned on us like a monster. The greed consumed us, and before we knew it, we woke a real monster. Our digging shook a nest of imps with a hunger for sulfur. They swarmed us, clawing and biting like demons. They blocked our exits, driving us back against a tall dirt wall. We were scared for our lives. The guards formed a line to hold them off, while the rest of us clawed at the dirt, digging upward. Imps broke through the line, struck down my brother, and claimed many others as we carved out a staircase of desperation. We climbed higher until the imps suddenly lost interest in us. It turned out they were only after the sulfur itself. We dug out a ledge and collapsed there, looking over the chaos below. Everything was destroyed. Again. Our homes, our hopes. All seemed lost. Then Sersha Mecloom, a simple seamstress, stood up and said what none of us had the courage to say. Greener pastures still lay ahead, and it was time to take back what was ours. ‘For so we rose today, shall we rise tomorrow,’ she said, promising the reverdure of Willowbrook. We dubbed her mayor right then and there. Taking back Willowbrook was easier than we thought, since we knew how to fight the ogres now. Once we recovered the riches we’d stashed away in Bottombrook’s bank, we turned into the thriving civilization you see before you. Enough of the storytelling though, where’s my cake?” - Gelen Ovshale on his 90th birthday, recounting the tragedy to the Whittler historians.
+
+Tragedy of Bottombrook I - "Willowbrook has fallen." Retreat to the BurrowHart Redoubt, fighting back ogres, setting up camps and base, Root Readers sensing where to dig, forming of the clans.
+<b><i>The Tragedy of Bottom Brook, Volume I</i></b>
+By Ivy Patchmantle, Archivist of the Whittlers Guild
+
+Now this was back when Mayor Kedrik Jovius had the reins of first Willowbrook, and poor Kedrik, he was no more a warchief than a soft boiled cabbage. But the times didn’t ask, they demanded. And sure enough, didn't a whole horde of ogres come stormin' down from the north, wreckin' cottages left and right, and uprooting and splitting the Great Willow right down its middle. We’d fought ogres off and on over brookberries for generations, but now they had their eyes on the whole pie, not just the fruit.
+
+Willowbrook’s last sunrise was red with smoke. The vale folk hurried across the Mekally River as the only refuge left was an ancient BurrowHart redoubt. It had a low, root-laced tunnel mouth too narrow for an ogre’s shoulders and led to a set of chambers with storage, and enough space to make beds.
+
+Once the vale folk were inside, the ogres beat their clubs upon the hill, frustrated and unable to reach their prey.  Captain Pira BurrowHart, fire in her eyes, carved an opening slit from inside the hill with her spade. An ogre eye blinked through, and her pitchfork drove it back howling. Many slits followed. Spears pierced, stones soared, arrows whirred, and suddenly the smallest people in the Vale fought their giant adversaries on even terms. It felt as though the hill itself had put on armor for them. “Hill Warfare” turned into a key component of the later written war manual “Fighting Things Bigger Than You”. Ogre bellies rumbled and they eventually lumbered south to plunder the satyr glades instead.
+
+And then comes our next mystery guest. Some odd halfling wanderer what called himself <i>Jentercorn</i>. He shows up casually with a covered handcart, as if he was popping by to sell onions in the middle of a war. Some swear it was <i>Thornwise the Deceiver</i> in disguise, insulted over his satyrs getting thumped and curious how we survived. While the new burrowing tactics kept the position defensible, it would not push the Ogres back.
+
+Jentercorn revealed carved masks of different shapes and sizes, explaining tactics and illusions to introduce a mental element to battle. Perfect for ogres. Ideas flooded in, like, “Put one folk on another’s shoulders, slap an ogre mask on, and the ogres will think their cousin’s come to sort ‘em out.” The idea of masks in warfare hadn’t been proposed since the tribal wars, hence the suspicion this gentleman may have been Thornwise. Couple these tricks with the traps and ambushes from the old Brookberry battles, and suddenly they weren’t just defending, they were pushing’ the ogres back. Not far, mind, but enough to forage a few meals and breathe easier for a spell. But safety, as always, was on a short leash. They were now desperate to reconstruct a new home wherever possible.
+
+Deep within the redoubt, Meadowkin druids placed their palms to the damp walls, feeling for any message from the soil. They steered the BurrowHart miners ever downward to further sculpt their new home. That partnership seeded two guilds that flourish even today, the Root Readers and the Tunnel Runners.
+
+Day by day the redoubt widened. Cramped campsites became echoing halls. When the deepest tunnel struck solid riverbed stone, someone cracked a joke upon it, “Guess we hit rock bottom.. of the brook that is.” And just like that, the place had the name Bottombrook.
+
+Meanwhile, the Streamfoot tribe weren’t sitting idle. They threaded escape passages around the danger and out into Adrullan. And instead of disappearing, they spread word of our disaster. Spoke with Dwarves, Men, even Elves. Not something Vale Folk had ever been comfortable doing. But they told our story in songs and tales, and hearts began to open. The roaming troupe became the first Celebrants, sworn to keep doors and hearts open to the growing Bottombrook.
+
+Thus began a cultural shift for the vale folk. Now in a cave they dwell and stay, safe from the thundering ogres and whatever other bothersome creatures await outside. Though their meals were scarce, they were filled with courage, and the promise that Bottombrook would rise where Willowbrook had fallen.
+Tragedy of Bottombrook II - Celebrants bringing back the Dwarf brothers, discovery of sulfur, sulfur trade, 
+<b><i>The Tragedy of Bottom Brook, Volume II</i></b>
+By Ivy Patchmantle, Archivist of the Whittlers Guild
+
+Barely a season after the hill was won, Bottombrook’s lanterns burned low, as hunger gnawed at every ledger. Meals were scarce. Snacks were not as scarce, bless the stars. All perked up though as they saw a group of Celebrants return, accompanied by the twin dwarves Gebrik and Fergun Stoneshine. They were lured by Celebrant tales of Bottombrook, the earthen burrow dug by desperate hands. The Stoneshines had come to see it for themselves, though none doubted their real curiosity lay in what treasures might live buried beneath all that desperation.
+
+Now with the guidance of the pair of dwarves, the Tunnel Runners and Root Readers could  continue a new excavation past actual stone, not simply dirt anymore. During this mission the Root Readers felt a sour warmth in many of the stones. Curious, they ordered the dwarves to smash open one of the rocks, and a wall crumbled into a deep chamber streaked in gold. Yellow crystals glimmered like sunrise. It was <i>raw sulfur</i>. A treasure with a stink that they’d all just need to get used to for a time.
+
+The first wave of air out of the chamber caused more than a few to retch. There were shouts, panic, a near stampede back up the tunnels. But then the dwarves, ever calm in the face of gas and gloom, explained its worth. Sulfur, they said, could change everything. Mixed with saltpeter and charcoal, it became firepowder. Ground into grain, it killed pests. Distilled properly, it tanned leather in a fraction of the usual time. What once reeked of ruin now stank of opportunity. Vale Folk were already used to naturally tidying things up and clearing out the stink from the house, but now they could do so at an immense profit.
+
+Word of the yellow crystals spread like wildfire, carried on Streamfoot boats and Celebrant songs. Samples were taken to the cities beyond the vale. Men, Wildemen, Dwarves, Elves alike all turned curious, then eager, then demanding. Trade exploded. The crystals were in fashion. The vale folk, once a quiet hill people, found themselves the unlikely barons of an empire built on sulfur. Coin once counted in coppers now thudded in chests of gold. Meals and supplies from around Adrullan were in surplus, giving the halflings a taste for worldly delights. For a moment, it seemed the brook’s bottom had become the top of the world.
+
+But something else was suddenly listening through the cracks of the walls, and we would be reminded that every piece of treasure casts a shadow.
+Tragedy of Bottombrook III - Reverdure speech, declaration of reverdure, sulfur contraband, blame thrown around
+<b><i>The Tragedy of Bottom Brook, Volume III</i></b>
+By Ivy Patchmantle, Archivist of the Whittlers Guild
+
+Now, it’s one thing to make peace with digging in the dirt, but it’s another thing entirely to be <i>proud</i> of living in a hole. And by this chapter in our tale, I dare say some of the folk were starting to enjoy it. Bottombrook glowed gold with sulfur profits, and our folk were richer than ever. Trouble is, they’d grown used to the smell.
+
+There were whispers about sulfur running dry, and the fancyfolk in charge weren’t keen on losing their coin or their clout. So in the cursed hours before dawn, the Stoneshine twins, two dwarves fond of loud toys and bigger bangs, wedged a clay jug full of every flammable thing they could find into a crack in the tunnels. Charcoal, saltpeter, and Bottombrook’s finest sulfur. <i>Boom.</i> You could feel it in your molars.
+
+Sure enough, they opened up a chamber glinting with sulfur crystals, fat and pure. Cheering rang through the halls until it didn’t. Because then came the skittering, chittering, hissing sort of laugh, like a tea kettle with a grudge. Sulfur imps. Imagine a demon, skin like smoke and skull exposed, grinning with no lips, holding a nugget of sulfur like a babe in its arms. They weren’t just looking for sulfur, they <i>were</i> sulfur. And the vale folk stank of it deeply. The imps blocked the tunnels. Every way out. They were rats in their own burrow, backs to the wall and nowhere to turn as they stared down death.
+
+Mayor Kedrik bellowed, “Dig! Upward!” And dig they did with hands, helmets, plates, whatever wasn’t nailed down. The Tunnel Runners held the line behind  while the rest of the vale folk clawed like mad beasts. Imps squeezed through like smoke under a door, and where they passed, folk fell. Kedrik himself went down, protecting a clutch of children. The Stoneshine twins held a side tunnel till they were overrun. Their last act was toppling a beam to buy more time. And still, they dug. The sweat and blood soaked that dirt so deep the climb turned red beneath this desperate staircase taking form. This event and the staircase itself are both referred to as “The Redflight.”
+
+Eventually digging up to a safe level within the hill, the halflings spilled onto a cliffside ledge overlooking the Redflight they had just constructed. The imps milled below, content with their hoard and were no longer interested in following the halflings. But safe is not the same as whole, for they were torn, in grief and in blame.
+
+The Tunnel Runners were blamed for digging too deep with the dwarf companions.
+The Root Readers were blamed for pushing their curiosity and finding the sulfur.
+The Celebrants were blamed for fueling halfling greed through their trade.
+
+Accusations piled on accusations, until the seamstress Sersha Mecloom, mud-streaked, eyes unbroken, dared to break the commotion. Her voice cut through to deliver assurance and optimism:
+
+<i>“I stand with you. The same dirt and the same blood beneath my nails… Our tears water the earth we claw, but <b>so we rose today, shall we rise tomorrow</b>.”</i>
+
+Her speech, now known as The Reverdure speech, fuels some of the most quoted lines among the Vale Folk. The quarrel suddenly died after her delivery. On that ledge she was named Mayor, and she named a single purpose: <b>Reverdure</b>. The halflings were rallied to rebuild the vale they had fled and to let no greed drag them to rock bottom again. The vow lived in every throat that whispered back this promise richer than gold:
+
+<b>“So we rose today, shall we rise tomorrow.”</b>
+
+And that was the end of Bottombrook.
+
+The Reverdure I - Declaration of Sulfur Contraband, Fighting back Ogres, rebuilding broken buildings, Underbrook
+
+<b>The Reverdure I</b>
+By Brenden MekKole, Researcher, Whittler’s Guild
+
+Bottombrook had fallen. Many of our kin were slain by not just the imps we awoken, but by greed and the riches we amassed. Our home was once again destroyed. There was no place further down we could go. And so we rose.
+
+Sersha MekLoom was declared our mayor following the fall of Kedrik, and she called for the leaders of each of the guilds to give a report on any resources at all we could expend. The Tunnel Runners had only the shovels in their hands and the shields on their backs. Their numbers were few. The Root Readers felt helpless, and could only point the next direction to dig. The Celebrants however, had a report which could shift the tide of war in our favor.
+
+During our time in Bottombrook, the Celebrants led the trade of sulfur to the cities around Adrullan and established diplomacy where there was none, introducing our kin to the Humans of Leont, the Wildemen of the West, the divided Elf Lords, the Dwarves of Moraguld, and beyond. It was our first priority to rally whatever force we could to aid us in a campaign to liberate our lands from the Ogres which were also at odds with our allies.
+
+Our Tunnel Runners dug an exit from our cliff overlooking Bottombrook, and our Celebrants were dispatched to the far reaches of Adrullan. We heard an answer from but three of our most loyal allies, the Men of Leont, the Elves of Prince Lyrion, and the Wildemen. Leont brought their seasoned Paladins, the Wildemen brought fierce warriors that nearly matched the size of the ogres, and the Elves brought their elite archers to expertly pick off the brutes.
+
+As for our own force, we had the talented advisor Jentercorn who helped our Tunnel Runners write War manuals during our time in Bottombrook. Now armed with new traps, deceptive tactics, and our famed “Hill Warfare”, we laid the groundwork from which our allies could benefit in a carefully laid theater of war. Everyone met in the center where Willowbrook was razed, where the Great Willow was split in half, and where the Concord Veils were stolen. We rallied to the words of Mayor Sersha, and charged north to the Pellswin Plains, meeting the greedy Ogres as we saw them reaping our lands.
+
+For once in our history, the odds were in our favor, and after several grueling and bloody battles spanning nearly two weeks, the Ogres were defeated and pushed back. A squad of each of the armies stayed for the months to come as proxy guards, allowing us time to pick up the pieces of our home. Any Ogres that tried to ambush or press an attack were easily foiled, frustrating them beyond belief, and like an animal, conditioning them to stay away.
+
+The cleanup and rebuilding effort took three years, but this was also a time of great cultural exchange. The Wildemen provided us War Hounds to fend off wolves that attacked our clovik herds (which we later rebranded to Clovikhounds). The Lyrionian Elves crafted bows and arrows of our size, and taught many of our warriors how to use them. The Elves and Wildemen also shared survival and sustainability techniques, later leading to the formation of the Hillwatcher Guild down south in Dunnock Hills, and guiding techniques which we would later use in the harvesting of Mistledew Island.
+
+One important change was the contrabanding of sulfur. Simply put, sulfur attracts imps, reminds us of our rotten past, and it stinks. Some devious actors during the Reverdure battles thought to use our sulfur as bombs and gas against the ogres. This was effective, but had a permanent effect on the nature around it. From this, sulfur based weaponry was marked by ourselves and our allies as forbidden tactics in war. Any sulfur mining efforts in Bottombrook would be quelled, fined, and possibly jailed.
+
+Many of our homes were left in disrepair, and as such had to be demolished. However new homes were established in less than half the amount of time due to our Hill Warfare tactics. “Hill Shelters” provided a sturdy foundation, and the narrow slits used for weapons were merely widened, and we suddenly had windows for our Hill Shelter homes. Thus began the time when halflings did live in hills.
+
+Moreover, our Tunnel Runners and Root Readers played a new role together in establishing a network of tunnels connecting all of these homes, so that we might all be able to unite in safety. The cliff we carved was deepened, and the area below the mayor’s house was dug into a large open grotto with several dirt paths leading to the buildings of our town, as well as to many secret exits in case of emergency. The network was dubbed Underbrook, and the first structure in it was a grand tavern so that we might properly celebrate our Reverdure.
+
+The Reverdure II - Formation of the BDI and Union of Archaeology, Reclamation of old Willowbrook gold
+
+<b>The Reverdure II</b>
+By Brenden MekKole, Researcher, Whittler’s Guild
+
+Willowbrook was born anew, with Underbrook to connect it, and war-hardened vale folk to defend it. It was the year 275. We had reached a time of relative calm where we could further build ourselves and reclaim what was lost. Bottombrook was a time of great darkness, but also a time of great prosperity. Like it or not, our allies stuck beside us to see our city rebuilt, and it was at this point that we needed to pay our bill. However, all of the gold we made was stuck in a vault surrounded by Sulfur Imps in our former home.
+
+Mayor Sersha MekLoom called for the sneakiest, most devious halflings to be brought before her. Thinking they would be punished, Sersha instead offered them a chance at redemption, and a chance to get their hands on the shiniest trinkets of all history. We needed treasure hunters, and these would be our best bet in recovering our riches. So a foreman was appointed, and so the “Union of Archaeology” was founded, with its members all tasked with the main covert operation of recovering the gold and treasures from our Bottombrook vault and beyond.
+
+A small contingent of Tunnel Runners were formed to block the entrance to Bottombrook and prevent any imps from attacking, but the Union operations went surprisingly easier than anyone thought. We had washed the stink from our skin since we left Bottombrook, meaning the imps were less provoked by us than before. Our encounters were far and few, as most of the imps had retreated into the cave they poured out from.
+
+As the efforts of the Union were proving successful, there were vale folk interested in the recovery of not just our riches, but our history and our traditions as well. It was then that the Whittlers Guild was formed. The first members were seen as distant and standoffish, though truly they were grief stricken by the loss of their home and culture, wanting to devote themselves to retelling and preserving our old tales. And so, the Whittlers joined with the Tunnel Runners and the Union to bolster efforts of retrieving artifacts and literature from Bottombrook. The concentrated effort to contain, survey, and study their old underground home led to the formation of the Bottombrook Defense Initiative.
+
+In the years to come, the practice of mask making was revived, as it was once a coming-of-age rite. The Whittlers also were the ones to help us all agree on the Eight Sacred Meals. In three years, all of the gold from Bottombrook was recovered, and our allies were repaid many times over.
+
+It was thought at that point that the purpose of the Union of Archaeology was complete, but the members all felt like they found a home and would not be disbanded so hastily. As was recently declassified, the new Mayor Branic Wossel preferred to contain any possible hooliganism, and thus after a deep conversation with the Foreman, left the Union in charge of the vault’s defense, gainfully employing all members for any missions of secrecy, as well as making them the primary manufacturer and supplier of traps used by Willowbrook’s military.
+
+With Willowbrook stabilized and its finances secured, the Ardent Vale would find itself once again in the hands of the Vale Folk, and future projects including Ehrensdale, Mistledew Island, Dunnock Hills, and the Hill Keep of Pellwin Plains would surely prosper. For so we rose today, shall we rise tomorrow.
+The Reverdure Speech - book that is simply the Reverdure speech, and a little about Sersha MecLoom
+
+“I stand with you. The same dirt and the same blood beneath my nails. I stand with you, looking off the cliff we carve, driven from our depths to heights of despair. See well the poisoned soils we refuse to wither in. Listen well to the song of our lost ones, whose silent tune we must hold. Though we were forsaken, a sapling whose pot was shattered, I stand with you, now ready to root in the vast gardens of our forefathers. Our tears water the earth we claw, but so we rose today, shall we rise tomorrow, and after our grand reverdure, I will plant a flower in these ruins.”
+
+This speech was given by Sersha Mecloom, elected Mayor of the Vale Folk following the tragedy of Bottombrook. Spoken from atop the cliff overlooking Bottombrook, shortly following the climb up the Redflight.
+Founding Ehrensdale - account of Ehrensdale's construction thought behind a self sustaining settlement when it came to wine production, built on Streamfoots territory.
+
+<b>Founding Ehrensdale</b>
+By Jern OvBrook, Streamfoot Winery Master Vintner, in collaboration with the Whittler’s Guild
+
+It is the year 370 and thus marks the 920th anniversary of the founding of my tribe’s Winery. The Streamfoots have lived historically in the southern region of the Ardent Vale conducting trade up and down the rivers of the Ardent Vale and beyond. Just south of us lie the vast fields of the Moorlands, and with them many beautiful flowers and the honeybees attracted to them. So it goes, we bred flowers and honeybees brought in from the Moorlands, and added their honey to a batch of fermenting brookberries (a bit more common back then than now), and thus Brookberry Wine was wrought.
+
+Our exact recipe and portions were and are to this day heavily guarded secrets. Amateurs trying to craft their own simply fail to meet our quality. The operation had always been left undisturbed, as across many cities in Adrullan, Brookberry Wine is a respected household name. Still, we have faced our lulls in history, namely the sacking of Willowbrook by the Ogres of Osgul which burned down the building, but not the equipment. At that point, we preferred to call the Winery “under renovation” rather than “shut down” or “destroyed” or “out of business.” Heavens, no. Brookberry Wine was still enjoyed during the days of Bottombrook, the Reverdure, and beyond.
+
+In fact, it was in the year 280, eight years after the Reverdure campaign that Hill Warfare was enacted, and the Hill Shelter housing model was popularized. At that point, we decided to adopt this architecture for a new Winery where the historic location lay. The natural cool of the interior was perfect for keeping the wine even on the main floor. With our funds recovered by the Union and the Willowbrook Bank established at this time, my great-grandfather Ehren OvBrook decided to expand our operation beyond one hovel.
+
+The idea was to create a hamlet that was nearly self-sustaining, fueled by sales of wine, flowers, honey, and produce. We would grow and perfect our own vineyards of brookberries, we would breed flowers from the Moorlands and the Vale to create a honey like no other from the bees pollinating them. The only thing we would need to import was glass and corkware from Leont, which the city was already heavily in debt to my family for the many festivals we’ve supplied (and to note, one of the reasons the Celebrants were able to recruit Leont’s Paladins for the Reverdure was namely from this debt!)
+
+More Hill Shelters were dug, flowers transplanted and bred, a tavern was born, a guard and watch post were planted, and staff was hired for it all. Ehrensdale was taking shape, and the outside world certainly noticed. With our position, we now act as a crossroads for newcomers to the Vale, giving them a friendly welcome, especially if they can pay their tab.
+The Concord Veils - about the masks from the tribal wars that were fueled by magic of Thornwise
+
+<b><i>The Concord Veils</i></b>
+By Lumas OvWhisper, Researcher of the Whittlers Guild
+
+Before the three Vale tribes united to form Willowbrook, they teetered on the brink of ruin and had prepared to war against each other. They were however manipulated by the cunning of Thornwise, god of deceit. He bestowed upon each tribe enchanted masks meant to grant them great power in battle. The masks given to each tribe all looked the same. It was a ruse meant to blur friend and foe, and cause chaos upon the battlefield. But, to Thornwise's dismay, no blood was spilt, and our ancestors united over their realized sameness.
+
+Many vale folk in the battle held onto their masks as heirlooms, others traded them away. But the tribe chieftains Fergus BurrowHart, Aelwen Meadowkin, and Bran Streamfoot, all buried their masks beneath the Great Willow as a symbol of their newfound concord to establish Willowbrook. Thus, the masks of the chieftains became known as "The Concord Veils," relics of peace, concealed in sacred earth for centuries.
+
+It was not until the ogre scourge which destroyed First Willowbrook and uprooted the Great Willow would the Concord Veils be unearthed again. Yet, when the ogres were cast out during the Reverdure, the relics went missing, changing hands, claws, wings, and paws until they were untraceable. Only recently, one veil reemerged, bravely recovered by Kelly Ankler of the Willowbrook Union of Archaeology. This veil, thought to belong to Fergus BurrowHart, was stolen deftly from the treasury of Tybeloc, the green-horned dragon. Her daring retrieval earned her the coveted Union title of "A.R.T.ist."
+
+Today, two veils remain lost, their secrets whispering from unknown corners of Adrullan. The Whittlers tirelessly pursue these masks, believing their rediscovery might bring renewed strength, but perhaps it may unleash a forgotten peril. Such is the duality of Thornwise's legacy, forever interwoven with our history.
+
+Declassified: Sunflecked Shards - Report on the dangers of sunflecked shards. Satyrs traded them way back when, return of magic and effect, the effort to remove by the Union.
+
+Declassified: Union of Archaeology - Tunnel Runnel report on the shady turnings of the Union, and their cult-like turning to Thornwise in a struggle to retain purpose.
+
+Beware The Lies of Crow - a pamphlet put out by the mayor about Padric Crow's bandits and their campaign to take over Willowbrook, along with people who suffered because of it.
+
+Beware The Lies of Crow!
+
+In recent months, Padric Crow, the self-styled bandit king, has preyed on our desperate and downtrodden, those weary from our many struggles. He deceives with false promises of riches, expansion, and global recognition for the vale folk as an unstoppable force. But such reckless actions will only invite new enemies from far lands, fracture alliances built on trust, and undermine the very heart of halfling nature.
+
+War is exhausting. Conflict drains us all. Yet our history shows that with grit and wit, we always find a path back to peace, to joyful times around shared mugs and a warm hearth. Under Padric’s rule, the fires of war would never fade. He would exploit us until collapse, then abandon Willowbrook, pockets filled with what remains.
+
+Listen to reason. Dealing with Padric Crow means inviting a devil into your life. Trust in your neighbors, for we will fight with you. You will rise and his lies will rot.
+
+Mayor Derek OvMiller
+
+We Shall Be More - Propaganda piece by Padric Crow to recruit people, talking about expanding the bounds and trade of Willowbrook, saying the mayor is holding everyone back.
+
+Willowbrook is known across the world as one of the richest cities, yet we hunger and suffer behind fragile walls, led by weak hands. Mayor Derek OvMiller hoards our wealth, while ogres laugh at our weakness.
+
+But our Vale blood is strong. This vast fortune is rightfully ours, and more. Rise, my friends! Claim your share of this wealth, fortify our city, and reclaim our pride. With unity and courage, we will expand our reach, vanquish our foes, and build a future worthy of our dreams.
+
+Together, we shall be more!
+<i>Padric Crow</i>
+
+Leont: A Celebrant Report - a report on the port city of Leont, about tasty foods, industry practices, bureaucracy and corruption.
+Osgul: A Celebrant Report - a rather biased report of halflings infiltrating Osgul and seeing their primitive practices.
+Drinking Song: Our Reverdure - the song Our Reverdure
+Drinking Song: Wee Tum Tilly - the song Wee Tum Tilly
+Drinking Song: Silas Lost His Shovel - the song Silas Lost His Shovel
+
+Service and Resource Ledger - (Bottombrook) Un-scorched and in surprisingly good condition. If only it were a fantastic tale and not a boring government document!
+<b><i>Bottombrook Communal Services & Resources, Weekly Ledger Number 26 (Year 270)</i></b>
+Glem Wickroll, Clerk of Supplies, Bottombrook Civil Committee
+
+In accordance with Mayor Kedrik Jovius’ standardization efforts, the following summarizes the minutes of this week’s civil committee meeting on services and resources, excluding conversations, breaks, and gossip during lunch, though the lunch menu is included.
+
+Tunnel rations to be re-supplied bi-weekly by the Smithfire Bakery, with flour courtesy of the Undergarden silo. All clay-cured goods to be left at dawn inside the drop hatch, and shield moldings to be cooled in tandem using shared venting. If Tunnel Runners request “night rations” again, remind them to include more pickled things.
+
+“Unintended deposits” were noted by head banksman Homanen as he witnessed bits of bedrock crumble away from within the vault, creating cavities in the vault walls. Some committee members passed the phenomenon as “just a few more shelves to use,” though the foundation of the vault comes into question as we bring in more gold from the sulfur trade.
+
+Raised soil plots remain maintained by Root Readers under Verdant Oath within the Undergarden while other Root Readers free to sense are working with the Tunnel Runners and visitors. Sporekeeper Grema notes unchecked growth of the tiny Slumbell Fungus could eventually overtake all of Bottombrook. Before we dug out Bottombrook, the fungus didn’t have the space to grow. Thankfully they fry up nicely and keep the hounds fed.
+
+A reminder to Celebrants, successful ventures do not permit loud celebrations more than two hours past the last light. Celebrants are also urged to cease trading so-called ‘fungal fiddles’ to potential allies due to their brittle nature and propensity to shrivel under sunlight.
+
+Today’s Lunch options, 
+Pickled Root Medley on Smithfire Bread, Moss-pressed Pie, Amber Yam Mash,
+
+And so we remain,
+The Bottombrook Civil Committee.
+I Just Saw Jentercorn
+<b><i>I Just Saw Jentercorn</i></b>
+Finnigan Cask, Bottombrook Cooper
+
+Yes, we ought welcome friends in these dark times, and be thankful for visitors like the Stoneshine twins. Surely I know a dwarf when I see (and smell) one. But for Jentercorn, I don’t see a halfling anymore.
+
+I saw him top the waterfall ‘hind a column, the straw hat off, scratching his head. And clear as day, I saw horns. Twice I checked, no mistaking. His footprints don’t match what he steps neither, which is why I reckon he’s a boot-wearer. He says he’s not from the Vale, and bless him if all his kin were born with pointy bits on their heads, but I think the answer might be deeper.
+
+I was a skeptic, happy for the lessons he brought to us, pushing ogres back and all. But now I can't skept he's not Thornwise himself as many first thought. Friend today, perhaps, but tomorrow? Keep both eyes open around Jentercorn.
+Brainstorming / Comments / Ideas
+Moving comments down here
+
+
+Duck Pond - (Brool) - Rare spawn mallard appears to periodically attack players. Will be fun to arrive at this area only to see a large duck chasing a player away.
+
+Tailor - Mrs. Lirra Seamquick - (Brool) - Rare silk from an ancient spider Quest
+
+Mushroom Pen - Mr. Bardon OvGreen - (Brool) - Quests to find fabled mushrooms from all over the place. Encouraging players to check every little nook when exploring.
+
+Union - Brool - Achaeology based quests could be a good way to dig deeper into the ancient lore of the game world. Sending interested players to ancient sites all over. Some Indiana Jones themed questlines here
+
+Mistledew Island Operations - (Brool) - for halflings not respecting moderation of harvesting - some fun dialogue from a few prisoner NPCs as to why they got in trouble. Some maybe learned their lesson, others not so much. "It was worth it" etc
+
+Entrance to Willowbrook - (Brool) - could add some halflings just laying on the beach or in other ways to show a more laid back vibe on the island. Could add some humor as halflings in general are already laid back, but the viewpoint of the Island Halflings is that they're "Too uptight"
+
+Sheepdogs - (Brool) - could be rangers or BST patrolling the outskirts of the city with a small pack of hounds to keep the Ogres at bay
+
+Sheepdog - (Brool) - Breed idea - pushing the size of these dogs to be quite large could add some humor with the contrast of the HLF size. These dogs would also serve as guardians for HLF's and their families in addition to livestock. If we went this route i'd reference the Central Asian Shepherd (One of the oldest dog breeds still around today) https://www.youtube.com/shorts/1Mda2E0Xzak These could also lead to fun dog events like cart racing .
+
+Sheep - (Brool) - Saytrs have been dying the sheep wool weird colors! Put a stop to these pests and help clean the affected animals.
+
+Lost Ogres - (Brool) - One Ogre in particular could be wanted for eating Halflings. Bit higher level than the average ogre with some fun pathing to provide occasional trouble for lowbies.
+
+Halfling Bandits (Brool) - could have ties to black market trade
+
+Fireflies (Brool) - Could be a fun little line or two about how the soul of the forest lights the way for those in need. Some little lore about the lights
+
+Skeletons in Bottombrook - (Brool) - Perhaps halfling skeletons from the ancient underground graveyard?
+
+Masks - (Brool) - Awesome opportunity for a cultural quest line of masks that any race could do (faction depending). Maybe something for every class here? Even some that are non player races - Froglok, Gnoll, Demon, etc (for the higher level parts)
+
+Berries in Osgul (Donfrow) - Since rogues can sneak, and fits in with the berry wars, rogue quest to sneak into the Osgul city and break barrels of the berries in the monk area to disrupt the ogres. This makes use of rogue sneak skills and adds a questline that isn’t just go camp x or kill y.
