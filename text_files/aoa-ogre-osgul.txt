@@ -111,9 +111,9 @@ Vibe: Big brutes, After simple pleasures of life (bashing, hot springs), caveman
 Appearance: Among the tallest. Scary, goofy faces, Top-heavy, muscular.
 Culture: Beat Downs (Sanctioned Brawls) are what gains an ogre respect. Reject civility. Embrace Smash.
 Naming: Marth, Norg, Okrog - simple, no surname, Inuit inspired 
-Classes: Warrior, Shadowknight, Shaman, Monk
+Classes: Warrior, Hex-Knight, Shaman, Monk
 Domains: Industry, Insects, Rot, Justice, Dark, Hate, War, Death, Fire, Earth, Nature, Seasons, Air, Water, Moon
-General Difficulty: Medium, Shadowknight Hard
+General Difficulty: Medium, Hex-Knight Hard
 City - Osgul
 Vibe: Snow mountain with hot springs, bones, hides, and blood
 Appearance: Primitive dwellings in and around caves of a snowy mountain, bones of Frost Giants buried underneath, part of the city, even carved to be part of it.
@@ -135,7 +135,7 @@ On the frigid plains of Northeast Adrullan, the Ogres hold an imposing fastness 
 Key Facts
 City: Osgul
 Location: Frostfall Foothills, Eastern Region
-Available Classes: Warrior, Shadowknight, Shaman, Monk
+Available Classes: Warrior, Hex-Knight, Shaman, Monk
 Aspects: Industry, Insects, Rot, Justice, Dark, Hate, War, Death, Fire, Earth, Nature, Seasons, Air, Water, Moon
 
 Culture
@@ -436,7 +436,7 @@ The Split Skull Brigade is the backbone of the Ogre society, embodying both its 
 
 Averaging taller and broader than most of their kin, members of the Brigade are an intimidating sight. They are renowned for their unparalleled strength, endurance, and sheer determination. Their scarlet insignia, a stylized skull split down the middle, symbolizes the strength and resilience of their people and their readiness to protect at any cost.
 
-Devoted to Vexx the Flood, Celtrious the Tide, and Mortas the Decomposed of the Water Domain, the Split Skull Brigade integrates the teachings of these deities into their way of life, embodying the fluidity, adaptability, and relentlessness of water. Many among the Brigade also worship Zegrath the Barbarian, the Dark Aspect's deity of War, whose doctrine complements their martial spirit.
+Devoted to Vexx the Flood, Celtrious the Tide, and Mortas the Decomposed of the Water Domain, the Split Skull Brigade integrates the teachings of these deities into their way of life, embodying the fluidity, adaptability, and relentlessness of water. Many among the Brigade also worship Zegrath the Wildeman, the Dark Aspect's deity of War, whose doctrine complements their martial spirit.
 
 Beneath the Beat Down Pit at the center of town lies the expansive barracks where members of the Brigade live and train. The cavernous, well-lit space is lined with bunks and communal living areas. Here, warriors rest, share tales of their exploits, and prepare for their guard duties or the next friendly clash in the Pit.
 
@@ -463,7 +463,7 @@ In a separate, optional quest, Dorzug requests warriors to bring him a Large Rus
 As you traverse this path of battles and diplomacy, always remember the spirits watching over you, guiding you towards your destiny. With every task, you draw closer to the heart of Osgul, embodying its essence and becoming a true warrior.
 
 The Frostfright Knights [Blue]
-Shadowknights
+Hex-Knights
 Starting Questline Overview
 After learning basic skills Au`guk wants the player to get some bone fragments to prove basic combat. After this, he wants a Halfling foot.
 
@@ -1255,7 +1255,7 @@ The Frostflower is a rare and magical plant that can be found in the coldest reg
 
 The Frostflower has silver-blue petals that shimmer in the moonlight, and its stem and leaves are a deep, rich purple. The plant gives off a faint, sweet aroma that is said to have healing properties, and its nectar is said to be a potent elixir that can restore vitality and energy to those who drink it.
 
-Ogre and Barbarian legend alike has it that the Frostflower only blooms once a year, during the longest night of the year, and that it is a sign of good luck and prosperity for those who are lucky enough to witness its beauty. Some of the more romantic persuasions even believe that the Frostflower has the power to grant wishes to those who tend to it with care and love.
+Ogre and Wildeman legend alike has it that the Frostflower only blooms once a year, during the longest night of the year, and that it is a sign of good luck and prosperity for those who are lucky enough to witness its beauty. Some of the more romantic persuasions even believe that the Frostflower has the power to grant wishes to those who tend to it with care and love.
 Voxel Rules: Permafrost
 
 
@@ -1378,7 +1378,7 @@ Perhaps an adventurous ogre could uncover the truth… is Ik`kigak an heir to th
 
 DETAILS:
 NPC 823 will go to Beat Down Pit and lose, dropping a bloody rag (item 1160) on the way back.
-Give rag (1160) to NPC 823 to learn that the Shadowknights can divine the bloodline. Go to the Shadowknight guild leader (NPC 816) and give item 1160.
+Give rag (1160) to NPC 823 to learn that the Hex-Knights can divine the bloodline. Go to the Hex-Knight guild leader (NPC 816) and give item 1160.
 Will only do this for a Savage Gurshak mead drink, which takes the player to NPC 845 to clean out the pests, at which point player gets item 1191.
 Giving item 1191 and 1160 to NPC 816 will offer more insight into the blood line
 TBD WHAT HAPPENS FROM HERE (Kalangak ogre name somehow involved)
@@ -1392,11 +1392,11 @@ Warrior is given by an NPC named Ikchat, located in Osgul warrior guild. Ikchat 
 
 If a player is a warrior, Ikchat mentions a prized sword used by Tokor, which has also been stolen by the gnolls. Ikchat asks the player to return the sword to the Broken Skull Brigade as it is a great dishonor for the gnolls to possess such a hallowed weapon. Other classes CAN turn in the sword for the same reward as a warrior, but it is not explicitly mentioned.
 
-Shadowknight:
+Hex-Knight:
 
-Shadowknight is given by an NPC named Akvik, located in Osgul Shadowknight guild. Akvik asks the player to help honor the great Clan Tokor by recovering the desecrated remains of the clan members from the tomb that has fallen into disrepair and has been plundered by gnolls.
+Hex-Knight is given by an NPC named Akvik, located in Osgul Hex-Knight guild. Akvik asks the player to help honor the great Clan Tokor by recovering the desecrated remains of the clan members from the tomb that has fallen into disrepair and has been plundered by gnolls.
 
-If a player is a Shadowknight, Akvik mentions a fallen Frostfright Knight and wants the skull returned. Other classes CAN turn in the skull for the same reward as a SK, but it is not explicitly mentioned.
+If a player is a Hex-Knight, Akvik mentions a fallen Frostfright Knight and wants the skull returned. Other classes CAN turn in the skull for the same reward as a SK, but it is not explicitly mentioned.
 
 Shaman:
 

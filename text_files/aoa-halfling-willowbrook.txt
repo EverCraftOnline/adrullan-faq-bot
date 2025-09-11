@@ -256,7 +256,7 @@ Druid
 Bard
 Ranger - ?
 Shaman - ??
-Beastlord - ??
+Beastwarden - ??
 
 List of Names to Use
 This is based on the naming convention above. Mark these off as you use them, either crossing them out, or putting an X next to the name.
@@ -661,7 +661,7 @@ What do they look like: smaller than halflings? Pointy ears, big mouths and shar
 What do they eat: uhh sulfur
 What do they live in: Hollowed out Stalagmites
 What do they want: more sulfur
-Classes: warrior, magician, shaman
+Classes: warrior, Summoner, shaman
  
 One quest, you can coax out sulfur imps using Shaman alchemy to create an imitation block of sulfur, and lead the imps into a trap.
  
@@ -776,7 +776,7 @@ Said to be creations of the god Thornwise, and thought to be created specificall
 
 These intelligent beings have evolved their own tribal culture centered around revelry, much akin to the halflings, though the Halflings would find the satyrs a bit noisier and hedonistic than them, making satyrs a true threat to the peace and quiet of the Vale. One downfall of the Satyrs is they never learned how to read, and have no written language. All tribal knowledge is passed down orally, many times through song and dance. Satyrs tend to be nomadic and roam around the wooded areas of Adrullan, but will always circle their camps back to the Ardent Vale out of a sense of belonging around other small beings. The Satyr’s most recent camp has been set up at the center of the Whistling Glade, where they have resided for the past few years.
 
-The average player starts out at least at “suspicious” level to the satyrs. Players with classes generally against chaos or nature (Paladins, Clerics, Necromancers, Shadowknights) will have an even lower faction with Satyrs. Nature oriented classes (Druid, Beastlord, Ranger) will have a slight bonus towards Satyrs. The fun-loving Bard will have a greater increase towards their innate faction with Satyrs, and Satyrs may be able to teach them how to play the pan flute some day.
+The average player starts out at least at “suspicious” level to the satyrs. Players with classes generally against chaos or nature (Paladins, Clerics, Necromancers, Hex-Knights) will have an even lower faction with Satyrs. Nature oriented classes (Druid, Beastwarden, Ranger) will have a slight bonus towards Satyrs. The fun-loving Bard will have a greater increase towards their innate faction with Satyrs, and Satyrs may be able to teach them how to play the pan flute some day.
 
 There are opportunities to gain better faction with the satyrs, though many halfling tasks might end up lowering satyr faction. Satyrs, being able to speak, will have their own set of quests which players with enough faction can partake in. Satyrs love a good drink, so you might gain some friends through enjoying a good bottle of halfling Brookberry wine with them. It might be a common sight though, that players turn the satyr village into a hunting ground, intent on finding their rumored magical artifacts.
 
@@ -832,7 +832,7 @@ https://assetstore.unity.com/packages/3d/characters/fawn-3d-199077
 https://assetstore.unity.com/packages/3d/characters/creatures/poly-hp-goatman-177613
 (might work out, but animations might be tied to the arms and head being huge)
 
-https://assetstore.unity.com/packages/3d/characters/humanoids/fantasy/minotaur-barbarian-222570
+https://assetstore.unity.com/packages/3d/characters/humanoids/fantasy/minotaur-Wildeman-222570
 (It doesn’t look like the head plays a huge role in the animations. Everything is there though; we could use for an actual minotaur character as well)
 
 There are unfortunately no animations I can find where the satyrs are dancing or playing an instrument.
@@ -891,8 +891,8 @@ https://assetstore.unity.com/packages/3d/characters/animals/mammals/lowpoly-shee
 Sheepdogs (Clovikhound)
 The gentle Cloviks would stand no chance against the hulking wolves that roam the area, but fortunately, they are protected by the faithful Clovikhounds, also known as sheepdogs or simply dogs. These loyal companions grow to be almost as tall as a halfling, but their bond with the Cloviks is formed when they are still puppies, smaller than the halflings themselves.
 
-The halflings of the Ardent Vale are immensely grateful for the Clovikhounds' service and feed them as well as they feed themselves. This generous treatment further incentivizes the dogs to excel in their duties. Interestingly, the Clovikhounds are not native to the Vale. They were originally a gift from the Barbarians, who taught the halflings how to breed and train them several decades ago when the growing number of wolves began to threaten the Cloviks.
-The Barbarians use these dogs in war, which initially made the halflings hesitant to accept them. However, the arrangement ended up being successful. The adopted dogs immediately felt less stressed in the calmer environment of the Vale, yet they still retained their killer instinct when a threat was near. Over time, the halflings have grown very fond of these companions. Due mainly to their size, the halflings are strict about the number of Clovikhounds they breed, ensuring there is enough food to go around for all.
+The halflings of the Ardent Vale are immensely grateful for the Clovikhounds' service and feed them as well as they feed themselves. This generous treatment further incentivizes the dogs to excel in their duties. Interestingly, the Clovikhounds are not native to the Vale. They were originally a gift from the Wildemans, who taught the halflings how to breed and train them several decades ago when the growing number of wolves began to threaten the Cloviks.
+The Wildemans use these dogs in war, which initially made the halflings hesitant to accept them. However, the arrangement ended up being successful. The adopted dogs immediately felt less stressed in the calmer environment of the Vale, yet they still retained their killer instinct when a threat was near. Over time, the halflings have grown very fond of these companions. Due mainly to their size, the halflings are strict about the number of Clovikhounds they breed, ensuring there is enough food to go around for all.
 
 Much like Fippy rushing to the gates of Qeynos and being slain by guards, Players might see a wolf dart towards the Clovik pens and be slain by dogs on duty.
 Sheepdog Model Reference.
@@ -931,7 +931,7 @@ https://assetstore.unity.com/packages/3d/characters/creatures/low-poly-character
 Nice variant if we have more of a rat like guy
 https://assetstore.unity.com/packages/3d/characters/creatures/ratkin-rogue-88599 
 Golem
-The Sulfur Imps bear a powerful magic which in times of need they use to conjure a golem made of sulfur as a champion. Golems are automatons created from elements of the land, much like the common pet of a magician, and this one is not much different, though it is created with the combined efforts of several imps at once. It has a limited sense of loyalty because it doesn’t have one true master, meaning there are times this kind of golem can turn chaotic and violent at everything around it.
+The Sulfur Imps bear a powerful magic which in times of need they use to conjure a golem made of sulfur as a champion. Golems are automatons created from elements of the land, much like the common pet of a Summoner, and this one is not much different, though it is created with the combined efforts of several imps at once. It has a limited sense of loyalty because it doesn’t have one true master, meaning there are times this kind of golem can turn chaotic and violent at everything around it.
 
 Golem Animation Rigs
 The protofactor rig for Golem fits almost perfectly with what I had in mind. https://assetstore.unity.com/packages/3d/characters/humanoids/fantasy/golem-3620 
