@@ -228,11 +228,121 @@
             font-size: 0.9rem;
         }
 
-        .profile-list {
+        .profile-management {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
+            grid-template-columns: 1fr 2fr;
+            gap: 20px;
             margin-top: 15px;
+        }
+
+        .profile-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .profile-management-panel {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .management-section {
+            margin-bottom: 20px;
+        }
+
+        .management-section h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+            margin: 0;
+            transform: scale(1.2);
+        }
+
+        .checkbox-group label {
+            margin: 0;
+            display: inline;
+            font-weight: normal;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 8px 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .btn-small {
+            padding: 6px 12px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        .btn-danger-small {
+            background: linear-gradient(45deg, #f44336, #e91e63);
+            color: white;
+        }
+
+        .btn-warning-small {
+            background: linear-gradient(45deg, #ff9800, #ff5722);
+            color: white;
+        }
+
+        @media (max-width: 1200px) {
+            .profile-management {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
         }
 
         .profile-item {
@@ -399,9 +509,146 @@
 
             <!-- Profiles Card -->
             <div class="card dashboard-full-width">
-                <h3>🎭 Available Profiles</h3>
-                <div class="profile-list" id="profileList">
-                    Loading...
+                <h3>🎭 Profile Management</h3>
+                <div class="profile-management">
+                    <div class="profile-list" id="profileList">
+                        Loading...
+                    </div>
+                    <div class="profile-management-panel">
+                        <div class="management-section">
+                            <h4>✏️ Edit Profile</h4>
+                            <div id="editProfileForm" style="display: none;">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Profile ID</label>
+                                        <input type="text" id="editName" readonly>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Display Name</label>
+                                        <input type="text" id="editDisplayName">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Description</label>
+                                    <textarea id="editDescription"></textarea>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Max Tokens</label>
+                                        <input type="number" id="editMaxTokens" min="1000" max="100000">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Response Length</label>
+                                        <select id="editResponseLength">
+                                            <option value="concise">Concise</option>
+                                            <option value="detailed">Detailed</option>
+                                            <option value="comprehensive">Comprehensive</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Personality</label>
+                                        <select id="editPersonality">
+                                            <option value="professional">Professional</option>
+                                            <option value="casual">Casual</option>
+                                            <option value="creative">Creative</option>
+                                            <option value="technical">Technical</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Citation Style</label>
+                                        <select id="editCitationStyle">
+                                            <option value="basic">Basic</option>
+                                            <option value="clickable-url">Clickable URL</option>
+                                            <option value="detailed">Detailed</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="editAllowSpeculation">
+                                    <label for="editAllowSpeculation">Allow Speculation</label>
+                                </div>
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="editAllowOffTopic">
+                                    <label for="editAllowOffTopic">Allow Off-Topic</label>
+                                </div>
+                                <div class="form-group">
+                                    <label>System Prompt</label>
+                                    <textarea id="editSystemPrompt" style="min-height: 150px;"></textarea>
+                                </div>
+                                <button class="btn btn-success btn-small" onclick="updateProfile()">💾 Save Changes</button>
+                                <button class="btn btn-warning-small btn-small" onclick="cancelEdit()">❌ Cancel</button>
+                            </div>
+                            <div id="noEditSelection">
+                                <p style="color: #666; font-style: italic;">Select a profile from the list to edit it.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="management-section">
+                            <h4>✨ Create New Profile</h4>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Profile ID</label>
+                                    <input type="text" id="createName" placeholder="e.g., my-custom-profile">
+                                </div>
+                                <div class="form-group">
+                                    <label>Display Name</label>
+                                    <input type="text" id="createDisplayName" placeholder="e.g., My Custom Profile">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Description</label>
+                                <textarea id="createDescription" placeholder="Brief description of this profile..."></textarea>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Max Tokens</label>
+                                    <input type="number" id="createMaxTokens" value="20000" min="1000" max="100000">
+                                </div>
+                                <div class="form-group">
+                                    <label>Response Length</label>
+                                    <select id="createResponseLength">
+                                        <option value="concise">Concise</option>
+                                        <option value="detailed" selected>Detailed</option>
+                                        <option value="comprehensive">Comprehensive</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Personality</label>
+                                    <select id="createPersonality">
+                                        <option value="professional">Professional</option>
+                                        <option value="casual">Casual</option>
+                                        <option value="creative">Creative</option>
+                                        <option value="technical">Technical</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Citation Style</label>
+                                    <select id="createCitationStyle">
+                                        <option value="basic">Basic</option>
+                                        <option value="clickable-url" selected>Clickable URL</option>
+                                        <option value="detailed">Detailed</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="createAllowSpeculation">
+                                <label for="createAllowSpeculation">Allow Speculation</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="createAllowOffTopic">
+                                <label for="createAllowOffTopic">Allow Off-Topic</label>
+                            </div>
+                            <div class="form-group">
+                                <label>System Prompt</label>
+                                <textarea id="createSystemPrompt" placeholder="Enter the system prompt for this profile..." style="min-height: 150px;"></textarea>
+                            </div>
+                            <button class="btn btn-success btn-small" onclick="createProfile()">✨ Create Profile</button>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -520,24 +767,169 @@
             document.getElementById('uploadedFiles').textContent = status.uploadedFiles || '0';
         }
 
+        let currentEditingProfile = null;
+
         function updateProfiles(profiles) {
             const profileList = document.getElementById('profileList');
             profileList.innerHTML = profiles.map(profile => `
-                <div class="profile-item ${profile.active ? 'active' : ''}" onclick="toggleProfileDetails('${profile.name}')">
+                <div class="profile-item ${profile.active ? 'active' : ''}" onclick="selectProfileForEdit('${profile.name}')">
                     <div class="profile-name">${profile.displayName}</div>
                     <div class="profile-description">${profile.description}</div>
-                    <div class="profile-details" id="details-${profile.name}">
-                        <div style="margin-bottom: 10px;">
-                            <strong>Profile ID:</strong> ${profile.name}<br>
-                            <strong>Status:</strong> ${profile.active ? 'Active' : 'Inactive'}
-                        </div>
+                    <div style="margin-top: 10px;">
                         <button class="profile-toggle-btn ${profile.active ? 'active' : ''}" 
                                 onclick="switchProfile('${profile.name}'); event.stopPropagation();">
                             ${profile.active ? '✓ Active' : 'Switch to this profile'}
                         </button>
+                        ${!profile.active && profile.name !== 'locked-down' ? `
+                            <button class="btn btn-danger-small btn-small" 
+                                    onclick="deleteProfile('${profile.name}'); event.stopPropagation();">
+                                🗑️ Delete
+                            </button>
+                        ` : ''}
                     </div>
                 </div>
             `).join('');
+        }
+
+        async function selectProfileForEdit(profileName) {
+            try {
+                const response = await fetch('/bot/profiles');
+                const profiles = await response.json();
+                const profile = profiles.find(p => p.name === profileName);
+                
+                if (profile) {
+                    currentEditingProfile = profileName;
+                    
+                    // Populate edit form with the complete profile data
+                    document.getElementById('editName').value = profile.name;
+                    document.getElementById('editDisplayName').value = profile.displayName || profile.name;
+                    document.getElementById('editDescription').value = profile.description || '';
+                    document.getElementById('editMaxTokens').value = profile.maxTokens || 20000;
+                    document.getElementById('editResponseLength').value = profile.responseLength || 'detailed';
+                    document.getElementById('editPersonality').value = profile.personality || 'professional';
+                    document.getElementById('editCitationStyle').value = profile.citationStyle || 'basic';
+                    document.getElementById('editAllowSpeculation').checked = profile.allowSpeculation || false;
+                    document.getElementById('editAllowOffTopic').checked = profile.allowOffTopic || false;
+                    document.getElementById('editSystemPrompt').value = profile.systemPrompt || '';
+                    
+                    // Show edit form
+                    document.getElementById('editProfileForm').style.display = 'block';
+                    document.getElementById('noEditSelection').style.display = 'none';
+                }
+            } catch (error) {
+                console.error('Error loading profile details:', error);
+                alert('Error loading profile details: ' + error.message);
+            }
+        }
+
+        async function updateProfile() {
+            if (!currentEditingProfile) return;
+            
+            try {
+                const updates = {
+                    displayName: document.getElementById('editDisplayName').value,
+                    description: document.getElementById('editDescription').value,
+                    maxTokens: parseInt(document.getElementById('editMaxTokens').value),
+                    responseLength: document.getElementById('editResponseLength').value,
+                    personality: document.getElementById('editPersonality').value,
+                    citationStyle: document.getElementById('editCitationStyle').value,
+                    allowSpeculation: document.getElementById('editAllowSpeculation').checked,
+                    allowOffTopic: document.getElementById('editAllowOffTopic').checked,
+                    systemPrompt: document.getElementById('editSystemPrompt').value
+                };
+                
+                const response = await fetch(`/bot/profiles/${currentEditingProfile}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(updates)
+                });
+                
+                if (response.ok) {
+                    alert('Profile updated successfully!');
+                    cancelEdit();
+                    refreshData();
+                } else {
+                    const error = await response.json();
+                    alert('Failed to update profile: ' + error.message);
+                }
+            } catch (error) {
+                alert('Error updating profile: ' + error.message);
+            }
+        }
+
+        async function createProfile() {
+            try {
+                const profileData = {
+                    name: document.getElementById('createName').value,
+                    displayName: document.getElementById('createDisplayName').value,
+                    description: document.getElementById('createDescription').value,
+                    maxTokens: parseInt(document.getElementById('createMaxTokens').value),
+                    responseLength: document.getElementById('createResponseLength').value,
+                    personality: document.getElementById('createPersonality').value,
+                    citationStyle: document.getElementById('createCitationStyle').value,
+                    allowSpeculation: document.getElementById('createAllowSpeculation').checked,
+                    allowOffTopic: document.getElementById('createAllowOffTopic').checked,
+                    systemPrompt: document.getElementById('createSystemPrompt').value
+                };
+                
+                if (!profileData.name || !profileData.displayName || !profileData.systemPrompt) {
+                    alert('Please fill in Profile ID, Display Name, and System Prompt');
+                    return;
+                }
+                
+                const response = await fetch('/bot/profiles', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(profileData)
+                });
+                
+                if (response.ok) {
+                    alert('Profile created successfully!');
+                    // Clear form
+                    document.getElementById('createName').value = '';
+                    document.getElementById('createDisplayName').value = '';
+                    document.getElementById('createDescription').value = '';
+                    document.getElementById('createSystemPrompt').value = '';
+                    refreshData();
+                } else {
+                    const error = await response.json();
+                    alert('Failed to create profile: ' + error.message);
+                }
+            } catch (error) {
+                alert('Error creating profile: ' + error.message);
+            }
+        }
+
+        async function deleteProfile(profileName) {
+            if (!confirm(`Are you sure you want to delete the profile "${profileName}"? This action cannot be undone.`)) {
+                return;
+            }
+            
+            try {
+                const response = await fetch(`/bot/profiles/${profileName}`, {
+                    method: 'DELETE'
+                });
+                
+                if (response.ok) {
+                    alert('Profile deleted successfully!');
+                    refreshData();
+                } else {
+                    const error = await response.json();
+                    alert('Failed to delete profile: ' + error.message);
+                }
+            } catch (error) {
+                alert('Error deleting profile: ' + error.message);
+            }
+        }
+
+        function cancelEdit() {
+            currentEditingProfile = null;
+            document.getElementById('editProfileForm').style.display = 'none';
+            document.getElementById('noEditSelection').style.display = 'block';
         }
 
         function toggleProfileDetails(profileName) {

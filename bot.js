@@ -31,6 +31,9 @@ client.once('ready', () => {
   // Start health check server
   healthServer.start();
   
+  // Set Discord client for notifications
+  healthServer.setDiscordClient(client);
+  
   // Log startup metrics
   const metrics = monitor.getSystemMetrics();
   monitor.log('INFO', 'Bot startup complete', {
