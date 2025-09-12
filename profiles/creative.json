@@ -7,6 +7,7 @@
   "personality": "creative",
   "allowSpeculation": true,
   "allowOffTopic": false,
-  "citationStyle": "clickable-url"
+  "citationStyle": "clickable-url",
+  "displayName": "Creative Storyteller",
+  "includeConversationContext": true
 }
-

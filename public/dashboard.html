@@ -652,6 +652,10 @@
                                     <input type="checkbox" id="editAllowOffTopic">
                                     <label for="editAllowOffTopic">Allow Off-Topic</label>
                                 </div>
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="editIncludeConversationContext">
+                                    <label for="editIncludeConversationContext">Include Conversation Context</label>
+                                </div>
                                 <div class="form-group">
                                     <label>System Prompt</label>
                                     <textarea id="editSystemPrompt" style="min-height: 150px;"></textarea>
@@ -721,6 +725,10 @@
                                 <input type="checkbox" id="createAllowOffTopic">
                                 <label for="createAllowOffTopic">Allow Off-Topic</label>
                             </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="createIncludeConversationContext">
+                                <label for="createIncludeConversationContext">Include Conversation Context</label>
+                            </div>
                             <div class="form-group">
                                 <label>System Prompt</label>
                                 <textarea id="createSystemPrompt" placeholder="Enter the system prompt for this profile..." style="min-height: 150px;"></textarea>
@@ -756,12 +764,16 @@
 
     <script>
         let refreshInterval;
+        let filesRefreshInterval;
 
         // Initialize dashboard
         document.addEventListener('DOMContentLoaded', function() {
             refreshData();
+            refreshFilesOnly(); // Load files on initial load
             // Auto-refresh every 30 seconds
             refreshInterval = setInterval(refreshData, 30000);
+            // Refresh files less frequently (every 5 minutes)
+            filesRefreshInterval = setInterval(refreshFilesOnly, 300000);
         });
 
         async function refreshData() {
@@ -769,13 +781,12 @@
             indicator.style.display = 'block';
             
             try {
-                // Fetch all data in parallel
-                const [status, metrics, botStatus, profiles, files, logs, costs] = await Promise.all([
+                // Fetch all data in parallel (excluding files to reduce API calls)
+                const [status, metrics, botStatus, profiles, logs, costs] = await Promise.all([
                     fetch('/status').then(r => r.json()),
                     fetch('/metrics').then(r => r.json()),
                     fetch('/bot/status').then(r => r.json()),
                     fetch('/bot/profiles').then(r => r.json()),
-                    fetch('/bot/files').then(r => r.json()),
                     fetch('/bot/logs').then(r => r.json()),
                     fetch('/costs').then(r => r.json())
                 ]);
@@ -784,7 +795,6 @@
                 updateSystemMetrics(metrics);
                 updateBotStatus(botStatus);
                 updateProfiles(profiles);
-                updateFiles(files);
                 updateLogs(logs);
                 updateCostMetrics(costs);
                 
@@ -795,6 +805,16 @@
                 showError('Failed to fetch data. Please check if the bot is running.');
             } finally {
                 indicator.style.display = 'none';
+            }
+        }
+
+        async function refreshFilesOnly() {
+            try {
+                const files = await fetch('/bot/files').then(r => r.json());
+                updateFiles(files);
+                console.log('Files refreshed');
+            } catch (error) {
+                console.error('Error refreshing files:', error);
             }
         }
 
@@ -892,6 +912,7 @@
                     document.getElementById('editCitationStyle').value = profile.citationStyle || 'basic';
                     document.getElementById('editAllowSpeculation').checked = profile.allowSpeculation || false;
                     document.getElementById('editAllowOffTopic').checked = profile.allowOffTopic || false;
+                    document.getElementById('editIncludeConversationContext').checked = profile.includeConversationContext || false;
                     document.getElementById('editSystemPrompt').value = profile.systemPrompt || '';
                     
                     // Show edit form
@@ -917,6 +938,7 @@
                     citationStyle: document.getElementById('editCitationStyle').value,
                     allowSpeculation: document.getElementById('editAllowSpeculation').checked,
                     allowOffTopic: document.getElementById('editAllowOffTopic').checked,
+                    includeConversationContext: document.getElementById('editIncludeConversationContext').checked,
                     systemPrompt: document.getElementById('editSystemPrompt').value
                 };
                 
@@ -953,6 +975,7 @@
                     citationStyle: document.getElementById('createCitationStyle').value,
                     allowSpeculation: document.getElementById('createAllowSpeculation').checked,
                     allowOffTopic: document.getElementById('createAllowOffTopic').checked,
+                    includeConversationContext: document.getElementById('createIncludeConversationContext').checked,
                     systemPrompt: document.getElementById('createSystemPrompt').value
                 };
                 

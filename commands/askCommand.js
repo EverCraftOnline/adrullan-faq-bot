@@ -55,10 +55,25 @@ module.exports = {
       // Get active profile settings
       const activeProfile = profileManager.getActiveProfile();
       const maxTokens = useAllContext ? 50000 : activeProfile.maxTokens;
-      const context = buildComprehensiveContext(question, knowledgeBase, maxTokens);
       
-      if (context.length === 0) {
-        return message.reply('I don\'t have information about that topic in my current knowledge base. Try asking about game mechanics, lore, or community topics.');
+      // Add conversation context if enabled
+      let enhancedQuestion = question;
+      if (activeProfile.includeConversationContext) {
+        const conversationContext = await getConversationContext(message);
+        if (conversationContext) {
+          enhancedQuestion = `Previous conversation context:\n${conversationContext}\n\nCurrent question: ${question}`;
+          console.log(`📝 Added conversation context (${conversationContext.length} chars)`);
+        }
+      }
+      
+      // Only build context if in Context Passing mode
+      let context = '';
+      if (anthropicClient.isContextPassing()) {
+        context = buildComprehensiveContext(enhancedQuestion, knowledgeBase, maxTokens);
+        
+        if (context.length === 0) {
+          return message.reply('I don\'t have information about that topic in my current knowledge base. Try asking about game mechanics, lore, or community topics.');
+        }
       }
 
       // Debug logging
@@ -66,17 +81,22 @@ module.exports = {
       console.log(`Using --all flag: ${useAllContext}`);
       console.log(`Active profile: ${activeProfile.name} (${profileManager.activeProfile})`);
       console.log(`Context mode: ${anthropicClient.isContextPassing() ? 'Context Passing' : 'File Usage'}`);
-      console.log(`Context length: ${context.length} characters`);
-      console.log(`Estimated tokens: ${Math.ceil(context.length / 4)}`);
-      console.log(`Documents included: ${context.split('---').length - 1}`);
-      console.log(`Contains lore content: ${context.includes('Six Aspects')}`);
-      console.log(`Contains central conflict: ${context.includes('Age of Heroism')}`);
+      
+      if (anthropicClient.isContextPassing()) {
+        console.log(`Context length: ${context.length} characters`);
+        console.log(`Estimated tokens: ${Math.ceil(context.length / 4)}`);
+        console.log(`Documents included: ${context.split('---').length - 1}`);
+        console.log(`Contains lore content: ${context.includes('Six Aspects')}`);
+        console.log(`Contains central conflict: ${context.includes('Age of Heroism')}`);
+      } else {
+        console.log(`File mode: Using uploaded files, no context building`);
+      }
 
       // Use system prompt from active profile
       const systemPrompt = activeProfile.systemPrompt;
 
       // Call Anthropic API
-      const response = await anthropicClient.ask(systemPrompt, context, question);
+      const response = await anthropicClient.ask(systemPrompt, context, enhancedQuestion);
       
       // Format and send response
       const formattedResponse = `**Question:** ${question}\n\n${response}`;
@@ -244,6 +264,38 @@ function findRelevantDocs(question, knowledgeBase, limit) {
     .sort((a, b) => b.score - a.score)
     .slice(0, limit)
     .map(item => ({ ...item.doc, score: item.score }));
+}
+
+// Get the last reply to this user (contains their original message)
+async function getConversationContext(message) {
+  try {
+    // Fetch recent messages in this channel
+    const messages = await message.channel.messages.fetch({ limit: 50 });
+    
+    // Find the last message where the bot replied to this user
+    const userMessages = messages.filter(msg => msg.author.id === message.author.id);
+    const botMessages = messages.filter(msg => msg.author.bot && msg.author.id !== message.author.id);
+    
+    // Look for bot replies that mention or reference this user
+    for (const botMsg of botMessages.values()) {
+      // Check if this bot message is a reply to a message from our user
+      if (botMsg.reference && botMsg.reference.messageId) {
+        const referencedMsg = messages.get(botMsg.reference.messageId);
+        if (referencedMsg && referencedMsg.author.id === message.author.id) {
+          // Found a bot reply to this user - return the context
+          const context = `Bot's last response: "${botMsg.content}"\nUser's previous question: "${referencedMsg.content}"`;
+          console.log(`🔍 Found conversation context from ${botMsg.createdAt}`);
+          return context;
+        }
+      }
+    }
+    
+    console.log('📝 No previous conversation context found');
+    return null;
+  } catch (error) {
+    console.error('Error fetching conversation context:', error);
+    return null;
+  }
 }
 
 function chunkString(str, maxLength) {

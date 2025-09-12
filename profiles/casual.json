@@ -7,6 +7,7 @@
   "personality": "friendly",
   "allowSpeculation": true,
   "allowOffTopic": false,
-  "citationStyle": "clickable-url"
+  "citationStyle": "clickable-url",
+  "includeConversationContext": true
 }
 

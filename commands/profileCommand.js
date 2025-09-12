@@ -44,6 +44,10 @@ module.exports = {
         case 'init':
           await handleInitializeProfiles(message);
           break;
+        case 'context':
+        case 'conversation':
+          await handleToggleConversationContext(message, args[1]);
+          break;
         default:
           await showHelp(message);
       }
@@ -67,11 +71,14 @@ async function showHelp(message) {
 \`!profile create <name> <description>\` - Create a new profile (interactive)
 \`!profile update <name>\` - Update an existing profile (interactive)
 \`!profile delete <name>\` - Delete a profile (cannot delete default)
+\`!profile context [on/off]\` - Toggle conversation context for current profile
 \`!profile init\` - Initialize default profiles
 
 **Examples:**
 \`!profile switch casual\` - Switch to casual personality
 \`!profile info creative\` - Show details about creative profile
+\`!profile context on\` - Enable conversation context
+\`!profile context\` - Check current conversation context status
 \`!profile list\` - See all available profiles
 
 **Note:** Profile changes affect all future !ask and !askall commands.`;
@@ -255,4 +262,27 @@ async function handleDeleteProfile(message, profileName) {
 async function handleInitializeProfiles(message) {
   profileManager.initializeDefaultProfiles();
   await message.reply('✅ **Initialized default profiles!**\n\nUse `!profile list` to see all available profiles.');
+}
+
+async function handleToggleConversationContext(message, action) {
+  if (!action) {
+    const activeProfile = profileManager.getActiveProfile();
+    const status = activeProfile.includeConversationContext ? 'enabled' : 'disabled';
+    return message.reply(`📝 **Conversation Context:** ${status}\n\nUse \`!profile context on/off\` to toggle.`);
+  }
+  
+  const enable = action.toLowerCase() === 'on' || action.toLowerCase() === 'true' || action.toLowerCase() === 'enable';
+  const activeProfileName = profileManager.activeProfile;
+  
+  const success = profileManager.updateProfile(activeProfileName, {
+    includeConversationContext: enable
+  });
+  
+  if (success) {
+    const status = enable ? 'enabled' : 'disabled';
+    await message.reply(`✅ **Conversation Context ${status}** for profile: ${activeProfileName}\n\nThis will include the last bot reply and user question as context for new questions.`);
+    monitor.trackProfileSwitch(activeProfileName, 'conversation-context-toggle');
+  } else {
+    await message.reply(`❌ Failed to update conversation context setting.`);
+  }
 }
