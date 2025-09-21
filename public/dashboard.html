@@ -547,7 +547,7 @@
                 </div>
             </div>
 
-            <div class="card">
+            <div class="card" style="display: none;">
                 <h3>💰 Cost Metrics <small style="color: #ff9800; font-size: 0.7em;">(ESTIMATES)</small></h3>
                 <div style="background: #fff3cd; padding: 8px; border-radius: 5px; margin-bottom: 15px; font-size: 0.8rem; color: #856404;">
                     ⚠️ These are estimates based on token usage. Check your <a href="https://console.anthropic.com/" target="_blank" style="color: #856404;">Anthropic dashboard</a> for actual billing.
@@ -781,14 +781,17 @@
             indicator.style.display = 'block';
             
             try {
-                // Fetch all data in parallel (excluding files to reduce API calls)
+                // Fetch all data in parallel (including costs)
                 const [status, metrics, botStatus, profiles, logs, costs] = await Promise.all([
                     fetch('/status').then(r => r.json()),
                     fetch('/metrics').then(r => r.json()),
                     fetch('/bot/status').then(r => r.json()),
                     fetch('/bot/profiles').then(r => r.json()),
                     fetch('/bot/logs').then(r => r.json()),
-                    fetch('/costs').then(r => r.json())
+                    fetch('/costs').then(r => r.json()).catch(err => {
+                        console.warn('Failed to fetch costs:', err);
+                        return null;
+                    })
                 ]);
 
                 updateHealthStatus(status);
@@ -796,7 +799,11 @@
                 updateBotStatus(botStatus);
                 updateProfiles(profiles);
                 updateLogs(logs);
-                updateCostMetrics(costs);
+                
+                // Update cost metrics if available
+                if (costs) {
+                    updateCostMetrics(costs);
+                }
                 
                 document.getElementById('lastUpdated').textContent = 
                     `Last updated: ${new Date().toLocaleTimeString()}`;
@@ -1064,12 +1071,40 @@
         }
 
         function updateCostMetrics(costs) {
-            document.getElementById('totalCost').textContent = `$${costs.total.cost.toFixed(4)}`;
-            document.getElementById('todayCost').textContent = `$${costs.daily.today.cost.toFixed(4)}`;
-            document.getElementById('totalTokens').textContent = costs.total.tokens.toLocaleString();
-            document.getElementById('apiRequests').textContent = costs.total.requests.toLocaleString();
-            document.getElementById('avgCostPerRequest').textContent = `$${costs.average.costPerRequest.toFixed(4)}`;
-            document.getElementById('estimatedMonthly').textContent = `$${costs.estimated.monthlyCost.toFixed(2)}`;
+            if (!costs) {
+                console.warn('Cost metrics data is null or undefined');
+                return;
+            }
+
+            // Helper function to safely get numeric value with fallback
+            const safeNumber = (value, fallback = 0) => {
+                return (value !== null && value !== undefined && !isNaN(value)) ? Number(value) : fallback;
+            };
+
+            // Helper function to safely format currency
+            const safeCurrency = (value, decimals = 4) => {
+                const num = safeNumber(value);
+                return `$${num.toFixed(decimals)}`;
+            };
+
+            // Update each metric with safe fallbacks
+            document.getElementById('totalCost').textContent = costs.total?.cost !== null ? 
+                safeCurrency(costs.total.cost) : 'N/A';
+            
+            document.getElementById('todayCost').textContent = costs.daily?.today?.cost !== null ? 
+                safeCurrency(costs.daily.today.cost) : 'N/A';
+            
+            document.getElementById('totalTokens').textContent = costs.total?.tokens !== null ? 
+                safeNumber(costs.total.tokens).toLocaleString() : 'N/A';
+            
+            document.getElementById('apiRequests').textContent = costs.total?.requests !== null ? 
+                safeNumber(costs.total.requests).toLocaleString() : 'N/A';
+            
+            document.getElementById('avgCostPerRequest').textContent = costs.average?.costPerRequest !== null ? 
+                safeCurrency(costs.average.costPerRequest) : 'N/A';
+            
+            document.getElementById('estimatedMonthly').textContent = costs.estimated?.monthlyCost !== null ? 
+                safeCurrency(costs.estimated.monthlyCost, 2) : 'N/A';
         }
 
         function updateFiles(files) {
