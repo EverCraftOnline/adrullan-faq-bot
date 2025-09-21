@@ -9,6 +9,7 @@ const statsCommand = require('./commands/statsCommand');
 const uploadDataCommand = require('./commands/uploadDataCommand');
 const profileCommand = require('./commands/profileCommand');
 const monitorCommand = require('./commands/monitorCommand');
+const helpCommand = require('./commands/helpCommand');
 const monitor = require('./lib/monitor');
 const HealthCheckServer = require('./lib/healthCheck');
 
@@ -26,7 +27,7 @@ const healthServer = new HealthCheckServer();
 
 client.once('ready', () => {
   monitor.log('SUCCESS', `Logged in as ${client.user.tag}`);
-  monitor.log('SUCCESS', 'Bot is ready! Commands: !index, !ask, !askall, !refreshfaq, !quiz, !stats, !uploaddata, !profile, !monitor');
+  monitor.log('SUCCESS', 'Bot is ready! Commands: !help, !index, !ask, !askall, !refreshfaq, !quiz, !stats, !uploaddata, !profile, !monitor');
   
   // Start health check server
   healthServer.start();
@@ -153,6 +154,12 @@ client.on('messageCreate', async (message) => {
     if (message.content.startsWith('!monitor')) {
       monitor.trackMessage('monitor');
       await monitorCommand.execute(message);
+    }
+    
+    // Handle !help command (command help and documentation)
+    if (message.content.startsWith('!help')) {
+      monitor.trackMessage('help');
+      await helpCommand.execute(message);
     }
   } catch (error) {
     monitor.trackError(error, 'Message processing error');
