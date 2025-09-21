@@ -38,11 +38,11 @@ module.exports = {
   // Deployment configuration (optional)
   deploy: {
     production: {
-      user: 'ubuntu',
-      host: 'your-lightsail-ip',
+      user: 'bitnami',
+      host: '18.190.207.216',
       ref: 'origin/main',
-      repo: 'your-git-repo-url',
-      path: '/home/ubuntu/adrullan-faq-bot',
+      repo: 'https://github.com/EverCraftOnline/adrullan-faq-bot.git',
+      path: '/home/bitnami/adrullan-faq-bot',
       'pre-deploy-local': '',
       'post-deploy': 'npm install && pm2 reload ecosystem.config.js --env production',
       'pre-setup': ''
