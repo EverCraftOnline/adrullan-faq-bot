@@ -40,7 +40,7 @@ module.exports = {
     production: {
       user: 'bitnami',
       host: '18.190.207.216',
-      ref: 'origin/main',
+      ref: 'origin/master',
       repo: 'https://github.com/EverCraftOnline/adrullan-faq-bot.git',
       path: '/home/bitnami/adrullan-faq-bot',
       'pre-deploy-local': '',

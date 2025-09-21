@@ -26,7 +26,7 @@ if pm2 list | grep -q $BOT_NAME; then
     
     # Pull latest changes
     echo "📥 Pulling latest changes..."
-    git pull origin main
+    git pull origin master
     
     # Install/update dependencies
     echo "📦 Installing dependencies..."
@@ -45,7 +45,7 @@ else
     
     # Pull latest changes
     echo "📥 Pulling latest changes..."
-    git pull origin main
+    git pull origin master
     
     # Install dependencies
     echo "📦 Installing dependencies..."
