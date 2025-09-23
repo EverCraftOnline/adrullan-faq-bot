@@ -3,7 +3,8 @@ const path = require('path');
 
 module.exports = {
   async loadAll() {
-    const dataDir = path.join(__dirname, '..', 'data');
+    // Option A: data/ remains at repo root while JS lives in legacy-js/
+    const dataDir = path.join(__dirname, '..', '..', 'data');
     
     if (!fs.existsSync(dataDir)) {
       console.log('Data directory not found, creating it...');

@@ -97,8 +97,8 @@ module.exports = {
         }
       }
 
-      // Save to data folder
-      const jsonPath = path.join(__dirname, '..', 'data', 'forum_faq.json');
+      // Save to data folder at repo root (Option A)
+      const jsonPath = path.join(__dirname, '..', '..', 'data', 'forum_faq.json');
       fs.writeFileSync(jsonPath, JSON.stringify(jsonEntries, null, 2));
       
       const archivedCount = Array.from(allThreads.values()).filter(t => t.archived).length;

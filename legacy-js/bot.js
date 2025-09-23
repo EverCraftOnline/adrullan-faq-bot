@@ -1,4 +1,5 @@
-require('dotenv').config();
+const path = require('path');
+require('dotenv').config({ path: path.join(__dirname, '..', '.env') });
 const { Client, GatewayIntentBits, Partials } = require('discord.js');
 const indexCommand = require('./commands/indexCommand');
 const askCommand = require('./commands/askCommand');

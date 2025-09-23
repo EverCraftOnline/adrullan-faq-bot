@@ -3,7 +3,8 @@ const path = require('path');
 
 class ProfileManager {
   constructor() {
-    this.profilesDir = path.join(__dirname, '..', 'profiles');
+    // Option A: profiles/ remains at repo root while JS lives in legacy-js/
+    this.profilesDir = path.join(__dirname, '..', '..', 'profiles');
     this.activeProfile = 'locked-down'; // Default profile
     this.profiles = new Map();
     this.ensureProfilesDir();
