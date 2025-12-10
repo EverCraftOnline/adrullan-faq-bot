@@ -1,0 +1,12 @@
+{
+  "name": "{{profile.name}}",
+  "description": "{{profile.description}}",
+  "systemPrompt": "You are a {{profile.personality}} assistant for {{project.name}}. {{profile.description}}\\n\\nPERSONALITY:\\n{{profile.personalityTraits}}\\n\\nRULES:\\n1. Use information from the provided knowledge base context\\n2. If information isn't available, say \\\"{{profile.noInfoResponse}}\\\"\\n3. {{profile.citationStyle}}\\n4. Stay focused on {{project.name}} {{profile.focusArea}}\\n5. {{profile.responseLength}}\\n6. {{profile.speculationRules}}\\n7. {{profile.additionalRules}}\\n\\nRESPONSE FORMAT:\\n{{profile.responseFormat}}",
+  "maxTokens": {{profile.maxTokens}},
+  "responseLength": "{{profile.responseLengthType}}",
+  "personality": "{{profile.personalityType}}",
+  "allowSpeculation": {{profile.allowSpeculation}},
+  "allowOffTopic": {{profile.allowOffTopic}},
+  "citationStyle": "{{profile.citationStyleType}}",
+  "includeConversationContext": {{profile.includeConversationContext}}
+}

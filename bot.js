@@ -1,5 +1,6 @@
 require('dotenv').config();
 const { Client, GatewayIntentBits, Partials } = require('discord.js');
+const configLoader = require('./lib/configLoader');
 const indexCommand = require('./commands/indexCommand');
 const askCommand = require('./commands/askCommand');
 const askAllCommand = require('./commands/askAllCommand');
@@ -10,6 +11,7 @@ const uploadDataCommand = require('./commands/uploadDataCommand');
 const profileCommand = require('./commands/profileCommand');
 const monitorCommand = require('./commands/monitorCommand');
 const helpCommand = require('./commands/helpCommand');
+const patchNotesCommand = require('./commands/patchNotesCommand');
 const monitor = require('./lib/monitor');
 const HealthCheckServer = require('./lib/healthCheck');
 
@@ -26,8 +28,12 @@ const client = new Client({
 const healthServer = new HealthCheckServer();
 
 client.once('ready', () => {
+  const project = configLoader.getProjectInfo();
+  const branding = configLoader.getBranding();
+  const discordConfig = configLoader.getDiscordConfig();
+  
   monitor.log('SUCCESS', `Logged in as ${client.user.tag}`);
-  monitor.log('SUCCESS', 'Bot is ready! Commands: !help, !index, !ask, !askall, !refreshfaq, !quiz, !stats, !uploaddata, !profile, !monitor');
+  monitor.log('SUCCESS', `${branding.displayName} is ready! Commands: ${discordConfig.defaultPrefix}help, ${discordConfig.defaultPrefix}index, ${discordConfig.defaultPrefix}ask, ${discordConfig.defaultPrefix}askall, ${discordConfig.defaultPrefix}refreshfaq, ${discordConfig.defaultPrefix}quiz, ${discordConfig.defaultPrefix}stats, ${discordConfig.defaultPrefix}uploaddata, ${discordConfig.defaultPrefix}profile, ${discordConfig.defaultPrefix}monitor, ${discordConfig.defaultPrefix}patchnotes`);
   
   // Start health check server
   healthServer.start();
@@ -160,6 +166,12 @@ client.on('messageCreate', async (message) => {
     if (message.content.startsWith('!help')) {
       monitor.trackMessage('help');
       await helpCommand.execute(message);
+    }
+    
+    // Handle !patchnotes command (patch notes formatting)
+    if (message.content.startsWith('!patchnotes')) {
+      monitor.trackMessage('patchnotes');
+      await patchNotesCommand.execute(message);
     }
   } catch (error) {
     monitor.trackError(error, 'Message processing error');

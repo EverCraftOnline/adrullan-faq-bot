@@ -1,6 +1,8 @@
+const configLoader = require('./lib/configLoader');
+
 module.exports = {
   apps: [{
-    name: 'adrullan-faq-bot',
+    name: configLoader.get('branding.botName', 'discord-faq-bot'),
     script: 'bot.js',
     instances: 1,
     autorestart: true,
@@ -41,8 +43,8 @@ module.exports = {
       user: 'bitnami',
       host: '18.190.207.216',
       ref: 'origin/master',
-      repo: 'https://github.com/EverCraftOnline/adrullan-faq-bot.git',
-      path: '/home/bitnami/adrullan-faq-bot',
+      repo: configLoader.get('project.repository', 'https://github.com/your-org/your-bot.git'),
+      path: `/home/bitnami/${configLoader.get('branding.botName', 'discord-faq-bot')}`,
       'pre-deploy-local': '',
       'post-deploy': 'npm install && pm2 reload ecosystem.config.js --env production',
       'pre-setup': ''

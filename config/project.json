@@ -1,0 +1,86 @@
+{
+  "project": {
+    "name": "Adrullan FAQ Bot",
+    "description": "Discord bot for Adrullan Online Adventures FAQ with AI-powered responses",
+    "version": "1.0.0",
+    "author": "EverCraft Online",
+    "repository": "https://github.com/EverCraftOnline/adrullan-faq-bot.git",
+    "website": "https://discord.gg/adrullan"
+  },
+  "branding": {
+    "botName": "adrullan-faq-bot",
+    "displayName": "Adrullan FAQ Bot",
+    "emoji": "🎮",
+    "color": "#0099ff",
+    "primaryColor": "#0099ff",
+    "secondaryColor": "#ffffff"
+  },
+  "discord": {
+    "adminUserIds": ["146495555760160769"],
+    "adminRoles": ["Designer", "Admin", "Developer"],
+    "supportChannels": ["#general-discussion", "#dev-updates", "#help"],
+    "defaultPrefix": "!"
+  },
+  "ai": {
+    "model": "claude-sonnet-4-5-20250929",
+    "maxTokens": 2000,
+    "contextLimits": {
+      "ask": 20000,
+      "askall": 50000
+    },
+    "defaultSystemPrompt": "You are the official {{project.name}} assistant. You help community members by answering questions using only official documentation and FAQ entries."
+  },
+  "rateLimits": {
+    "dailyLimit": 20,
+    "cooldownSimple": 30000,
+    "cooldownComplex": 120000,
+    "costEstimates": {
+      "ask": 0.01,
+      "askSimple": 0.003,
+      "quiz": 0.005,
+      "refresh": 0.001
+    }
+  },
+  "features": {
+    "healthCheck": {
+      "enabled": true,
+      "port": 3000
+    },
+    "profiles": {
+      "enabled": true,
+      "defaultProfile": "casual"
+    },
+    "monitoring": {
+      "enabled": true,
+      "logRetentionDays": 30
+    },
+    "fileUpload": {
+      "enabled": true,
+      "defaultMode": "fileUsage"
+    }
+  },
+  "data": {
+    "categories": {
+      "forum_faq": "Community Q&A from Discord forums",
+      "philosophy": "Design vision, team info, development history", 
+      "guides": "Combat, progression, crafting, monetization",
+      "lore": "World building, gods, champions, story, races"
+    },
+    "knowledgeBasePath": "./data/",
+    "profilesPath": "./profiles/",
+    "templatesPath": "./templates/"
+  },
+  "deployment": {
+    "pm2": {
+      "name": "{{branding.botName}}",
+      "maxMemoryRestart": "400M",
+      "instances": 1
+    },
+    "healthCheck": {
+      "port": 3000,
+      "endpoints": ["/health", "/status", "/metrics"]
+    }
+  }
+}
+
+

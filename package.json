@@ -1,11 +1,12 @@
 {
   "name": "adrullan-faq-bot",
   "version": "1.0.0",
-  "description": "Senan - Discord bot for Adrullan Online Adventures FAQ with AI-powered responses",
+  "description": "Discord bot for Adrullan Online Adventures FAQ with AI-powered responses",
   "main": "bot.js",
   "scripts": {
     "start": "node bot.js",
-    "dev": "node bot.js"
+    "dev": "node bot.js",
+    "generate-package": "node scripts/generate-package.js"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.62.0",
@@ -19,8 +20,15 @@
     "bot",
     "faq",
     "ai",
-    "adrullan"
+    "adrullan",
+    "faq",
+    "bot"
   ],
-  "author": "",
-  "license": "MIT"
+  "author": "EverCraft Online",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/EverCraftOnline/adrullan-faq-bot.git"
+  },
+  "homepage": "https://discord.gg/adrullan"
 }

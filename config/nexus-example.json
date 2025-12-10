@@ -1,0 +1,87 @@
+{
+  "project": {
+    "name": "Nexus FAQ Bot",
+    "description": "Discord bot for Nexus blockchain platform, SCRAPT game, and XRP Junkies community",
+    "version": "1.0.0",
+    "author": "Nexus Team",
+    "repository": "https://github.com/nexus/nexus-faq-bot.git",
+    "website": "https://www.buildnexus.io/"
+  },
+  "branding": {
+    "botName": "nexus-faq-bot",
+    "displayName": "Nexus FAQ Bot",
+    "emoji": "🔗",
+    "color": "#00D4FF",
+    "primaryColor": "#00D4FF",
+    "secondaryColor": "#ffffff"
+  },
+  "discord": {
+    "adminUserIds": ["YOUR_ADMIN_USER_ID"],
+    "adminRoles": ["Admin", "Developer", "Moderator"],
+    "supportChannels": ["#general", "#help", "#scrapt-game", "#blockchain"],
+    "defaultPrefix": "!"
+  },
+  "ai": {
+    "model": "claude-3-5-sonnet-20241022",
+    "maxTokens": 2000,
+    "contextLimits": {
+      "ask": 20000,
+      "askall": 50000
+    },
+    "defaultSystemPrompt": "You are the official {{project.name}} assistant. You help community members by answering questions about Nexus blockchain platform, SCRAPT game, and XRP Junkies using only official documentation and FAQ entries."
+  },
+  "rateLimits": {
+    "dailyLimit": 20,
+    "cooldownSimple": 30000,
+    "cooldownComplex": 120000,
+    "costEstimates": {
+      "ask": 0.01,
+      "askSimple": 0.003,
+      "quiz": 0.005,
+      "refresh": 0.001
+    }
+  },
+  "features": {
+    "healthCheck": {
+      "enabled": true,
+      "port": 3000
+    },
+    "profiles": {
+      "enabled": true,
+      "defaultProfile": "technical"
+    },
+    "monitoring": {
+      "enabled": true,
+      "logRetentionDays": 30
+    },
+    "fileUpload": {
+      "enabled": true,
+      "defaultMode": "fileUsage"
+    }
+  },
+  "data": {
+    "categories": {
+      "nexus_faq": "Nexus platform FAQ and general questions",
+      "blockchain_guides": "XRPL, NFT, and blockchain integration guides",
+      "scrapt_game": "SCRAPT game mechanics, features, and gameplay",
+      "junkiverse_lore": "XRP Junkies community lore, characters, and story",
+      "technical_docs": "API documentation and developer resources"
+    },
+    "knowledgeBasePath": "./data/",
+    "profilesPath": "./profiles/",
+    "templatesPath": "./templates/"
+  },
+  "deployment": {
+    "pm2": {
+      "name": "nexus-faq-bot",
+      "maxMemoryRestart": "400M",
+      "instances": 1
+    },
+    "healthCheck": {
+      "port": 3000,
+      "endpoints": ["/health", "/status", "/metrics"]
+    }
+  }
+}
+
+

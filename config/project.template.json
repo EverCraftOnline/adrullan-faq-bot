@@ -1,0 +1,86 @@
+{
+  "project": {
+    "name": "{{PROJECT_NAME}}",
+    "description": "{{PROJECT_DESCRIPTION}}",
+    "version": "1.0.0",
+    "author": "{{PROJECT_AUTHOR}}",
+    "repository": "{{PROJECT_REPOSITORY}}",
+    "website": "{{PROJECT_WEBSITE}}"
+  },
+  "branding": {
+    "botName": "{{BOT_NAME}}",
+    "displayName": "{{DISPLAY_NAME}}",
+    "emoji": "{{BOT_EMOJI}}",
+    "color": "{{PRIMARY_COLOR}}",
+    "primaryColor": "{{PRIMARY_COLOR}}",
+    "secondaryColor": "#ffffff"
+  },
+  "discord": {
+    "adminUserIds": ["{{ADMIN_USER_ID}}"],
+    "adminRoles": ["Admin", "Developer"],
+    "supportChannels": ["#general", "#help", "#support"],
+    "defaultPrefix": "!"
+  },
+  "ai": {
+    "model": "claude-3-5-sonnet-20241022",
+    "maxTokens": 2000,
+    "contextLimits": {
+      "ask": 20000,
+      "askall": 50000
+    },
+    "defaultSystemPrompt": "You are the official {{PROJECT_NAME}} assistant. You help community members by answering questions using only official documentation and FAQ entries."
+  },
+  "rateLimits": {
+    "dailyLimit": 20,
+    "cooldownSimple": 30000,
+    "cooldownComplex": 120000,
+    "costEstimates": {
+      "ask": 0.01,
+      "askSimple": 0.003,
+      "quiz": 0.005,
+      "refresh": 0.001
+    }
+  },
+  "features": {
+    "healthCheck": {
+      "enabled": true,
+      "port": 3000
+    },
+    "profiles": {
+      "enabled": true,
+      "defaultProfile": "casual"
+    },
+    "monitoring": {
+      "enabled": true,
+      "logRetentionDays": 30
+    },
+    "fileUpload": {
+      "enabled": true,
+      "defaultMode": "fileUsage"
+    }
+  },
+  "data": {
+    "categories": {
+      "faq": "Frequently Asked Questions",
+      "guides": "How-to guides and tutorials",
+      "lore": "Story, characters, and world building",
+      "technical": "Technical documentation and API references"
+    },
+    "knowledgeBasePath": "./data/",
+    "profilesPath": "./profiles/",
+    "templatesPath": "./templates/"
+  },
+  "deployment": {
+    "pm2": {
+      "name": "{{BOT_NAME}}",
+      "maxMemoryRestart": "400M",
+      "instances": 1
+    },
+    "healthCheck": {
+      "port": 3000,
+      "endpoints": ["/health", "/status", "/metrics"]
+    }
+  }
+}
+
+
