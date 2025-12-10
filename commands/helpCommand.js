@@ -1,4 +1,5 @@
 const { PermissionsBitField } = require('discord.js');
+const configLoader = require('../lib/configLoader');
 
 module.exports = {
   async execute(message) {
@@ -12,13 +13,16 @@ module.exports = {
 
     // Check if user is admin for admin commands visibility
     const isAdmin = message.member?.permissions.has(PermissionsBitField.Flags.Administrator) || 
-                   message.author.id === '146495555760160769' ||
-                   message.member?.roles.cache.some(role => role.name === 'Designer');
+                   configLoader.isAdmin(message.author.id, message.member);
+
+    const branding = configLoader.getBranding();
+    const project = configLoader.getProjectInfo();
+    const discordConfig = configLoader.getDiscordConfig();
 
     const helpEmbed = {
-      color: 0x0099ff,
-      title: '🤖 Adrullan FAQ Bot - Command Help',
-      description: 'Here are all the commands available for the Adrullan FAQ Bot:',
+      color: parseInt(branding.color.replace('#', ''), 16),
+      title: `${branding.emoji} ${branding.displayName} - Command Help`,
+      description: `Here are all the commands available for the ${branding.displayName}:`,
       fields: [
         {
           name: '🎯 **Question Commands**',
@@ -43,7 +47,7 @@ module.exports = {
         }
       ],
       footer: {
-        text: 'Use !help <command> for detailed information about any command'
+        text: `Use ${discordConfig.defaultPrefix}help <command> for detailed information about any command`
       },
       timestamp: new Date().toISOString()
     };
@@ -72,8 +76,10 @@ module.exports = {
 
 async function showCommandHelp(message, commandName) {
   const isAdmin = message.member?.permissions.has(PermissionsBitField.Flags.Administrator) || 
-                 message.author.id === '146495555760160769' ||
-                 message.member?.roles.cache.some(role => role.name === 'Designer');
+                 configLoader.isAdmin(message.author.id, message.member);
+  
+  const project = configLoader.getProjectInfo();
+  const discordConfig = configLoader.getDiscordConfig();
 
   let helpText = '';
 
@@ -83,7 +89,7 @@ async function showCommandHelp(message, commandName) {
 
 **Usage:** \`!ask <your question>\`
 
-**Description:** Ask questions about Adrullan lore, gameplay, mechanics, or philosophy. The bot intelligently selects relevant context based on your question type.
+**Description:** Ask questions about {{project.name}} lore, gameplay, mechanics, or philosophy. The bot intelligently selects relevant context based on your question type.
 
 **Examples:**
 • \`!ask What is the death penalty system?\`
