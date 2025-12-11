@@ -1,6 +1,7 @@
 const anthropicClient = require('../lib/anthropicClient');
 const configLoader = require('../lib/configLoader');
 const monitor = require('../lib/monitor');
+const draftManager = require('../lib/patchNotesDraft');
 const fs = require('fs');
 const path = require('path');
 
@@ -57,6 +58,14 @@ module.exports = {
         return message.reply('ℹ️ No patch notes found to format.');
       }
       
+      // Check if draft already exists
+      const existingDraft = draftManager.loadDraft(version);
+      const isUpdate = existingDraft && existingDraft.status === 'draft';
+      
+      if (isUpdate) {
+        await message.channel.send(`⚠️ Draft for ${version} already exists. Regenerating with all current messages...\n💡 **Note:** This will replace the draft. If you've made manual edits, they'll be overwritten.`);
+      }
+      
       // Format using AI
       await message.channel.send('🤖 Formatting patch notes with AI...');
       const formatted = await formatWithAI(rawNotes, version);
@@ -65,21 +74,28 @@ module.exports = {
         return message.reply('❌ Failed to format patch notes. Check logs for details.');
       }
       
-      // Post formatted notes to Discord
-      const discordMessages = splitDiscordMessage(formatted.discord);
+      // Parse formatted output into structured categories
+      const categories = parseFormattedToCategories(formatted);
       
-      // Post version header first
-      await message.channel.send(`**${formatted.version}**\n\n${discordMessages[0]}`);
+      // Store/update draft
+      const draft = {
+        version,
+        categories,
+        rawNotes,
+        discord: formatted.discord,
+        html: formatted.html,
+        generated: isUpdate ? existingDraft.generated : new Date().toISOString(),
+        updated: new Date().toISOString(),
+        status: 'draft',
+        messageCount: rawNotes.length
+      };
       
-      // Post remaining messages if split
-      for (let i = 1; i < discordMessages.length; i++) {
-        await message.channel.send(discordMessages[i]);
-      }
+      draftManager.saveDraft(version, draft);
       
-      // Store HTML version for dashboard
-      await storeHTMLVersion(formatted.version, formatted.html);
+      // Get dashboard URL from config or env
+      const dashboardUrl = process.env.DASHBOARD_URL || 'http://localhost:3000';
       
-      await message.reply(`✅ Patch notes formatted and posted! HTML version saved for dashboard.`);
+      await message.reply(`✅ Patch notes ${isUpdate ? 'updated' : 'formatted and saved'} as draft!\n\n📝 **Edit & Review:** ${dashboardUrl}/dashboard/patchnotes/${version}\n\n📊 Processed ${rawNotes.length} message(s)\n⚠️ Review and edit before publishing!`);
       
       monitor.log('INFO', `Patch notes processed for version ${formatted.version}`, {
         messageCount: messages.length,
@@ -426,39 +442,36 @@ async function fetchMessagesAfter(channel, afterId) {
 }
 
 /**
- * Store HTML version for dashboard access
+ * Parse formatted Discord/HTML output into structured categories
  */
-async function storeHTMLVersion(version, html) {
-  const fs = require('fs');
-  const path = require('path');
+function parseFormattedToCategories(formatted) {
+  const categories = {};
   
-  const dataDir = path.join(__dirname, '..', 'data');
-  if (!fs.existsSync(dataDir)) {
-    fs.mkdirSync(dataDir, { recursive: true });
+  // Parse Discord format to extract categories and notes
+  const lines = formatted.discord.split('\n');
+  let currentCategory = null;
+  
+  for (const line of lines) {
+    const trimmed = line.trim();
+    if (!trimmed) continue;
+    
+    // Check if it's a category header (bold text)
+    const categoryMatch = trimmed.match(/^\*\*(.+?)\*\*$/);
+    if (categoryMatch) {
+      currentCategory = categoryMatch[1];
+      if (!categories[currentCategory]) {
+        categories[currentCategory] = [];
+      }
+      continue;
+    }
+    
+    // Check if it's a note (starts with -)
+    if (trimmed.startsWith('-') && currentCategory) {
+      const note = trimmed.substring(1).trim();
+      categories[currentCategory].push(note);
+    }
   }
   
-  const filePath = path.join(dataDir, `patch-notes-${version}.html`);
-  fs.writeFileSync(filePath, html, 'utf-8');
-  
-  // Also update a latest file
-  const latestPath = path.join(dataDir, 'patch-notes-latest.html');
-  fs.writeFileSync(latestPath, html, 'utf-8');
-  
-  // Store metadata
-  const metadataPath = path.join(dataDir, 'patch-notes-metadata.json');
-  let metadata = {};
-  if (fs.existsSync(metadataPath)) {
-    metadata = JSON.parse(fs.readFileSync(metadataPath, 'utf-8'));
-  }
-  
-  metadata[version] = {
-    version,
-    generated: new Date().toISOString(),
-    htmlFile: `patch-notes-${version}.html`
-  };
-  
-  metadata.latest = version;
-  
-  fs.writeFileSync(metadataPath, JSON.stringify(metadata, null, 2), 'utf-8');
+  return categories;
 }
 

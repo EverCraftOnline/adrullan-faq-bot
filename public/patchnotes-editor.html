@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patch Notes Editor - Adrullan FAQ Bot</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .header h1 {
+            color: #667eea;
+            font-size: 2rem;
+        }
+
+        .version-badge {
+            background: #667eea;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .controls {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        .btn-success {
+            background: linear-gradient(45deg, #4CAF50, #8BC34A);
+            color: white;
+        }
+
+        .btn-danger {
+            background: linear-gradient(45deg, #f44336, #e91e63);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: #e0e0e0;
+            color: #333;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .categories-container {
+            display: grid;
+            gap: 20px;
+        }
+
+        .category-section {
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 20px;
+            background: #f8f9fa;
+        }
+
+        .category-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #667eea;
+        }
+
+        .category-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #667eea;
+        }
+
+        .category-controls {
+            display: flex;
+            gap: 5px;
+        }
+
+        .notes-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .note-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            background: white;
+            border-radius: 5px;
+            border-left: 4px solid #667eea;
+            transition: all 0.2s ease;
+        }
+
+        .note-item:hover {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .note-item.dragging {
+            opacity: 0.5;
+        }
+
+        .drag-handle {
+            cursor: move;
+            color: #999;
+            font-size: 1.2rem;
+        }
+
+        .note-text {
+            flex: 1;
+            border: none;
+            background: transparent;
+            font-size: 14px;
+            padding: 5px;
+            font-family: inherit;
+        }
+
+        .note-text:focus {
+            outline: 2px solid #667eea;
+            border-radius: 3px;
+        }
+
+        .note-controls {
+            display: flex;
+            gap: 5px;
+        }
+
+        .btn-icon {
+            padding: 5px 10px;
+            font-size: 12px;
+            min-width: auto;
+        }
+
+        .add-note-form {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+            padding: 10px;
+            background: white;
+            border-radius: 5px;
+        }
+
+        .add-note-input {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+
+        .preview-panel {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .preview-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            border: none;
+            background: transparent;
+            font-weight: 600;
+            color: #666;
+            border-bottom: 3px solid transparent;
+        }
+
+        .tab.active {
+            color: #667eea;
+            border-bottom-color: #667eea;
+        }
+
+        .preview-content {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            max-height: 400px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+        }
+
+        .preview-content.html {
+            font-family: 'Courier New', monospace;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        .status-draft {
+            background: #ffc107;
+            color: #333;
+        }
+
+        .status-published {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .empty-category {
+            text-align: center;
+            padding: 20px;
+            color: #999;
+            font-style: italic;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #667eea;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <h1>Patch Notes Editor</h1>
+                <div style="margin-top: 5px;">
+                    <span class="version-badge" id="versionBadge">Loading...</span>
+                    <span class="status-badge status-draft" id="statusBadge">Draft</span>
+                </div>
+            </div>
+            <div class="controls">
+                <button class="btn btn-secondary" onclick="addCategory()">+ Add Category</button>
+                <button class="btn btn-primary" onclick="saveDraft()">💾 Save Draft</button>
+                <button class="btn btn-success" onclick="publishDraft()">📤 Publish to Discord</button>
+                <button class="btn btn-secondary" onclick="copyHTML()">📋 Copy HTML</button>
+            </div>
+        </div>
+
+        <div id="loading" class="loading">Loading draft...</div>
+        <div id="categoriesContainer" class="categories-container" style="display: none;"></div>
+
+        <div class="preview-panel">
+            <div class="preview-tabs">
+                <button class="tab active" onclick="showPreview('discord')">Discord Preview</button>
+                <button class="tab" onclick="showPreview('html')">HTML Preview</button>
+            </div>
+            <div id="previewContent" class="preview-content"></div>
+        </div>
+    </div>
+
+    <script>
+        let currentDraft = null;
+        let currentVersion = null;
+
+        // Get version from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const versionFromPath = window.location.pathname.split('/').pop();
+        currentVersion = versionFromPath !== 'patchnotes-editor.html' ? versionFromPath : urlParams.get('version');
+
+        if (!currentVersion) {
+            // Try to get from URL path like /dashboard/patchnotes/0.10.43
+            const pathParts = window.location.pathname.split('/');
+            const versionIndex = pathParts.indexOf('patchnotes');
+            if (versionIndex !== -1 && pathParts[versionIndex + 1]) {
+                currentVersion = pathParts[versionIndex + 1];
+            }
+        }
+
+        async function loadDraft() {
+            if (!currentVersion) {
+                document.getElementById('loading').textContent = 'No version specified';
+                return;
+            }
+
+            try {
+                const response = await fetch(`/api/patch-notes/drafts/${currentVersion}`);
+                if (!response.ok) {
+                    throw new Error('Draft not found');
+                }
+                currentDraft = await response.json();
+                renderDraft();
+            } catch (error) {
+                document.getElementById('loading').textContent = `Error: ${error.message}`;
+            }
+        }
+
+        function renderDraft() {
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('categoriesContainer').style.display = 'block';
+            
+            document.getElementById('versionBadge').textContent = currentDraft.version;
+            document.getElementById('statusBadge').textContent = currentDraft.status || 'draft';
+            document.getElementById('statusBadge').className = `status-badge status-${currentDraft.status || 'draft'}`;
+
+            const container = document.getElementById('categoriesContainer');
+            container.innerHTML = '';
+
+            const categoryOrder = ['Content', 'Class', 'Systems', 'Interface', 'Crafting', 'Guilds', 'Bug Fixes'];
+            const orderedCategories = {};
+            
+            // Add categories in order
+            for (const cat of categoryOrder) {
+                if (currentDraft.categories[cat]) {
+                    orderedCategories[cat] = currentDraft.categories[cat];
+                }
+            }
+            
+            // Add any remaining categories
+            for (const cat in currentDraft.categories) {
+                if (!orderedCategories[cat]) {
+                    orderedCategories[cat] = currentDraft.categories[cat];
+                }
+            }
+
+            for (const [category, notes] of Object.entries(orderedCategories)) {
+                const section = createCategorySection(category, notes);
+                container.appendChild(section);
+            }
+
+            updatePreview();
+        }
+
+        function createCategorySection(category, notes) {
+            const section = document.createElement('div');
+            section.className = 'category-section';
+            section.dataset.category = category;
+
+            const header = document.createElement('div');
+            header.className = 'category-header';
+            header.innerHTML = `
+                <div class="category-title">${category}</div>
+                <div class="category-controls">
+                    <button class="btn btn-icon btn-secondary" onclick="addNoteToCategory('${category}')">+ Add Note</button>
+                    <button class="btn btn-icon btn-danger" onclick="deleteCategory('${category}')">🗑️ Delete</button>
+                </div>
+            `;
+
+            const notesList = document.createElement('div');
+            notesList.className = 'notes-list';
+            notesList.id = `notes-${category}`;
+
+            if (notes.length === 0) {
+                notesList.innerHTML = '<div class="empty-category">No notes in this category</div>';
+            } else {
+                notes.forEach((note, index) => {
+                    const noteItem = createNoteItem(category, note, index);
+                    notesList.appendChild(noteItem);
+                });
+            }
+
+            section.appendChild(header);
+            section.appendChild(notesList);
+            return section;
+        }
+
+        function createNoteItem(category, noteText, index) {
+            const item = document.createElement('div');
+            item.className = 'note-item';
+            item.draggable = true;
+            item.dataset.category = category;
+            item.dataset.index = index;
+
+            item.innerHTML = `
+                <span class="drag-handle">☰</span>
+                <input type="text" class="note-text" value="${escapeHtml(noteText)}" 
+                       onchange="updateNote('${category}', ${index}, this.value)">
+                <div class="note-controls">
+                    <button class="btn btn-icon btn-secondary" onclick="moveNote('${category}', ${index}, 'up')">↑</button>
+                    <button class="btn btn-icon btn-secondary" onclick="moveNote('${category}', ${index}, 'down')">↓</button>
+                    <button class="btn btn-icon btn-secondary" onclick="moveNoteToCategory('${category}', ${index})">↔ Move</button>
+                    <button class="btn btn-icon btn-danger" onclick="deleteNote('${category}', ${index})">🗑️</button>
+                </div>
+            `;
+
+            // Drag and drop
+            item.addEventListener('dragstart', (e) => {
+                e.dataTransfer.setData('text/plain', '');
+                item.classList.add('dragging');
+            });
+
+            item.addEventListener('dragend', () => {
+                item.classList.remove('dragging');
+            });
+
+            item.addEventListener('dragover', (e) => {
+                e.preventDefault();
+            });
+
+            item.addEventListener('drop', (e) => {
+                e.preventDefault();
+                const draggedItem = document.querySelector('.dragging');
+                if (draggedItem && draggedItem !== item) {
+                    const draggedCategory = draggedItem.dataset.category;
+                    const draggedIndex = parseInt(draggedItem.dataset.index);
+                    const targetCategory = item.dataset.category;
+                    const targetIndex = parseInt(item.dataset.index);
+                    
+                    moveNoteBetween(draggedCategory, draggedIndex, targetCategory, targetIndex);
+                }
+            });
+
+            return item;
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function updateNote(category, index, newValue) {
+            currentDraft.categories[category][index] = newValue;
+            updatePreview();
+        }
+
+        function deleteNote(category, index) {
+            if (confirm('Delete this note?')) {
+                currentDraft.categories[category].splice(index, 1);
+                renderDraft();
+                updatePreview();
+            }
+        }
+
+        function addNoteToCategory(category) {
+            const note = prompt('Enter new note:');
+            if (note && note.trim()) {
+                if (!currentDraft.categories[category]) {
+                    currentDraft.categories[category] = [];
+                }
+                currentDraft.categories[category].push(note.trim());
+                renderDraft();
+                updatePreview();
+            }
+        }
+
+        function deleteCategory(category) {
+            if (confirm(`Delete entire "${category}" category?`)) {
+                delete currentDraft.categories[category];
+                renderDraft();
+                updatePreview();
+            }
+        }
+
+        function addCategory() {
+            const category = prompt('Enter category name:');
+            if (category && category.trim()) {
+                currentDraft.categories[category.trim()] = [];
+                renderDraft();
+                updatePreview();
+            }
+        }
+
+        function moveNote(category, index, direction) {
+            const notes = currentDraft.categories[category];
+            if (direction === 'up' && index > 0) {
+                [notes[index], notes[index - 1]] = [notes[index - 1], notes[index]];
+            } else if (direction === 'down' && index < notes.length - 1) {
+                [notes[index], notes[index + 1]] = [notes[index + 1], notes[index]];
+            }
+            renderDraft();
+            updatePreview();
+        }
+
+        function moveNoteToCategory(category, index) {
+            const note = currentDraft.categories[category][index];
+            const newCategory = prompt(`Move note to category:\n\n${Object.keys(currentDraft.categories).join('\n')}\n\nEnter category name:`, category);
+            
+            if (newCategory && newCategory !== category && currentDraft.categories[newCategory] !== undefined) {
+                currentDraft.categories[category].splice(index, 1);
+                currentDraft.categories[newCategory].push(note);
+                renderDraft();
+                updatePreview();
+            }
+        }
+
+        function moveNoteBetween(fromCategory, fromIndex, toCategory, toIndex) {
+            const note = currentDraft.categories[fromCategory][fromIndex];
+            currentDraft.categories[fromCategory].splice(fromIndex, 1);
+            
+            if (!currentDraft.categories[toCategory]) {
+                currentDraft.categories[toCategory] = [];
+            }
+            
+            currentDraft.categories[toCategory].splice(toIndex, 0, note);
+            renderDraft();
+            updatePreview();
+        }
+
+        async function saveDraft() {
+            try {
+                // Regenerate HTML and Discord formats
+                currentDraft.html = generateHTML(currentDraft.categories);
+                currentDraft.discord = generateDiscord(currentDraft.categories);
+
+                const response = await fetch(`/api/patch-notes/drafts/${currentVersion}`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ categories: currentDraft.categories })
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to save');
+                }
+
+                const updated = await response.json();
+                currentDraft = updated;
+                updatePreview();
+                
+                alert('✅ Draft saved successfully!');
+            } catch (error) {
+                alert(`❌ Error saving: ${error.message}`);
+            }
+        }
+
+        async function publishDraft() {
+            if (!confirm(`Publish patch notes ${currentVersion} to Discord?\n\nThis will post to the patch notes channel.`)) {
+                return;
+            }
+
+            try {
+                const response = await fetch(`/api/patch-notes/drafts/${currentVersion}/publish`, {
+                    method: 'POST'
+                });
+
+                if (!response.ok) {
+                    const error = await response.json();
+                    throw new Error(error.error || 'Failed to publish');
+                }
+
+                const result = await response.json();
+                alert(`✅ Published successfully!\n\nPosted ${result.messageCount} message(s) to Discord.`);
+                
+                // Reload to update status
+                await loadDraft();
+            } catch (error) {
+                alert(`❌ Error publishing: ${error.message}`);
+            }
+        }
+
+        function copyHTML() {
+            const html = generateHTML(currentDraft.categories);
+            navigator.clipboard.writeText(html).then(() => {
+                alert('✅ HTML copied to clipboard!');
+            }).catch(err => {
+                alert(`❌ Failed to copy: ${err.message}`);
+            });
+        }
+
+        function generateHTML(categories) {
+            const sections = [];
+            
+            for (const category in categories) {
+                const notes = categories[category];
+                if (notes.length === 0) continue;
+                
+                sections.push(`<div class="patch-header2">${category}</div>`);
+                sections.push(`<div class="spacer-10"></div>`);
+                
+                for (const note of notes) {
+                    sections.push(`<div class="patch-note">- ${note}</div>`);
+                }
+                
+                sections.push(`<div class="spacer-30"></div>`);
+            }
+            
+            return sections.join('\n');
+        }
+
+        function generateDiscord(categories) {
+            const sections = [];
+            
+            for (const category in categories) {
+                const notes = categories[category];
+                if (notes.length === 0) continue;
+                
+                sections.push(`**${category}**`);
+                
+                for (const note of notes) {
+                    sections.push(`- ${note}`);
+                }
+                
+                sections.push(''); // Empty line between categories
+            }
+            
+            return sections.join('\n');
+        }
+
+        function updatePreview() {
+            const activeTab = document.querySelector('.tab.active').textContent;
+            const previewContent = document.getElementById('previewContent');
+            
+            if (activeTab.includes('Discord')) {
+                previewContent.textContent = generateDiscord(currentDraft.categories);
+                previewContent.className = 'preview-content';
+            } else {
+                previewContent.textContent = generateHTML(currentDraft.categories);
+                previewContent.className = 'preview-content html';
+            }
+        }
+
+        function showPreview(type) {
+            document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+            event.target.classList.add('active');
+            updatePreview();
+        }
+
+        // Load draft on page load
+        loadDraft();
+    </script>
+</body>
+</html>
+
+
