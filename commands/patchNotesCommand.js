@@ -7,6 +7,7 @@ const path = require('path');
 
 const PATCH_NOTES_CHANNEL_ID = '988344623028137995';
 const ENIGMAFACTORY_USER_ID = '146495555760160769'; // Use user ID instead of username
+const BOT_USER_ID = '1394144920826023956'; // Senan bot - filter out its messages
 
 module.exports = {
   async execute(message) {
@@ -43,16 +44,72 @@ module.exports = {
         return message.reply('ℹ️ No new patch notes found after the last version post.');
       }
       
+      // Check for -withimages flag
+      const withImages = message.content.includes('-withimages') || message.content.includes('--with-images');
+      
       // Prepare raw messages for AI formatting
-      const rawNotes = messages.map(msg => ({
-        author: msg.author.username,
-        content: msg.content.trim(),
-        timestamp: msg.createdTimestamp
-      })).filter(msg => {
+      const rawNotes = [];
+      const imagesToDownload = [];
+      
+      for (const msg of messages) {
+        // Skip bot's own messages (Senan)
+        if (msg.author.id === BOT_USER_ID) {
+          continue;
+        }
+        
+        // Skip commands (messages starting with !)
+        const content = msg.content.trim();
+        if (content.startsWith('!')) {
+          continue;
+        }
+        
         // Skip version posts and "reserve" messages
-        const content = msg.content.toLowerCase().trim();
-        return content !== 'reserve' && !isVersionPost(msg.content);
-      });
+        const contentLower = content.toLowerCase().trim();
+        if (contentLower === 'reserve' || isVersionPost(content)) {
+          continue;
+        }
+        
+        // Skip empty messages
+        if (!content && (!msg.attachments || msg.attachments.size === 0)) {
+          continue;
+        }
+        
+        // Collect note data
+        const noteData = {
+          author: msg.author.username,
+          authorId: msg.author.id,
+          content: content,
+          timestamp: msg.createdTimestamp,
+          messageId: msg.id,
+          attachments: []
+        };
+        
+        // Handle image attachments if flag is set
+        if (withImages && msg.attachments && msg.attachments.size > 0) {
+          for (const attachment of msg.attachments.values()) {
+            // Only process images
+            if (attachment.contentType && attachment.contentType.startsWith('image/')) {
+              const imageData = {
+                url: attachment.url,
+                filename: attachment.name,
+                contentType: attachment.contentType,
+                size: attachment.size,
+                width: attachment.width,
+                height: attachment.height
+              };
+              
+              noteData.attachments.push(imageData);
+              imagesToDownload.push({
+                ...imageData,
+                messageId: msg.id,
+                noteIndex: rawNotes.length
+              });
+            }
+          }
+        }
+        
+        rawNotes.push(noteData);
+      }
       
       if (rawNotes.length === 0) {
         return message.reply('ℹ️ No patch notes found to format.');
@@ -66,9 +123,22 @@ module.exports = {
         await message.channel.send(`⚠️ Draft for ${version} already exists. Regenerating with all current messages...\n💡 **Note:** This will replace the draft. If you've made manual edits, they'll be overwritten.`);
       }
       
-      // Format using AI
+      // Download images if requested
+      let downloadedImages = [];
+      if (withImages && imagesToDownload.length > 0) {
+        await message.channel.send(`📸 Downloading ${imagesToDownload.length} image(s)...`);
+        downloadedImages = await downloadImages(imagesToDownload, version);
+      }
+      
+      // Format using AI (don't send image URLs to AI, just note content)
       await message.channel.send('🤖 Formatting patch notes with AI...');
-      const formatted = await formatWithAI(rawNotes, version);
+      const notesForAI = rawNotes.map(note => ({
+        author: note.author,
+        content: note.content,
+        timestamp: note.timestamp
+      }));
+      
+      const formatted = await formatWithAI(notesForAI, version);
       
       if (!formatted) {
         return message.reply('❌ Failed to format patch notes. Check logs for details.');
@@ -77,17 +147,25 @@ module.exports = {
       // Parse formatted output into structured categories
       const categories = parseFormattedToCategories(formatted);
       
+      // Create a mapping from raw note indices to formatted notes for better image matching
+      // This helps us track which raw notes contributed to which formatted notes
+      const rawNoteToFormattedNote = createRawToFormattedMapping(rawNotes, categories);
+      
       // Store/update draft
       const draft = {
         version,
         categories,
-        rawNotes,
+        rawNotes, // Includes attachment metadata
+        downloadedImages, // Local file paths
+        rawNoteToFormattedNote, // Mapping for image matching
         discord: formatted.discord,
         html: formatted.html,
         generated: isUpdate ? existingDraft.generated : new Date().toISOString(),
         updated: new Date().toISOString(),
         status: 'draft',
-        messageCount: rawNotes.length
+        messageCount: rawNotes.length,
+        imageCount: downloadedImages.length,
+        withImages: withImages
       };
       
       draftManager.saveDraft(version, draft);
@@ -439,6 +517,232 @@ async function fetchMessagesAfter(channel, afterId) {
   
   // Reverse to get chronological order (oldest first)
   return messages.reverse();
+}
+
+/**
+ * Download images from Discord attachments
+ * Uses Discord attachment ID as filename for consistency
+ */
+async function downloadImages(imagesToDownload, version) {
+  const https = require('https');
+  const http = require('http');
+  const fs = require('fs');
+  const path = require('path');
+  
+  const imagesDir = path.join(__dirname, '..', 'data', 'patch-notes-images', version);
+  if (!fs.existsSync(imagesDir)) {
+    fs.mkdirSync(imagesDir, { recursive: true });
+  }
+  
+  const downloaded = [];
+  
+  for (const image of imagesToDownload) {
+    try {
+      // Extract attachment ID from Discord CDN URL
+      // URL format: https://cdn.discordapp.com/attachments/{channel_id}/{attachment_id}/{filename}?{query}
+      const urlMatch = image.url.match(/\/attachments\/\d+\/(\d+)\//);
+      const attachmentId = urlMatch ? urlMatch[1] : image.messageId;
+      
+      // Use attachment ID as filename (Discord CDN URLs are immutable)
+      const ext = path.extname(image.filename) || '.png';
+      const filename = `${attachmentId}${ext}`;
+      const filepath = path.join(imagesDir, filename);
+      
+      // Skip if file already exists (already downloaded)
+      if (fs.existsSync(filepath)) {
+        console.log(`Image ${filename} already exists, skipping download`);
+        downloaded.push({
+          originalUrl: image.url,
+          localPath: `patch-notes-images/${version}/${filename}`,
+          filename: filename,
+          messageId: image.messageId,
+          attachmentId: attachmentId,
+          noteIndex: image.noteIndex,
+          width: image.width,
+          height: image.height,
+          skipped: true
+        });
+        continue;
+      }
+      
+      // Download image
+      const protocol = image.url.startsWith('https') ? https : http;
+      
+      await new Promise((resolve, reject) => {
+        const file = fs.createWriteStream(filepath);
+        protocol.get(image.url, (response) => {
+          response.pipe(file);
+          file.on('finish', () => {
+            file.close();
+            resolve();
+          });
+        }).on('error', (err) => {
+          fs.unlink(filepath, () => {}); // Delete file on error
+          reject(err);
+        });
+      });
+      
+      downloaded.push({
+        originalUrl: image.url,
+        localPath: `patch-notes-images/${version}/${filename}`,
+        filename: filename,
+        messageId: image.messageId,
+        attachmentId: attachmentId,
+        noteIndex: image.noteIndex,
+        width: image.width,
+        height: image.height
+      });
+    } catch (error) {
+      console.error(`Failed to download image ${image.filename}:`, error);
+      // Continue with other images
+    }
+  }
+  
+  return downloaded;
+}
+
+/**
+ * Create mapping from raw note indices to formatted notes
+ * This helps match images to the correct formatted notes
+ * Exported so it can be used by draft manager
+ */
+function createRawToFormattedMapping(rawNotes, categories) {
+  const mapping = {};
+  const usedRawIndices = new Set(); // Track which raw notes have been mapped
+  const usedFormattedNotes = new Set(); // Track which formatted notes have been mapped
+  
+  // Flatten all formatted notes with their categories
+  const allFormattedNotes = [];
+  for (const category in categories) {
+    for (const note of categories[category]) {
+      allFormattedNotes.push({ category, note });
+    }
+  }
+  
+  // First pass: Try to match each raw note to a formatted note (one-to-one preferred)
+  for (let i = 0; i < rawNotes.length; i++) {
+    if (usedRawIndices.has(i)) continue;
+    
+    const rawNote = rawNotes[i];
+    const rawContent = rawNote.content.toLowerCase().trim();
+    
+    if (!rawContent) continue;
+    
+    // Find best matching formatted note that hasn't been used yet
+    let bestMatch = null;
+    let bestScore = 0;
+    
+    for (const formatted of allFormattedNotes) {
+      // Prefer one-to-one mapping - skip if already mapped
+      if (usedFormattedNotes.has(formatted.note)) {
+        continue;
+      }
+      
+      const formattedContent = formatted.note.toLowerCase().trim();
+      
+      // Extract key words (filter out common words)
+      const rawWords = rawContent.split(/\s+/).filter(w => w.length > 2 && !['the', 'and', 'for', 'was', 'were'].includes(w));
+      const formattedWords = formattedContent.split(/\s+/).filter(w => w.length > 2 && !['the', 'and', 'for', 'was', 'were'].includes(w));
+      
+      // Calculate match score
+      let score = 0;
+      for (const word of rawWords.slice(0, 6)) {
+        if (formattedContent.includes(word)) {
+          score++;
+        }
+      }
+      
+      // Strong bonus for substring overlap (exact or near-exact match)
+      if (formattedContent.includes(rawContent.substring(0, 50)) || 
+          rawContent.includes(formattedContent.substring(0, 50))) {
+        score += 10; // Strong match
+      } else if (formattedContent.includes(rawContent.substring(0, 30)) || 
+                 rawContent.includes(formattedContent.substring(0, 30))) {
+        score += 5; // Medium match
+      }
+      
+      // Bonus for matching unique/distinctive words
+      const distinctiveWords = rawWords.filter(w => w.length > 4);
+      for (const word of distinctiveWords) {
+        if (formattedContent.includes(word)) {
+          score += 2; // Distinctive word match
+        }
+      }
+      
+      if (score > bestScore) {
+        bestScore = score;
+        bestMatch = formatted;
+      }
+    }
+    
+    // Only map if we have a strong match (score >= 4 for one-to-one, >= 6 for duplicates)
+    if (bestMatch && bestScore >= 4) {
+      if (!mapping[bestMatch.note]) {
+        mapping[bestMatch.note] = [];
+      }
+      mapping[bestMatch.note].push(i);
+      usedRawIndices.add(i);
+      usedFormattedNotes.add(bestMatch.note);
+    }
+  }
+  
+  // Second pass: For remaining raw notes, allow mapping to already-used formatted notes
+  // but require higher score threshold
+  for (let i = 0; i < rawNotes.length; i++) {
+    if (usedRawIndices.has(i)) continue;
+    
+    const rawNote = rawNotes[i];
+    const rawContent = rawNote.content.toLowerCase().trim();
+    
+    if (!rawContent) continue;
+    
+    let bestMatch = null;
+    let bestScore = 0;
+    
+    for (const formatted of allFormattedNotes) {
+      const formattedContent = formatted.note.toLowerCase().trim();
+      const rawWords = rawContent.split(/\s+/).filter(w => w.length > 2 && !['the', 'and', 'for', 'was', 'were'].includes(w));
+      
+      let score = 0;
+      for (const word of rawWords.slice(0, 6)) {
+        if (formattedContent.includes(word)) {
+          score++;
+        }
+      }
+      
+      // Require stronger match for duplicates
+      if (formattedContent.includes(rawContent.substring(0, 50)) || 
+          rawContent.includes(formattedContent.substring(0, 50))) {
+        score += 10;
+      } else if (formattedContent.includes(rawContent.substring(0, 30)) || 
+                 rawContent.includes(formattedContent.substring(0, 30))) {
+        score += 5;
+      }
+      
+      const distinctiveWords = rawWords.filter(w => w.length > 4);
+      for (const word of distinctiveWords) {
+        if (formattedContent.includes(word)) {
+          score += 2;
+        }
+      }
+      
+      if (score > bestScore) {
+        bestScore = score;
+        bestMatch = formatted;
+      }
+    }
+    
+    // Higher threshold for duplicates (score >= 6)
+    if (bestMatch && bestScore >= 6) {
+      if (!mapping[bestMatch.note]) {
+        mapping[bestMatch.note] = [];
+      }
+      mapping[bestMatch.note].push(i);
+      usedRawIndices.add(i);
+    }
+  }
+  
+  return mapping;
 }
 
 /**
