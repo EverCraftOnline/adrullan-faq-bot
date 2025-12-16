@@ -531,11 +531,12 @@
 
             let imagePreviews = '';
             if (hasImages) {
-                imagePreviews = noteImages.map((img, imgIdx) => 
-                    `<span class="note-image-preview" draggable="true" data-image-index="${imgIdx}" data-original-url="${escapeHtml(img.originalUrl)}" title="Click to remove, drag to move">
-                        <img src="${escapeHtml(img.originalUrl)}" alt="Preview" />
-                    </span>`
-                ).join('');
+                imagePreviews = noteImages.map((img, imgIdx) => {
+                    const imageUrl = img.wixUrl || img.originalUrl;
+                    return `<span class="note-image-preview" draggable="true" data-image-index="${imgIdx}" data-original-url="${escapeHtml(img.originalUrl)}" title="Click to remove, drag to move">
+                        <img src="${escapeHtml(imageUrl)}" alt="Preview" />
+                    </span>`;
+                }).join('');
             }
 
             item.innerHTML = `
@@ -1515,8 +1516,9 @@
                         }
                         
                         for (const image of uniqueImages) {
-                            // Use Discord CDN URL (originalUrl) - we'll update to local paths later
-                            sections.push(`<div class="patch-image"><img src="${image.originalUrl}" alt="Patch note image" style="max-width: 100%; height: auto;" /></div>`);
+                            // Use Wix URL if available, otherwise fall back to Discord CDN URL
+                            const imageUrl = image.wixUrl || image.originalUrl;
+                            sections.push(`<div class="patch-image"><img src="${imageUrl}" alt="Patch note image" style="max-width: 100%; height: auto;" /></div>`);
                         }
                     }
                 }

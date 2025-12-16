@@ -2,6 +2,7 @@ const anthropicClient = require('../lib/anthropicClient');
 const configLoader = require('../lib/configLoader');
 const monitor = require('../lib/monitor');
 const draftManager = require('../lib/patchNotesDraft');
+const WixMediaUploader = require('../lib/wixMediaUploader');
 const fs = require('fs');
 const path = require('path');
 
@@ -128,6 +129,24 @@ module.exports = {
       if (withImages && imagesToDownload.length > 0) {
         await message.channel.send(`📸 Downloading ${imagesToDownload.length} image(s)...`);
         downloadedImages = await downloadImages(imagesToDownload, version);
+        
+        // Upload to Wix if API keys are configured
+        if (process.env.WIX_API_KEY && process.env.WIX_SITE_ID) {
+          await message.channel.send(`☁️ Uploading images to Wix Media Manager...`);
+          const wixResults = await uploadImagesToWix(downloadedImages, version);
+          
+          // Update downloaded images with Wix URLs
+          for (let i = 0; i < downloadedImages.length; i++) {
+            if (wixResults[i] && wixResults[i].success) {
+              downloadedImages[i].wixUrl = wixResults[i].wixUrl;
+              downloadedImages[i].wixFileId = wixResults[i].wixFileId;
+              downloadedImages[i].uploadedToWix = new Date().toISOString();
+            }
+          }
+          
+          const successCount = wixResults.filter(r => r.success).length;
+          await message.channel.send(`✅ Uploaded ${successCount}/${downloadedImages.length} image(s) to Wix`);
+        }
       }
       
       // Format using AI (don't send image URLs to AI, just note content)
@@ -777,5 +796,44 @@ function parseFormattedToCategories(formatted) {
   }
   
   return categories;
+}
+
+/**
+ * Upload images to Wix Media Manager
+ */
+async function uploadImagesToWix(downloadedImages, version) {
+  const results = [];
+  
+  try {
+    const uploader = new WixMediaUploader(
+      process.env.WIX_API_KEY,
+      process.env.WIX_SITE_ID
+    );
+    
+    for (const image of downloadedImages) {
+      try {
+        const fullPath = path.join(__dirname, '..', 'data', image.localPath);
+        const result = await uploader.uploadImage(fullPath, `patch-notes/${version}`);
+        results.push(result);
+        
+        // Small delay to avoid rate limiting
+        await new Promise(resolve => setTimeout(resolve, 800));
+        
+      } catch (error) {
+        console.error(`Failed to upload ${image.filename}:`, error);
+        results.push({
+          success: false,
+          error: error.message,
+          originalPath: image.localPath
+        });
+      }
+    }
+    
+  } catch (error) {
+    console.error('Wix uploader initialization failed:', error);
+    return downloadedImages.map(() => ({ success: false, error: 'Wix uploader not initialized' }));
+  }
+  
+  return results;
 }
 
