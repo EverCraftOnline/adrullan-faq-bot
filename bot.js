@@ -12,6 +12,7 @@ const profileCommand = require('./commands/profileCommand');
 const monitorCommand = require('./commands/monitorCommand');
 const helpCommand = require('./commands/helpCommand');
 const patchNotesCommand = require('./commands/patchNotesCommand');
+const permissions = require('./lib/permissions');
 const monitor = require('./lib/monitor');
 const HealthCheckServer = require('./lib/healthCheck');
 
@@ -110,66 +111,88 @@ client.on('messageCreate', async (message) => {
   try {
     // Handle !index command (your existing functionality)
     if (message.content.startsWith('!index')) {
+      const perm = permissions.canRun('index', { message });
+      if (!perm.allowed) return message.reply(perm.reason || '❌ You do not have permission to use this command.');
       monitor.trackMessage('index');
       await indexCommand.execute(message);
     }
   
     // Handle !askall command (uses all context) - MUST come before !ask
     if (message.content.startsWith('!askall')) {
+      const perm = permissions.canRun('askall', { message });
+      if (!perm.allowed) return message.reply(perm.reason || '❌ You do not have permission to use this command.');
       monitor.trackMessage('askall');
       await askAllCommand.execute(message);
     }
     
     // Handle !ask command (new AI functionality)
     else if (message.content.startsWith('!ask')) {
+      const perm = permissions.canRun('ask', { message });
+      if (!perm.allowed) return message.reply(perm.reason || '❌ You do not have permission to use this command.');
       monitor.trackMessage('ask');
       await askCommand.execute(message);
     }
     
     // Handle !refreshfaq command (FAQ data generation)
     if (message.content.startsWith('!refreshfaq')) {
+      const perm = permissions.canRun('refreshfaq', { message });
+      if (!perm.allowed) return message.reply(perm.reason || '❌ You do not have permission to use this command.');
       monitor.trackMessage('refreshfaq');
       await refreshFAQ.execute(message);
     }
     
     // Handle !quiz command (interactive quiz system)
     if (message.content.startsWith('!quiz')) {
+      const perm = permissions.canRun('quiz', { message });
+      if (!perm.allowed) return message.reply(perm.reason || '❌ You do not have permission to use this command.');
       monitor.trackMessage('quiz');
       await quizCommand.execute(message);
     }
     
     // Handle !stats command (usage statistics - admin only)
     if (message.content.startsWith('!stats')) {
+      const perm = permissions.canRun('stats', { message });
+      if (!perm.allowed) return message.reply(perm.reason || '❌ You do not have permission to use this command.');
       monitor.trackMessage('stats');
       await statsCommand.execute(message);
     }
     
     // Handle !uploaddata command (data upload and toggle management)
     if (message.content.startsWith('!uploaddata')) {
+      const perm = permissions.canRun('uploaddata', { message });
+      if (!perm.allowed) return message.reply(perm.reason || '❌ You do not have permission to use this command.');
       monitor.trackMessage('uploaddata');
       await uploadDataCommand.execute(message);
     }
     
     // Handle !profile command (profile management - admin only)
     if (message.content.startsWith('!profile')) {
+      const perm = permissions.canRun('profile', { message });
+      if (!perm.allowed) return message.reply(perm.reason || '❌ You do not have permission to use this command.');
       monitor.trackMessage('profile');
       await profileCommand.execute(message);
     }
     
     // Handle !monitor command (monitoring and admin tools - admin only)
     if (message.content.startsWith('!monitor')) {
+      const perm = permissions.canRun('monitor', { message });
+      if (!perm.allowed) return message.reply(perm.reason || '❌ You do not have permission to use this command.');
       monitor.trackMessage('monitor');
       await monitorCommand.execute(message);
     }
     
     // Handle !help command (command help and documentation)
     if (message.content.startsWith('!help')) {
+      const perm = permissions.canRun('help', { message });
+      if (!perm.allowed) return message.reply(perm.reason || '❌ You do not have permission to use this command.');
       monitor.trackMessage('help');
       await helpCommand.execute(message);
     }
     
     // Handle !patchnotes command (patch notes formatting)
     if (message.content.startsWith('!patchnotes')) {
+      const perm = permissions.canRun('patchnotes', { message });
+      if (!perm.allowed) return message.reply(perm.reason || '❌ You do not have permission to use this command.');
       monitor.trackMessage('patchnotes');
       await patchNotesCommand.execute(message);
     }
