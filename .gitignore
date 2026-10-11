@@ -41,3 +41,20 @@ vector_store/
 forum-index.txt
 *.db
 *.sqlite
+
+# Channel exports (scripts/exportChannelHistory.js)
+data/history/
+
+# Never commit: keys, server details, cost exports
+*.pem
+*.tlp
+*.csv
+QUICK_UPDATE_GUIDE.md
+
+# Local working data (the tracked knowledge files under data/ stay tracked)
+data/patch-notes-images/
+data/patch-notes-drafts/
+data/cat-screenshots/
+data/reaction-*
+data/patch-notes-*.html
+data/patch-notes-metadata.json

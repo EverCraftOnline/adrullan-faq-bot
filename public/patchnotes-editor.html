@@ -359,8 +359,47 @@
                     <span>📸 Include Images</span>
                 </label>
                 <button class="btn btn-primary" onclick="saveDraft()">💾 Save Draft</button>
-                <button class="btn btn-success" onclick="publishDraft()">📤 Publish to Discord</button>
+                <button class="btn btn-success" onclick="showPublishDialog()">📤 Publish</button>
                 <button class="btn btn-secondary" onclick="copyHTML()">📋 Copy HTML</button>
+            </div>
+        </div>
+
+        <!-- Publish Dialog -->
+        <div id="publishDialog" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
+            <div style="background: white; padding: 30px; border-radius: 12px; max-width: 400px; width: 90%;">
+                <h3 style="margin-top: 0;">📤 Publish Patch Notes</h3>
+                <p style="color: #666;">Select where to publish version <span id="publishVersionText"></span>:</p>
+                
+                <div style="margin: 20px 0;">
+                    <label style="display: flex; align-items: center; gap: 10px; padding: 10px; cursor: pointer;">
+                        <input type="checkbox" id="publishToDiscord" checked style="width: 20px; height: 20px;">
+                        <div>
+                            <strong>📢 Push to Discord</strong>
+                            <div style="font-size: 0.9em; color: #666;">Post to patch notes channel</div>
+                        </div>
+                    </label>
+                    
+                    <label style="display: flex; align-items: center; gap: 10px; padding: 10px; cursor: pointer;">
+                        <input type="checkbox" id="publishToWeb" checked style="width: 20px; height: 20px;">
+                        <div>
+                            <strong>🌐 Push to Web</strong>
+                            <div style="font-size: 0.9em; color: #666;">Publish to Wix CMS</div>
+                        </div>
+                    </label>
+
+                    <label style="display: flex; align-items: center; gap: 10px; padding: 10px; cursor: pointer;">
+                        <input type="checkbox" id="publishToEcoWebFeed" style="width: 20px; height: 20px;">
+                        <div>
+                            <strong>🗂️ Sync eco-web Feed</strong>
+                            <div style="font-size: 0.9em; color: #666;">Update local eco-web/public/patch-notes-feed.json</div>
+                        </div>
+                    </label>
+                </div>
+                
+                <div style="display: flex; gap: 10px; justify-content: flex-end;">
+                    <button class="btn btn-secondary" onclick="closePublishDialog()">Cancel</button>
+                    <button class="btn btn-success" onclick="publishWithOptions()">Publish</button>
+                </div>
             </div>
         </div>
 
@@ -794,77 +833,58 @@
             const sourceNote = currentDraft.categories[sourceCategory][sourceIndex];
             const targetNote = currentDraft.categories[targetCategory][targetIndex];
             
-            // Update mapping: remove from source, add to target
+            // Update mapping: COMPLETELY REMOVE the raw note indices from ALL notes,
+            // then add ONLY to the target note
             if (currentDraft.rawNoteToFormattedNote) {
                 // Find which raw note index this image belongs to
                 const rawNoteIndex = image.noteIndex;
+                
+                console.log('Moving image with rawNoteIndex:', rawNoteIndex);
+                console.log('From:', sourceNote);
+                console.log('To:', targetNote);
                 
                 // Check if image is on an image-only message (next raw note after content)
                 const imageRawNote = currentDraft.rawNotes[rawNoteIndex];
                 const isImageOnlyMessage = imageRawNote && (!imageRawNote.content || !imageRawNote.content.trim());
                 const contentRawNoteIndex = isImageOnlyMessage ? rawNoteIndex - 1 : rawNoteIndex;
                 
-                // Remove from source note mapping - need to remove both the content note index
-                // and check if image-only message index is also mapped
-                let removed = false;
+                console.log('isImageOnlyMessage:', isImageOnlyMessage, 'contentRawNoteIndex:', contentRawNoteIndex);
+                console.log('Before removal, mapping:', JSON.parse(JSON.stringify(currentDraft.rawNoteToFormattedNote)));
                 
-                // Try exact match first
-                if (currentDraft.rawNoteToFormattedNote[sourceNote]) {
-                    const indices = currentDraft.rawNoteToFormattedNote[sourceNote];
-                    // Remove both the content note index and image-only message index if present
+                // STEP 1: Remove these indices from ALL notes in the mapping
+                for (const formattedNote in currentDraft.rawNoteToFormattedNote) {
+                    const indices = currentDraft.rawNoteToFormattedNote[formattedNote];
                     const newIndices = indices.filter(idx => idx !== contentRawNoteIndex && idx !== rawNoteIndex);
+                    
                     if (newIndices.length !== indices.length) {
-                        removed = true;
-                        if (newIndices.length > 0) {
-                            currentDraft.rawNoteToFormattedNote[sourceNote] = newIndices;
-                        } else {
-                            delete currentDraft.rawNoteToFormattedNote[sourceNote];
-                        }
+                        console.log(`Removed indices from "${formattedNote}": ${indices} -> ${newIndices}`);
+                    }
+                    
+                    if (newIndices.length > 0) {
+                        currentDraft.rawNoteToFormattedNote[formattedNote] = newIndices;
+                    } else {
+                        delete currentDraft.rawNoteToFormattedNote[formattedNote];
                     }
                 }
                 
-                // If not found by exact match, try to find by similarity (in case note was edited)
-                if (!removed) {
-                    for (const mappedNote in currentDraft.rawNoteToFormattedNote) {
-                        const indices = currentDraft.rawNoteToFormattedNote[mappedNote];
-                        // Check if either the content note index or image-only message index is in this mapping
-                        if (indices.includes(contentRawNoteIndex) || indices.includes(rawNoteIndex)) {
-                            const mappedLower = mappedNote.toLowerCase().trim();
-                            const sourceLower = sourceNote.toLowerCase().trim();
-                            
-                            // Check if this is the source note (by similarity)
-                            if (mappedLower === sourceLower || 
-                                (mappedLower.includes(sourceLower.substring(0, 30)) || 
-                                 sourceLower.includes(mappedLower.substring(0, 30)))) {
-                                // Remove both indices
-                                const newIndices = indices.filter(idx => idx !== contentRawNoteIndex && idx !== rawNoteIndex);
-                                if (newIndices.length > 0) {
-                                    currentDraft.rawNoteToFormattedNote[mappedNote] = newIndices;
-                                } else {
-                                    delete currentDraft.rawNoteToFormattedNote[mappedNote];
-                                }
-                                removed = true;
-                                break;
-                            }
-                        }
-                    }
-                }
-                
-                // Add to target note mapping - add the content note index (image-only messages are handled automatically)
+                // STEP 2: Add to target note mapping ONLY
                 if (!currentDraft.rawNoteToFormattedNote[targetNote]) {
                     currentDraft.rawNoteToFormattedNote[targetNote] = [];
                 }
-                // Add the content note index (not the image-only message index)
+                // Add the content note index (image-only messages are handled automatically in HTML generation)
                 if (!currentDraft.rawNoteToFormattedNote[targetNote].includes(contentRawNoteIndex)) {
                     currentDraft.rawNoteToFormattedNote[targetNote].push(contentRawNoteIndex);
+                    console.log(`Added contentRawNoteIndex ${contentRawNoteIndex} to "${targetNote}"`);
                 }
+                
+                console.log('After moveImageToNote, mapping:', JSON.parse(JSON.stringify(currentDraft.rawNoteToFormattedNote)));
             }
             
-            console.log('After moveImageToNote, mapping:', currentDraft.rawNoteToFormattedNote);
-            
             // Re-render to show updated images
+            console.log('Calling renderDraft() and updatePreview()...');
             renderDraft();
             updatePreview();
+            console.log('Preview update complete');
         }
 
         /**
@@ -1069,29 +1089,109 @@
             }
         }
 
-        async function publishDraft() {
-            if (!confirm(`Publish patch notes ${currentVersion} to Discord?\n\nThis will post to the patch notes channel.`)) {
+        function showPublishDialog() {
+            document.getElementById('publishVersionText').textContent = currentVersion;
+            document.getElementById('publishDialog').style.display = 'flex';
+        }
+        
+        function closePublishDialog() {
+            document.getElementById('publishDialog').style.display = 'none';
+        }
+        
+        async function publishWithOptions() {
+            const toDiscord = document.getElementById('publishToDiscord').checked;
+            const toWeb = document.getElementById('publishToWeb').checked;
+            const toEcoWebFeed = document.getElementById('publishToEcoWebFeed').checked;
+            
+            if (!toDiscord && !toWeb && !toEcoWebFeed) {
+                alert('Please select at least one publish destination.');
                 return;
             }
-
+            
+            closePublishDialog();
+            
+            const results = {
+                discord: null,
+                web: null,
+                ecoWebFeed: null
+            };
+            
             try {
-                const response = await fetch(`/api/patch-notes/drafts/${currentVersion}/publish`, {
-                    method: 'POST'
-                });
-
-                if (!response.ok) {
-                    const error = await response.json();
-                    throw new Error(error.error || 'Failed to publish');
+                // Publish to Discord
+                if (toDiscord) {
+                    try {
+                        const response = await fetch(`/api/patch-notes/drafts/${currentVersion}/publish`, {
+                            method: 'POST'
+                        });
+                        
+                        if (response.ok) {
+                            const result = await response.json();
+                            results.discord = `✅ Posted ${result.messageCount} message(s) to Discord`;
+                        } else {
+                            const error = await response.json();
+                            results.discord = `❌ Discord: ${error.error || 'Failed'}`;
+                        }
+                    } catch (error) {
+                        results.discord = `❌ Discord: ${error.message}`;
+                    }
+                }
+                
+                // Publish to Web (Wix CMS)
+                if (toWeb) {
+                    try {
+                        const response = await fetch(`/api/patch-notes/drafts/${currentVersion}/publish-web`, {
+                            method: 'POST'
+                        });
+                        
+                        if (response.ok) {
+                            const result = await response.json();
+                            results.web = `✅ Published to Wix CMS (${result.action})`;
+                        } else {
+                            const error = await response.json();
+                            results.web = `❌ Web: ${error.error || 'Failed'}`;
+                        }
+                    } catch (error) {
+                        results.web = `❌ Web: ${error.message}`;
+                    }
                 }
 
-                const result = await response.json();
-                alert(`✅ Published successfully!\n\nPosted ${result.messageCount} message(s) to Discord.`);
+                // Sync local eco-web feed JSON
+                if (toEcoWebFeed) {
+                    try {
+                        const response = await fetch(`/api/patch-notes/drafts/${currentVersion}/publish-local-feed`, {
+                            method: 'POST'
+                        });
+                        
+                        if (response.ok) {
+                            const result = await response.json();
+                            results.ecoWebFeed = `✅ Local eco-web feed ${result.action} (${result.version})`;
+                        } else {
+                            const error = await response.json();
+                            results.ecoWebFeed = `❌ eco-web feed: ${error.error || 'Failed'}`;
+                        }
+                    } catch (error) {
+                        results.ecoWebFeed = `❌ eco-web feed: ${error.message}`;
+                    }
+                }
+                
+                // Show results
+                let message = `📤 Publish Complete!\n\n`;
+                if (results.discord) message += results.discord + '\n';
+                if (results.web) message += results.web + '\n';
+                if (results.ecoWebFeed) message += results.ecoWebFeed + '\n';
+                
+                alert(message);
                 
                 // Reload to update status
                 await loadDraft();
             } catch (error) {
                 alert(`❌ Error publishing: ${error.message}`);
             }
+        }
+        
+        // Keep old function for compatibility
+        async function publishDraft() {
+            showPublishDialog();
         }
 
         function toggleImages() {
@@ -1109,6 +1209,9 @@
         }
 
         function generateHTML(categories, includeImages = false) {
+            console.log('generateHTML called with includeImages:', includeImages);
+            console.log('Current mapping keys:', currentDraft.rawNoteToFormattedNote ? Object.keys(currentDraft.rawNoteToFormattedNote).length : 'no mapping');
+            
             const sections = [];
             
             // Create mapping from formatted note text to images
@@ -1141,7 +1244,9 @@
                         for (const currentFormattedNote of categories[category]) {
                             // Try to find which raw note indices this current note corresponds to
                             // First, check if there's an exact match in the old mapping
+                            // ONLY use exact matches - if the note isn't in the mapping, it has no images
                             if (currentDraft.rawNoteToFormattedNote[currentFormattedNote]) {
+                                console.log(`Exact match found for: "${currentFormattedNote.substring(0, 40)}..." with indices:`, currentDraft.rawNoteToFormattedNote[currentFormattedNote]);
                                 const rawNoteIndices = currentDraft.rawNoteToFormattedNote[currentFormattedNote];
                                 const processedRawNoteIndices = new Set(); // Track which raw note indices we've processed
                                 
@@ -1197,283 +1302,21 @@
                                         }
                                     }
                                 }
-                            } else {
-                                // No exact match - try to find by matching to old formatted notes
-                                // This handles edited notes (before saving)
-                                // Use stricter matching to avoid false positives
-                                let bestMatch = null;
-                                let bestScore = 0;
-                                
-                                for (const oldFormattedNote in currentDraft.rawNoteToFormattedNote) {
-                                    const oldLower = oldFormattedNote.toLowerCase().trim();
-                                    const currentLower = currentFormattedNote.toLowerCase().trim();
-                                    
-                                    // Skip if they're identical (shouldn't happen, but just in case)
-                                    if (oldLower === currentLower) {
-                                        bestMatch = oldFormattedNote;
-                                        bestScore = 100;
-                                        break;
-                                    }
-                                    
-                                    // Check similarity - require at least 3 matching words for edited notes
-                                    const oldWords = oldLower.split(/\s+/).filter(w => w.length > 3); // Longer words only
-                                    const currentWords = currentLower.split(/\s+/).filter(w => w.length > 3);
-                                    
-                                    let score = 0;
-                                    // Count matching words in both directions
-                                    for (const word of oldWords.slice(0, 6)) {
-                                        if (currentLower.includes(word)) {
-                                            score += 2; // Longer words worth more
-                                        }
-                                    }
-                                    for (const word of currentWords.slice(0, 6)) {
-                                        if (oldLower.includes(word)) {
-                                            score += 2;
-                                        }
-                                    }
-                                    
-                                    // Also check for substring match (first 40 chars) for better accuracy
-                                    if (oldLower.substring(0, 40) === currentLower.substring(0, 40)) {
-                                        score += 5;
-                                    }
-                                    
-                                    // Strong bonus for substring overlap
-                                    if (oldLower.includes(currentLower.substring(0, 40)) || 
-                                        currentLower.includes(oldLower.substring(0, 40))) {
-                                        score += 10;
-                                    } else if (oldLower.includes(currentLower.substring(0, 25)) || 
-                                               currentLower.includes(oldLower.substring(0, 25))) {
-                                        score += 5;
-                                    }
-                                    
-                                    // Bonus for matching distinctive/longer words
-                                    const distinctiveOldWords = oldWords.filter(w => w.length > 4);
-                                    for (const word of distinctiveOldWords) {
-                                        if (currentLower.includes(word)) {
-                                            score += 2;
-                                        }
-                                    }
-                                    
-                                    // Higher threshold - require at least 6 points (3+ matching words) for edited notes
-                                    // This prevents false matches
-                                    if (score > bestScore && score >= 6) {
-                                        bestScore = score;
-                                        bestMatch = oldFormattedNote;
-                                    }
-                                }
-                                
-                                // If we found a match, use its raw note indices
-                                if (bestMatch) {
-                                    const rawNoteIndices = currentDraft.rawNoteToFormattedNote[bestMatch];
-                                    const processedRawNoteIndices = new Set(); // Track which raw note indices we've processed
-                                    
-                                    for (const rawNoteIndex of rawNoteIndices) {
-                                        // Skip if we've already processed this raw note index
-                                        if (processedRawNoteIndices.has(rawNoteIndex)) {
-                                            continue;
-                                        }
-                                        processedRawNoteIndices.add(rawNoteIndex);
-                                        
-                                        // Add images directly on this raw note
-                                        if (rawNoteIndexToImages[rawNoteIndex]) {
-                                            if (!noteToImages[currentFormattedNote]) {
-                                                noteToImages[currentFormattedNote] = [];
-                                            }
-                                            // Use a Set per note to prevent duplicates within this note
-                                            const noteSeenUrls = new Set(noteToImages[currentFormattedNote].map(img => img.originalUrl));
-                                            
-                                            for (const image of rawNoteIndexToImages[rawNoteIndex]) {
-                                                if (!seenImageUrls.has(image.originalUrl) && !noteSeenUrls.has(image.originalUrl)) {
-                                                    noteToImages[currentFormattedNote].push(image);
-                                                    seenImageUrls.add(image.originalUrl);
-                                                    noteSeenUrls.add(image.originalUrl);
-                                                }
-                                            }
-                                        }
-                                        
-                                        // Also check for image-only messages following this raw note
-                                        // BUT only if the next raw note index is NOT already in our mapping
-                                        const nextRawNoteIndex = rawNoteIndex + 1;
-                                        if (nextRawNoteIndex < currentDraft.rawNotes.length && 
-                                            !rawNoteIndices.includes(nextRawNoteIndex)) {
-                                            const nextRawNote = currentDraft.rawNotes[nextRawNoteIndex];
-                                            if (nextRawNote && (!nextRawNote.content || !nextRawNote.content.trim())) {
-                                                // This is an image-only message, check if it has images
-                                                // Use rawNoteIndexToImages to avoid iterating all images
-                                                if (rawNoteIndexToImages[nextRawNoteIndex]) {
-                                                    if (!noteToImages[currentFormattedNote]) {
-                                                        noteToImages[currentFormattedNote] = [];
-                                                    }
-                                                    // Use a Set per note to prevent duplicates within this note
-                                                    const noteSeenUrls = new Set(noteToImages[currentFormattedNote].map(img => img.originalUrl));
-                                                    
-                                                    for (const image of rawNoteIndexToImages[nextRawNoteIndex]) {
-                                                        if (!seenImageUrls.has(image.originalUrl) && !noteSeenUrls.has(image.originalUrl)) {
-                                                            noteToImages[currentFormattedNote].push(image);
-                                                            seenImageUrls.add(image.originalUrl);
-                                                            noteSeenUrls.add(image.originalUrl);
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
                             }
-                        }
-                    }
-                } else {
-                    // Fall back to content-based matching for older drafts
-                    // Build a map: messageId -> images
-                    const messageIdToImages = {};
-                    for (const image of currentDraft.downloadedImages) {
-                        if (!messageIdToImages[image.messageId]) {
-                            messageIdToImages[image.messageId] = [];
-                        }
-                        messageIdToImages[image.messageId].push(image);
-                    }
-                    
-                    // Match raw notes to formatted notes
-                    for (const category in categories) {
-                        const formattedNotes = categories[category];
-                        
-                        for (const formattedNote of formattedNotes) {
-                            for (const rawNote of currentDraft.rawNotes) {
-                                if (!messageIdToImages[rawNote.messageId]) {
-                                    continue;
-                                }
-                                
-                                const rawContent = rawNote.content.toLowerCase().trim();
-                                const formattedContent = formattedNote.toLowerCase().trim();
-                                
-                                if (!rawContent || !rawContent.trim()) {
-                                    continue;
-                                }
-                                
-                                const rawWords = rawContent.split(/\s+/).filter(w => w.length > 2).slice(0, 5);
-                                let matchScore = 0;
-                                for (const word of rawWords) {
-                                    if (formattedContent.includes(word)) {
-                                        matchScore++;
-                                    }
-                                }
-                                
-                                if (matchScore >= 3 || formattedContent.includes(rawContent.substring(0, 40)) || 
-                                    rawContent.includes(formattedContent.substring(0, 40))) {
-                                    if (!noteToImages[formattedNote]) {
-                                        noteToImages[formattedNote] = [];
-                                    }
-                                    noteToImages[formattedNote].push(...messageIdToImages[rawNote.messageId]);
-                                    break;
-                                }
-                            }
+                            // NO fuzzy matching - if note isn't in the mapping, it has no images
+                            // This ensures moved images don't appear in their old locations
                         }
                     }
                 }
-                
-                // Handle image-only messages (empty content) - attach to previous note
-                // Also handle images attached to messages with content (back-to-back messages)
-                for (const image of currentDraft.downloadedImages) {
-                    const rawNote = currentDraft.rawNotes.find(rn => rn.messageId === image.messageId);
-                    if (!rawNote) continue;
-                    
-                    const rawNoteIndex = currentDraft.rawNotes.indexOf(rawNote);
-                    const hasContent = rawNote.content && rawNote.content.trim();
-                    const hasAttachments = rawNote.attachments && rawNote.attachments.length > 0;
-                    
-                    // Case 1: Image-only message (empty content)
-                    if (!hasContent && hasAttachments) {
-                        // Use mapping if available
-                        if (currentDraft.rawNoteToFormattedNote) {
-                            // Find previous note that has a mapping
-                            for (let i = rawNoteIndex - 1; i >= 0; i--) {
-                                const prevRawNote = currentDraft.rawNotes[i];
-                                if (prevRawNote.content && prevRawNote.content.trim()) {
-                                    // Find formatted note for this previous raw note
-                                    for (const formattedNote in currentDraft.rawNoteToFormattedNote) {
-                                        if (currentDraft.rawNoteToFormattedNote[formattedNote].includes(i)) {
-                                            if (!noteToImages[formattedNote]) {
-                                                noteToImages[formattedNote] = [];
-                                            }
-                                            noteToImages[formattedNote].push(image);
-                                            break;
-                                        }
-                                    }
-                                    break;
-                                }
-                            }
-                        } else {
-                            // Fall back to content matching
-                            for (let i = rawNoteIndex - 1; i >= 0; i--) {
-                                const prevRawNote = currentDraft.rawNotes[i];
-                                if (prevRawNote.content && prevRawNote.content.trim()) {
-                                    const prevRawContent = prevRawNote.content.toLowerCase().trim();
-                                    const prevWords = prevRawContent.split(/\s+/).filter(w => w.length > 2).slice(0, 5);
-                                    
-                                    for (const category in categories) {
-                                        for (const formattedNote of categories[category]) {
-                                            const formattedContent = formattedNote.toLowerCase().trim();
-                                            let prevMatchScore = 0;
-                                            for (const word of prevWords) {
-                                                if (formattedContent.includes(word)) {
-                                                    prevMatchScore++;
-                                                }
-                                            }
-                                            
-                                            if (prevMatchScore >= 3 || formattedContent.includes(prevRawContent.substring(0, 40)) || 
-                                                prevRawContent.includes(formattedContent.substring(0, 40))) {
-                                                if (!noteToImages[formattedNote]) {
-                                                    noteToImages[formattedNote] = [];
-                                                }
-                                                noteToImages[formattedNote].push(image);
-                                                break;
-                                            }
-                                        }
-                                    }
-                                    break;
-                                }
-                            }
-                        }
-                    }
-                    // Case 2: Message with both content and image (back-to-back)
-                    // The image should already be matched above, but if not, try to match by content
-                    else if (hasContent && hasAttachments) {
-                        // Check if image wasn't already matched
-                        let alreadyMatched = false;
-                        for (const formattedNote in noteToImages) {
-                            if (noteToImages[formattedNote].some(img => img.messageId === image.messageId)) {
-                                alreadyMatched = true;
-                                break;
-                            }
-                        }
-                        
-                        // If not matched yet, try to match by content
-                        if (!alreadyMatched) {
-                            const rawContent = rawNote.content.toLowerCase().trim();
-                            const rawWords = rawContent.split(/\s+/).filter(w => w.length > 2).slice(0, 5);
-                            
-                            for (const category in categories) {
-                                for (const formattedNote of categories[category]) {
-                                    const formattedContent = formattedNote.toLowerCase().trim();
-                                    let matchScore = 0;
-                                    for (const word of rawWords) {
-                                        if (formattedContent.includes(word)) {
-                                            matchScore++;
-                                        }
-                                    }
-                                    
-                                    if (matchScore >= 3 || formattedContent.includes(rawContent.substring(0, 40)) || 
-                                        rawContent.includes(formattedContent.substring(0, 40))) {
-                                        if (!noteToImages[formattedNote]) {
-                                            noteToImages[formattedNote] = [];
-                                        }
-                                        noteToImages[formattedNote].push(image);
-                                        break;
-                                    }
-                                }
-                            }
-                        }
-                    }
+                // NOTE: If rawNoteToFormattedNote doesn't exist (older drafts),
+                // images won't be shown. This is OK - resaving the draft will regenerate the mapping.
+            }
+            
+            // Debug: Log the final noteToImages mapping
+            console.log('Final noteToImages mapping:');
+            for (const note in noteToImages) {
+                if (noteToImages[note].length > 0) {
+                    console.log(`  "${note.substring(0, 50)}...": ${noteToImages[note].length} image(s)`);
                 }
             }
             
@@ -1505,6 +1348,8 @@
                     
                     // Add images if enabled (use Discord CDN URL for now)
                     if (includeImages && noteToImages[note] && noteToImages[note].length > 0) {
+                        console.log(`Adding ${noteToImages[note].length} image(s) to: "${note.substring(0, 40)}..."`);
+                        
                         // Deduplicate images by URL to prevent duplicates
                         const seenUrls = new Set();
                         const uniqueImages = [];
@@ -1549,14 +1394,25 @@
         }
 
         function updatePreview() {
-            const activeTab = document.querySelector('.tab.active').textContent;
+            console.log('updatePreview() called');
+            const activeTab = document.querySelector('.tab.active');
+            if (!activeTab) {
+                console.log('No active tab found!');
+                return;
+            }
+            const activeTabText = activeTab.textContent;
+            console.log('Active tab:', activeTabText);
+            
             const previewContent = document.getElementById('previewContent');
             const includeImages = document.getElementById('includeImages').checked;
+            console.log('Include images checkbox:', includeImages);
             
-            if (activeTab.includes('Discord')) {
+            if (activeTabText.includes('Discord')) {
+                console.log('Generating Discord preview');
                 previewContent.textContent = generateDiscord(currentDraft.categories);
                 previewContent.className = 'preview-content';
             } else {
+                console.log('Generating HTML preview with includeImages:', includeImages);
                 // For HTML preview, show as text (code) not rendered
                 const htmlCode = generateHTML(currentDraft.categories, includeImages);
                 previewContent.textContent = htmlCode;

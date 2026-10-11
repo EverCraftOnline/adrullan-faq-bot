@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CAT screenshot manager</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #2d6a6a 0%, #1b3a4b 100%);
+      min-height: 100vh;
+      color: #1a1a1a;
+      padding: 16px;
+    }
+    .wrap {
+      max-width: 1280px;
+      margin: 0 auto;
+      background: #fafafa;
+      border-radius: 14px;
+      padding: 22px 24px 28px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+    }
+    h1 { font-size: 1.35rem; color: #1b3a4b; margin-bottom: 4px; }
+    .sub { color: #555; font-size: 0.88rem; margin-bottom: 18px; line-height: 1.45; }
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: flex-end;
+      margin-bottom: 14px;
+    }
+    label {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #333;
+    }
+    input[type="text"], select, textarea {
+      padding: 8px 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 13px;
+    }
+    input[type="text"] { min-width: 140px; }
+    .search-field input { min-width: 200px; }
+    .check {
+      flex-direction: row;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      user-select: none;
+    }
+    .stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 20px;
+      font-size: 0.85rem;
+      color: #444;
+      margin-bottom: 12px;
+      padding: 10px 12px;
+      background: #eef6f6;
+      border-radius: 10px;
+      border: 1px solid #cfe0e0;
+    }
+    .stats strong { color: #1b3a4b; }
+    .bulk-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 14px;
+      padding: 10px 12px;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+    }
+    .bulk-bar span { font-size: 0.85rem; color: #555; margin-right: 6px; }
+    button {
+      padding: 8px 14px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 13px;
+      background: #2d6a6a;
+      color: #fff;
+    }
+    button.secondary { background: #5a6570; }
+    button.danger { background: #a53c3c; }
+    button:disabled { opacity: 0.45; cursor: not-allowed; }
+    button.wix-btn { background: #0d5c4b; }
+    .paste-zone {
+      border: 2px dashed #2d6a6a;
+      border-radius: 10px;
+      min-height: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 14px;
+      background: #eef6f6;
+      margin-bottom: 14px;
+      cursor: pointer;
+    }
+    .paste-zone:focus { outline: 2px solid #1b3a4b; }
+    .paste-zone strong { color: #1b3a4b; font-size: 0.95rem; }
+    .paste-zone span { color: #666; font-size: 0.82rem; margin-top: 4px; }
+    .status { min-height: 22px; font-size: 0.88rem; margin-bottom: 10px; }
+    .status.ok { color: #1b7d4b; }
+    .status.err { color: #b00020; }
+    .status.busy { color: #6a5a00; }
+    h2 {
+      font-size: 1rem;
+      color: #333;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 6px;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 14px;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+      transition: box-shadow 0.15s;
+    }
+    .card:hover { box-shadow: 0 4px 14px rgba(0,0,0,0.12); }
+    .card.selected { border-color: #2d6a6a; box-shadow: 0 0 0 2px rgba(45,106,106,0.35); }
+    .card-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 8px;
+      background: #f6f6f6;
+      border-bottom: 1px solid #eee;
+    }
+    .card-head input { width: 16px; height: 16px; cursor: pointer; }
+    .badge {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 2px 6px;
+      border-radius: 4px;
+      letter-spacing: 0.03em;
+    }
+    .badge.wix { background: #d4edda; color: #155724; }
+    .badge.local { background: #fff3cd; color: #856404; }
+    .card-thumb {
+      aspect-ratio: 16/10;
+      background: #222;
+      cursor: pointer;
+    }
+    .card-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .card-body {
+      padding: 8px 10px 10px;
+      font-size: 11px;
+      color: #555;
+    }
+    .card-body .name {
+      font-weight: 600;
+      color: #222;
+      font-size: 12px;
+      word-break: break-all;
+      margin-bottom: 4px;
+    }
+    .card-body .tags {
+      color: #2d6a6a;
+      font-size: 11px;
+      line-height: 1.3;
+      max-height: 2.6em;
+      overflow: hidden;
+    }
+    .empty-gallery {
+      text-align: center;
+      padding: 40px 20px;
+      color: #888;
+      font-size: 0.95rem;
+    }
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal {
+      background: #fff;
+      border-radius: 12px;
+      max-width: 560px;
+      width: 100%;
+      max-height: 90vh;
+      overflow: auto;
+      padding: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+    }
+    .modal h3 { margin-bottom: 12px; color: #1b3a4b; font-size: 1.1rem; }
+    .modal .preview {
+      max-width: 100%;
+      max-height: 220px;
+      object-fit: contain;
+      background: #111;
+      border-radius: 8px;
+      margin-bottom: 14px;
+    }
+    .modal label { margin-bottom: 10px; }
+    .modal textarea { width: 100%; min-height: 72px; resize: vertical; }
+    .modal-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .modal code.url {
+      display: block;
+      font-size: 11px;
+      word-break: break-all;
+      background: #f0f0f0;
+      padding: 8px;
+      border-radius: 6px;
+      margin-top: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Community alpha screenshot manager</h1>
+    <p class="sub">Paste captures here (same as before). Review in the gallery, add optional title / note / tags for search, then bulk-upload only the keepers to Wix. Data lives in <code>data/cat-screenshots/&lt;session&gt;/</code>.</p>
+
+    <div class="toolbar">
+      <label>Session
+        <input type="text" id="session" value="CAT7" autocomplete="off" spellcheck="false">
+      </label>
+      <label>Filename prefix
+        <input type="text" id="prefix" value="AOA_CAT7_" autocomplete="off" spellcheck="false">
+      </label>
+      <label>Show
+        <select id="filter">
+          <option value="all">All</option>
+          <option value="local">Not on Wix</option>
+          <option value="wix">On Wix</option>
+        </select>
+      </label>
+      <label class="search-field">Search
+        <input type="text" id="search" placeholder="filename, title, note, tags…" autocomplete="off">
+      </label>
+      <label class="check">
+        <input type="checkbox" id="uploadWixPaste">
+        Upload to Wix on paste
+      </label>
+      <button type="button" class="secondary" id="btnReload">Reload</button>
+    </div>
+
+    <div class="stats" id="stats">
+      <span><strong>0</strong> total</span>
+      <span><strong>0</strong> on Wix</span>
+      <span><strong>0</strong> local only</span>
+    </div>
+
+    <div class="bulk-bar">
+      <span id="selCount">0 selected</span>
+      <button type="button" class="secondary" id="btnSelVisible">Select visible</button>
+      <button type="button" class="secondary" id="btnSelLocal">Select visible (not on Wix)</button>
+      <button type="button" class="secondary" id="btnClearSel">Clear selection</button>
+      <button type="button" class="wix-btn" id="btnBulkWix" disabled>Upload selected to Wix</button>
+    </div>
+
+    <div class="paste-zone" id="zone" tabindex="0">
+      <strong>Paste image (Ctrl+V)</strong>
+      <span>Usually off: leave “Upload on paste” unchecked and curate before bulk upload.</span>
+    </div>
+    <div class="status" id="status"></div>
+
+    <h2>Gallery</h2>
+    <div class="gallery" id="gallery"></div>
+    <div class="empty-gallery" id="emptyHint" style="display:none;">No shots match this filter/search.</div>
+  </div>
+
+  <div class="modal-overlay" id="modal">
+    <div class="modal">
+      <p id="modalSessionHint" style="font-size:12px;color:#666;margin:-6px 0 10px;"></p>
+      <h3 id="modalTitle">Edit</h3>
+      <img class="preview" id="modalImg" alt="">
+      <label>Title (short)
+        <input type="text" id="metaTitle" maxlength="200">
+      </label>
+      <label>Note
+        <textarea id="metaNote"></textarea>
+      </label>
+      <label>Tags / search terms (comma-separated)
+        <input type="text" id="metaTags" placeholder="combat, UI bug, Leont">
+      </label>
+      <div>
+        <small>Local URL</small>
+        <code class="url" id="modalLocalUrl"></code>
+      </div>
+      <div id="modalWixBlock" style="display:none;">
+        <small>Wix URL</small>
+        <code class="url" id="modalWixUrl"></code>
+      </div>
+      <div class="modal-actions">
+        <button type="button" id="btnSaveMeta">Save metadata</button>
+        <button type="button" class="wix-btn" id="btnModalWix">Upload this to Wix</button>
+        <button type="button" class="danger" id="btnDelete">Delete file</button>
+        <button type="button" class="secondary" id="btnCloseModal">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const sessionEl = document.getElementById('session');
+    const prefixEl = document.getElementById('prefix');
+    const filterEl = document.getElementById('filter');
+    const searchEl = document.getElementById('search');
+    const uploadWixPasteEl = document.getElementById('uploadWixPaste');
+    const zone = document.getElementById('zone');
+    const statusEl = document.getElementById('status');
+    const galleryEl = document.getElementById('gallery');
+    const emptyHint = document.getElementById('emptyHint');
+    const statsEl = document.getElementById('stats');
+    const selCountEl = document.getElementById('selCount');
+    const btnBulkWix = document.getElementById('btnBulkWix');
+
+    const modal = document.getElementById('modal');
+    const modalContext = { seq: null, sessionId: null };
+
+    let entries = [];
+    let stats = { total: 0, onWix: 0, localOnly: 0 };
+    const selected = new Set();
+
+    function setStatus(msg, kind) {
+      statusEl.textContent = msg || '';
+      statusEl.className = 'status ' + (kind || '');
+    }
+
+    function escapeHtml(s) {
+      const d = document.createElement('div');
+      d.textContent = s == null ? '' : String(s);
+      return d.innerHTML;
+    }
+
+    function session() {
+      return sessionEl.value.trim();
+    }
+
+    function imageUrl(entry) {
+      return '/api/cat-screenshots/images/' + encodeURIComponent(session()) + '/' + encodeURIComponent(entry.filename);
+    }
+
+    function imageUrlSession(sess, entry) {
+      return '/api/cat-screenshots/images/' + encodeURIComponent(sess) + '/' + encodeURIComponent(entry.filename);
+    }
+
+    function findEntry(seq) {
+      return entries.find((x) => Number(x.seq) === Number(seq));
+    }
+
+    function entryMatches(entry, q) {
+      if (!q) return true;
+      const t = q.toLowerCase();
+      const blob = [
+        entry.filename,
+        entry.title || '',
+        entry.note || '',
+        (entry.tags || []).join(' ')
+      ].join(' ').toLowerCase();
+      return blob.includes(t);
+    }
+
+    function passesFilter(entry) {
+      const f = filterEl.value;
+      if (f === 'local') return !entry.wixUrl;
+      if (f === 'wix') return Boolean(entry.wixUrl);
+      return true;
+    }
+
+    function visibleEntries() {
+      const q = searchEl.value.trim();
+      return entries.filter((e) => passesFilter(e) && entryMatches(e, q));
+    }
+
+    function updateStatsDisplay() {
+      statsEl.innerHTML =
+        '<span><strong>' + stats.total + '</strong> total</span>' +
+        '<span><strong>' + stats.onWix + '</strong> on Wix</span>' +
+        '<span><strong>' + stats.localOnly + '</strong> local only</span>';
+    }
+
+    function syncSelectionUi() {
+      const vis = visibleEntries();
+      const selInVis = vis.filter((e) => selected.has(e.seq)).length;
+      selCountEl.textContent = selected.size + ' selected' + (vis.length ? ' (' + selInVis + ' in view)' : '');
+      const hasLocalSelected = [...selected].some((seq) => {
+        const e = findEntry(seq);
+        return e && !e.wixUrl;
+      });
+      btnBulkWix.disabled = !hasLocalSelected || !stats.total;
+    }
+
+    function renderGallery() {
+      const vis = visibleEntries();
+      galleryEl.innerHTML = '';
+      emptyHint.style.display = vis.length ? 'none' : 'block';
+
+      const sorted = vis.slice().sort((a, b) => b.seq - a.seq);
+      for (const e of sorted) {
+        const card = document.createElement('div');
+        card.className = 'card' + (selected.has(e.seq) ? ' selected' : '');
+        card.dataset.seq = e.seq;
+
+        const head = document.createElement('div');
+        head.className = 'card-head';
+        const cb = document.createElement('input');
+        cb.type = 'checkbox';
+        cb.checked = selected.has(e.seq);
+        cb.addEventListener('click', (ev) => ev.stopPropagation());
+        cb.addEventListener('change', () => {
+          if (cb.checked) selected.add(e.seq);
+          else selected.delete(e.seq);
+          renderGallery();
+          syncSelectionUi();
+        });
+        const badge = document.createElement('span');
+        badge.className = 'badge ' + (e.wixUrl ? 'wix' : 'local');
+        badge.textContent = e.wixUrl ? 'Wix' : 'Local';
+        head.appendChild(cb);
+        head.appendChild(badge);
+
+        const thumb = document.createElement('div');
+        thumb.className = 'card-thumb';
+        const img = document.createElement('img');
+        img.loading = 'lazy';
+        img.alt = e.filename;
+        img.src = imageUrl(e);
+        thumb.appendChild(img);
+        thumb.addEventListener('click', () => openModal(e.seq));
+
+        const body = document.createElement('div');
+        body.className = 'card-body';
+        const name = document.createElement('div');
+        name.className = 'name';
+        name.textContent = e.title || e.filename;
+        body.appendChild(name);
+        if (e.tags && e.tags.length) {
+          const tags = document.createElement('div');
+          tags.className = 'tags';
+          tags.textContent = e.tags.join(' · ');
+          body.appendChild(tags);
+        }
+        body.style.cursor = 'pointer';
+        body.addEventListener('click', () => openModal(e.seq));
+
+        card.appendChild(head);
+        card.appendChild(thumb);
+        card.appendChild(body);
+        galleryEl.appendChild(card);
+      }
+      syncSelectionUi();
+    }
+
+    async function loadState() {
+      const s = session();
+      if (!s) return;
+      try {
+        const r = await fetch('/api/cat-screenshots/' + encodeURIComponent(s) + '/state', { credentials: 'same-origin' });
+        if (!r.ok) throw new Error('Failed to load');
+        const data = await r.json();
+        entries = data.entries || [];
+        stats = data.stats || {
+          total: entries.length,
+          onWix: entries.filter((x) => x.wixUrl).length,
+          localOnly: entries.filter((x) => !x.wixUrl).length
+        };
+        updateStatsDisplay();
+        renderGallery();
+        setStatus('Loaded ' + entries.length + ' shot(s).', 'ok');
+      } catch (e) {
+        setStatus(e.message || 'Load failed', 'err');
+      }
+    }
+
+    async function saveImageBlob(file) {
+      const s = session();
+      if (!s) {
+        setStatus('Set session first.', 'err');
+        return;
+      }
+      setStatus('Saving…', 'busy');
+      const reader = new FileReader();
+      const dataUrl = await new Promise((resolve, reject) => {
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = () => reject(reader.error);
+        reader.readAsDataURL(file);
+      });
+      try {
+        const r = await fetch('/api/cat-screenshots/' + encodeURIComponent(s) + '/save', {
+          method: 'POST',
+          credentials: 'same-origin',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            prefix: prefixEl.value,
+            imageBase64: dataUrl,
+            mimeType: file.type,
+            uploadWix: uploadWixPasteEl.checked
+          })
+        });
+        const data = await r.json().catch(() => ({}));
+        if (!r.ok) {
+          setStatus(data.error || 'Save failed', 'err');
+          return;
+        }
+        let msg = 'Saved ' + data.filename;
+        if (data.wix && data.wix.success) msg += ' (Wix)';
+        else if (data.wixSkipped) msg += ' (' + data.wixSkipped + ')';
+        setStatus(msg, 'ok');
+        await loadState();
+      } catch (e) {
+        setStatus(e.message || 'Network error', 'err');
+      }
+    }
+
+    document.addEventListener('paste', (e) => {
+      const items = e.clipboardData && e.clipboardData.items;
+      if (!items) return;
+      for (const item of items) {
+        if (item.kind === 'file' && item.type.startsWith('image/')) {
+          e.preventDefault();
+          const file = item.getAsFile();
+          if (file) saveImageBlob(file);
+          return;
+        }
+      }
+    });
+
+    zone.addEventListener('click', () => zone.focus());
+
+    sessionEl.addEventListener('change', () => {
+      selected.clear();
+      loadState();
+    });
+    filterEl.addEventListener('change', renderGallery);
+    searchEl.addEventListener('input', () => {
+      renderGallery();
+    });
+    document.getElementById('btnReload').addEventListener('click', loadState);
+
+    document.getElementById('btnSelVisible').addEventListener('click', () => {
+      for (const e of visibleEntries()) selected.add(e.seq);
+      renderGallery();
+    });
+    document.getElementById('btnSelLocal').addEventListener('click', () => {
+      for (const e of visibleEntries()) {
+        if (!e.wixUrl) selected.add(e.seq);
+      }
+      renderGallery();
+    });
+    document.getElementById('btnClearSel').addEventListener('click', () => {
+      selected.clear();
+      renderGallery();
+    });
+
+    btnBulkWix.addEventListener('click', async () => {
+      const s = session();
+      const seqs = [...selected].filter((seq) => {
+        const e = findEntry(seq);
+        return e && !e.wixUrl;
+      });
+      if (!seqs.length) {
+        setStatus('No local-only shots selected.', 'err');
+        return;
+      }
+      if (!confirm('Upload ' + seqs.length + ' image(s) to Wix (folder cat-tests/' + s + ')?')) return;
+      setStatus('Uploading…', 'busy');
+      btnBulkWix.disabled = true;
+      try {
+        const r = await fetch('/api/cat-screenshots/' + encodeURIComponent(s) + '/bulk-upload-wix', {
+          method: 'POST',
+          credentials: 'same-origin',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ seqs })
+        });
+        const data = await r.json().catch(() => ({}));
+        if (!r.ok) {
+          setStatus(data.error || 'Bulk upload failed', 'err');
+          return;
+        }
+        setStatus('Uploaded ' + data.uploaded + ' / ' + data.total + ' to Wix.', 'ok');
+        selected.clear();
+        await loadState();
+      } catch (e) {
+        setStatus(e.message || 'Network error', 'err');
+      }
+    });
+
+    function openModal(seq) {
+      const e = findEntry(seq);
+      if (!e) return;
+      modalContext.seq = seq;
+      modalContext.sessionId = session();
+      document.getElementById('modalSessionHint').textContent =
+        'Folder: ' + modalContext.sessionId + ' — Save / Wix / Delete always target this folder (not the Session box if you change it).';
+      document.getElementById('modalTitle').textContent = e.filename;
+      const imgPath = imageUrlSession(modalContext.sessionId, e);
+      document.getElementById('modalImg').src = imgPath;
+      document.getElementById('metaTitle').value = e.title || '';
+      document.getElementById('metaNote').value = e.note || '';
+      document.getElementById('metaTags').value = (e.tags || []).join(', ');
+      document.getElementById('modalLocalUrl').textContent = window.location.origin + imgPath;
+      const wixBlock = document.getElementById('modalWixBlock');
+      if (e.wixUrl) {
+        wixBlock.style.display = 'block';
+        document.getElementById('modalWixUrl').textContent = e.wixUrl;
+        document.getElementById('btnModalWix').style.display = 'none';
+      } else {
+        wixBlock.style.display = 'none';
+        document.getElementById('btnModalWix').style.display = 'inline-block';
+      }
+      modal.classList.add('open');
+    }
+
+    function closeModal() {
+      modal.classList.remove('open');
+      modalContext.seq = null;
+      modalContext.sessionId = null;
+    }
+
+    document.getElementById('btnCloseModal').addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+
+    document.getElementById('btnSaveMeta').addEventListener('click', async () => {
+      const seq = modalContext.seq;
+      const s = modalContext.sessionId;
+      if (seq == null || !s) return;
+      const body = {
+        title: document.getElementById('metaTitle').value,
+        note: document.getElementById('metaNote').value,
+        tags: document.getElementById('metaTags').value
+      };
+      try {
+        const r = await fetch('/api/cat-screenshots/' + encodeURIComponent(s) + '/entry/' + seq, {
+          method: 'PATCH',
+          credentials: 'same-origin',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(body)
+        });
+        const data = await r.json().catch(() => ({}));
+        if (!r.ok) {
+          const hint = data.hint ? ' ' + data.hint : '';
+          setStatus((data.error || 'Save failed') + hint, 'err');
+          return;
+        }
+        setStatus('Metadata saved.', 'ok');
+        await loadState();
+        if (session() === s) {
+          openModal(seq);
+        } else {
+          setStatus('Metadata saved in folder ' + s + '. Switch Session to that folder to see updates.', 'ok');
+          closeModal();
+        }
+      } catch (e) {
+        setStatus(e.message, 'err');
+      }
+    });
+
+    document.getElementById('btnModalWix').addEventListener('click', async () => {
+      const seq = modalContext.seq;
+      const s = modalContext.sessionId;
+      if (seq == null || !s) return;
+      setStatus('Uploading…', 'busy');
+      try {
+        const r = await fetch('/api/cat-screenshots/' + encodeURIComponent(s) + '/bulk-upload-wix', {
+          method: 'POST',
+          credentials: 'same-origin',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ seqs: [seq] })
+        });
+        const data = await r.json().catch(() => ({}));
+        if (!r.ok) {
+          setStatus(data.error || 'Upload failed', 'err');
+          return;
+        }
+        setStatus('On Wix.', 'ok');
+        await loadState();
+        if (session() === s) {
+          openModal(seq);
+        } else {
+          closeModal();
+        }
+      } catch (e) {
+        setStatus(e.message, 'err');
+      }
+    });
+
+    document.getElementById('btnDelete').addEventListener('click', async () => {
+      const seq = modalContext.seq;
+      const s = modalContext.sessionId;
+      if (seq == null || !s) return;
+      if (!confirm('Delete this file and remove it from the list?')) return;
+      try {
+        const r = await fetch('/api/cat-screenshots/' + encodeURIComponent(s) + '/entry/' + seq, {
+          method: 'DELETE',
+          credentials: 'same-origin'
+        });
+        const data = await r.json().catch(() => ({}));
+        if (!r.ok) {
+          setStatus(data.error || 'Delete failed', 'err');
+          return;
+        }
+        selected.delete(seq);
+        closeModal();
+        setStatus('Deleted.', 'ok');
+        await loadState();
+      } catch (e) {
+        setStatus(e.message, 'err');
+      }
+    });
+
+    loadState();
+  </script>
+</body>
+</html>

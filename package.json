@@ -6,7 +6,9 @@
   "scripts": {
     "start": "node bot.js",
     "dev": "node bot.js",
-    "generate-package": "node scripts/generate-package.js"
+    "generate-package": "node scripts/generate-package.js",
+    "list-reactions": "node scripts/listReactionUsers.js",
+    "pick-reaction-winner": "node scripts/pickReactionWinner.js"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.62.0",

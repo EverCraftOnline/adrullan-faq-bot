@@ -1,8 +1,8 @@
-const anthropicClient = require('../lib/anthropicClient');
-const configLoader = require('../lib/configLoader');
 const monitor = require('../lib/monitor');
 const draftManager = require('../lib/patchNotesDraft');
 const WixMediaUploader = require('../lib/wixMediaUploader');
+const { formatPatchNotes } = require('../lib/patchNotesAiFormatter');
+const { parseFormattedToCategories } = require('../lib/patchNotesMerge');
 const fs = require('fs');
 const path = require('path');
 
@@ -156,15 +156,18 @@ module.exports = {
         content: note.content,
         timestamp: note.timestamp
       }));
-      
-      const formatted = await formatWithAI(notesForAI, version);
-      
+
+      const formatted = await formatPatchNotes(notesForAI, version, {
+        onProgress: async (progressMessage) => {
+          await message.channel.send(progressMessage);
+        }
+      });
+
       if (!formatted) {
         return message.reply('❌ Failed to format patch notes. Check logs for details.');
       }
-      
-      // Parse formatted output into structured categories
-      const categories = parseFormattedToCategories(formatted);
+
+      const categories = formatted.categories || parseFormattedToCategories(formatted);
       
       // Create a mapping from raw note indices to formatted notes for better image matching
       // This helps us track which raw notes contributed to which formatted notes
@@ -184,7 +187,8 @@ module.exports = {
         status: 'draft',
         messageCount: rawNotes.length,
         imageCount: downloadedImages.length,
-        withImages: withImages
+        withImages: withImages,
+        batchMeta: formatted.batchMeta || null
       };
       
       draftManager.saveDraft(version, draft);
@@ -272,159 +276,6 @@ function isVersionPost(content) {
   
   // Match version patterns: "0.10.43", "Patch 0.10.43", "Version 0.10.43", etc.
   return /^(patch\s+|version\s+)?\d+\.\d+\.\d+/i.test(cleaned);
-}
-
-/**
- * Format patch notes using AI
- */
-async function formatWithAI(rawNotes, version) {
-  try {
-    // Load formatting guide - try multiple possible paths
-    const possiblePaths = [
-      path.join(__dirname, '..', '..', 'eco-web', 'PATCH_NOTES_FORMATTING_GUIDE.md'),
-      path.join(__dirname, '..', '..', '..', 'eco-web', 'PATCH_NOTES_FORMATTING_GUIDE.md'),
-      path.join(__dirname, '..', 'PATCH_NOTES_FORMATTING_GUIDE.md')
-    ];
-    
-    let formattingGuide = '';
-    for (const guidePath of possiblePaths) {
-      if (fs.existsSync(guidePath)) {
-        formattingGuide = fs.readFileSync(guidePath, 'utf-8');
-        break;
-      }
-    }
-    
-    // Fallback: use embedded guide summary if file not found
-    if (!formattingGuide) {
-      formattingGuide = `# Patch Notes Formatting Guide
-
-## Core Rules:
-1. Headline Case (Title Case) - capitalize major words, lowercase articles/conjunctions/prepositions
-2. Brevity - keep concise, 5-15 words when possible
-3. Punctuation - only exclamation marks for exciting content, no periods unless needed
-4. Light humor only - keep professional
-5. Categories in order: Content, Class, Systems, Interface, Crafting, Guilds, Bug Fixes
-6. Class names alphabetical within Class section
-7. Each change gets its own line, even if same class
-8. HTML format: <div class="patch-header2">Category</div><div class="spacer-10"></div><div class="patch-note">- Note</div><div class="spacer-30"></div>`;
-    }
-    
-    // Prepare raw notes text
-    const rawNotesText = rawNotes.map((note, idx) => {
-      return `${idx + 1}. [${note.author}] ${note.content}`;
-    }).join('\n');
-    
-    // System prompt for AI
-    const systemPrompt = `You are a patch notes formatter. Format Discord patch notes according to the formatting guide provided. Return ONLY valid JSON with two fields: "discord" (Discord markdown format) and "html" (HTML div format for Wix CMS).`;
-    
-    // User prompt
-    const userPrompt = `Format these patch notes for version ${version} according to the formatting guide:
-
-${formattingGuide}
-
----
-
-RAW PATCH NOTES:
-${rawNotesText}
-
----
-
-Return JSON with this exact structure:
-{
-  "discord": "**Category**\n- Note 1\n- Note 2\n\n**Next Category**\n- Note 3",
-  "html": "<div class=\"patch-header2\">Category</div><div class=\"spacer-10\"></div><div class=\"patch-note\">- Note 1</div><div class=\"patch-note\">- Note 2</div><div class=\"spacer-30\"></div>"
-}
-
-Important:
-- Use Headline Case throughout
-- Keep notes brief and concise
-- Categorize properly (Content, Class, Systems, Interface, Crafting, Guilds, Bug Fixes)
-- Class names must be alphabetical in Class section
-- Each change gets its own line
-- Remove author names, timestamps, "reserve" text
-- Fix typos (incomming -> Incoming, to high -> Too High)
-- HTML must use single quotes for attributes (class='patch-header2')
-- Discord format uses **bold** for category headers`;
-    
-    // Call AI directly with a known working model
-    // The model name in anthropicClient might be outdated, so we'll call directly
-    const Anthropic = require('@anthropic-ai/sdk');
-    const anthropic = new Anthropic({
-      apiKey: process.env.ANTHROPIC_API_KEY,
-    });
-    
-    // Use the newest active model: claude-sonnet-4-5-20250929
-    // Fallback to claude-sonnet-4-20250514 if needed
-    let response;
-    try {
-      response = await anthropic.messages.create({
-        model: 'claude-sonnet-4-5-20250929',
-        max_tokens: 4000,
-        system: systemPrompt,
-        messages: [
-          { role: 'user', content: userPrompt }
-        ]
-      });
-    } catch (error) {
-      // Try fallback model
-      console.log('Trying fallback model name...');
-      response = await anthropic.messages.create({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 4000,
-        system: systemPrompt,
-        messages: [
-          { role: 'user', content: userPrompt }
-        ]
-      });
-    }
-    
-    // Track API usage
-    if (response.usage) {
-      monitor.trackAPIUsage(
-        response.usage.input_tokens,
-        response.usage.output_tokens,
-        response.model
-      );
-    }
-    
-    return parseAIResponse(response.content[0].text, version);
-    
-  } catch (error) {
-    monitor.trackError(error, 'AI patch notes formatting error');
-    console.error('AI formatting error:', error);
-    return null;
-  }
-}
-
-/**
- * Parse AI response and extract formatted patch notes
- */
-function parseAIResponse(response, version) {
-  try {
-    // Parse JSON from response
-    // AI might wrap JSON in markdown code blocks
-    let jsonText = typeof response === 'string' ? response : response.content[0].text;
-    jsonText = jsonText.trim();
-    jsonText = jsonText.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim();
-    
-    // Try to extract JSON object
-    const jsonMatch = jsonText.match(/\{[\s\S]*\}/);
-    if (!jsonMatch) {
-      throw new Error('AI response did not contain valid JSON');
-    }
-    
-    const formatted = JSON.parse(jsonMatch[0]);
-    
-    return {
-      version,
-      discord: formatted.discord,
-      html: formatted.html
-    };
-  } catch (error) {
-    console.error('Error parsing AI response:', error);
-    console.error('Response was:', typeof response === 'string' ? response.substring(0, 500) : JSON.stringify(response).substring(0, 500));
-    throw error;
-  }
 }
 
 /**
@@ -762,40 +613,6 @@ function createRawToFormattedMapping(rawNotes, categories) {
   }
   
   return mapping;
-}
-
-/**
- * Parse formatted Discord/HTML output into structured categories
- */
-function parseFormattedToCategories(formatted) {
-  const categories = {};
-  
-  // Parse Discord format to extract categories and notes
-  const lines = formatted.discord.split('\n');
-  let currentCategory = null;
-  
-  for (const line of lines) {
-    const trimmed = line.trim();
-    if (!trimmed) continue;
-    
-    // Check if it's a category header (bold text)
-    const categoryMatch = trimmed.match(/^\*\*(.+?)\*\*$/);
-    if (categoryMatch) {
-      currentCategory = categoryMatch[1];
-      if (!categories[currentCategory]) {
-        categories[currentCategory] = [];
-      }
-      continue;
-    }
-    
-    // Check if it's a note (starts with -)
-    if (trimmed.startsWith('-') && currentCategory) {
-      const note = trimmed.substring(1).trim();
-      categories[currentCategory].push(note);
-    }
-  }
-  
-  return categories;
 }
 
 /**
