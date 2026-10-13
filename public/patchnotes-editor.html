@@ -388,10 +388,10 @@
                     </label>
 
                     <label style="display: flex; align-items: center; gap: 10px; padding: 10px; cursor: pointer;">
-                        <input type="checkbox" id="publishToEcoWebFeed" style="width: 20px; height: 20px;">
+                        <input type="checkbox" id="publishToFeed" style="width: 20px; height: 20px;">
                         <div>
-                            <strong>🗂️ Sync eco-web Feed</strong>
-                            <div style="font-size: 0.9em; color: #666;">Update local eco-web/public/patch-notes-feed.json</div>
+                            <strong>🗂️ Sync Patch-Notes Feed</strong>
+                            <div style="font-size: 0.9em; color: #666;">Update aoa-web/data/patch-notes/patch-notes-feed.json</div>
                         </div>
                     </label>
                 </div>
@@ -1101,9 +1101,9 @@
         async function publishWithOptions() {
             const toDiscord = document.getElementById('publishToDiscord').checked;
             const toWeb = document.getElementById('publishToWeb').checked;
-            const toEcoWebFeed = document.getElementById('publishToEcoWebFeed').checked;
+            const toFeed = document.getElementById('publishToFeed').checked;
             
-            if (!toDiscord && !toWeb && !toEcoWebFeed) {
+            if (!toDiscord && !toWeb && !toFeed) {
                 alert('Please select at least one publish destination.');
                 return;
             }
@@ -1113,7 +1113,7 @@
             const results = {
                 discord: null,
                 web: null,
-                ecoWebFeed: null
+                feed: null
             };
             
             try {
@@ -1155,8 +1155,8 @@
                     }
                 }
 
-                // Sync local eco-web feed JSON
-                if (toEcoWebFeed) {
+                // Sync the feed JSON in the aoa-web checkout
+                if (toFeed) {
                     try {
                         const response = await fetch(`/api/patch-notes/drafts/${currentVersion}/publish-local-feed`, {
                             method: 'POST'
@@ -1164,13 +1164,13 @@
                         
                         if (response.ok) {
                             const result = await response.json();
-                            results.ecoWebFeed = `✅ Local eco-web feed ${result.action} (${result.version})`;
+                            results.feed = `✅ Feed ${result.action} (${result.version})`;
                         } else {
                             const error = await response.json();
-                            results.ecoWebFeed = `❌ eco-web feed: ${error.error || 'Failed'}`;
+                            results.feed = `❌ Feed: ${error.error || 'Failed'}`;
                         }
                     } catch (error) {
-                        results.ecoWebFeed = `❌ eco-web feed: ${error.message}`;
+                        results.feed = `❌ Feed: ${error.message}`;
                     }
                 }
                 
@@ -1178,7 +1178,7 @@
                 let message = `📤 Publish Complete!\n\n`;
                 if (results.discord) message += results.discord + '\n';
                 if (results.web) message += results.web + '\n';
-                if (results.ecoWebFeed) message += results.ecoWebFeed + '\n';
+                if (results.feed) message += results.feed + '\n';
                 
                 alert(message);
                 
