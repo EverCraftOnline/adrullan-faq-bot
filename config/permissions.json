@@ -1,0 +1,112 @@
+{
+  "defaults": {
+    "allowIfNoRule": false,
+    "allowDM": true,
+    "allowedChannels": [
+      "#general-discussion",
+      "#dev-updates",
+      "#help"
+    ]
+  },
+  "commands": {
+    "help": {
+      "allowDM": true
+    },
+    "ask": {
+      "allowDM": true,
+      "channels": [
+        "#general-discussion",
+        "#help"
+      ]
+    },
+    "askall": {
+      "allowDM": false,
+      "channels": [
+        "#dev-updates"
+      ],
+      "roles": [
+        "Admin",
+        "Designer",
+        "Developer"
+      ],
+      "reason": "❌ askall is limited to staff channels/users."
+    },
+    "index": {
+      "allowDM": false,
+      "channels": [
+        "#dev-updates"
+      ],
+      "roles": [
+        "Admin",
+        "Designer",
+        "Developer"
+      ]
+    },
+    "refreshfaq": {
+      "allowDM": false,
+      "channels": [
+        "#dev-updates"
+      ],
+      "roles": [
+        "Admin",
+        "Designer",
+        "Developer"
+      ]
+    },
+    "quiz": {
+      "allowDM": false,
+      "channels": [
+        "#general-discussion",
+        "#help"
+      ]
+    },
+    "stats": {
+      "allowDM": false,
+      "roles": [
+        "Admin",
+        "Designer",
+        "Developer"
+      ]
+    },
+    "uploaddata": {
+      "allowDM": false,
+      "channels": [
+        "#dev-updates"
+      ],
+      "roles": [
+        "Admin",
+        "Designer",
+        "Developer"
+      ]
+    },
+    "profile": {
+      "allowDM": false,
+      "roles": [
+        "Admin",
+        "Designer",
+        "Developer"
+      ]
+    },
+    "monitor": {
+      "allowDM": false,
+      "roles": [
+        "Admin",
+        "Designer",
+        "Developer",
+        "Bot Admin"
+      ]
+    },
+    "patchnotes": {
+      "allowDM": false,
+      "channels": [
+        "988344623028137995"
+      ],
+      "roles": [
+        "Admin",
+        "Designer",
+        "Developer"
+      ]
+    }
+  }
+}
+
