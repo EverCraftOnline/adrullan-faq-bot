@@ -89,7 +89,7 @@ The module uses AI (Claude) to format according to the Patch Notes Formatting Gu
 - Alphabetical ordering for Class section
 - Proper HTML div structure for Wix
 
-The AI reads the formatting guide (from `eco-web/PATCH_NOTES_FORMATTING_GUIDE.md` if available) and applies all formatting rules automatically.
+The AI reads the formatting guide (`PATCH_NOTES_FORMATTING_GUIDE.md` in this repo, falling back to a short built-in copy) and applies all formatting rules automatically.
 
 ## Message Limits
 
@@ -107,21 +107,22 @@ Discord has a 2000 character limit per message. The module automatically splits 
 
 ## Integration
 
-The module is integrated into `bot.js`. Use `!patchnotes` in Discord, review in the dashboard, then publish to Discord/Wix/eco-web from there.
+The module is integrated into `bot.js`. Use `!patchnotes` in Discord, review in the dashboard, then publish to Discord, Wix and the feed file from there.
 
 ## After publishing: the feed
 
 The patcher and the game client's main menu read the patch-notes feed, not Discord or Wix.
 
-1. In the dashboard's Publish dialog, check **eco-web feed**. `lib/syncEcoWebPatchFeed.js` adds or
-   replaces the version in `..\eco-web\public\patch-notes-feed.json`, so the eco-web checkout must sit
-   next to this repo. The **Wix CMS** option feeds the retired Wix site, so leave it unchecked.
+1. In the dashboard's Publish dialog, check **Sync Patch-Notes Feed**. `lib/syncPatchFeed.js` adds or
+   replaces the version in `..\aoa-web\data\patch-notes\patch-notes-feed.json`, so the aoa-web
+   checkout must sit next to this repo. The **Wix CMS** option feeds the retired Wix site, so leave it
+   unchecked.
 2. Push that file live from the aoa-web repo:
-   `npm run feed -- ../eco-web/public/patch-notes-feed.json` (add `--dry` to check it first).
+   `npm run feed -- data/patch-notes/patch-notes-feed.json` (add `--dry` to check it first).
    It uploads to the DigitalOcean Space, and `https://www.adrullan.online/public/patch-notes-feed.json`
-   serves it within a minute. No site release, and no eco-web deploy, is needed.
-3. The website's `/patch-notes` page updates on the next site release
-   (`npm run content -- --feed <feed URL>` in aoa-web).
+   serves it within a minute. No site release is needed.
+3. The website's `/patch-notes` pages read the live feed in the browser, so the new patch shows there
+   too. A later site release bakes it into the prerendered pages and the sitemap.
 
 The full flow, feed format and gotchas are in aoa-web's
 [docs/patch-notes.md](https://github.com/EverCraftOnline/aoa-web/blob/main/docs/patch-notes.md).
